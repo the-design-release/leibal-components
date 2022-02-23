@@ -10,7 +10,7 @@ export class NavBar {
   render() {
     return (
       <Host>
-        <nav class="navbar">
+        <nav class="navbar bg-red-700">
           <div class="navbar__row">
             <a href="#" class="navbar__row__leading">
               Leibal Stories
