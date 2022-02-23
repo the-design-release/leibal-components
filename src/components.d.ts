@@ -7,6 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface NavBar {
+        "authenticated": boolean;
+    }
+    interface StickyScroller {
+        "parent"?: string;
     }
 }
 declare global {
@@ -16,15 +20,27 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
+    interface HTMLStickyScrollerElement extends Components.StickyScroller, HTMLStencilElement {
+    }
+    var HTMLStickyScrollerElement: {
+        prototype: HTMLStickyScrollerElement;
+        new (): HTMLStickyScrollerElement;
+    };
     interface HTMLElementTagNameMap {
         "nav-bar": HTMLNavBarElement;
+        "sticky-scroller": HTMLStickyScrollerElement;
     }
 }
 declare namespace LocalJSX {
     interface NavBar {
+        "authenticated"?: boolean;
+    }
+    interface StickyScroller {
+        "parent"?: string;
     }
     interface IntrinsicElements {
         "nav-bar": NavBar;
+        "sticky-scroller": StickyScroller;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +48,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+            "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
         }
     }
 }
