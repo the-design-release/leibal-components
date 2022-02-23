@@ -6,7 +6,7 @@ import cssnano from 'cssnano';
 
 
 const purge = purgecss({
-  content: ["./src/**/*.tsx", "./src/index.html"],
+  content: ['./src/**/*.tsx', './src/index.html'],
   safelist: [':host'],
   defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
 });
