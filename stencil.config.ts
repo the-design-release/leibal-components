@@ -1,4 +1,6 @@
 import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+
 
 export const config: Config = {
   namespace: 'leibal-components',
@@ -18,4 +20,13 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  plugins: [
+    postcss({
+      plugins: [
+        require('tailwindcss/nesting'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ]
+    })
+  ]
 };

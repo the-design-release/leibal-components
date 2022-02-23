@@ -26,13 +26,20 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0"
+    "@stencil/core": "^2.13.0",
+    "postcss-nesting": "^10.1.2"
   },
   "devDependencies": {
+    "@stencil/postcss": "^2.1.0",
+    "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^27.0.3",
+    "autoprefixer": "^10.4.2",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
-    "puppeteer": "^10.0.0"
+    "postcss": "^8.4.6",
+    "postcss-nested": "^5.0.6",
+    "puppeteer": "^13.4.0",
+    "tailwindcss": "^3.0.23"
   },
   "license": "MIT"
 }
