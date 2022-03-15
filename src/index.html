@@ -7,6 +7,12 @@
 
     <script type="module" src="/build/leibal-components.esm.js"></script>
     <script nomodule src="/build/leibal-components.js"></script>
+
+    <style>
+      body {
+        line-height: 1.7;
+      }
+    </style>
   </head>
   <body>
     <div style="border: 1px solid #eaeaea; border-bottom: none; margin-bottom: 6rem">
@@ -16,8 +22,8 @@
     <div style="display: grid; grid-template-columns: 1fr 3fr">
       <div>
         <sticky-scroller
-          start-top="20"
-          end-bottom="200"
+          start-offset="20"
+          end-offset="200"
           style="height: 105vh; display: flex; flex-direction: column; justify-content: space-between"
         >
           <h1>Here's some text YO</h1>
@@ -25,7 +31,7 @@
         </sticky-scroller>
       </div>
 
-      <div style="font-size: 50rem">Blah Blah Blah Blah</div>
+      <div style="font-size: 20vw">Blah Blah Blah Blah</div>
     </div>
   </body>
 </html>

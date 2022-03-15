@@ -292,28 +292,24 @@ const registerNode = (node, { offsetTop, offsetBottom, bottom }) => {
 
 @Component({
   tag: 'sticky-scroller',
-  styleUrl: 'sticky-scroller.css',
-  shadow: true,
 })
 export class StickyScroller {
-  @Prop() startTop: number = 0;
-  @Prop() endBottom: number = 0;
+  @Prop() startOffset: number = 0;
+  @Prop() endOffset: number = 0;
   @Prop() bottom: boolean = false;
   @Element() el: HTMLElement;
   @State() argsRef: { offsetTop: number; offsetBottom: number; bottom: boolean } = {
-    offsetTop: this.startTop,
-    offsetBottom: this.endBottom,
+    offsetTop: this.startOffset,
+    offsetBottom: this.endOffset,
     bottom: this.bottom,
   };
 
   componentWillLoad() {
-    console.log(this);
     registerNode(this.el, this.argsRef as any);
   }
 
   componentShouldUpdate() {
-    this.argsRef = { offsetTop: this.startTop, offsetBottom: this.endBottom, bottom: this.bottom };
-    console.log(this);
+    this.argsRef = { offsetTop: this.startOffset, offsetBottom: this.endOffset, bottom: this.bottom };
   }
 
   render() {

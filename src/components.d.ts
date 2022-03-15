@@ -13,8 +13,8 @@ export namespace Components {
     }
     interface StickyScroller {
         "bottom": boolean;
-        "endBottom": number;
-        "startTop": number;
+        "endOffset": number;
+        "startOffset": number;
     }
 }
 declare global {
@@ -42,8 +42,8 @@ declare namespace LocalJSX {
     }
     interface StickyScroller {
         "bottom"?: boolean;
-        "endBottom"?: number;
-        "startTop"?: number;
+        "endOffset"?: number;
+        "startOffset"?: number;
     }
     interface IntrinsicElements {
         "nav-bar": NavBar;
