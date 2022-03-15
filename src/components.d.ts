@@ -5,8 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { DisplayCardTheme } from "./components/display-card/display-card";
 import { PlatformType } from "./components/nav-bar/nav-bar";
 export namespace Components {
+    interface DisplayCard {
+        "images": string;
+        "linkTo": string;
+        "theme": DisplayCardTheme;
+    }
     interface NavBar {
         "authenticated": boolean;
         "platform": PlatformType;
@@ -18,6 +24,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDisplayCardElement extends Components.DisplayCard, HTMLStencilElement {
+    }
+    var HTMLDisplayCardElement: {
+        prototype: HTMLDisplayCardElement;
+        new (): HTMLDisplayCardElement;
+    };
     interface HTMLNavBarElement extends Components.NavBar, HTMLStencilElement {
     }
     var HTMLNavBarElement: {
@@ -31,11 +43,17 @@ declare global {
         new (): HTMLStickyScrollerElement;
     };
     interface HTMLElementTagNameMap {
+        "display-card": HTMLDisplayCardElement;
         "nav-bar": HTMLNavBarElement;
         "sticky-scroller": HTMLStickyScrollerElement;
     }
 }
 declare namespace LocalJSX {
+    interface DisplayCard {
+        "images"?: string;
+        "linkTo"?: string;
+        "theme"?: DisplayCardTheme;
+    }
     interface NavBar {
         "authenticated"?: boolean;
         "platform"?: PlatformType;
@@ -46,6 +64,7 @@ declare namespace LocalJSX {
         "startOffset"?: number;
     }
     interface IntrinsicElements {
+        "display-card": DisplayCard;
         "nav-bar": NavBar;
         "sticky-scroller": StickyScroller;
     }
@@ -54,6 +73,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "display-card": LocalJSX.DisplayCard & JSXBase.HTMLAttributes<HTMLDisplayCardElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
         }

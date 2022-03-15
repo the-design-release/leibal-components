@@ -1,7 +1,10 @@
 /**
+ *
  * ======================================================================
  *
  * Stick scrolling Stencil component, modified from from react-sticky-box
+ *
+ * https://github.com/codecks-io/react-sticky-box
  *
  * ======================================================================
  *

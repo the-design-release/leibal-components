@@ -1,0 +1,62 @@
+:host {
+  @apply mb-12 lg:mb-20;
+
+  --font-family: var(--leibal-components-font-family, sans-serif);
+  --color-light: #f3f3f3;
+  --color-dark: #222;
+
+  display: block;
+  font-family: var(--font-family);
+}
+
+.display-card {
+  @apply tracking-widest cursor-pointer;
+
+  color: var(--color-dark);
+  text-decoration: inherit;
+
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: auto 1 / 1;
+    overflow: hidden;
+
+    & > * {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+    }
+
+    & > *:first-child {
+      opacity: 1;
+    }
+
+    &:hover > *:nth-child(2) {
+      opacity: 1;
+    }
+  }
+
+  &__top {
+    @apply my-8;
+
+    &__title {
+      @apply uppercase font-normal text-xs mb-1;
+    }
+    &__subtitle {
+      @apply uppercase font-light text-xs;
+    }
+  }
+
+  &__bottom {
+    &__title {
+      @apply font-normal text-base mb-1;
+    }
+    &__subtitle {
+      @apply font-normal text-xs;
+    }
+  }
+}
