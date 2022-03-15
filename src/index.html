@@ -7,87 +7,32 @@
 
     <script type="module" src="/build/leibal-components.esm.js"></script>
     <script nomodule src="/build/leibal-components.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+    </style>
 
     <style>
+      :root {
+        --leibal-components-font-family: Roboto, sans-serif;
+      }
+
       body {
+        font-family: var(--leibal-components-font-family);
         line-height: 1.7;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        letter-spacing: 2px;
       }
     </style>
   </head>
   <body>
-    <div style="border: 1px solid #eaeaea; border-bottom: none; margin-bottom: 6rem">
+    <div style="border: 1px solid #eaeaea; border-top: none; border-bottom: none; margin-bottom: 6rem">
       <nav-bar />
     </div>
-
-    <div style="display: grid; grid-template-columns: 2fr 1fr; grid-gap: 2.5rem">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0 2.5rem">
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-        <display-card
-          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-        >
-          <div slot="top-title">JUL 13, 2022</div>
-          <div slot="top-subtitle">FURNITURE</div>
-          <div slot="bottom-title">Pedestal.05</div>
-          <div slot="bottom-subtitle">by Luka Yakesawa</div>
-        </display-card>
-      </div>
-      <div>
-        <sticky-scroller style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0 2.5rem" start-offset="40">
+    <div style="padding: 0 2rem">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; grid-gap: 2.5rem">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0 2.5rem">
           <display-card
             images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
           >
@@ -112,23 +57,152 @@
             <div slot="bottom-title">Pedestal.05</div>
             <div slot="bottom-subtitle">by Luka Yakesawa</div>
           </display-card>
-        </sticky-scroller>
+          <display-card
+            images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+          >
+            <div slot="top-title">JUL 13, 2022</div>
+            <div slot="top-subtitle">FURNITURE</div>
+            <div slot="bottom-title">Pedestal.05</div>
+            <div slot="bottom-subtitle">by Luka Yakesawa</div>
+          </display-card>
+          <display-card
+            images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+          >
+            <div slot="top-title">JUL 13, 2022</div>
+            <div slot="top-subtitle">FURNITURE</div>
+            <div slot="bottom-title">Pedestal.05</div>
+            <div slot="bottom-subtitle">by Luka Yakesawa</div>
+          </display-card>
+          <display-card
+            images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+          >
+            <div slot="top-title">JUL 13, 2022</div>
+            <div slot="top-subtitle">FURNITURE</div>
+            <div slot="bottom-title">Pedestal.05</div>
+            <div slot="bottom-subtitle">by Luka Yakesawa</div>
+          </display-card>
+          <display-card
+            images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+          >
+            <div slot="top-title">JUL 13, 2022</div>
+            <div slot="top-subtitle">FURNITURE</div>
+            <div slot="bottom-title">Pedestal.05</div>
+            <div slot="bottom-subtitle">by Luka Yakesawa</div>
+          </display-card>
+          <display-card
+            images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+          >
+            <div slot="top-title">JUL 13, 2022</div>
+            <div slot="top-subtitle">FURNITURE</div>
+            <div slot="bottom-title">Pedestal.05</div>
+            <div slot="bottom-subtitle">by Luka Yakesawa</div>
+          </display-card>
+        </div>
+        <div>
+          <sticky-scroller style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0 2.5rem" start-offset="40">
+            <display-card
+              images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+            >
+              <div slot="top-title">JUL 13, 2022</div>
+              <div slot="top-subtitle">FURNITURE</div>
+              <div slot="bottom-title">Pedestal.05</div>
+              <div slot="bottom-subtitle">by Luka Yakesawa</div>
+            </display-card>
+            <display-card
+              images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+            >
+              <div slot="top-title">JUL 13, 2022</div>
+              <div slot="top-subtitle">FURNITURE</div>
+              <div slot="bottom-title">Pedestal.05</div>
+              <div slot="bottom-subtitle">by Luka Yakesawa</div>
+            </display-card>
+            <display-card
+              images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
+            >
+              <div slot="top-title">JUL 13, 2022</div>
+              <div slot="top-subtitle">FURNITURE</div>
+              <div slot="bottom-title">Pedestal.05</div>
+              <div slot="bottom-subtitle">by Luka Yakesawa</div>
+            </display-card>
+          </sticky-scroller>
+        </div>
       </div>
-    </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 3fr">
-      <div>
-        <sticky-scroller
-          start-offset="20"
-          end-offset="20"
-          style="height: 105vh; display: flex; flex-direction: column; justify-content: space-between"
-        >
-          <h1>Here's some text YO</h1>
-          <h1>Here's the bottom</h1>
-        </sticky-scroller>
+      <div style="display: grid; grid-template-columns: 1fr 3fr">
+        <div>
+          <sticky-scroller
+            start-offset="20"
+            end-offset="20"
+            style="height: 105vh; display: flex; flex-direction: column; justify-content: space-between"
+          >
+            <h1>Here's some text YO</h1>
+            <h1>Here's the bottom</h1>
+          </sticky-scroller>
+        </div>
+
+        <div style="font-size: 20vw; line-height: 0.687; letter-spacing: 8vw">
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+          <div style="display: flex; justify-content: space-evenly">
+            <div>B</div>
+            <div>l</div>
+            <div>a</div>
+            <div>h</div>
+          </div>
+        </div>
       </div>
-
-      <div style="font-size: 20vw">Blah Blah Blah Blah</div>
     </div>
   </body>
 </html>

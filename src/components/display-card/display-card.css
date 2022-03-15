@@ -41,7 +41,7 @@
   }
 
   &__top {
-    @apply my-6;
+    @apply my-5;
 
     &__title {
       @apply uppercase font-normal text-xs mb-1;
@@ -56,7 +56,7 @@
       @apply font-normal text-sm mb-1;
     }
     &__subtitle {
-      @apply font-normal text-xs;
+      @apply font-light text-xs;
     }
   }
 }

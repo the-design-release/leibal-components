@@ -14,7 +14,7 @@
 
 .navbar {
   &__row {
-    @apply block lg:grid grid-cols-10 justify-between tracking-widest md:text-xs lg:text-xs xl:text-sm;
+    @apply block lg:grid grid-cols-10 justify-between tracking-widest text-xs md:text-sm lg:text-sm xl:text-sm;
     border-bottom: 1px solid var(--color-dim);
 
     &__leading {
@@ -25,7 +25,7 @@
       @apply block md:grid lg:grid-cols-4 xl:grid-cols-6 flex-1 col-span-6;
 
       & a {
-        @apply flex items-center px-5 py-4;
+        @apply flex font-light items-center px-5 py-4;
 
         transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 

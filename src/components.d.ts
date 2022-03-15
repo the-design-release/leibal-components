@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { DisplayCardTheme } from "./components/display-card/display-card";
-import { PlatformType } from "./components/nav-bar/nav-bar";
+import { PlatformType } from "./utils/platform";
 export namespace Components {
     interface DisplayCard {
         "images": string;

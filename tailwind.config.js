@@ -1,9 +1,10 @@
 module.exports = {
-  content: ['./src/**/*.{tsx}', './src/index.html'],
+  content: ['./src/**/*.tsx', './src/index.html'],
   theme: {
     extend: {
       fontSize: {
-        xs: '10px',
+        xs: '9px',
+        sm: '13px',
       },
     },
   },

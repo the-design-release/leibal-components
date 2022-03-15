@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop } from '@stencil/core';
+import { PlatformType } from '../../utils/platform';
 
-export type PlatformType = 'shop' | 'blog';
 @Component({
   tag: 'nav-bar',
   styleUrl: 'nav-bar.css',
