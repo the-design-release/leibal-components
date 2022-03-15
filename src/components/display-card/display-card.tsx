@@ -24,6 +24,8 @@ export class DisplayCard {
   watchImages(value) {
     if (typeof value === 'string') {
       this._images = JSON.parse(value);
+    } else {
+      this._images = value;
     }
   }
 

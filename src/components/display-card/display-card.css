@@ -44,19 +44,19 @@
     @apply my-8;
 
     &__title {
-      @apply uppercase font-normal text-xs mb-1;
+      @apply uppercase font-normal text-2xs mb-1;
     }
     &__subtitle {
-      @apply uppercase font-light text-xs;
+      @apply uppercase font-light text-2xs;
     }
   }
 
   &__bottom {
     &__title {
-      @apply font-normal text-base mb-1;
+      @apply font-normal text-sm mb-1;
     }
     &__subtitle {
-      @apply font-normal text-xs;
+      @apply font-normal text-2xs;
     }
   }
 }
