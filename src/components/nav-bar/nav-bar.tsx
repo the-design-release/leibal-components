@@ -1,5 +1,6 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
+export type PlatformType = 'shop' | 'blog';
 @Component({
   tag: 'nav-bar',
   styleUrl: 'nav-bar.css',
@@ -9,12 +10,15 @@ export class NavBar {
   @Prop()
   authenticated: boolean = false;
 
+  @Prop()
+  platform: PlatformType = 'blog';
+
   render() {
     return (
       <Host>
         <nav class="navbar">
           <div class="navbar__row">
-            <a href="#" class="navbar__row__leading">
+            <a href="#" class={'navbar__row__leading ' + (this.platform === 'blog' ? 'font-bold' : '')}>
               Leibal Stories
             </a>
             <div class="navbar__row__links">
@@ -26,16 +30,12 @@ export class NavBar {
               <a href="#">Travel</a>
             </div>
             <div class="navbar__row__action">
-              <a href="#">
-                Submit
-              </a>
-              <a href="#">
-                Sign Up
-              </a>
+              <a href="#">Submit</a>
+              <a href="#">Sign Up</a>
             </div>
           </div>
           <div class="navbar__row">
-            <a href="#" class="navbar__row__leading">
+            <a href="#" class={'navbar__row__leading ' + (this.platform === 'shop' ? 'font-bold' : '')}>
               Leibal Shop
             </a>
             <div class="navbar__row__links">
@@ -47,17 +47,12 @@ export class NavBar {
               <a href="#">Accessories</a>
             </div>
             <div class="navbar__row__action">
-              <a href="#">
-                Trade
-              </a>
-              <a href="#">
-                Login
-              </a>
+              <a href="#">Trade</a>
+              <a href="#">Login</a>
             </div>
           </div>
         </nav>
       </Host>
     );
   }
-
 }

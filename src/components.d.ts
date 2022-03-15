@@ -5,12 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { PlatformType } from "./components/nav-bar/nav-bar";
 export namespace Components {
     interface NavBar {
         "authenticated": boolean;
+        "platform": PlatformType;
     }
     interface StickyScroller {
-        "parent"?: string;
+        "bottom": boolean;
+        "endBottom": number;
+        "startTop": number;
     }
 }
 declare global {
@@ -34,9 +38,12 @@ declare global {
 declare namespace LocalJSX {
     interface NavBar {
         "authenticated"?: boolean;
+        "platform"?: PlatformType;
     }
     interface StickyScroller {
-        "parent"?: string;
+        "bottom"?: boolean;
+        "endBottom"?: number;
+        "startTop"?: number;
     }
     interface IntrinsicElements {
         "nav-bar": NavBar;

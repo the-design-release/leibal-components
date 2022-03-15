@@ -32,13 +32,14 @@ export const config: Config = {
   plugins: [
     postcss({
       plugins: [
+        require('postcss-import'),
         require('tailwindcss/nesting'),
         require('tailwindcss')('./tailwind.config.js'),
         require('autoprefixer'),
         replace({ pattern: 'html', data: { replaceAll: ':host' } } as any),
         // purge and cssnano if production build
         ...(!process.argv.includes('--dev')
-          ? [ purge, cssnano() ]
+          ? [purge, cssnano()]
           : [])
       ]
     })
