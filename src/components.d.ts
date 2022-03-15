@@ -16,6 +16,7 @@ export namespace Components {
     interface NavBar {
         "authenticated": boolean;
         "platform": PlatformType;
+        "showMultiplier": number;
     }
     interface StickyScroller {
         "bottom": boolean;
@@ -57,6 +58,7 @@ declare namespace LocalJSX {
     interface NavBar {
         "authenticated"?: boolean;
         "platform"?: PlatformType;
+        "showMultiplier"?: number;
     }
     interface StickyScroller {
         "bottom"?: boolean;

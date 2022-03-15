@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, Element, h, Prop, State, Watch } from '@stencil/core';
 import { PlatformType } from '../../utils/platform';
 
 @Component({
@@ -7,11 +7,43 @@ import { PlatformType } from '../../utils/platform';
   shadow: true,
 })
 export class NavBar {
-  @Prop()
-  authenticated: boolean = false;
+  @Element() el: HTMLElement;
 
-  @Prop()
-  platform: PlatformType = 'blog';
+  @Prop() authenticated: boolean = false;
+  @Prop() platform: PlatformType = 'blog';
+  @Prop() showMultiplier: number = 3;
+
+  @State() deltaY: number = 0;
+  @State() currentHeight: number = 150;
+  @State() scrollY: number = window.scrollY;
+  @State() scrolled: boolean = false;
+
+  componentDidLoad() {
+    this.setHeight.bind(this);
+  }
+
+  componentWillLoad() {
+    window.addEventListener('scroll', this.scrollListener.bind(this));
+    window.addEventListener('resize', this.setHeight.bind(this));
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('scroll', this.scrollListener.bind(this));
+    window.removeEventListener('resize', this.setHeight.bind(this));
+  }
+
+  setHeight() {
+    this.currentHeight = this.el.getBoundingClientRect().height;
+  }
+
+  scrollListener() {
+    this.scrollY = window.scrollY;
+  }
+
+  @Watch('scrollY')
+  watchScrollY() {
+    // TODO: Fill me in!
+  }
 
   render() {
     return (
