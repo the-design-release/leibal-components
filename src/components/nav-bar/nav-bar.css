@@ -4,6 +4,7 @@
 
 :host {
   --font-family: var(--leibal-components-font-family, sans-serif);
+  --color-white: #fff;
   --color-light: #f3f3f3;
   --color-dim: #eaeaea;
   --color-dark: #222;
@@ -13,12 +14,36 @@
 }
 
 .navbar {
+  background: var(--color-white);
+  transition: top 200ms ease-in-out;
+
+  &--scrolled {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+
+    top: -105px;
+    &.show {
+      top: 0;
+    }
+  }
+
+  &__logo {
+    @apply mr-10;
+    width: 110px;
+  }
+
   &__row {
     @apply block lg:grid grid-cols-10 justify-between tracking-widest text-xs md:text-sm lg:text-sm xl:text-sm;
     border-bottom: 1px solid var(--color-dim);
 
     &__leading {
-      @apply px-5 py-4 pl-4 xl:pl-16 col-span-1 lg:col-span-2 overflow-clip;
+      @apply px-5 py-4 pl-4 xl:pl-8 col-span-1 lg:col-span-2 overflow-clip flex;
+
+      &__logo {
+        @apply flex items-center;
+      }
     }
 
     &__links {

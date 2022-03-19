@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :host {
   @apply mb-12 lg:mb-20;
 
@@ -11,9 +15,6 @@
 
 .display-card {
   @apply tracking-widest cursor-pointer;
-
-  color: var(--color-dark);
-  text-decoration: inherit;
 
   &__image {
     position: relative;
