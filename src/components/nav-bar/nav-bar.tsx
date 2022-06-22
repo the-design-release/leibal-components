@@ -12,7 +12,7 @@ export class NavBar {
 
   @Prop() authenticated: boolean = false;
   @Prop() platform: PlatformType = 'blog';
-  @Prop() showMultiplier: number = 3;
+  @Prop() showMultiplier: number = 1;
 
   @State() deltaY: number = 0;
   @State() scrollY: number = window.scrollY;
@@ -45,6 +45,16 @@ export class NavBar {
     this.scrollY = window.scrollY;
   }
 
+  @Watch('scrolled')
+  watchScrolled(scrolled, lastScrolled) {
+    if (scrolled === false && lastScrolled === true) {
+      this.el.animate([{ transform: 'translateY(0px)' }, { transform: 'translateY(-150px)' }], {
+        duration: 150,
+        iterations: 1,
+      });
+    }
+  }
+
   @Watch('scrollY')
   watchScrollY(y, lastY) {
     this.deltaY = y - lastY;
@@ -71,55 +81,51 @@ export class NavBar {
     return (
       <Host>
         <div style={{ height: (this.scrolled ? this.currentHeight : 0) + 'px' }}></div>
-        <animatable-component animation="slideInDown" easing="ease-in" duration={250}>
-          <nav class={'navbar ' + (this.scrolled ? 'navbar--scrolled ' : '') + (this.scrolledUp ? 'show' : '')}>
-            <div class="navbar__row">
-              <a
-                href="#"
-                class={
-                  'navbar__row__leading navbar__row__leading__logo ' + (this.platform === 'blog' ? 'font-bold' : '')
-                }
-              >
-                <div class="navbar__logo">
-                  <img src={getAssetPath(`./assets/leibal-logo.png`)} />
-                </div>
-                <div>Stories</div>
-              </a>
-              <div class="navbar__row__links">
-                <a href="#">Architecture</a>
-                <a href="#">Interiors</a>
-                <a href="#">Furniture</a>
-                <a href="#">Lighting</a>
-                <a href="#">Products</a>
-                <a href="#">Travel</a>
+        <nav class={'navbar ' + (this.scrolled ? 'navbar--scrolled ' : '') + (this.scrolledUp ? 'show' : '')}>
+          <div class="navbar__row">
+            <a
+              href="#"
+              class={'navbar__row__leading navbar__row__leading__logo ' + (this.platform === 'blog' ? 'font-bold' : '')}
+            >
+              <div class="navbar__logo">
+                <img src={getAssetPath(`./assets/leibal-logo.png`)} />
               </div>
-              <div class="navbar__row__action">
-                <a href="#">Submit</a>
-                <a href="#">Sign Up</a>
-              </div>
+              <div>Stories</div>
+            </a>
+            <div class="navbar__row__links">
+              <a href="#">Architecture</a>
+              <a href="#">Interiors</a>
+              <a href="#">Furniture</a>
+              <a href="#">Lighting</a>
+              <a href="#">Products</a>
+              <a href="#">Travel</a>
             </div>
-            <div class="navbar__row">
-              <a href="#" class={'navbar__row__leading ' + (this.platform === 'shop' ? 'font-bold' : '')}>
-                <div class="navbar__logo" style={{ opacity: '0', visibility: 'hidden' }}>
-                  <img src={getAssetPath(`./assets/leibal-logo.png`)} />
-                </div>
-                Shop
-              </a>
-              <div class="navbar__row__links">
-                <a href="#">Sofas</a>
-                <a href="#">Chairs</a>
-                <a href="#">Tables</a>
-                <a href="#">Storage</a>
-                <a href="#">Lighting</a>
-                <a href="#">Accessories</a>
-              </div>
-              <div class="navbar__row__action">
-                <a href="#">Trade</a>
-                <a href="#">Login</a>
-              </div>
+            <div class="navbar__row__action">
+              <a href="#">Submit</a>
+              <a href="#">Sign Up</a>
             </div>
-          </nav>
-        </animatable-component>
+          </div>
+          <div class="navbar__row">
+            <a href="#" class={'navbar__row__leading ' + (this.platform === 'shop' ? 'font-bold' : '')}>
+              <div class="navbar__logo" style={{ opacity: '0', visibility: 'hidden' }}>
+                <img src={getAssetPath(`./assets/leibal-logo.png`)} />
+              </div>
+              Shop
+            </a>
+            <div class="navbar__row__links">
+              <a href="#">Sofas</a>
+              <a href="#">Chairs</a>
+              <a href="#">Tables</a>
+              <a href="#">Storage</a>
+              <a href="#">Lighting</a>
+              <a href="#">Accessories</a>
+            </div>
+            <div class="navbar__row__action">
+              <a href="#">Trade</a>
+              <a href="#">Login</a>
+            </div>
+          </div>
+        </nav>
       </Host>
     );
   }

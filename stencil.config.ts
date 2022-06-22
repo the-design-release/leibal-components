@@ -12,6 +12,9 @@ const purge = purgecss({
 });
 
 export const config: Config = {
+  devServer: {
+    openBrowser: !process.env.NOBROWSER,
+  },
   namespace: 'leibal-components',
   outputTargets: [
     {

@@ -17,6 +17,11 @@
   background: var(--color-white);
   transition: top 200ms ease-in-out;
 
+  @keyframes slide-down {
+    from {
+    }
+  }
+
   &--scrolled {
     position: fixed;
     z-index: 10;

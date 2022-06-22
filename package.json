@@ -20,13 +20,12 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
+    "start": "NOBROWSER=true stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@proyecto26/animatable-component": "^1.1.10",
     "@stencil/core": "^2.13.0",
     "postcss-nesting": "^10.1.2",
     "st-lazy": "^2.2.0"
