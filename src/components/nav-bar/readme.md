@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type               | Default  |
-| ---------------- | ----------------- | ----------- | ------------------ | -------- |
-| `authenticated`  | `authenticated`   |             | `boolean`          | `false`  |
-| `platform`       | `platform`        |             | `"blog" \| "shop"` | `'blog'` |
-| `showMultiplier` | `show-multiplier` |             | `number`           | `1`      |
+| Property         | Attribute         | Description | Type                | Default  |
+| ---------------- | ----------------- | ----------- | ------------------- | -------- |
+| `authenticated`  | `authenticated`   |             | `boolean`           | `false`  |
+| `platform`       | `platform`        |             | `"blog" \| "store"` | `'blog'` |
+| `showMultiplier` | `show-multiplier` |             | `number`            | `1`      |
 
 
 ----------------------------------------------
