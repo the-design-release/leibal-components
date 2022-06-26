@@ -1,5 +1,5 @@
 import { Component, Host, Element, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
-import { PlatformType } from '../../utils/platform';
+import { PlatformType, STORE_URL, BLOG_URL } from '../../utils/platform';
 
 @Component({
   tag: 'nav-bar',
@@ -45,6 +45,15 @@ export class NavBar {
     this.scrollY = window.scrollY;
   }
 
+  platformSpecificLink(platform: PlatformType, path: string): string {
+    const platformUrl = (platform === 'store') ? STORE_URL : BLOG_URL;
+    if(this.platform === platform) {
+      return path;
+    } else {
+      return new URL(path, platformUrl).toString();
+    }
+  }
+
   @Watch('scrolled')
   watchScrolled(scrolled, lastScrolled) {
     if (scrolled === false && lastScrolled === true) {
@@ -84,21 +93,21 @@ export class NavBar {
         <nav class={'navbar ' + (this.scrolled ? 'navbar--scrolled ' : '') + (this.scrolledUp ? 'show' : '')}>
           <div class="navbar__row">
             <a
-              href="#"
+              href={this.platformSpecificLink("blog", "/")}
               class={'navbar__row__leading navbar__row__leading__logo ' + (this.platform === 'blog' ? 'font-bold' : '')}
             >
               <div class="navbar__logo">
                 <img src={getAssetPath(`./assets/leibal-logo.png`)} />
               </div>
-              <div>Stories</div>
+              <a href="/">Stories</a>
             </a>
             <div class="navbar__row__links">
-              <a href="#">Architecture</a>
-              <a href="#">Interiors</a>
-              <a href="#">Furniture</a>
-              <a href="#">Lighting</a>
-              <a href="#">Products</a>
-              <a href="#">Travel</a>
+              <a href={this.platformSpecificLink("blog", "/category/architecture")}>Architecture</a>
+              <a href={this.platformSpecificLink("blog", "/category/interiors")}>Interiors</a>
+              <a href={this.platformSpecificLink("blog", "/category/furniture")}>Furniture</a>
+              <a href={this.platformSpecificLink("blog", "/category/lighting")}>Lighting</a>
+              <a href={this.platformSpecificLink("blog", "/category/products")}>Products</a>
+              <a href={this.platformSpecificLink("blog", "/category/travel")}>Travel</a>
             </div>
             <div class="navbar__row__action">
               <a href="#">Submit</a>
@@ -106,23 +115,23 @@ export class NavBar {
             </div>
           </div>
           <div class="navbar__row">
-            <a href="#" class={'navbar__row__leading ' + (this.platform === 'shop' ? 'font-bold' : '')}>
+            <a href={this.platformSpecificLink("store", "/")} class={'navbar__row__leading ' + (this.platform === 'store' ? 'font-bold' : '')}>
               <div class="navbar__logo" style={{ opacity: '0', visibility: 'hidden' }}>
                 <img src={getAssetPath(`./assets/leibal-logo.png`)} />
               </div>
               Shop
             </a>
             <div class="navbar__row__links">
-              <a href="#">Sofas</a>
-              <a href="#">Chairs</a>
-              <a href="#">Tables</a>
-              <a href="#">Storage</a>
-              <a href="#">Lighting</a>
-              <a href="#">Accessories</a>
+              <a href={this.platformSpecificLink("store", "/collections/new")}>New</a>
+              <a href={this.platformSpecificLink("store", "/collections/furniture")}>Furniture</a>
+              <a href={this.platformSpecificLink("store", "/collections/lighting")}>Lighting</a>
+              <a href={this.platformSpecificLink("store", "/collections/accessories")}>Accessories</a>
+              <a href={this.platformSpecificLink("store", "/collections/outdoor")}>Outdoor</a>
+              <a href={this.platformSpecificLink("store", "/collections/brands")}>Brands</a>
             </div>
             <div class="navbar__row__action">
-              <a href="#">Trade</a>
-              <a href="#">Login</a>
+              <a href="#">Cart</a>
+              <a href="#">Search</a>
             </div>
           </div>
         </nav>
