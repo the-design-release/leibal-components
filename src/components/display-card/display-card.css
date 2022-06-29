@@ -62,7 +62,7 @@
   }
 
   &--featured {
-    @apply block md:grid md:grid-cols-2 md:gap-10 tracking-widest cursor-pointer;
+    @apply block md:grid md:grid-cols-2 md:gap-8 tracking-widest cursor-pointer;
 
     &__right {
       @apply flex flex-col justify-between;
@@ -72,7 +72,7 @@
       @apply my-6 md:my-0 mb-7;
 
       &__title {
-        @apply font-normal text-3xl mb-4;
+        @apply font-normal text-3xl mb-4 pr-4;
       }
       &__subtitle {
         @apply font-light text-base;
