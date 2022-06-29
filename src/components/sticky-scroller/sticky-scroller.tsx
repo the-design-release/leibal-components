@@ -1,12 +1,12 @@
 /**
  *
- * ======================================================================
+ * =======================================================================
  *
  * Stick scrolling Stencil component, modified from from react-sticky-box
  *
  * https://github.com/codecks-io/react-sticky-box
  *
- * ======================================================================
+ * =======================================================================
  *
  * Original License & Credit:
  *
@@ -26,6 +26,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
+ * =======================================================================
  */
 
 import { Component, Host, h, Prop, Element, State } from '@stencil/core';

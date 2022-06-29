@@ -5,10 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { DisplayCardTheme } from "./components/display-card/display-card";
+import { DisplayCardTheme, DisplayCardType } from "./components/display-card/display-card";
 import { PlatformType } from "./utils/platform";
 export namespace Components {
     interface DisplayCard {
+        "bottomSubtitleName": string;
+        "bottomTitleName": string;
+        "cardType": DisplayCardType;
         "images": string;
         "linkTo": string;
         "theme": DisplayCardTheme;
@@ -51,6 +54,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DisplayCard {
+        "bottomSubtitleName"?: string;
+        "bottomTitleName"?: string;
+        "cardType"?: DisplayCardType;
         "images"?: string;
         "linkTo"?: string;
         "theme"?: DisplayCardTheme;

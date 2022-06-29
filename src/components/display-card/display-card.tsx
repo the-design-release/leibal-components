@@ -3,6 +3,8 @@ import { Theme } from '../../utils/theme';
 
 export type DisplayCardTheme = Theme;
 
+export type DisplayCardType = 'normal' | 'featured';
+
 @Component({
   tag: 'display-card',
   styleUrl: 'display-card.css',
@@ -11,6 +13,15 @@ export type DisplayCardTheme = Theme;
 export class DisplayCard {
   @Prop({ mutable: true, reflect: true })
   theme: DisplayCardTheme = 'light';
+
+  @Prop({ mutable: true, reflect: true })
+  cardType: DisplayCardType = 'normal';
+
+  @Prop({ mutable: true })
+  bottomTitleName: string = '';
+
+  @Prop({ mutable: true })
+  bottomSubtitleName: string = '';
 
   @Prop({ mutable: true })
   images: string = '';
@@ -36,28 +47,57 @@ export class DisplayCard {
   render() {
     return (
       <Host>
-        <a href={this.linkTo} class="display-card">
-          <div class="display-card__image">
-            <div style={{ backgroundImage: `url(${this._images[0]})` }}></div>
-            <div style={{ backgroundImage: `url(${this._images[1]})` }}></div>
-          </div>
-          <div class="display-card__top">
-            <div class="display-card__top__title">
-              <slot name="top-title"></slot>
+        {this.cardType === 'normal' ? (
+          <a href={this.linkTo} class="display-card">
+            <div class="display-card__image">
+              <div style={{ backgroundImage: `url(${this._images[0]})` }}></div>
+              <div style={{ backgroundImage: `url(${this._images[1]})` }}></div>
             </div>
-            <div class="display-card__top__subtitle">
-              <slot name="top-subtitle"></slot>
+            <div class="display-card__top">
+              <div class="display-card__top__title">
+                <slot name="top-title"></slot>
+              </div>
+              <div class="display-card__top__subtitle">
+                <slot name="top-subtitle"></slot>
+              </div>
             </div>
-          </div>
-          <div class="display-card__bottom">
-            <div class="display-card__bottom__title">
-              <slot name="bottom-title"></slot>
+            <div class="display-card__bottom">
+              <div class="display-card__bottom__title">
+                <slot name="bottom-title"></slot>
+              </div>
+              <div class="display-card__bottom__subtitle">
+                <slot name="bottom-subtitle"></slot>
+              </div>
             </div>
-            <div class="display-card__bottom__subtitle">
-              <slot name="bottom-subtitle"></slot>
+          </a>
+        ) : (
+          <a href={this.linkTo} class="display-card--featured">
+            <div class="display-card__image">
+              <div style={{ backgroundImage: `url(${this._images[0]})` }}></div>
+              <div style={{ backgroundImage: `url(${this._images[1]})` }}></div>
             </div>
-          </div>
-        </a>
+            <div class="display-card--featured__right">
+              <div class="display-card--featured__top">
+                <div class="display-card--featured__top__title">
+                  <slot name="top-title"></slot>
+                </div>
+                <div class="display-card--featured__top__subtitle">
+                  <slot name="top-subtitle"></slot>
+                </div>
+              </div>
+              <div class="display-card--featured__bottom">
+                <div class="display-card--featured__bottom__title">
+                  <div class="display-card--featured__bottom__title__name">{this.bottomTitleName}</div>
+                  <slot name="bottom-title"></slot>
+                </div>
+                <div class="display-card--featured__bottom__subtitle">
+                  <div class="display-card--featured__bottom__subtitle__name">{this.bottomSubtitleName}</div>
+                  <slot name="bottom-subtitle"></slot>
+                </div>
+              </div>
+            </div>
+          </a>
+        )}
       </Host>
     );
   }
