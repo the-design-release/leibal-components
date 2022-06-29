@@ -6,7 +6,7 @@
   @apply mb-12 lg:mb-20;
 
   --font-family: var(--leibal-components-font-family, sans-serif);
-  --color-light: #f3f3f3;
+  --color-light: #fff;
   --color-dark: #222;
 
   display: block;

@@ -5,7 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { DisplayCardTheme, DisplayCardType } from "./components/display-card/display-card";
+import { Theme } from "./utils/theme";
+import { DisplayCardType } from "./components/display-card/display-card";
 import { PlatformType } from "./utils/platform";
 export namespace Components {
     interface DisplayCard {
@@ -14,12 +15,16 @@ export namespace Components {
         "cardType": DisplayCardType;
         "images": string;
         "linkTo": string;
-        "theme": DisplayCardTheme;
+        "theme": Theme;
     }
     interface NavBar {
         "authenticated": boolean;
         "platform": PlatformType;
         "showMultiplier": number;
+    }
+    interface SimpleButton {
+        "fillWidth": boolean;
+        "theme": Theme;
     }
     interface StickyScroller {
         "bottom": boolean;
@@ -40,6 +45,12 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
+    interface HTMLSimpleButtonElement extends Components.SimpleButton, HTMLStencilElement {
+    }
+    var HTMLSimpleButtonElement: {
+        prototype: HTMLSimpleButtonElement;
+        new (): HTMLSimpleButtonElement;
+    };
     interface HTMLStickyScrollerElement extends Components.StickyScroller, HTMLStencilElement {
     }
     var HTMLStickyScrollerElement: {
@@ -49,6 +60,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "display-card": HTMLDisplayCardElement;
         "nav-bar": HTMLNavBarElement;
+        "simple-button": HTMLSimpleButtonElement;
         "sticky-scroller": HTMLStickyScrollerElement;
     }
 }
@@ -59,12 +71,16 @@ declare namespace LocalJSX {
         "cardType"?: DisplayCardType;
         "images"?: string;
         "linkTo"?: string;
-        "theme"?: DisplayCardTheme;
+        "theme"?: Theme;
     }
     interface NavBar {
         "authenticated"?: boolean;
         "platform"?: PlatformType;
         "showMultiplier"?: number;
+    }
+    interface SimpleButton {
+        "fillWidth"?: boolean;
+        "theme"?: Theme;
     }
     interface StickyScroller {
         "bottom"?: boolean;
@@ -74,6 +90,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "display-card": DisplayCard;
         "nav-bar": NavBar;
+        "simple-button": SimpleButton;
         "sticky-scroller": StickyScroller;
     }
 }
@@ -83,6 +100,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "display-card": LocalJSX.DisplayCard & JSXBase.HTMLAttributes<HTMLDisplayCardElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+            "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
         }
     }

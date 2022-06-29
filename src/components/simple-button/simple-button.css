@@ -1,0 +1,50 @@
+:host {
+  --font-family: var(--leibal-components-font-family, sans-serif);
+  --color-light: #fff;
+  --color-dark: #222;
+
+  font-family: var(--font-family);
+}
+
+.simple-button {
+  @apply inline-flex relative justify-center items-center px-32 py-4 cursor-pointer;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-dark);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  transition-duration: 300ms;
+
+  &--full-width {
+    @apply px-12 w-full;
+  }
+
+  &__text {
+  }
+
+  &__icon {
+    @apply w-4 h-4 absolute top-2 right-2;
+
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+  }
+
+  &--dark {
+    border-color: var(--color-dark);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    &:hover,
+    &:active {
+      background-color: var(--color-light);
+      color: var(--color-dark);
+    }
+  }
+}

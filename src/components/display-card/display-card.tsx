@@ -1,8 +1,6 @@
 import { Component, h, Host, Prop, Watch } from '@stencil/core';
 import { Theme } from '../../utils/theme';
 
-export type DisplayCardTheme = Theme;
-
 export type DisplayCardType = 'normal' | 'featured';
 
 @Component({
@@ -12,7 +10,7 @@ export type DisplayCardType = 'normal' | 'featured';
 })
 export class DisplayCard {
   @Prop({ mutable: true, reflect: true })
-  theme: DisplayCardTheme = 'light';
+  theme: Theme = 'light';
 
   @Prop({ mutable: true, reflect: true })
   cardType: DisplayCardType = 'normal';
