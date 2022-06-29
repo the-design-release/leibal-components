@@ -69,7 +69,7 @@
     }
 
     &__top {
-      @apply mb-5;
+      @apply my-6 md:my-0 mb-7;
 
       &__title {
         @apply font-normal text-3xl mb-4;
@@ -81,7 +81,7 @@
 
     &__bottom {
       &__title {
-        @apply font-normal text-xs mb-10;
+        @apply font-normal text-xs mb-5 md:mb-10;
 
         &__name {
           @apply font-light text-xs uppercase mb-1;
