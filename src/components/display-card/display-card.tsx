@@ -70,7 +70,7 @@ export class DisplayCard {
           </a>
         ) : (
           <a href={this.linkTo} class="display-card--featured">
-            <div class="display-card__image">
+            <div class="col-span-4 display-card__image">
               <div style={{ backgroundImage: `url(${this._images[0]})` }}></div>
               <div style={{ backgroundImage: `url(${this._images[1]})` }}></div>
             </div>
