@@ -7,7 +7,7 @@
 }
 
 .simple-button {
-  @apply inline-flex relative justify-center items-center px-32 py-4 cursor-pointer;
+  @apply flex relative justify-center items-center px-32 py-4 cursor-pointer;
 
   border-width: 1px;
   border-style: solid;
@@ -17,7 +17,6 @@
   transition-duration: 300ms;
 
   &--full-width {
-    @apply px-12 w-full;
   }
 
   &__text {
