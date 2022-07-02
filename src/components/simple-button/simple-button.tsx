@@ -13,6 +13,9 @@ export class SimpleButton {
   @Prop({ mutable: true })
   fillWidth: boolean = false;
 
+  @Prop({ mutable: true })
+  disabled: boolean = false;
+
   render() {
     return (
       <Host>
@@ -20,7 +23,8 @@ export class SimpleButton {
           class={
             'simple-button ' +
             (this.fillWidth ? 'simple-button--full-width' : '') +
-            (this.theme == 'dark' ? 'simple-button--dark' : '')
+            (this.theme == 'dark' ? 'simple-button--dark' : '') +
+            (this.disabled ? 'simple-button--disabled' : '')
           }
           role="button"
           aria-pressed="false"
