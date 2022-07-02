@@ -22,8 +22,8 @@ export class SimpleButton {
         <div
           class={
             'simple-button ' +
-            (this.fillWidth ? 'simple-button--full-width' : ' ') +
-            (this.theme == 'dark' ? 'simple-button--dark' : ' ') +
+            (this.fillWidth ? 'simple-button--full-width ' : ' ') +
+            (this.theme == 'dark' ? 'simple-button--dark ' : ' ') +
             (this.disabled ? 'simple-button--disabled' : ' ')
           }
           role="button"
