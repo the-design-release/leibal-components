@@ -23,6 +23,7 @@ export namespace Components {
         "showMultiplier": number;
     }
     interface SimpleButton {
+        "disabled": boolean;
         "fillWidth": boolean;
         "theme": Theme;
     }
@@ -79,6 +80,7 @@ declare namespace LocalJSX {
         "showMultiplier"?: number;
     }
     interface SimpleButton {
+        "disabled"?: boolean;
         "fillWidth"?: boolean;
         "theme"?: Theme;
     }
