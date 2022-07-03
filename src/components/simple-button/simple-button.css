@@ -4,6 +4,7 @@
   --color-dark: #222;
 
   font-family: var(--font-family);
+  display: block;
 }
 
 .simple-button {

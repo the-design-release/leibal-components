@@ -1,0 +1,46 @@
+:host {
+  --font-family: var(--leibal-components-font-family, sans-serif);
+  --color-light: #fff;
+  --color-dark: #222;
+
+  font-family: var(--font-family);
+  display: block;
+}
+
+.footer-nav {
+  @apply block lg:grid lg:grid-cols-10 lg:gap-8 my-16 lg:my-24;
+
+  &__column {
+    @apply col-span-2 flex flex-col mb-12 lg:mb-0;
+
+    &:last-child {
+      @apply justify-between;
+    }
+  }
+
+  &__title {
+    @apply mb-12;
+  }
+
+  &__links {
+  }
+
+  &__link {
+    @apply block mb-3 text-sm;
+
+    color: var(--color-dark);
+    text-decoration: none;
+    text-underline-offset: 2px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__email-form {
+  }
+
+  &__trademark {
+    @apply font-light text-xs;
+  }
+}

@@ -17,6 +17,8 @@ export namespace Components {
         "linkTo": string;
         "theme": Theme;
     }
+    interface FooterNav {
+    }
     interface NavBar {
         "authenticated": boolean;
         "platform": PlatformType;
@@ -40,6 +42,12 @@ declare global {
         prototype: HTMLDisplayCardElement;
         new (): HTMLDisplayCardElement;
     };
+    interface HTMLFooterNavElement extends Components.FooterNav, HTMLStencilElement {
+    }
+    var HTMLFooterNavElement: {
+        prototype: HTMLFooterNavElement;
+        new (): HTMLFooterNavElement;
+    };
     interface HTMLNavBarElement extends Components.NavBar, HTMLStencilElement {
     }
     var HTMLNavBarElement: {
@@ -60,6 +68,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "display-card": HTMLDisplayCardElement;
+        "footer-nav": HTMLFooterNavElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
         "sticky-scroller": HTMLStickyScrollerElement;
@@ -73,6 +82,8 @@ declare namespace LocalJSX {
         "images"?: string;
         "linkTo"?: string;
         "theme"?: Theme;
+    }
+    interface FooterNav {
     }
     interface NavBar {
         "authenticated"?: boolean;
@@ -91,6 +102,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "display-card": DisplayCard;
+        "footer-nav": FooterNav;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
         "sticky-scroller": StickyScroller;
@@ -101,6 +113,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "display-card": LocalJSX.DisplayCard & JSXBase.HTMLAttributes<HTMLDisplayCardElement>;
+            "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
