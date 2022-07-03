@@ -19,7 +19,7 @@
   }
 
   &__title {
-    @apply mb-12;
+    @apply mb-12 text-base tracking-widest;
   }
 
   &__links {
