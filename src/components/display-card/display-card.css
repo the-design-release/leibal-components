@@ -88,7 +88,7 @@
         }
       }
       &__subtitle {
-        @apply font-normal text-xs;
+        @apply font-normal text-xs uppercase;
 
         &__name {
           @apply font-light text-xs uppercase mb-1;

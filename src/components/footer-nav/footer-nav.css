@@ -19,7 +19,7 @@
   }
 
   &__title {
-    @apply mb-12 text-base tracking-widest;
+    @apply mb-12 text-base tracking-widest font-normal;
   }
 
   &__links {
@@ -34,6 +34,10 @@
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &:last-child {
+      @apply mb-0;
     }
   }
 

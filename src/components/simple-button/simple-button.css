@@ -8,7 +8,7 @@
 }
 
 .simple-button {
-  @apply flex relative justify-center items-center px-2 py-4 cursor-pointer;
+  @apply flex relative justify-center items-center px-4 py-8 cursor-pointer;
 
   border-width: 1px;
   border-style: solid;
@@ -29,7 +29,7 @@
   }
 
   &__icon {
-    @apply w-4 h-4 absolute top-2 right-2;
+    @apply w-4 h-4 absolute top-4 right-4;
 
     width: 1rem;
     height: 1rem;
