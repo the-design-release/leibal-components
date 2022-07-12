@@ -44,7 +44,7 @@
     border-bottom: 1px solid var(--color-dim);
 
     &__leading {
-      @apply px-5 py-4 pl-4 xl:pl-8 col-span-1 lg:col-span-2 overflow-clip flex;
+      @apply px-5 py-4 pl-4 xl:pl-8 col-span-1 lg:col-span-2 overflow-clip flex ml-0 lg:ml-8;
 
       &__logo {
         @apply flex items-center;
