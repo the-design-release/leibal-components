@@ -122,7 +122,7 @@ export class NavBar {
               <div class="navbar__logo" style={{ opacity: '0', visibility: 'hidden' }}>
                 <img src={getAssetPath(`./assets/leibal-logo.png`)} />
               </div>
-              Shop
+              Store
             </a>
             <div class="navbar__row__links">
               <a href={this.platformSpecificLink('store', '/collections/new')}>New</a>
