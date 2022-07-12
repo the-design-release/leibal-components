@@ -119,7 +119,7 @@ export class FooterNav {
             <div class="footer-nav__title">Subscribe</div>
             <div class="footer-nav__email-form">{/* TODO: Create an input component and add the email form. */}</div>
             <div class="footer-nav__trademark">
-              &copy; {new Date().getUTCFullYear()} Leibal LLC. ALL RIGHTS RESERVED
+              &copy; {new Date().getUTCFullYear()} LEIBAL LLC. ALL RIGHTS RESERVED
             </div>
           </div>
           {/* End Subscribe */}

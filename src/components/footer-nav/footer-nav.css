@@ -45,6 +45,6 @@
   }
 
   &__trademark {
-    @apply font-light text-xs;
+    @apply font-light text-xs uppercase;
   }
 }
