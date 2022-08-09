@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+    <script type="module" src="/build/leibal-components.esm.js"></script>
+    <script nomodule src="/build/leibal-components.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+    </style>
 
-  <script type="module" src="/build/leibal-components.esm.js"></script>
-  <script nomodule src="/build/leibal-components.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-  </style>
+    <style>
+      :root {
+        --leibal-components-font-family: Roboto, sans-serif;
+      }
 
-  <style>
-    :root {
-      --leibal-components-font-family: Roboto, sans-serif;
-    }
+      body {
+        font-family: var(--leibal-components-font-family);
+        line-height: 1.7;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
 
-    body {
-      font-family: var(--leibal-components-font-family);
-      line-height: 1.7;
-      border: 0;
-      padding: 0;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-  </style>
-</head>
+  <body>
+    <div>
+      <nav-bar />
+    </div>
+    <div
+      style="display: grid; grid-template-columns: repeat(10, 1fr); grid-gap: 2rem; margin-top: 8rem; padding: 2.5rem"
+    >
+      <enquire-modal
+        post-title="Zack by Zack"
+        preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg"
+      />
+    </div>
 
-<body>
-  <div>
-    <nav-bar />
-  </div>
-  <div>
+    <!-- <div>
     <simple-button>Submit</simple-button>
     <simple-button theme="dark">Submit</simple-button>
   </div>
@@ -210,7 +218,6 @@
   </div>
   <div style="padding: 4rem">
     <footer-nav></footer-nav>
-  </div>
-</body>
-
+  </div> -->
+  </body>
 </html>

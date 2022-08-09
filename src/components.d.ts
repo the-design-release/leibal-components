@@ -17,6 +17,10 @@ export namespace Components {
         "linkTo": string;
         "theme": Theme;
     }
+    interface EnquireModal {
+        "postTitle": string;
+        "previewImage": string;
+    }
     interface FooterNav {
     }
     interface NavBar {
@@ -41,6 +45,12 @@ declare global {
     var HTMLDisplayCardElement: {
         prototype: HTMLDisplayCardElement;
         new (): HTMLDisplayCardElement;
+    };
+    interface HTMLEnquireModalElement extends Components.EnquireModal, HTMLStencilElement {
+    }
+    var HTMLEnquireModalElement: {
+        prototype: HTMLEnquireModalElement;
+        new (): HTMLEnquireModalElement;
     };
     interface HTMLFooterNavElement extends Components.FooterNav, HTMLStencilElement {
     }
@@ -68,6 +78,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "display-card": HTMLDisplayCardElement;
+        "enquire-modal": HTMLEnquireModalElement;
         "footer-nav": HTMLFooterNavElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
@@ -82,6 +93,10 @@ declare namespace LocalJSX {
         "images"?: string;
         "linkTo"?: string;
         "theme"?: Theme;
+    }
+    interface EnquireModal {
+        "postTitle"?: string;
+        "previewImage"?: string;
     }
     interface FooterNav {
     }
@@ -102,6 +117,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "display-card": DisplayCard;
+        "enquire-modal": EnquireModal;
         "footer-nav": FooterNav;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
@@ -113,6 +129,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "display-card": LocalJSX.DisplayCard & JSXBase.HTMLAttributes<HTMLDisplayCardElement>;
+            "enquire-modal": LocalJSX.EnquireModal & JSXBase.HTMLAttributes<HTMLEnquireModalElement>;
             "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;

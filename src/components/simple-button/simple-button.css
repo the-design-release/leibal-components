@@ -8,7 +8,7 @@
 }
 
 .simple-button {
-  @apply flex relative justify-center items-center px-4 py-8 cursor-pointer;
+  @apply flex relative justify-center items-center px-4 py-8 cursor-pointer select-none;
 
   border-width: 1px;
   border-style: solid;
