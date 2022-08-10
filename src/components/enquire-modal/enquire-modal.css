@@ -10,6 +10,8 @@
 .enquire-card {
   @apply block md:grid md:grid-cols-12 md:gap-8;
 
+  grid-column: 1/4;
+
   &__preview-image {
     @apply md:col-span-8;
 

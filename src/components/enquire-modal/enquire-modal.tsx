@@ -43,6 +43,7 @@ export class EnquireModal {
 
   handleScroll() {
     this.contentElement.style.top = this.getContentPageOffset().toString() + 'px';
+    this.contentElement.style.zIndex = '1000';
   }
 
   handleEnquireClick() {
@@ -64,15 +65,15 @@ export class EnquireModal {
   clampBodyScroll(isModalOpen, oldIsModalOpen) {
     if (isModalOpen === oldIsModalOpen) return;
 
-    if (isModalOpen === true) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'inherit';
-    }
+    // if (isModalOpen === true) {
+    //   document.body.style.overflow = 'hidden';
+    // } else {
+    //   document.body.style.overflow = 'inherit';
+    // }
   }
 
   renderEnquireCard = () => (
-    <div class="enquire-card">
+    <div class="col-span-3 w-full enquire-card">
       <div class="enquire-card__preview-image">
         <div style={{ backgroundImage: `url(${this.previewImage})` }}></div>
       </div>
@@ -92,7 +93,7 @@ export class EnquireModal {
   render() {
     return (
       <Host>
-        <div>{this.renderEnquireCard()}</div>
+        {this.renderEnquireCard()}
         <div
           class={this.isModalOpen ? 'enquire-modal__modal enquire-modal__modal--visible' : 'enquire-modal__modal'}
           onClick={() => {
@@ -105,7 +106,6 @@ export class EnquireModal {
             ref={el => (this.contentElement = el as HTMLDivElement)}
           >
             {this.renderEnquireCard()}
-            <div class="col"></div>
             <div
               class="enquire-modal__modal__close"
               onClick={() => {
