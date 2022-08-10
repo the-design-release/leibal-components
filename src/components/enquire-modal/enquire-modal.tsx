@@ -42,8 +42,26 @@ export class EnquireModal {
   render() {
     return (
       <Host>
-        {JSON.stringify(this.isModalOpen)}
-        {this.renderEnquireCard()}
+        <div>{this.renderEnquireCard()}</div>
+        <div
+          class={this.isModalOpen ? 'enquire-modal__modal enquire-modal__modal--visible' : 'enquire-modal__modal'}
+          onClick={() => {
+            this.isModalOpen = false;
+          }}
+        >
+          <div class="enquire-modal__modal__content" onClick={e => e.stopImmediatePropagation()}>
+            {this.renderEnquireCard()}
+            <div class="col"></div>
+            <div
+              class="enquire-modal__modal__close"
+              onClick={() => {
+                this.isModalOpen = false;
+              }}
+            >
+              x
+            </div>
+          </div>
+        </div>
       </Host>
     );
   }

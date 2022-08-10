@@ -52,4 +52,27 @@
   &__button {
     @apply col-span-8;
   }
+
+  &__modal {
+    @apply absolute top-0 bottom-0 left-0 right-0 z-50 flex justify-center items-center;
+
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+      transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+
+    &__content {
+      @apply md:grid md:grid-cols-10 md:gap-8 bg-white p-16 relative;
+    }
+
+    &__close {
+      @apply absolute top-3 right-3 cursor-pointer leading-none text-xl font-light;
+    }
+  }
 }

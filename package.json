@@ -39,6 +39,7 @@
     "@stencil/postcss": "^2.1.0",
     "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^27.0.3",
+    "animejs": "^3.2.1",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.0.17",
     "jest": "^27.4.5",
