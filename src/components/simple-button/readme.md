@@ -14,6 +14,19 @@
 | `theme`     | `theme`      |             | `"dark" \| "light"` | `'light'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [enquire-modal](../enquire-modal)
+
+### Graph
+```mermaid
+graph TD;
+  enquire-modal --> simple-button
+  style simple-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
