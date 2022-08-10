@@ -35,7 +35,7 @@ export class EnquireModal {
   getContentPageOffset() {
     const computedStyle = window.getComputedStyle(this.contentElement);
     const paddingOffset = parseFloat(computedStyle.paddingTop.replace('px', ''));
-    const relativeOffset = this.el.getBoundingClientRect().top + window.scrollY;
+    const relativeOffset = this.el.getBoundingClientRect().top;
     const windowOffset = relativeOffset - paddingOffset;
 
     return windowOffset;
@@ -49,13 +49,13 @@ export class EnquireModal {
     this.isModalOpen = !this.isModalOpen;
 
     if (this.isModalOpen) {
-      const top = this.getContentPageOffset() - window.scrollY;
+      const top = this.getContentPageOffset();
 
       if (top < 0) {
         window.scrollBy({ behavior: 'smooth', top: top - 64, left: 0 });
-      } else if (top > window.innerHeight) {
+      } else if (top + this.contentElement.clientHeight > window.innerHeight) {
         console.log(top);
-        window.scrollBy({ behavior: 'smooth', top: top + 64, left: 0 });
+        window.scrollBy({ behavior: 'smooth', top: top - this.contentElement.clientHeight + 64, left: 0 });
       }
     }
   }
