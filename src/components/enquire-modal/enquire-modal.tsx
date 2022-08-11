@@ -65,6 +65,8 @@ export class EnquireModal {
   clampBodyScroll(isModalOpen, oldIsModalOpen) {
     if (isModalOpen === oldIsModalOpen) return;
 
+    // TODO: How to handle this?
+    // Let's keep it simple for now.
     // if (isModalOpen === true) {
     //   document.body.style.overflow = 'hidden';
     // } else {
