@@ -33,7 +33,9 @@ export class EnquireModal {
 
   // Calculate the position on the screen.
   getContentPageOffset() {
-    const computedStyle = window.getComputedStyle(this.contentElement);
+    // NOTE: This is a bit fucky, but works for me for now.
+    // Get the child of the element so we can have borders between each grid section.
+    const computedStyle = window.getComputedStyle(this.contentElement.querySelector('div'));
     const paddingOffset = parseFloat(computedStyle.paddingTop.replace('px', ''));
     const relativeOffset = this.el.getBoundingClientRect().top;
     const windowOffset = relativeOffset - paddingOffset;
@@ -122,6 +124,8 @@ export class EnquireModal {
               ref={el => (this.contentElement = el as HTMLDivElement)}
             >
               {this.renderEnquireCard()}
+              <div class="enquire-modal__modal__form"></div>
+              <div class="enquire-modal__modal__submit"></div>
               <div
                 class="enquire-modal__modal__close"
                 onClick={() => {

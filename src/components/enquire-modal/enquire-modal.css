@@ -1,13 +1,11 @@
-:host {
+.enquire-card {
   --font-family: var(--leibal-components-font-family, sans-serif);
   --color-light: #fff;
   --color-dark: #222;
 
   font-family: var(--font-family);
   display: block;
-}
 
-.enquire-card {
   @apply block md:grid md:grid-cols-12 md:gap-8;
 
   grid-column: 1/4;
@@ -72,7 +70,26 @@
     }
 
     &__content {
-      @apply md:grid md:grid-cols-10 md:gap-8 bg-white p-16 relative;
+      @apply md:grid md:grid-cols-10 md:gap-8 px-16 bg-white relative;
+
+      & > div {
+        @apply py-16;
+      }
+
+      & > div:last-child {
+        @apply p-0;
+      }
+    }
+
+    &__form {
+      @apply col-span-5;
+      border: 1px solid #eaeaea;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    &__submit {
+      @apply col-span-2;
     }
 
     &__close {
