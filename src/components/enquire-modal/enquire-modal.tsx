@@ -31,6 +31,7 @@ export class EnquireModal {
     window.removeEventListener('scroll', this.handleScroll.bind(this));
   }
 
+  // Calculate the position on the screen.
   getContentPageOffset() {
     const computedStyle = window.getComputedStyle(this.contentElement);
     const paddingOffset = parseFloat(computedStyle.paddingTop.replace('px', ''));
@@ -41,16 +42,29 @@ export class EnquireModal {
   }
 
   handleScroll() {
-    this.contentElement.style.top = this.getContentPageOffset().toString() + 'px';
+    // Move the modal to the correct position on the page.
+    const offset = this.getContentPageOffset();
+    this.contentElement.style.top = offset + 'px';
     this.contentElement.style.zIndex = '1000';
+
+    // Hide if the content is not visible on the page.
+    if (
+      this.isModalOpen &&
+      (offset < -this.contentElement.clientHeight ||
+        offset + this.contentElement.clientHeight > window.innerHeight + this.contentElement.clientHeight)
+    ) {
+      this.isModalOpen = false;
+    }
   }
 
+  // Handle the enquire opening click.
   handleEnquireClick() {
     this.isModalOpen = !this.isModalOpen;
 
     if (this.isModalOpen) {
       const top = this.getContentPageOffset();
 
+      // Move the content into view.
       if (top < 0) {
         window.scrollBy({ behavior: 'smooth', top: top - 64, left: 0 });
       } else if (top + this.contentElement.clientHeight > window.innerHeight) {
