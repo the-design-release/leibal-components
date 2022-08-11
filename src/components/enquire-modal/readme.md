@@ -18,11 +18,13 @@
 ### Depends on
 
 - [simple-button](../simple-button)
+- [tele-portal](../tele-portal)
 
 ### Graph
 ```mermaid
 graph TD;
   enquire-modal --> simple-button
+  enquire-modal --> tele-portal
   style enquire-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

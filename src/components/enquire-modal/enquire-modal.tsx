@@ -3,7 +3,6 @@ import { Component, Host, h, Prop, State, Element, Watch } from '@stencil/core';
 @Component({
   tag: 'enquire-modal',
   styleUrl: 'enquire-modal.css',
-  shadow: true,
 })
 export class EnquireModal {
   @Element()
@@ -96,28 +95,30 @@ export class EnquireModal {
     return (
       <Host>
         {this.renderEnquireCard()}
-        <div
-          class={this.isModalOpen ? 'enquire-modal__modal enquire-modal__modal--visible' : 'enquire-modal__modal'}
-          onClick={() => {
-            this.isModalOpen = false;
-          }}
-        >
+        <tele-portal>
           <div
-            class="enquire-modal__modal__content"
-            onClick={e => e.stopImmediatePropagation()}
-            ref={el => (this.contentElement = el as HTMLDivElement)}
+            class={this.isModalOpen ? 'enquire-modal__modal enquire-modal__modal--visible' : 'enquire-modal__modal'}
+            onClick={() => {
+              this.isModalOpen = false;
+            }}
           >
-            {this.renderEnquireCard()}
             <div
-              class="enquire-modal__modal__close"
-              onClick={() => {
-                this.isModalOpen = false;
-              }}
+              class="enquire-modal__modal__content"
+              onClick={e => e.stopImmediatePropagation()}
+              ref={el => (this.contentElement = el as HTMLDivElement)}
             >
-              x
+              {this.renderEnquireCard()}
+              <div
+                class="enquire-modal__modal__close"
+                onClick={() => {
+                  this.isModalOpen = false;
+                }}
+              >
+                x
+              </div>
             </div>
           </div>
-        </div>
+        </tele-portal>
       </Host>
     );
   }

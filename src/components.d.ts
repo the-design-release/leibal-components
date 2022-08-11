@@ -38,6 +38,8 @@ export namespace Components {
         "endOffset": number;
         "startOffset": number;
     }
+    interface TelePortal {
+    }
 }
 declare global {
     interface HTMLDisplayCardElement extends Components.DisplayCard, HTMLStencilElement {
@@ -76,6 +78,12 @@ declare global {
         prototype: HTMLStickyScrollerElement;
         new (): HTMLStickyScrollerElement;
     };
+    interface HTMLTelePortalElement extends Components.TelePortal, HTMLStencilElement {
+    }
+    var HTMLTelePortalElement: {
+        prototype: HTMLTelePortalElement;
+        new (): HTMLTelePortalElement;
+    };
     interface HTMLElementTagNameMap {
         "display-card": HTMLDisplayCardElement;
         "enquire-modal": HTMLEnquireModalElement;
@@ -83,6 +91,7 @@ declare global {
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
         "sticky-scroller": HTMLStickyScrollerElement;
+        "tele-portal": HTMLTelePortalElement;
     }
 }
 declare namespace LocalJSX {
@@ -115,6 +124,8 @@ declare namespace LocalJSX {
         "endOffset"?: number;
         "startOffset"?: number;
     }
+    interface TelePortal {
+    }
     interface IntrinsicElements {
         "display-card": DisplayCard;
         "enquire-modal": EnquireModal;
@@ -122,6 +133,7 @@ declare namespace LocalJSX {
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
         "sticky-scroller": StickyScroller;
+        "tele-portal": TelePortal;
     }
 }
 export { LocalJSX as JSX };
@@ -134,6 +146,7 @@ declare module "@stencil/core" {
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
+            "tele-portal": LocalJSX.TelePortal & JSXBase.HTMLAttributes<HTMLTelePortalElement>;
         }
     }
 }
