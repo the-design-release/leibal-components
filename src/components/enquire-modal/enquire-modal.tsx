@@ -99,7 +99,7 @@ export class EnquireModal {
         </div>
         <div>Find out more information regarding purchasing, dimensions or lead times.</div>
       </div>
-      <div class="enquire-card__button">
+      <div class="text-xl enquire-card__button">
         <simple-button onClick={this.handleEnquireClick.bind(this)}>Enquire</simple-button>
       </div>
     </div>

@@ -26,6 +26,7 @@
   }
 
   &__text {
+    @apply md:text-lg lg:text-xl;
   }
 
   &__icon {
