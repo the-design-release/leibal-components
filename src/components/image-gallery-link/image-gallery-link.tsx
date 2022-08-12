@@ -2,6 +2,8 @@ import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'image-gallery-link',
+  styleUrl: 'image-gallery-link.css',
+  shadow: true,
 })
 export class ImageGalleryLink {
   @Prop({ mutable: true, reflect: true })
