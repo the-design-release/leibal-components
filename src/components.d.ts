@@ -31,6 +31,9 @@ export namespace Components {
         "postTitle": string;
         "previewImage": string;
     }
+    interface ImageGalleryLink {
+        "imageIndex": number;
+    }
     interface NavBar {
         "authenticated": boolean;
         "platform": PlatformType;
@@ -81,6 +84,12 @@ declare global {
         prototype: HTMLImageGalleryElement;
         new (): HTMLImageGalleryElement;
     };
+    interface HTMLImageGalleryLinkElement extends Components.ImageGalleryLink, HTMLStencilElement {
+    }
+    var HTMLImageGalleryLinkElement: {
+        prototype: HTMLImageGalleryLinkElement;
+        new (): HTMLImageGalleryLinkElement;
+    };
     interface HTMLNavBarElement extends Components.NavBar, HTMLStencilElement {
     }
     var HTMLNavBarElement: {
@@ -116,6 +125,7 @@ declare global {
         "enquire-modal": HTMLEnquireModalElement;
         "footer-nav": HTMLFooterNavElement;
         "image-gallery": HTMLImageGalleryElement;
+        "image-gallery-link": HTMLImageGalleryLinkElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
         "simple-input": HTMLSimpleInputElement;
@@ -144,6 +154,10 @@ declare namespace LocalJSX {
         "postExcerpt"?: string;
         "postTitle"?: string;
         "previewImage"?: string;
+    }
+    interface ImageGalleryLink {
+        "imageIndex"?: number;
+        "onOpenImageGallery"?: (event: CustomEvent<number>) => void;
     }
     interface NavBar {
         "authenticated"?: boolean;
@@ -175,6 +189,7 @@ declare namespace LocalJSX {
         "enquire-modal": EnquireModal;
         "footer-nav": FooterNav;
         "image-gallery": ImageGallery;
+        "image-gallery-link": ImageGalleryLink;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
         "simple-input": SimpleInput;
@@ -190,6 +205,7 @@ declare module "@stencil/core" {
             "enquire-modal": LocalJSX.EnquireModal & JSXBase.HTMLAttributes<HTMLEnquireModalElement>;
             "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
             "image-gallery": LocalJSX.ImageGallery & JSXBase.HTMLAttributes<HTMLImageGalleryElement>;
+            "image-gallery-link": LocalJSX.ImageGalleryLink & JSXBase.HTMLAttributes<HTMLImageGalleryLinkElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;

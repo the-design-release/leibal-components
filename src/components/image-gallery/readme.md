@@ -1,4 +1,4 @@
-# enquire-modal
+# image-gallery
 
 
 
@@ -9,30 +9,29 @@
 
 | Property       | Attribute       | Description | Type     | Default     |
 | -------------- | --------------- | ----------- | -------- | ----------- |
+| `images`       | `images`        |             | `string` | `'[]'`      |
+| `photographer` | `photographer`  |             | `string` | `undefined` |
+| `postExcerpt`  | `post-excerpt`  |             | `string` | `undefined` |
 | `postTitle`    | `post-title`    |             | `string` | `undefined` |
 | `previewImage` | `preview-image` |             | `string` | `undefined` |
 
 
 ## Dependencies
 
-### Used by
-
- - [image-gallery](../image-gallery)
-
 ### Depends on
 
-- [simple-button](../simple-button)
 - [tele-portal](../tele-portal)
-- [simple-input](../simple-input)
+- [enquire-modal](../enquire-modal)
 
 ### Graph
 ```mermaid
 graph TD;
+  image-gallery --> tele-portal
+  image-gallery --> enquire-modal
   enquire-modal --> simple-button
   enquire-modal --> tele-portal
   enquire-modal --> simple-input
-  image-gallery --> enquire-modal
-  style enquire-modal fill:#f9f,stroke:#333,stroke-width:4px
+  style image-gallery fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

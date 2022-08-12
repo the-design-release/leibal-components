@@ -1,4 +1,4 @@
-import { Component, Element, Host, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Host, h, Prop, State, Watch, Listen } from '@stencil/core';
 
 import Swiper, { Navigation, Pagination, Keyboard } from 'swiper';
 
@@ -28,7 +28,7 @@ export class ImageGallery {
   photographer: string;
 
   @State()
-  isModalOpen: boolean = true;
+  isModalOpen: boolean = false;
 
   // Parsed JSON images.
   _images: string[] = [];
@@ -72,6 +72,15 @@ export class ImageGallery {
     } else {
       document.body.style.overflow = 'inherit';
     }
+  }
+
+  @Listen('openImageGallery', { target: 'body' })
+  openImageGalleryHandler(event: CustomEvent<number>) {
+    if (this.isModalOpen !== true) {
+      this.isModalOpen = true;
+    }
+
+    this.swiper.slideTo(event.detail);
   }
 
   render() {
