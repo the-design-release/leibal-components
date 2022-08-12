@@ -24,6 +24,13 @@ export namespace Components {
     }
     interface FooterNav {
     }
+    interface ImageGallery {
+        "images": string;
+        "photographer": string;
+        "postExcerpt": string;
+        "postTitle": string;
+        "previewImage": string;
+    }
     interface NavBar {
         "authenticated": boolean;
         "platform": PlatformType;
@@ -68,6 +75,12 @@ declare global {
         prototype: HTMLFooterNavElement;
         new (): HTMLFooterNavElement;
     };
+    interface HTMLImageGalleryElement extends Components.ImageGallery, HTMLStencilElement {
+    }
+    var HTMLImageGalleryElement: {
+        prototype: HTMLImageGalleryElement;
+        new (): HTMLImageGalleryElement;
+    };
     interface HTMLNavBarElement extends Components.NavBar, HTMLStencilElement {
     }
     var HTMLNavBarElement: {
@@ -102,6 +115,7 @@ declare global {
         "display-card": HTMLDisplayCardElement;
         "enquire-modal": HTMLEnquireModalElement;
         "footer-nav": HTMLFooterNavElement;
+        "image-gallery": HTMLImageGalleryElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
         "simple-input": HTMLSimpleInputElement;
@@ -123,6 +137,13 @@ declare namespace LocalJSX {
         "previewImage"?: string;
     }
     interface FooterNav {
+    }
+    interface ImageGallery {
+        "images"?: string;
+        "photographer"?: string;
+        "postExcerpt"?: string;
+        "postTitle"?: string;
+        "previewImage"?: string;
     }
     interface NavBar {
         "authenticated"?: boolean;
@@ -153,6 +174,7 @@ declare namespace LocalJSX {
         "display-card": DisplayCard;
         "enquire-modal": EnquireModal;
         "footer-nav": FooterNav;
+        "image-gallery": ImageGallery;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
         "simple-input": SimpleInput;
@@ -167,6 +189,7 @@ declare module "@stencil/core" {
             "display-card": LocalJSX.DisplayCard & JSXBase.HTMLAttributes<HTMLDisplayCardElement>;
             "enquire-modal": LocalJSX.EnquireModal & JSXBase.HTMLAttributes<HTMLEnquireModalElement>;
             "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
+            "image-gallery": LocalJSX.ImageGallery & JSXBase.HTMLAttributes<HTMLImageGalleryElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;

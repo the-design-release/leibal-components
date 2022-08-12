@@ -57,7 +57,6 @@ export class EnquireModal {
     // Move the modal to the correct position on the page.
     const offset = this.getContentPageOffset();
     this.contentElement.style.top = offset + 'px';
-    this.contentElement.style.zIndex = '1000';
 
     // Hide if the content is not visible on the page.
     if (
