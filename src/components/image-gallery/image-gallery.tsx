@@ -1,8 +1,31 @@
 import { Component, Element, Host, h, Prop, State, Watch, Listen } from '@stencil/core';
 
-import Swiper, { Navigation, Pagination, Keyboard } from 'swiper';
+import Swiper, { Navigation, Pagination, Keyboard, SwiperOptions } from 'swiper';
+import { zeroPad } from '../../utils';
 
-Swiper.use([Navigation, Pagination, Keyboard]);
+const DEFAULT_SWIPER_OPTIONS: SwiperOptions = {
+  modules: [Navigation, Pagination, Keyboard],
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction',
+    formatFractionCurrent(number) {
+      return zeroPad(number, 2);
+    },
+    formatFractionTotal(number) {
+      return zeroPad(number, 2);
+    },
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  loop: true,
+  centeredSlides: true,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+};
 
 @Component({
   tag: 'image-gallery',
@@ -41,22 +64,7 @@ export class ImageGallery {
 
   componentDidLoad() {
     this.stopBodyScroll();
-    this.swiper = new Swiper('.image-gallery__images__swiper', {
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      loop: true,
-      centeredSlides: true,
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false,
-      },
-    });
+    this.swiper = new Swiper('.image-gallery__images__swiper', DEFAULT_SWIPER_OPTIONS);
   }
 
   @Watch('isModalOpen')
