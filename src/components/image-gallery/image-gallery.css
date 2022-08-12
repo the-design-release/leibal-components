@@ -43,10 +43,10 @@
     background: #eaeaea;
 
     &__close {
-      @apply underline underline-offset-2 uppercase cursor-pointer p-4 absolute top-0 right-0 text-xs z-10;
+      @apply underline underline-offset-2 uppercase cursor-pointer m-2 p-2 absolute top-0 right-0 text-xs z-10;
 
       background: #eaeaea;
-      border-radius: 3px;
+      border-radius: 5px;
     }
   }
 
