@@ -90,7 +90,7 @@
     color: #999;
   }
 
-  .swiper-pagination-fraction {
+  .swiper-pagination {
     top: 0px;
     right: -32px;
     display: inline-block;
