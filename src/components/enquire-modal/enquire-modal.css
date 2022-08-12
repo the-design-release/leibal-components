@@ -6,12 +6,12 @@
   font-family: var(--font-family);
   display: block;
 
-  @apply block md:grid md:grid-cols-12 md:gap-8;
+  @apply block lg:grid lg:grid-cols-12 lg:gap-8;
 
   grid-column: 1/4;
 
   &__preview-image {
-    @apply md:col-span-8;
+    @apply lg:col-span-8;
 
     position: relative;
     width: 100%;
@@ -38,7 +38,7 @@
   }
 
   &__info {
-    @apply md:col-span-4 flex flex-col md:justify-between font-light text-xs;
+    @apply lg:col-span-4 flex flex-col lg:justify-between font-light text-xs;
 
     &__enquire {
       @apply mb-1 uppercase;
@@ -70,10 +70,14 @@
     }
 
     &__content {
-      @apply md:grid md:grid-cols-10 md:gap-8 px-16 bg-white relative;
+      @apply lg:grid lg:grid-cols-10 lg:gap-8 px-8 lg:px-16 bg-white relative;
 
       & > div {
-        @apply py-12;
+        @apply py-8 lg:py-12;
+      }
+
+      & > div:first-child {
+        @apply hidden lg:grid;
       }
 
       & > div:last-child {
@@ -82,13 +86,23 @@
     }
 
     &__form {
-      @apply col-span-5 px-8;
-      border: 1px solid #eaeaea;
-      border-top: none;
-      border-bottom: none;
+      @apply col-span-5;
+      border: none;
+
+      @screen lg {
+        @apply px-8;
+
+        border: 1px solid #eaeaea;
+        border-top: none;
+        border-bottom: none;
+      }
 
       & > div {
-        @apply block md:grid md:grid-cols-2 md:gap-12;
+        @apply block lg:grid lg:grid-cols-2 lg:gap-12;
+
+        & > * {
+          @apply mb-8 lg:mb-0;
+        }
       }
 
       &__message {
@@ -119,10 +133,10 @@
     }
 
     &__submit {
-      @apply col-span-2 block md:flex md:flex-col md:justify-between;
+      @apply col-span-2 block lg:flex lg:flex-col lg:justify-between;
 
       &__disclaimer {
-        @apply text-xs tracking-widest;
+        @apply text-xs tracking-widest mb-8;
 
         & a {
           color: #000;
