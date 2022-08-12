@@ -19,12 +19,14 @@
 
 - [simple-button](../simple-button)
 - [tele-portal](../tele-portal)
+- [simple-input](../simple-input)
 
 ### Graph
 ```mermaid
 graph TD;
   enquire-modal --> simple-button
   enquire-modal --> tele-portal
+  enquire-modal --> simple-input
   style enquire-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

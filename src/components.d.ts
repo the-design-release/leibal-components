@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Theme } from "./utils/theme";
 import { DisplayCardType } from "./components/display-card/display-card";
 import { PlatformType } from "./utils/platform";
+import { InputType } from "./components/simple-input/simple-input";
 export namespace Components {
     interface DisplayCard {
         "bottomSubtitleName": string;
@@ -32,6 +33,13 @@ export namespace Components {
         "disabled": boolean;
         "fillWidth": boolean;
         "theme": Theme;
+    }
+    interface SimpleInput {
+        "name": string;
+        "placeholder": string;
+        "required": boolean;
+        "type": InputType;
+        "value": string;
     }
     interface StickyScroller {
         "bottom": boolean;
@@ -72,6 +80,12 @@ declare global {
         prototype: HTMLSimpleButtonElement;
         new (): HTMLSimpleButtonElement;
     };
+    interface HTMLSimpleInputElement extends Components.SimpleInput, HTMLStencilElement {
+    }
+    var HTMLSimpleInputElement: {
+        prototype: HTMLSimpleInputElement;
+        new (): HTMLSimpleInputElement;
+    };
     interface HTMLStickyScrollerElement extends Components.StickyScroller, HTMLStencilElement {
     }
     var HTMLStickyScrollerElement: {
@@ -90,6 +104,7 @@ declare global {
         "footer-nav": HTMLFooterNavElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
+        "simple-input": HTMLSimpleInputElement;
         "sticky-scroller": HTMLStickyScrollerElement;
         "tele-portal": HTMLTelePortalElement;
     }
@@ -119,6 +134,14 @@ declare namespace LocalJSX {
         "fillWidth"?: boolean;
         "theme"?: Theme;
     }
+    interface SimpleInput {
+        "name"?: string;
+        "onValueChanged"?: (event: CustomEvent<string>) => void;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "type"?: InputType;
+        "value"?: string;
+    }
     interface StickyScroller {
         "bottom"?: boolean;
         "endOffset"?: number;
@@ -132,6 +155,7 @@ declare namespace LocalJSX {
         "footer-nav": FooterNav;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
+        "simple-input": SimpleInput;
         "sticky-scroller": StickyScroller;
         "tele-portal": TelePortal;
     }
@@ -145,6 +169,7 @@ declare module "@stencil/core" {
             "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
+            "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
             "tele-portal": LocalJSX.TelePortal & JSXBase.HTMLAttributes<HTMLTelePortalElement>;
         }

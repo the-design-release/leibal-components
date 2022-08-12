@@ -1,0 +1,27 @@
+:host {
+  --font-family: var(--leibal-components-font-family, sans-serif);
+  --color-light: #fff;
+  --color-dark: #222;
+  --color-gray: #ddd;
+
+  font-family: var(--font-family);
+  display: block;
+}
+
+.simple-input {
+  @apply block;
+
+  &--text {
+    @apply w-full pb-4 block tracking-wider;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-gray);
+
+    &::placeholder {
+      @apply tracking-wider;
+      opacity: 1 !important;
+      color: #999;
+    }
+  }
+}

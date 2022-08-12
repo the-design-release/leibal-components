@@ -73,7 +73,7 @@
       @apply md:grid md:grid-cols-10 md:gap-8 px-16 bg-white relative;
 
       & > div {
-        @apply py-16;
+        @apply py-12;
       }
 
       & > div:last-child {
@@ -82,14 +82,52 @@
     }
 
     &__form {
-      @apply col-span-5;
+      @apply col-span-5 px-8;
       border: 1px solid #eaeaea;
       border-top: none;
       border-bottom: none;
+
+      & > div {
+        @apply block md:grid md:grid-cols-2 md:gap-12;
+      }
+
+      &__message {
+        @apply col-span-2 row-span-2;
+
+        &__title {
+          @apply text-sm font-light mb-4;
+        }
+
+        &__body {
+          @apply p-4 font-light text-sm tracking-wider leading-6;
+
+          border: 1px solid #eaeaea;
+
+          & p {
+            @apply my-4;
+          }
+
+          & p:first-child {
+            @apply mt-0;
+          }
+
+          & p:last-child {
+            @apply mb-0;
+          }
+        }
+      }
     }
 
     &__submit {
-      @apply col-span-2;
+      @apply col-span-2 block md:flex md:flex-col md:justify-between;
+
+      &__disclaimer {
+        @apply text-xs tracking-widest;
+
+        & a {
+          color: #000;
+        }
+      }
     }
 
     &__close {

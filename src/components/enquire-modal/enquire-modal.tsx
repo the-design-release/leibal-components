@@ -1,5 +1,7 @@
 import { Component, Host, h, Prop, State, Element, Watch } from '@stencil/core';
 
+type FormState = { firstName: string; lastName: string; email: string; location: string };
+
 @Component({
   tag: 'enquire-modal',
   styleUrl: 'enquire-modal.css',
@@ -17,7 +19,15 @@ export class EnquireModal {
   @State()
   isModalOpen: boolean = false;
 
-  private contentElement?: HTMLDivElement;
+  @State()
+  formState: FormState = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    location: '',
+  };
+
+  private contentElement?: HTMLFormElement;
 
   componentWillLoad() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
@@ -70,11 +80,18 @@ export class EnquireModal {
       if (top < 0) {
         window.scrollBy({ behavior: 'smooth', top: top - 64, left: 0 });
       } else if (top + this.contentElement.clientHeight > window.innerHeight) {
-        console.log(top);
         window.scrollBy({ behavior: 'smooth', top: top - this.contentElement.clientHeight + 64, left: 0 });
       }
     }
   }
+
+  // Handle when the form data changes.
+  handleFormChange = event => {
+    this.formState = {
+      ...this.formState,
+      [event.target.name]: event.target.value,
+    };
+  };
 
   @Watch('isModalOpen')
   clampBodyScroll(isModalOpen, oldIsModalOpen) {
@@ -118,14 +135,44 @@ export class EnquireModal {
               this.isModalOpen = false;
             }}
           >
-            <div
+            <form
               class="enquire-modal__modal__content"
               onClick={e => e.stopImmediatePropagation()}
-              ref={el => (this.contentElement = el as HTMLDivElement)}
+              ref={el => (this.contentElement = el as HTMLFormElement)}
+              onInput={e => this.handleFormChange(e)}
             >
               {this.renderEnquireCard()}
-              <div class="enquire-modal__modal__form"></div>
-              <div class="enquire-modal__modal__submit"></div>
+              <div class="enquire-modal__modal__form">
+                <div>
+                  <simple-input type="text" name="firstName" placeholder="First Name" required></simple-input>
+                  <simple-input type="text" name="lastName" placeholder="Last Name" required></simple-input>
+                  <simple-input type="text" name="email" placeholder="Email Address" required></simple-input>
+                  <simple-input type="text" name="location" placeholder="Location" required></simple-input>
+                  <div class="enquire-modal__modal__form__message">
+                    <div class="enquire-modal__modal__form__message__title">Message</div>
+                    <div class="enquire-modal__modal__form__message__body">
+                      <p>Hello,</p>
+                      <p>
+                        My name is <u>{this.formState.firstName || '...'}</u> <u>{this.formState.lastName || '...'}</u>,
+                        and I would like additional information regarding <u>{this.postTitle}</u>.
+                      </p>
+                      <p>
+                        I am currently located in <u>{this.formState.location || '...'}</u>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="enquire-modal__modal__submit">
+                <div class="enquire-modal__modal__submit__disclaimer">
+                  By sending this message your agree to our&nbsp;
+                  <a href="#">Terms and Conditions</a>. For more information regarding how your data is processed,
+                  please view of <a href="#">Privacy Policy</a>.
+                </div>
+                <div>
+                  <simple-button theme="dark">Send</simple-button>
+                </div>
+              </div>
               <div
                 class="enquire-modal__modal__close"
                 onClick={() => {
@@ -134,7 +181,7 @@ export class EnquireModal {
               >
                 x
               </div>
-            </div>
+            </form>
           </div>
         </tele-portal>
       </Host>
