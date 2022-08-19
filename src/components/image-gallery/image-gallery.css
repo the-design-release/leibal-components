@@ -15,7 +15,7 @@
   }
 
   &__info {
-    @apply block lg:flex lg:flex-col lg:justify-between col-span-3 text-xs pt-12 pb-12 z-20;
+    @apply block lg:flex lg:flex-col lg:justify-between col-span-3 text-xs pt-12 pb-12 z-20 cursor-default;
 
     background: #fff;
 
@@ -83,7 +83,11 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: #999;
+    color: #000;
+
+    &::after {
+      font-size: 1rem;
+    }
   }
 
   .swiper-pagination {
