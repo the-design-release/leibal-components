@@ -15,7 +15,7 @@
   }
 
   &__info {
-    @apply block lg:flex lg:flex-col lg:justify-between col-span-3 text-xs pt-12 pb-12 z-20 cursor-default;
+    @apply block lg:flex lg:flex-col lg:justify-between col-span-3 text-xs pt-12 pb-[2.75rem] z-20 cursor-default;
 
     background: #fff;
 
