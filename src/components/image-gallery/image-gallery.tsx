@@ -50,6 +50,9 @@ export class ImageGallery {
   @Prop({ mutable: true, reflect: true })
   photographer: string;
 
+  @Prop({ mutable: true, reflect: true })
+  canEnquire: boolean = false;
+
   @State()
   isModalOpen: boolean = false;
 
@@ -118,10 +121,12 @@ export class ImageGallery {
               </div>
               <div>{/* TODO: Moods button */}</div>
               <div>
-                <enquire-modal
-                  postTitle={this.postTitle + ' by ' + this.postExcerpt}
-                  previewImage={this.previewImage}
-                />
+                {this.canEnquire && (
+                  <enquire-modal
+                    postTitle={this.postTitle + ' by ' + this.postExcerpt}
+                    previewImage={this.previewImage}
+                  />
+                )}
               </div>
             </div>
             <div class="image-gallery__images">

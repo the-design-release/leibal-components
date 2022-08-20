@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type     | Default     |
-| -------------- | --------------- | ----------- | -------- | ----------- |
-| `images`       | `images`        |             | `string` | `'[]'`      |
-| `photographer` | `photographer`  |             | `string` | `undefined` |
-| `postExcerpt`  | `post-excerpt`  |             | `string` | `undefined` |
-| `postTitle`    | `post-title`    |             | `string` | `undefined` |
-| `previewImage` | `preview-image` |             | `string` | `undefined` |
+| Property       | Attribute       | Description | Type      | Default     |
+| -------------- | --------------- | ----------- | --------- | ----------- |
+| `canEnquire`   | `can-enquire`   |             | `boolean` | `false`     |
+| `images`       | `images`        |             | `string`  | `'[]'`      |
+| `photographer` | `photographer`  |             | `string`  | `undefined` |
+| `postExcerpt`  | `post-excerpt`  |             | `string`  | `undefined` |
+| `postTitle`    | `post-title`    |             | `string`  | `undefined` |
+| `previewImage` | `preview-image` |             | `string`  | `undefined` |
 
 
 ## Dependencies
