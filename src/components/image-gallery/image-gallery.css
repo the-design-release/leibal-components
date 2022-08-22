@@ -87,7 +87,20 @@
 
     &::after {
       font-size: 1rem;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 6rem;
     }
+  }
+
+  .swiper-button-prev {
+    cursor: w-resize;
+  }
+
+  .swiper-button-next {
+    cursor: e-resize;
   }
 
   .swiper-pagination {
