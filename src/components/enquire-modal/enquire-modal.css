@@ -6,7 +6,7 @@
   font-family: var(--font-family);
   display: block;
 
-  @apply block lg:grid lg:grid-cols-12 lg:gap-8;
+  @apply block lg:grid lg:grid-cols-12 lg:gap-8 cursor-pointer;
 
   grid-column: 1/4;
 

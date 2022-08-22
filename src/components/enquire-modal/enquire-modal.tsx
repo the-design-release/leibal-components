@@ -115,7 +115,7 @@ export class EnquireModal {
   }
 
   renderEnquireCard = () => (
-    <div class="col-span-3 w-full enquire-card">
+    <div class="col-span-3 w-full cursor-pointer enquire-card" onClick={this.handleEnquireClick.bind(this)}>
       <div class="enquire-card__preview-image">
         <div style={{ backgroundImage: `url(${this.previewImage})` }}></div>
       </div>
@@ -127,7 +127,7 @@ export class EnquireModal {
         <div>Find out more information regarding purchasing, dimensions or lead times.</div>
       </div>
       <div class="text-xl enquire-card__button">
-        <simple-button onClick={this.handleEnquireClick.bind(this)}>Enquire</simple-button>
+        <simple-button>Enquire</simple-button>
       </div>
     </div>
   );
