@@ -45,7 +45,7 @@
     }
 
     &__title {
-      @apply font-normal;
+      @apply font-normal uppercase;
     }
   }
 

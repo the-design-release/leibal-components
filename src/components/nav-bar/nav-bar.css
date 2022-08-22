@@ -6,7 +6,7 @@
   --font-family: var(--leibal-components-font-family, sans-serif);
   --color-white: #fff;
   --color-light: #f3f3f3;
-  --color-dim: #eaeaea;
+  --color-dim: #f5f5f5;
   --color-dark: #222;
 
   display: block;
