@@ -32,6 +32,7 @@ export class SimpleInput {
         onInput={this.onInputChangeValue.bind(this)}
         type={this.type}
         placeholder={placeholder}
+        required={this.required}
       />
     );
   };

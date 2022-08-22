@@ -25,6 +25,7 @@ export namespace Components {
     interface FooterNav {
     }
     interface ImageGallery {
+        "canEnquire": boolean;
         "images": string;
         "photographer": string;
         "postExcerpt": string;
@@ -149,6 +150,7 @@ declare namespace LocalJSX {
     interface FooterNav {
     }
     interface ImageGallery {
+        "canEnquire"?: boolean;
         "images"?: string;
         "photographer"?: string;
         "postExcerpt"?: string;

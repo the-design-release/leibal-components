@@ -85,12 +85,21 @@ export class EnquireModal {
   }
 
   // Handle when the form data changes.
-  handleFormChange = event => {
+  handleFormChange(event) {
     this.formState = {
       ...this.formState,
       [event.target.name]: event.target.value,
     };
-  };
+  }
+
+  handleFormSubmit(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    console.log('SUBMITTEDDDD!!!~');
+
+    return false;
+  }
 
   @Watch('isModalOpen')
   clampBodyScroll(isModalOpen, oldIsModalOpen) {
@@ -138,7 +147,8 @@ export class EnquireModal {
               class="enquire-modal__modal__content"
               onClick={e => e.stopImmediatePropagation()}
               ref={el => (this.contentElement = el as HTMLFormElement)}
-              onInput={e => this.handleFormChange(e)}
+              onInput={this.handleFormChange.bind(this)}
+              onSubmit={this.handleFormSubmit.bind(this)}
             >
               {this.renderEnquireCard()}
               <div class="enquire-modal__modal__form">
@@ -169,7 +179,16 @@ export class EnquireModal {
                   please view of <a href="#">Privacy Policy</a>.
                 </div>
                 <div>
-                  <simple-button theme="dark">Send</simple-button>
+                  <simple-button
+                    theme="dark"
+                    onClick={(event: any) => {
+                      const submitButton = event.target.nextSibling;
+                      submitButton.click();
+                    }}
+                  >
+                    Send
+                  </simple-button>
+                  <button type="submit" style={{ display: 'none' }} />
                 </div>
               </div>
               <div

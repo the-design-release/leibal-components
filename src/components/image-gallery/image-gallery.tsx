@@ -50,6 +50,9 @@ export class ImageGallery {
   @Prop({ mutable: true, reflect: true })
   photographer: string;
 
+  @Prop({ mutable: true, reflect: true })
+  canEnquire: boolean = false;
+
   @State()
   isModalOpen: boolean = false;
 
@@ -91,13 +94,25 @@ export class ImageGallery {
     this.swiper.slideTo(event.detail);
   }
 
+  @Listen('keydown', { target: 'body' })
+  keydownHandler(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.isModalOpen = false;
+    }
+  }
+
   render() {
     return (
       <Host>
         <tele-portal>
           <div class={this.isModalOpen ? 'image-gallery image-gallery--visible' : 'image-gallery'}>
             <div class="image-gallery__info">
-              <div style={{ position: 'relative' }}>
+              <div
+                onClick={() => {
+                  this.isModalOpen = false;
+                }}
+                style={{ position: 'relative' }}
+              >
                 <div class="image-gallery__info__title">{this.postTitle}</div>
                 <div class="image-gallery__info__subtitle">by {this.postExcerpt}</div>
                 <div class="image-gallery__info__photographer__label">Photography</div>
@@ -106,10 +121,12 @@ export class ImageGallery {
               </div>
               <div>{/* TODO: Moods button */}</div>
               <div>
-                <enquire-modal
-                  postTitle={this.postTitle + ' by ' + this.postExcerpt}
-                  previewImage={this.previewImage}
-                />
+                {this.canEnquire && (
+                  <enquire-modal
+                    postTitle={this.postTitle + ' by ' + this.postExcerpt}
+                    previewImage={this.previewImage}
+                  />
+                )}
               </div>
             </div>
             <div class="image-gallery__images">
