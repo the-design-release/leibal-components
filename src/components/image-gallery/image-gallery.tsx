@@ -91,7 +91,7 @@ export class ImageGallery {
       this.isModalOpen = true;
     }
 
-    this.swiper.slideTo(event.detail);
+    this.swiper.slideTo(event.detail, 0, false);
   }
 
   @Listen('keydown', { target: 'body' })
