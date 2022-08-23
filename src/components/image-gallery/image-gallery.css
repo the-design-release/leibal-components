@@ -20,7 +20,7 @@
     background: #fff;
 
     &__title {
-      @apply text-[2.5rem] font-light mb-3 leading-none;
+      @apply text-[2.5rem] font-light mb-3 mr-3 lg:mr-16 leading-none;
     }
 
     &__subtitle {
