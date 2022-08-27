@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, State, Element, Watch } from '@stencil/core';
 
-type FormState = { firstName: string; lastName: string; email: string; location: string };
+type FormState = { firstName: string; lastName: string; email: string; location: string; moreText: string };
 
 @Component({
   tag: 'enquire-modal',
@@ -25,6 +25,7 @@ export class EnquireModal {
     lastName: '',
     email: '',
     location: '',
+    moreText: '',
   };
 
   private contentElement?: HTMLFormElement;
@@ -96,7 +97,14 @@ export class EnquireModal {
     event.preventDefault();
     event.stopPropagation();
 
-    console.log('SUBMITTEDDDD!!!~');
+    let body = `Hello,%0D%0A%0D%0A`;
+    body += `My name is ${this.formState.firstName} ${this.formState.lastName}, and I would like additional information regarding ${this.postTitle}.%0D%0A%0D%0A`;
+    body += `I am currently located in ${this.formState.location}.%0D%0A%0D%0A`;
+    body += `${this.formState.moreText.replace('\n', '%0D%0A')}`;
+
+    const email = document.createElement('a');
+    email.href = `mailto:info@leibal.com?subject=Enquiry about ${this.postTitle}&body=${body}`;
+    email.click();
 
     return false;
   }
@@ -168,6 +176,16 @@ export class EnquireModal {
                       <p>
                         I am currently located in <u>{this.formState.location || '...'}</u>.
                       </p>
+                      <div class="grow-wrap">
+                        <textarea
+                          class="enquire-modal__modal__form__message__more-text"
+                          placeholder="Type to add more to your request."
+                          name="moreText"
+                          onInput={function () {
+                            this.parentNode.dataset.replicatedValue = this.value;
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
