@@ -113,9 +113,8 @@
         }
 
         &__body {
-          @apply p-4 font-light text-sm tracking-wider leading-6 overflow-y-auto;
+          @apply p-4 font-light text-sm tracking-wider leading-6 max-h-[185px] overflow-y-auto;
 
-          height: 118%;
           border: 1px solid #eaeaea;
 
           & p {
