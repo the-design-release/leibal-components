@@ -6,7 +6,10 @@ import { Component, Host, h, State, Listen } from '@stencil/core';
   shadow: true,
 })
 export class ToolTip {
-  @State() show: boolean = false;
+  wrapperEl: HTMLElement;
+
+  @State() bottomOffset: number = 0;
+  @State() show: boolean = true;
 
   @Listen('mouseenter')
   handleMouseEnter() {
@@ -18,14 +21,33 @@ export class ToolTip {
     this.show = false;
   }
 
+  @Listen('resize')
+  handleResize() {
+    this.calculateWrapperHeight();
+  }
+
+  componentDidLoad() {
+    this.calculateWrapperHeight();
+  }
+
+  calculateWrapperHeight() {
+    const { height } = this.wrapperEl.getBoundingClientRect();
+    this.bottomOffset = height;
+  }
+
   render() {
     return (
       <Host>
         <div class="tooltip">
-          <div class={'tooltip__content ' + (this.show ? 'tooltip__content--visible' : '')}>
+          <div
+            style={{ bottom: this.bottomOffset - 1 + 'px' }}
+            class={'tooltip__content ' + (this.show ? 'tooltip__content--visible' : '')}
+          >
             <slot name="content"></slot>
           </div>
-          <slot name="wrapper"></slot>
+          <div ref={el => (this.wrapperEl = el)}>
+            <slot name="wrapper"></slot>
+          </div>
         </div>
       </Host>
     );
