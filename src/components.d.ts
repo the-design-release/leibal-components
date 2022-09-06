@@ -59,6 +59,8 @@ export namespace Components {
     }
     interface TelePortal {
     }
+    interface ToolTip {
+    }
 }
 declare global {
     interface HTMLDisplayCardElement extends Components.DisplayCard, HTMLStencilElement {
@@ -121,6 +123,12 @@ declare global {
         prototype: HTMLTelePortalElement;
         new (): HTMLTelePortalElement;
     };
+    interface HTMLToolTipElement extends Components.ToolTip, HTMLStencilElement {
+    }
+    var HTMLToolTipElement: {
+        prototype: HTMLToolTipElement;
+        new (): HTMLToolTipElement;
+    };
     interface HTMLElementTagNameMap {
         "display-card": HTMLDisplayCardElement;
         "enquire-modal": HTMLEnquireModalElement;
@@ -132,6 +140,7 @@ declare global {
         "simple-input": HTMLSimpleInputElement;
         "sticky-scroller": HTMLStickyScrollerElement;
         "tele-portal": HTMLTelePortalElement;
+        "tool-tip": HTMLToolTipElement;
     }
 }
 declare namespace LocalJSX {
@@ -186,6 +195,8 @@ declare namespace LocalJSX {
     }
     interface TelePortal {
     }
+    interface ToolTip {
+    }
     interface IntrinsicElements {
         "display-card": DisplayCard;
         "enquire-modal": EnquireModal;
@@ -197,6 +208,7 @@ declare namespace LocalJSX {
         "simple-input": SimpleInput;
         "sticky-scroller": StickyScroller;
         "tele-portal": TelePortal;
+        "tool-tip": ToolTip;
     }
 }
 export { LocalJSX as JSX };
@@ -213,6 +225,7 @@ declare module "@stencil/core" {
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
             "tele-portal": LocalJSX.TelePortal & JSXBase.HTMLAttributes<HTMLTelePortalElement>;
+            "tool-tip": LocalJSX.ToolTip & JSXBase.HTMLAttributes<HTMLToolTipElement>;
         }
     }
 }
