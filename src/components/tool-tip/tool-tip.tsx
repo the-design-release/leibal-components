@@ -9,7 +9,7 @@ export class ToolTip {
   wrapperEl: HTMLElement;
 
   @State() bottomOffset: number = 0;
-  @State() show: boolean = true;
+  @State() show: boolean = false;
 
   @Listen('mouseenter')
   handleMouseEnter() {
