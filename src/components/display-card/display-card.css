@@ -81,7 +81,7 @@
 
     &__bottom {
       &__title {
-        @apply font-normal text-xs mb-5 md:mb-10 uppercase;
+        @apply font-normal text-xs mb-3 uppercase;
 
         &__name {
           @apply font-light text-xs uppercase mb-1;
