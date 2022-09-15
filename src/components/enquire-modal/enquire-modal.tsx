@@ -77,9 +77,9 @@ export class EnquireModal {
       const top = this.getContentPageOffset();
 
       // Move the content into view.
-      if (top < 0) {
+      if (top <= 5) {
         window.scrollBy({ behavior: 'smooth', top: top - 64, left: 0 });
-      } else if (top + this.contentElement.clientHeight > window.innerHeight) {
+      } else if (top + this.contentElement.clientHeight >= window.innerHeight + 5) {
         window.scrollBy({ behavior: 'smooth', top: top - this.contentElement.clientHeight + 64, left: 0 });
       }
     }
