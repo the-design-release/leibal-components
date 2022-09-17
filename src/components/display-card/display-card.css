@@ -45,7 +45,7 @@
     @apply my-5;
 
     &__title {
-      @apply uppercase font-normal text-xs mb-1;
+      @apply uppercase font-normal text-xs mb-1 whitespace-nowrap overflow-hidden overflow-ellipsis;
     }
     &__subtitle {
       @apply uppercase font-light text-xs;
