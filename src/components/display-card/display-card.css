@@ -54,7 +54,7 @@
 
   &__bottom {
     &__title {
-      @apply font-normal text-sm mb-1;
+      @apply font-normal text-sm mb-1 whitespace-nowrap overflow-hidden overflow-ellipsis;
     }
     &__subtitle {
       @apply font-light text-xs;
