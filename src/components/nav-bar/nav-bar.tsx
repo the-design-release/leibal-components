@@ -110,8 +110,8 @@ export class NavBar {
               <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
             </div>
             <div class="navbar__row__action">
-              <a href="#">Submit</a>
-              <a href="#">Sign Up</a>
+              <a href="/submissions">Submit</a>
+              <a href="/register">Sign Up</a>
             </div>
           </div>
           <div class="navbar__row">
@@ -133,8 +133,8 @@ export class NavBar {
               <a href={this.platformSpecificLink('store', '/collections/brands')}>Brands</a>
             </div>
             <div class="navbar__row__action">
-              <a href="#">Cart</a>
-              <a href="#">Search</a>
+              <a href="/cart">Cart</a>
+              <a href="/search">Search</a>
             </div>
           </div>
         </nav>
