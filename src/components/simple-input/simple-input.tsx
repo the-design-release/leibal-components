@@ -1,6 +1,6 @@
 import { Event, Component, Host, h, Prop, EventEmitter } from '@stencil/core';
 
-export type InputType = 'text';
+export type InputType = 'text' | 'password' | 'email' | 'number' | 'tel' | 'url';
 
 @Component({
   tag: 'simple-input',
