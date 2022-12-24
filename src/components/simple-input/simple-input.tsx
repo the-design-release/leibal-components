@@ -2,6 +2,7 @@ import { Event, Component, Host, h, Prop, EventEmitter } from '@stencil/core';
 
 export type InputType = 'text' | 'password' | 'email' | 'number' | 'tel' | 'url';
 
+const INPUT_TYPES = ['text', 'password', 'email', 'number', 'tel', 'url'];
 @Component({
   tag: 'simple-input',
   styleUrl: 'simple-input.css',
@@ -20,7 +21,7 @@ export class SimpleInput {
     this.valueChanged.emit(this.value);
   }
 
-  textInput = () => {
+  input = () => {
     let placeholder = this.placeholder;
     if (this.required) {
       placeholder += ' *';
@@ -40,7 +41,7 @@ export class SimpleInput {
   render() {
     return (
       <Host>
-        <div class="simple-input">{this.type === 'text' && this.textInput()}</div>
+        <div class="simple-input">{INPUT_TYPES.includes(this.type) && this.input()}</div>
       </Host>
     );
   }

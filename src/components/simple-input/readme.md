@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type      | Default          |
-| ------------- | ------------- | ----------- | --------- | ---------------- |
-| `name`        | `name`        |             | `string`  | `undefined`      |
-| `placeholder` | `placeholder` |             | `string`  | `'Text here...'` |
-| `required`    | `required`    |             | `boolean` | `false`          |
-| `type`        | `type`        |             | `"text"`  | `undefined`      |
-| `value`       | `value`       |             | `string`  | `undefined`      |
+| Property      | Attribute     | Description | Type                                                            | Default          |
+| ------------- | ------------- | ----------- | --------------------------------------------------------------- | ---------------- |
+| `name`        | `name`        |             | `string`                                                        | `undefined`      |
+| `placeholder` | `placeholder` |             | `string`                                                        | `'Text here...'` |
+| `required`    | `required`    |             | `boolean`                                                       | `false`          |
+| `type`        | `type`        |             | `"email" \| "number" \| "password" \| "tel" \| "text" \| "url"` | `undefined`      |
+| `value`       | `value`       |             | `string`                                                        | `undefined`      |
 
 
 ## Events
