@@ -111,7 +111,11 @@ export class NavBar {
             </div>
             <div class="navbar__row__action">
               <a href="/submissions">Submit</a>
-              {this.authenticated ? <a href="/moods">MOODS</a> : <a href="/register">Sign Up</a>}
+              {this.authenticated ? (
+                <a href={this.platformSpecificLink('blog', '/moods')}>MOODS</a>
+              ) : (
+                <a href={this.platformSpecificLink('blog', '/subscription/subscribe')}>Sign Up</a>
+              )}
             </div>
           </div>
           <div class="navbar__row">

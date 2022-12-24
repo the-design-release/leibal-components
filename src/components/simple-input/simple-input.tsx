@@ -1,4 +1,4 @@
-import { Event, Component, Host, h, Prop, EventEmitter } from '@stencil/core';
+import { Event, Element, Component, Host, h, Prop, EventEmitter } from '@stencil/core';
 
 export type InputType = 'text' | 'password' | 'email' | 'number' | 'tel' | 'url';
 
@@ -9,6 +9,8 @@ const INPUT_TYPES = ['text', 'password', 'email', 'number', 'tel', 'url'];
   shadow: true,
 })
 export class SimpleInput {
+  @Element() el!: HTMLElement;
+
   @Prop() type: InputType;
   @Prop() placeholder: string = 'Text here...';
   @Prop() required: boolean = false;
@@ -31,6 +33,7 @@ export class SimpleInput {
         class="simple-input--text"
         name={this.name}
         onInput={this.onInputChangeValue.bind(this)}
+        value={this.value}
         type={this.type}
         placeholder={placeholder}
         required={this.required}
@@ -38,7 +41,23 @@ export class SimpleInput {
     );
   };
 
+  private renderInputOutsideShadowRoot(container: HTMLElement, name: string, value: string | null) {
+    let input = container.querySelector('input.hidden-input') as HTMLInputElement | null;
+    if (!input) {
+      input = container.ownerDocument.createElement('input');
+      input.type = 'hidden';
+      input.classList.add('hidden-input');
+      container.appendChild(input);
+    }
+    input.name = name;
+    input.value = value || '';
+  }
+
   render() {
+    const { el, value, name } = this;
+
+    this.renderInputOutsideShadowRoot(el, name, value);
+
     return (
       <Host>
         <div class="simple-input">{INPUT_TYPES.includes(this.type) && this.input()}</div>
