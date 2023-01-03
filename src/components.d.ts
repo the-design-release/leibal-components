@@ -6,10 +6,17 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Theme } from "./utils/theme";
+import { MoodsModalEvent } from "./components/add-to-moods-button/add-to-moods-button";
 import { DisplayCardType } from "./components/display-card/display-card";
 import { PlatformType } from "./utils/platform";
 import { InputType } from "./components/simple-input/simple-input";
 export namespace Components {
+    interface AddToMoodsButton {
+        "disabled": boolean;
+        "imageUrl": string;
+        "postId": number | null;
+        "theme": Theme;
+    }
     interface DisplayCard {
         "bottomSubtitleName": string;
         "bottomTitleName": string;
@@ -34,6 +41,8 @@ export namespace Components {
     }
     interface ImageGalleryLink {
         "imageIndex": number;
+    }
+    interface MoodsModal {
     }
     interface NavBar {
         "authenticated": boolean;
@@ -63,6 +72,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAddToMoodsButtonElement extends Components.AddToMoodsButton, HTMLStencilElement {
+    }
+    var HTMLAddToMoodsButtonElement: {
+        prototype: HTMLAddToMoodsButtonElement;
+        new (): HTMLAddToMoodsButtonElement;
+    };
     interface HTMLDisplayCardElement extends Components.DisplayCard, HTMLStencilElement {
     }
     var HTMLDisplayCardElement: {
@@ -92,6 +107,12 @@ declare global {
     var HTMLImageGalleryLinkElement: {
         prototype: HTMLImageGalleryLinkElement;
         new (): HTMLImageGalleryLinkElement;
+    };
+    interface HTMLMoodsModalElement extends Components.MoodsModal, HTMLStencilElement {
+    }
+    var HTMLMoodsModalElement: {
+        prototype: HTMLMoodsModalElement;
+        new (): HTMLMoodsModalElement;
     };
     interface HTMLNavBarElement extends Components.NavBar, HTMLStencilElement {
     }
@@ -130,11 +151,13 @@ declare global {
         new (): HTMLToolTipElement;
     };
     interface HTMLElementTagNameMap {
+        "add-to-moods-button": HTMLAddToMoodsButtonElement;
         "display-card": HTMLDisplayCardElement;
         "enquire-modal": HTMLEnquireModalElement;
         "footer-nav": HTMLFooterNavElement;
         "image-gallery": HTMLImageGalleryElement;
         "image-gallery-link": HTMLImageGalleryLinkElement;
+        "moods-modal": HTMLMoodsModalElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
         "simple-input": HTMLSimpleInputElement;
@@ -144,6 +167,13 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AddToMoodsButton {
+        "disabled"?: boolean;
+        "imageUrl"?: string;
+        "onOpenMoodsModal"?: (event: CustomEvent<MoodsModalEvent>) => void;
+        "postId"?: number | null;
+        "theme"?: Theme;
+    }
     interface DisplayCard {
         "bottomSubtitleName"?: string;
         "bottomTitleName"?: string;
@@ -169,6 +199,8 @@ declare namespace LocalJSX {
     interface ImageGalleryLink {
         "imageIndex"?: number;
         "onOpenImageGallery"?: (event: CustomEvent<number>) => void;
+    }
+    interface MoodsModal {
     }
     interface NavBar {
         "authenticated"?: boolean;
@@ -198,11 +230,13 @@ declare namespace LocalJSX {
     interface ToolTip {
     }
     interface IntrinsicElements {
+        "add-to-moods-button": AddToMoodsButton;
         "display-card": DisplayCard;
         "enquire-modal": EnquireModal;
         "footer-nav": FooterNav;
         "image-gallery": ImageGallery;
         "image-gallery-link": ImageGalleryLink;
+        "moods-modal": MoodsModal;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
         "simple-input": SimpleInput;
@@ -215,11 +249,13 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "add-to-moods-button": LocalJSX.AddToMoodsButton & JSXBase.HTMLAttributes<HTMLAddToMoodsButtonElement>;
             "display-card": LocalJSX.DisplayCard & JSXBase.HTMLAttributes<HTMLDisplayCardElement>;
             "enquire-modal": LocalJSX.EnquireModal & JSXBase.HTMLAttributes<HTMLEnquireModalElement>;
             "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
             "image-gallery": LocalJSX.ImageGallery & JSXBase.HTMLAttributes<HTMLImageGalleryElement>;
             "image-gallery-link": LocalJSX.ImageGalleryLink & JSXBase.HTMLAttributes<HTMLImageGalleryLinkElement>;
+            "moods-modal": LocalJSX.MoodsModal & JSXBase.HTMLAttributes<HTMLMoodsModalElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;

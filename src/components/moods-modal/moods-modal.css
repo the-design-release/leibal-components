@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.moods-modal {
+  @apply fixed top-0 left-0 w-full h-screen z-50;
+
+  & > * {
+    box-sizing: border-box;
+  }
+
+  opacity: 0;
+  visibility: hidden;
+  background: #f3f3f3;
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  }
+
+  &__content {
+    @apply block md:grid md:grid-cols-2 h-full;
+  }
+
+  &__left {
+    @apply flex flex-col justify-center p-12;
+    background: #e3e3e3;
+  }
+
+  &__right {
+    @apply flex flex-col justify-between p-12;
+  }
+}

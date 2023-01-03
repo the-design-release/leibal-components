@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.add-to-moods-button {
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.add-to-moods-button img {
+  padding-right: 0.5rem;
+  width: 1rem;
+  margin-top: -0.1rem;
+  /* height: 1rem; */
+}

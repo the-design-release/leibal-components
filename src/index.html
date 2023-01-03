@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/leibal-components.esm.js"></script>
-    <script nomodule src="/build/leibal-components.js"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-    </style>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
 
-    <style>
-      :root {
-        --leibal-components-font-family: Roboto, sans-serif;
-      }
+  <script type="module" src="/build/leibal-components.esm.js"></script>
+  <script nomodule src="/build/leibal-components.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+  </style>
 
-      body {
-        font-family: var(--leibal-components-font-family);
-        line-height: 1.7;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        letter-spacing: 2px;
-      }
-    </style>
-  </head>
+  <style>
+    :root {
+      --leibal-components-font-family: Roboto, sans-serif;
+    }
 
-  <body style="height: 340vh">
-    <div>
-      <nav-bar />
-    </div>
-    <image-gallery
-      post-title="The Game Is Here And We'll Die"
-      post-excerpt="Zack Bowler"
-      images='["https://leibal.com/wp-content/uploads/2022/03/leibal_pavilion-house_norm-architects_48.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_2.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_3.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_14.jpg"]'
-      preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg"
-      photographer="Zack Kollar"
-    ></image-gallery>
+    body {
+      font-family: var(--leibal-components-font-family);
+      line-height: 1.7;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
 
-    <image-gallery-link>
-      <simple-button>Open Gallery</simple-button>
-    </image-gallery-link>
-    <!-- <simple-input required type="text" placeholder="First Name"></simple-input> -->
-    <!-- <div style="margin-bottom: 60rem"></div> -->
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 2rem; padding-top: 20rem; margin: 4rem">
-      <tool-tip>
-        <div slot="content">
-          <display-card
-            style="margin-bottom: 0px; max-width: 242px"
-            bottom-title-name="date"
-            bottom-subtitle-name="category"
-            images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'
-          >
-            <div slot="top-title">Pedestal.05</div>
-            <div slot="top-subtitle">by Luka Yakesawa</div>
-            <div slot="bottom-title">JUL 13, 2022</div>
-            <div slot="bottom-subtitle">FURNITURE</div>
-          </display-card>
-        </div>
-        <div slot="wrapper">
-          <simple-button>Hover Me</simple-button>
-        </div>
-      </tool-tip>
-      <!-- <enquire-modal
+<body style="height: 340vh">
+  <div>
+    <nav-bar />
+  </div>
+
+  <moods-modal></moods-modal>
+
+  <div style="padding: 3rem; background: #CCC">
+    <add-to-moods-button
+      image-url="https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg" post-id="123"
+      theme="dark">
+      Add to moods
+    </add-to-moods-button>
+  </div>
+
+  <image-gallery post-title="The Game Is Here And We'll Die" post-excerpt="Zack Bowler"
+    images='["https://leibal.com/wp-content/uploads/2022/03/leibal_pavilion-house_norm-architects_48.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_2.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_3.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_14.jpg"]'
+    preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg"
+    photographer="Zack Kollar"></image-gallery>
+
+  <image-gallery-link>
+    <simple-button>Open Gallery</simple-button>
+  </image-gallery-link>
+  <!-- <simple-input required type="text" placeholder="First Name"></simple-input> -->
+  <!-- <div style="margin-bottom: 60rem"></div> -->
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 2rem; padding-top: 20rem; margin: 4rem">
+    <tool-tip>
+      <div slot="content">
+        <display-card style="margin-bottom: 0px; max-width: 242px" bottom-title-name="date"
+          bottom-subtitle-name="category"
+          images='["https://leibal.com/wp-content/uploads/2022/03/leibal_el-el_siin-siin_13.jpg", "https://leibal.com/wp-content/uploads/2022/03/leibal_cascina-otto_studio-wok_5.jpeg"]'>
+          <div slot="top-title">Pedestal.05</div>
+          <div slot="top-subtitle">by Luka Yakesawa</div>
+          <div slot="bottom-title">JUL 13, 2022</div>
+          <div slot="bottom-subtitle">FURNITURE</div>
+        </display-card>
+      </div>
+      <div slot="wrapper">
+        <simple-button>Hover Me</simple-button>
+      </div>
+    </tool-tip>
+    <!-- <enquire-modal
         post-title="Zack by Zack"
         preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg"
       /> -->
-    </div>
+  </div>
 
-    <!-- <div>
+  <!-- <div>
     <simple-button>Submit</simple-button>
     <simple-button theme="dark">Submit</simple-button>
   </div>
@@ -248,5 +254,6 @@
   <div style="padding: 4rem">
     <footer-nav></footer-nav>
   </div> -->
-  </body>
+</body>
+
 </html>
