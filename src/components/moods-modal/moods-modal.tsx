@@ -1,4 +1,4 @@
-import { Component, Host, h, State } from '@stencil/core';
+import { Component, Host, h, State, Prop } from '@stencil/core';
 
 @Component({
   tag: 'moods-modal',
@@ -13,6 +13,9 @@ export class MoodsModal {
 
   @State()
   postId: number | null = null;
+
+  @Prop({ reflect: true, mutable: true })
+  boards: string = '';
 
   componentWillLoad() {
     document.addEventListener('openMoodsModal', (event: CustomEvent) => {
@@ -34,6 +37,13 @@ export class MoodsModal {
               <div class="moods-modal__right">
                 <div class="moods-modal__close" onClick={() => (this.open = false)}>
                   Close
+                </div>
+                <div class="moods-modal__picker">
+                  <div>
+                    <div class="moods-modal__text">Choose A Board</div>
+                    <moods-board-picker boards={this.boards} />
+                  </div>
+                  <div></div>
                 </div>
               </div>
             </div>

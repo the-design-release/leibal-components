@@ -28,7 +28,7 @@ export class EnquireModal {
     moreText: '',
   };
 
-  private contentElement?: HTMLFormElement;
+  contentElement?: HTMLFormElement;
 
   componentWillLoad() {
     window.addEventListener('scroll', this.handleScroll.bind(this));

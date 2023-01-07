@@ -33,9 +33,25 @@
     <nav-bar />
   </div>
 
-  <moods-modal></moods-modal>
+  <moods-modal boards='[
+    {"postId": 1, "name": "My Cool Images"},
+    {"postId": 2, "name": "Neue Events"},
+    {"postId": 3, "name": "Art Hoe Hours"},
+    {"postId": 4, "name": "soho house"},
+    {"postId": 5, "name": "mee hungee"}
+  ]'></moods-modal>
 
-  <div style="padding: 3rem; background: #CCC">
+  <div style="padding: 3rem;">
+    <div style="width: 400px; margin-bottom: 2rem;">
+      <moods-board-picker boards='[
+        {"postId": 1, "name": "My Cool Images"},
+        {"postId": 2, "name": "Neue Events"},
+        {"postId": 3, "name": "Art Hoe Hours"},
+        {"postId": 4, "name": "soho house"},
+        {"postId": 5, "name": "mee hungee"}
+      ]'>
+      </moods-board-picker>
+    </div>
     <add-to-moods-button
       image-url="https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg" post-id="123"
       theme="dark">

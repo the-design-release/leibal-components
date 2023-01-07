@@ -27,7 +27,7 @@ export class DisplayCard {
   @Prop({ mutable: true })
   linkTo: string = '#';
 
-  private _images: string[];
+  _images: string[];
 
   @Watch('images')
   watchImages(value) {

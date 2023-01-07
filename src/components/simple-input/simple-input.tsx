@@ -18,7 +18,7 @@ export class SimpleInput {
   @Prop({ mutable: true, reflect: true }) value: string;
   @Event() valueChanged: EventEmitter<string>;
 
-  private onInputChangeValue(event: Event) {
+  onInputChangeValue(event: Event) {
     this.value = (event.target as HTMLInputElement).value;
     this.valueChanged.emit(this.value);
   }
@@ -41,7 +41,7 @@ export class SimpleInput {
     );
   };
 
-  private renderInputOutsideShadowRoot(container: HTMLElement, name: string, value: string | null) {
+  renderInputOutsideShadowRoot(container: HTMLElement, name: string, value: string | null) {
     let input = container.querySelector('input.hidden-input') as HTMLInputElement | null;
     if (!input) {
       input = container.ownerDocument.createElement('input');

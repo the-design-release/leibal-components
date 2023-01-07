@@ -7,14 +7,14 @@ import { Component, Host, h, Element } from '@stencil/core';
 export class TelePortal {
   @Element() el: HTMLElement;
 
-  private portal: HTMLDivElement;
+  portal: HTMLDivElement;
 
-  private createPortal() {
+  createPortal() {
     this.portal = document.createElement('div');
     document.body.prepend(this.portal);
   }
 
-  private moveElementToPortal() {
+  moveElementToPortal() {
     this.portal.appendChild(this.el);
   }
 

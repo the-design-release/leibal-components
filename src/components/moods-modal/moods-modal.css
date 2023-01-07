@@ -30,6 +30,24 @@
   }
 
   &__right {
-    @apply flex flex-col justify-between p-12;
+    @apply p-12;
+  }
+
+  &__close {
+    @apply absolute top-0 right-0 p-4 uppercase font-light underline underline-offset-2 text-xs;
+  }
+
+  &__picker {
+    @apply flex h-full flex-col justify-center items-center;
+
+    & > * {
+      @apply mb-12;
+      width: 100%;
+      max-width: 409px;
+    }
+  }
+
+  &__text {
+    @apply mb-8;
   }
 }

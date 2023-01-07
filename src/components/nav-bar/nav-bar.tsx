@@ -21,7 +21,7 @@ export class NavBar {
   @State() scrolledUp: number = 0;
   @State() scrollThreshold: number = 500;
 
-  private currentHeight: number = 150;
+  currentHeight: number = 150;
 
   componentWillLoad() {
     window.addEventListener('scroll', this.scrollListener.bind(this));
