@@ -116,6 +116,7 @@ export class MoodsBoardPicker {
       postId: null,
       name: this.newBoardName,
     };
+    this.newBoardName = '';
     this.open = false;
   }
 

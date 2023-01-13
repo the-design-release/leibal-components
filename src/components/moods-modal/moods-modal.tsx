@@ -49,6 +49,7 @@ export class MoodsModal {
 
       data.append('id', board.postId);
       data.append('post_id', this.postId.toString());
+      data.append('name', board.name);
       data.append('image_url', this.imageUrl);
 
       fetch(this.moodsApiUrl, {
@@ -60,6 +61,11 @@ export class MoodsModal {
       })
         .then(response => {
           if (response.status === 200) {
+            // Awful hack but it works.
+            let boards = JSON.parse(this.boards);
+            boards.push(board);
+            this.boards = JSON.stringify(boards);
+
             // TODO: Trigger a success message animation.
           }
         })
