@@ -1,10 +1,13 @@
-import { Component, Host, h, State, Prop } from '@stencil/core';
+import { Component, Host, h, State, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'moods-modal',
   styleUrl: 'moods-modal.css',
 })
 export class MoodsModal {
+  @Element()
+  el: HTMLElement;
+
   @State()
   open: boolean = false;
 
@@ -17,11 +20,54 @@ export class MoodsModal {
   @Prop({ reflect: true, mutable: true })
   boards: string = '';
 
+  @Prop({ reflect: true, mutable: true })
+  moodsApiUrl: string = '';
+
+  @Prop({ reflect: true, mutable: true })
+  wpApiNonce: string = '';
+
   componentWillLoad() {
     document.addEventListener('openMoodsModal', (event: CustomEvent) => {
       this.open = true;
       this.imageUrl = event.detail.imageUrl;
       this.postId = event.detail.postId;
+    });
+
+    document.addEventListener('moodsBoardPicked', (event: CustomEvent) => {
+      if (this.moodsApiUrl === '') {
+        console.error('moodsApiUrl prop is not set.');
+        return;
+      }
+
+      if (this.wpApiNonce === '') {
+        console.error('wpApiNonce prop is not set.');
+        return;
+      }
+
+      const board = event.detail.board;
+      const data = new FormData();
+
+      data.append('id', board.postId);
+      data.append('post_id', this.postId.toString());
+      data.append('image_url', this.imageUrl);
+
+      fetch(this.moodsApiUrl, {
+        method: 'POST',
+        headers: {
+          'X-WP-Nonce': this.wpApiNonce,
+        },
+        body: data,
+      })
+        .then(response => {
+          if (response.status === 200) {
+            // TODO: Trigger a success message animation.
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+      this.open = false;
     });
   }
 

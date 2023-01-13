@@ -99,4 +99,8 @@
   &__new-board-input {
     @apply mb-2 border-b border-black pb-4;
   }
+
+  &__button {
+    @apply w-full mt-8;
+  }
 }

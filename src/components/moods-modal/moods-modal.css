@@ -30,7 +30,7 @@
   }
 
   &__right {
-    @apply p-12;
+    @apply p-12 cursor-pointer;
   }
 
   &__close {

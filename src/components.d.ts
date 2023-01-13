@@ -49,6 +49,8 @@ export namespace Components {
     }
     interface MoodsModal {
         "boards": string;
+        "moodsApiUrl": string;
+        "wpApiNonce": string;
     }
     interface NavBar {
         "authenticated": boolean;
@@ -220,6 +222,8 @@ declare namespace LocalJSX {
     }
     interface MoodsModal {
         "boards"?: string;
+        "moodsApiUrl"?: string;
+        "wpApiNonce"?: string;
     }
     interface NavBar {
         "authenticated"?: boolean;

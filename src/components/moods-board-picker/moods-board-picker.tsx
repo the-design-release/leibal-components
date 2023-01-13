@@ -112,12 +112,11 @@ export class MoodsBoardPicker {
   }
 
   handleNewBoardClick() {
-    this.moodsBoardPicked.emit({
-      board: {
-        postId: null,
-        name: this.newBoardName,
-      },
-    });
+    this.selectedMoodBoard = {
+      postId: null,
+      name: this.newBoardName,
+    };
+    this.open = false;
   }
 
   handleBoardClick() {
@@ -180,13 +179,21 @@ export class MoodsBoardPicker {
                 onClick={() => {
                   this.selectedMoodBoard = moodBoard;
                   this.toggleOpen();
-                  this.handleBoardClick();
                 }}
               >
                 {moodBoard.name}
               </div>
             ))}
           </div>
+          <simple-button
+            theme="dark"
+            onClick={() => {
+              this.handleBoardClick();
+            }}
+            class="moods-board-picker__button"
+          >
+            Save
+          </simple-button>
         </div>
       </Host>
     );

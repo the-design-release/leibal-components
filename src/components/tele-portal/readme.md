@@ -11,12 +11,14 @@
 
  - [enquire-modal](../enquire-modal)
  - [image-gallery](../image-gallery)
+ - [moods-modal](../moods-modal)
 
 ### Graph
 ```mermaid
 graph TD;
   enquire-modal --> tele-portal
   image-gallery --> tele-portal
+  moods-modal --> tele-portal
   style tele-portal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
