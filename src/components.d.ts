@@ -9,6 +9,7 @@ import { Theme } from "./utils/theme";
 import { MoodsModalEvent } from "./components/add-to-moods-button/add-to-moods-button";
 import { DisplayCardType } from "./components/display-card/display-card";
 import { MoodBoard, MoodsBoardPickedEvent } from "./components/moods-board-picker/moods-board-picker";
+import { MoodsBoard } from "./components/moods-board-preview/moods-board-preview";
 import { PlatformType } from "./utils/platform";
 import { InputType } from "./components/simple-input/simple-input";
 export namespace Components {
@@ -46,6 +47,12 @@ export namespace Components {
     interface MoodsBoardPicker {
         "boards": string;
         "selectedMoodBoard": MoodBoard;
+    }
+    interface MoodsBoardPreview {
+        "board": MoodsBoard;
+    }
+    interface MoodsBoards {
+        "boards": string;
     }
     interface MoodsModal {
         "boards": string;
@@ -122,6 +129,18 @@ declare global {
         prototype: HTMLMoodsBoardPickerElement;
         new (): HTMLMoodsBoardPickerElement;
     };
+    interface HTMLMoodsBoardPreviewElement extends Components.MoodsBoardPreview, HTMLStencilElement {
+    }
+    var HTMLMoodsBoardPreviewElement: {
+        prototype: HTMLMoodsBoardPreviewElement;
+        new (): HTMLMoodsBoardPreviewElement;
+    };
+    interface HTMLMoodsBoardsElement extends Components.MoodsBoards, HTMLStencilElement {
+    }
+    var HTMLMoodsBoardsElement: {
+        prototype: HTMLMoodsBoardsElement;
+        new (): HTMLMoodsBoardsElement;
+    };
     interface HTMLMoodsModalElement extends Components.MoodsModal, HTMLStencilElement {
     }
     var HTMLMoodsModalElement: {
@@ -172,6 +191,8 @@ declare global {
         "image-gallery": HTMLImageGalleryElement;
         "image-gallery-link": HTMLImageGalleryLinkElement;
         "moods-board-picker": HTMLMoodsBoardPickerElement;
+        "moods-board-preview": HTMLMoodsBoardPreviewElement;
+        "moods-boards": HTMLMoodsBoardsElement;
         "moods-modal": HTMLMoodsModalElement;
         "nav-bar": HTMLNavBarElement;
         "simple-button": HTMLSimpleButtonElement;
@@ -220,6 +241,12 @@ declare namespace LocalJSX {
         "onMoodsBoardPicked"?: (event: CustomEvent<MoodsBoardPickedEvent>) => void;
         "selectedMoodBoard"?: MoodBoard;
     }
+    interface MoodsBoardPreview {
+        "board"?: MoodsBoard;
+    }
+    interface MoodsBoards {
+        "boards"?: string;
+    }
     interface MoodsModal {
         "boards"?: string;
         "moodsApiUrl"?: string;
@@ -260,6 +287,8 @@ declare namespace LocalJSX {
         "image-gallery": ImageGallery;
         "image-gallery-link": ImageGalleryLink;
         "moods-board-picker": MoodsBoardPicker;
+        "moods-board-preview": MoodsBoardPreview;
+        "moods-boards": MoodsBoards;
         "moods-modal": MoodsModal;
         "nav-bar": NavBar;
         "simple-button": SimpleButton;
@@ -280,6 +309,8 @@ declare module "@stencil/core" {
             "image-gallery": LocalJSX.ImageGallery & JSXBase.HTMLAttributes<HTMLImageGalleryElement>;
             "image-gallery-link": LocalJSX.ImageGalleryLink & JSXBase.HTMLAttributes<HTMLImageGalleryLinkElement>;
             "moods-board-picker": LocalJSX.MoodsBoardPicker & JSXBase.HTMLAttributes<HTMLMoodsBoardPickerElement>;
+            "moods-board-preview": LocalJSX.MoodsBoardPreview & JSXBase.HTMLAttributes<HTMLMoodsBoardPreviewElement>;
+            "moods-boards": LocalJSX.MoodsBoards & JSXBase.HTMLAttributes<HTMLMoodsBoardsElement>;
             "moods-modal": LocalJSX.MoodsModal & JSXBase.HTMLAttributes<HTMLMoodsModalElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;

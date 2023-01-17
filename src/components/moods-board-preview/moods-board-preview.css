@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.moods-board-preview {
+  @apply cursor-pointer;
+
+  &__images {
+    @apply grid grid-cols-2 grid-rows-2 gap-[2px] mb-4 p-3;
+
+    border: 1px solid #e3e3e3;
+  }
+
+  &__image img {
+    @apply w-full h-full object-cover;
+  }
+
+  &__saved {
+    @apply text-xs uppercase mb-1;
+  }
+
+  &__export {
+    @apply font-light text-xs mb-2 uppercase;
+  }
+
+  &__name {
+    @apply mb-2;
+  }
+}

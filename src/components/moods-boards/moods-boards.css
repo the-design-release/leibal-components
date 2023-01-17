@@ -1,0 +1,37 @@
+:host {
+  display: block;
+}
+
+.moods-boards {
+  @apply block md:grid md:grid-cols-10 md:gap-4 text-sm cursor-default;
+
+  &__sidebar {
+    @apply md:col-span-2;
+  }
+
+  &__content {
+    @apply md:col-span-8 block md:grid md:grid-cols-4 gap-8;
+  }
+
+  &__create-board {
+    @apply mb-2 cursor-pointer;
+
+    &:hover {
+      @apply font-bold underline underline-offset-2;
+    }
+  }
+
+  &__sort {
+    &__header {
+      @apply mb-2;
+    }
+  }
+
+  &__sort-by {
+    @apply mb-2 ml-6 cursor-pointer;
+
+    &--selected {
+      @apply font-bold underline underline-offset-2;
+    }
+  }
+}
