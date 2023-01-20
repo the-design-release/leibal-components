@@ -11,6 +11,11 @@
     border: 1px solid #e3e3e3;
   }
 
+  &__image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
   &__image img {
     @apply w-full h-full object-cover;
   }
@@ -20,10 +25,10 @@
   }
 
   &__export {
-    @apply font-light text-xs mb-2 uppercase;
+    @apply font-light text-xs mb-3 uppercase;
   }
 
   &__name {
-    @apply mb-2;
+    @apply text-base mb-2;
   }
 }

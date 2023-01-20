@@ -47,7 +47,7 @@ export class MoodsModal {
       const board = event.detail.board;
       const data = new FormData();
 
-      data.append('id', board.postId);
+      data.append('id', board.id || null);
       data.append('post_id', this.postId.toString());
       data.append('name', board.name);
       data.append('image_url', this.imageUrl);

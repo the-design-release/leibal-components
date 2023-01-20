@@ -72,9 +72,9 @@ export class MoodsBoards {
             {this.boardsList
               .sort((x, y) => {
                 if (this.sortOrder == 'asc') {
-                  return x[this.sortBy] > y[this.sortBy] ? 1 : -1;
-                } else {
                   return x[this.sortBy] < y[this.sortBy] ? 1 : -1;
+                } else {
+                  return x[this.sortBy] > y[this.sortBy] ? 1 : -1;
                 }
               })
               .map(board => (
