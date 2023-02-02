@@ -2,15 +2,18 @@ import { Component, Host, h, Prop } from '@stencil/core';
 
 export interface MoodsBoardImage {
   postId: string;
+  postTitle: string;
+  postSubtitle: string;
   imageUrl: string;
   timestamp: string;
 }
 
-export interface MoodsBoard {
+export interface MoodsBoardData {
   postId: string;
   name: string;
   createdAt: string;
   images: MoodsBoardImage[];
+  url: string;
 }
 
 @Component({
@@ -19,7 +22,7 @@ export interface MoodsBoard {
   shadow: true,
 })
 export class MoodsBoard {
-  @Prop() board: MoodsBoard;
+  @Prop() board: MoodsBoardData;
 
   render() {
     return (

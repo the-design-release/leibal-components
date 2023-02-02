@@ -41,30 +41,105 @@
     {"postId": 5, "name": "mee hungee"}
   ]'></moods-modal>
 
-  <div style="padding: 3rem;">
+  <!--  <div style="padding: 3rem;">
     <moods-boards boards='[
       {"postId": 1, "name": "My Cool Images", "timestamp": 10, "images": [{"postId": 0, "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_pavilion-house_norm-architects_20.jpg", "timestamp": 1630400000}]},
       {"postId": 2, "name": "Neue Events", "timestamp": 2, "images": [{"postId": 0, "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg", "timestamp": 1630400000}]},
       {"postId": 3, "name": "Art Hoe Hours", "timestamp": 3, "images": [{"postId": 0, "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg", "timestamp": 1630400000}]},
       {"postId": 4, "name": "soho house", "timestamp": 4, "images": [{"postId": 0, "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg", "timestamp": 1630400000}]},
       {"postId": 5, "name": "mee hungee", "timestamp": 5, "images": [{"postId": 0, "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg", "timestamp": 1630400000}]}
-]'></moods-boards>
+]'></moods-boards>  -->
 
-    <div style="width: 400px; margin-top: 4rem; margin-bottom: 2rem;">
-      <moods-board-picker boards='[
+  <div style="padding: 3rem;">
+    <moods-board images='[
+      {
+        "postId": 1,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_house-b_blurker_00037.jpg",
+        "timestamp": 1630400000,
+        "postTitle": "The Bedsast Image",
+        "postSubtitle": "by Some Guy"
+      },
+      {
+        "postId": 2,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_house-b_blurker_00036.jpg",
+        "timestamp": 1630100000,
+        "postTitle": "Thex Image",
+        "postSubtitle": "by Some Other Guy"
+      },
+      {
+        "postId": 3,
+        "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_pavilion-house_norm-architects_20.jpg",
+        "timestamp": 16306626000,
+        "postTitle": "Bester Image",
+        "postSubtitle": "by Dan Guy"
+      },
+      {
+        "postId": 4,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_thirteen-beach-house_mgao_2.jpg",
+        "timestamp": 16305666000,
+        "postTitle": "Besterest Image",
+        "postSubtitle": "by Mike Other Guy"
+      },
+      {
+        "postId": 5,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_anne_giovanni-mecozzi-architetti_5.jpg",
+        "timestamp": 163066436000,
+        "postTitle": "Besterestest Image",
+        "postSubtitle": "by Abstract Guy"
+      },
+      {
+        "postId": 1,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_house-b_blurker_00037.jpg",
+        "timestamp": 16304007000,
+        "postTitle": "The Best Image",
+        "postSubtitle": "by Some Guy"
+      },
+      {
+        "postId": 2,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_house-b_blurker_00036.jpg",
+        "timestamp": 1630100000,
+        "postTitle": "The Iemage",
+        "postSubtitle": "by Some Other Guy"
+      },
+      {
+        "postId": 3,
+        "imageUrl": "https://leibal.com/wp-content/uploads/2022/03/leibal_pavilion-house_norm-architects_20.jpg",
+        "timestamp": 163506666000,
+        "postTitle": "Bester Ieemage",
+        "postSubtitle": "by Dan Guy"
+      },
+      {
+        "postId": 4,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_thirteen-beach-house_mgao_2.jpg",
+        "timestamp": 16306660040,
+        "postTitle": "Bestedsarest Image",
+        "postSubtitle": "by Mike Other Guy"
+      },
+      {
+        "postId": 5,
+        "imageUrl": "https://leibal.wpenginepowered.com/wp-content/uploads/2023/01/leibal_anne_giovanni-mecozzi-architetti_5.jpg",
+        "timestamp": 1630636633000,
+        "postTitle": "Bestefsadsarestest Image",
+        "postSubtitle": "by Abstract Guy"
+      }
+    ]'>
+    </moods-board>
+  </div>
+
+  <div style="width: 400px; margin-top: 4rem; margin-bottom: 2rem;">
+    <moods-board-picker boards='[
         {"postId": 1, "name": "My Cool Images"},
         {"postId": 2, "name": "Neue Events"},
         {"postId": 3, "name": "Art Hoe Hours"},
         {"postId": 4, "name": "soho house"},
         {"postId": 5, "name": "mee hungee"}
       ]'>
-      </moods-board-picker>
-    </div>
-    <add-to-moods-button
-      image-url="https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg" post-id="123"
-      theme="dark">
-      Add to moods
-    </add-to-moods-button>
+    </moods-board-picker>
+  </div>
+  <add-to-moods-button image-url="https://leibal.com/wp-content/uploads/2022/03/leibal_schulstrasse-17_vaust_00003.jpg"
+    post-id="123" theme="dark">
+    Add to moods
+  </add-to-moods-button>
   </div>
 
   <image-gallery post-title="The Game Is Here And We'll Die" post-excerpt="Zack Bowler"

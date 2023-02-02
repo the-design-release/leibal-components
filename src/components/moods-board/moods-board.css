@@ -2,15 +2,32 @@
   display: block;
 }
 
-.moods-boards {
+.moods-board {
   @apply block md:grid md:grid-cols-10 md:gap-4 text-sm cursor-default;
 
   &__sidebar {
     @apply md:col-span-2;
   }
 
-  &__content {
+  &__contents {
     @apply md:col-span-8 block md:grid md:grid-cols-4 gap-8;
+    /* @apply md:col-span-8; */
+  }
+
+  &__content {
+    @apply mb-16;
+    &__image {
+      @apply mb-4;
+      width: 100%;
+    }
+
+    &__title {
+      @apply text-xs uppercase mb-1;
+    }
+
+    &__subtitle {
+      @apply text-xs font-light uppercase;
+    }
   }
 
   &__create-board {
@@ -33,10 +50,5 @@
     &--selected {
       @apply font-bold underline underline-offset-2;
     }
-  }
-
-  a {
-    @apply no-underline;
-    color: inherit;
   }
 }

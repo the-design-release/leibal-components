@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
-import { MoodsBoard } from '../moods-board-preview/moods-board-preview';
+import { MoodsBoardData } from '../moods-board-preview/moods-board-preview';
 
 type SortBy = 'name' | 'timestamp';
 type SortOrder = 'asc' | 'desc';
@@ -12,7 +12,7 @@ type SortOrder = 'asc' | 'desc';
 export class MoodsBoards {
   // Boards
   @Prop({ reflect: true, mutable: true }) boards: string;
-  boardsList: MoodsBoard[] = [];
+  boardsList: MoodsBoardData[] = [];
   @Watch('boards')
   boardsChanged(newValue: string) {
     this.boardsList = JSON.parse(newValue);
@@ -72,13 +72,15 @@ export class MoodsBoards {
             {this.boardsList
               .sort((x, y) => {
                 if (this.sortOrder == 'asc') {
-                  return x[this.sortBy] < y[this.sortBy] ? 1 : -1;
-                } else {
                   return x[this.sortBy] > y[this.sortBy] ? 1 : -1;
+                } else {
+                  return x[this.sortBy] < y[this.sortBy] ? 1 : -1;
                 }
               })
               .map(board => (
-                <moods-board-preview board={board}></moods-board-preview>
+                <a href={board.url}>
+                  <moods-board-preview board={board}></moods-board-preview>
+                </a>
               ))}
           </div>
         </div>

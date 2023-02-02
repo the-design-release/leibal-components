@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type         | Default     |
-| -------- | --------- | ----------- | ------------ | ----------- |
-| `board`  | --        |             | `MoodsBoard` | `undefined` |
+| Property | Attribute | Description | Type             | Default     |
+| -------- | --------- | ----------- | ---------------- | ----------- |
+| `board`  | --        |             | `MoodsBoardData` | `undefined` |
 
 
 ## Dependencies
