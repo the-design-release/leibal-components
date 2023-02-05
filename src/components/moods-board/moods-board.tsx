@@ -22,8 +22,8 @@ export class MoodsBoard {
   }
 
   // Sorting
-  @State() sortBy: SortBy = 'postTitle';
-  @State() sortOrder: SortOrder = 'asc';
+  @State() sortBy: SortBy = 'timestamp';
+  @State() sortOrder: SortOrder = 'desc';
   setSort(sortBy: SortBy, sortOrder: SortOrder) {
     this.sortBy = sortBy;
     this.sortOrder = sortOrder;
@@ -58,6 +58,18 @@ export class MoodsBoard {
             <div class="moods-board__sort">
               <div class="moods-board__sort__header">Sort Saved</div>
               <div
+                class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
+                onClick={() => this.setSort('timestamp', 'desc')}
+              >
+                Latest
+              </div>
+              <div
+                class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
+                onClick={() => this.setSort('timestamp', 'asc')}
+              >
+                Oldest
+              </div>
+              <div
                 class={'moods-board__sort-by ' + this.sortSelectedClass('postTitle', 'asc')}
                 onClick={() => this.setSort('postTitle', 'asc')}
               >
@@ -68,18 +80,6 @@ export class MoodsBoard {
                 onClick={() => this.setSort('postTitle', 'desc')}
               >
                 Z - A
-              </div>
-              <div
-                class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
-                onClick={() => this.setSort('timestamp', 'asc')}
-              >
-                Latest
-              </div>
-              <div
-                class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
-                onClick={() => this.setSort('timestamp', 'desc')}
-              >
-                Oldest
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@
   }
 
   &__content {
-    @apply md:col-span-8 block md:grid md:grid-cols-4 gap-8;
+    @apply md:col-span-8 block md:grid md:grid-cols-4 md:gap-8 md:gap-y-16;
   }
 
   &__create-board {

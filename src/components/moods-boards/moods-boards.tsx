@@ -19,8 +19,8 @@ export class MoodsBoards {
   }
 
   // Sorting
-  @State() sortBy: SortBy = 'name';
-  @State() sortOrder: SortOrder = 'asc';
+  @State() sortBy: SortBy = 'timestamp';
+  @State() sortOrder: SortOrder = 'desc';
   setSort(sortBy: SortBy, sortOrder: SortOrder) {
     this.sortBy = sortBy;
     this.sortOrder = sortOrder;
@@ -43,6 +43,18 @@ export class MoodsBoards {
             <div class="moods-boards__sort">
               <div class="moods-boards__sort__header">Sort Boards</div>
               <div
+                class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
+                onClick={() => this.setSort('timestamp', 'desc')}
+              >
+                Latest
+              </div>
+              <div
+                class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
+                onClick={() => this.setSort('timestamp', 'asc')}
+              >
+                Oldest
+              </div>
+              <div
                 class={'moods-boards__sort-by ' + this.sortSelectedClass('name', 'asc')}
                 onClick={() => this.setSort('name', 'asc')}
               >
@@ -54,27 +66,24 @@ export class MoodsBoards {
               >
                 Z - A
               </div>
-              <div
-                class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
-                onClick={() => this.setSort('timestamp', 'asc')}
-              >
-                Latest
-              </div>
-              <div
-                class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
-                onClick={() => this.setSort('timestamp', 'desc')}
-              >
-                Oldest
-              </div>
             </div>
           </div>
           <div class="moods-boards__content">
             {this.boardsList
-              .sort((x, y) => {
+              .sort((_x, _y) => {
+                let x = _x[this.sortBy];
+                let y = _y[this.sortBy];
+
+                // Order by last image timestamp or createdAt
+                if (this.sortBy == 'timestamp') {
+                  x = Array.isArray(_x.images) ? _x.images.slice(-1)[0].timestamp : _x.createdAt;
+                  y = Array.isArray(_y.images) ? _y.images.slice(-1)[0].timestamp : _y.createdAt;
+                }
+
                 if (this.sortOrder == 'asc') {
-                  return x[this.sortBy] > y[this.sortBy] ? 1 : -1;
+                  return x > y ? 1 : -1;
                 } else {
-                  return x[this.sortBy] < y[this.sortBy] ? 1 : -1;
+                  return x < y ? 1 : -1;
                 }
               })
               .map(board => (
