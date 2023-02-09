@@ -40,6 +40,7 @@ export namespace Components {
         "images": string;
         "photographer": string;
         "postExcerpt": string;
+        "postId": number;
         "postTitle": string;
         "previewImage": string;
     }
@@ -243,6 +244,7 @@ declare namespace LocalJSX {
         "images"?: string;
         "photographer"?: string;
         "postExcerpt"?: string;
+        "postId"?: number;
         "postTitle"?: string;
         "previewImage"?: string;
     }

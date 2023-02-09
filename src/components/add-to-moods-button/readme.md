@@ -24,6 +24,19 @@
 | `openMoodsModal` |             | `CustomEvent<MoodsModalEvent>` |
 
 
+## Dependencies
+
+### Used by
+
+ - [image-gallery](../image-gallery)
+
+### Graph
+```mermaid
+graph TD;
+  image-gallery --> add-to-moods-button
+  style add-to-moods-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

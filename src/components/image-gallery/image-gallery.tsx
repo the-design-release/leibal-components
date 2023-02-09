@@ -39,6 +39,9 @@ export class ImageGallery {
   images: string = '[]';
 
   @Prop({ mutable: true, reflect: true })
+  postId: number;
+
+  @Prop({ mutable: true, reflect: true })
   postTitle: string;
 
   @Prop({ mutable: true, reflect: true })
@@ -60,6 +63,7 @@ export class ImageGallery {
   _images: string[] = [];
 
   swiper: Swiper;
+  currentImageIndex: number = 0;
 
   componentWillLoad() {
     this._images = JSON.parse(this.images);
@@ -68,6 +72,11 @@ export class ImageGallery {
   componentDidLoad() {
     this.stopBodyScroll();
     this.swiper = new Swiper('.image-gallery__images__swiper', DEFAULT_SWIPER_OPTIONS);
+
+    // Update the currentImageIndex when the slide changes.
+    this.swiper.on('slideChange', () => {
+      this.currentImageIndex = this.swiper.realIndex;
+    });
   }
 
   @Watch('isModalOpen')
@@ -119,7 +128,16 @@ export class ImageGallery {
                 <div class="image-gallery__info__photographer__title">{this.photographer}</div>
                 <div class="swiper-pagination"></div>
               </div>
-              <div>{/* TODO: Moods button */}</div>
+              <div>
+                <add-to-moods-button
+                  theme={'dark'}
+                  image-url={this._images[this.currentImageIndex]}
+                  post-id={this.postId}
+                  content-location={'right'}
+                >
+                  <span style={{ marginLeft: '1rem', fontSize: '0.75rem' }}>Save Image to MOODS</span>
+                </add-to-moods-button>
+              </div>
               <div>
                 {this.canEnquire && (
                   <enquire-modal
