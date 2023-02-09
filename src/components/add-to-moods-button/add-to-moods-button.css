@@ -8,6 +8,28 @@
 
   display: flex;
   align-items: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.add-to-moods-button--show-on-hover {
+  opacity: 0;
+
+  & .add-to-moods-button__content-left,
+  & .add-to-moods-button__content-right {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  & .add-to-moods-button__content-left--hover,
+  & .add-to-moods-button__content-right--hover {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+  }
+}
+
+.add-to-moods-button--show-on-hover--hover {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .add-to-moods-button img {

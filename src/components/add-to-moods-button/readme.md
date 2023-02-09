@@ -7,12 +7,14 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                | Default   |
-| ---------- | ----------- | ----------- | ------------------- | --------- |
-| `disabled` | `disabled`  |             | `boolean`           | `false`   |
-| `imageUrl` | `image-url` |             | `string`            | `''`      |
-| `postId`   | `post-id`   |             | `number`            | `null`    |
-| `theme`    | `theme`     |             | `"dark" \| "light"` | `'light'` |
+| Property          | Attribute          | Description | Type                | Default   |
+| ----------------- | ------------------ | ----------- | ------------------- | --------- |
+| `contentLocation` | `content-location` |             | `"left" \| "right"` | `'left'`  |
+| `disabled`        | `disabled`         |             | `boolean`           | `false`   |
+| `imageUrl`        | `image-url`        |             | `string`            | `''`      |
+| `postId`          | `post-id`          |             | `number`            | `null`    |
+| `showOnHover`     | `show-on-hover`    |             | `boolean`           | `false`   |
+| `theme`           | `theme`            |             | `"dark" \| "light"` | `'light'` |
 
 
 ## Events

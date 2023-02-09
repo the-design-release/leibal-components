@@ -87,7 +87,6 @@ export class MoodsModal {
 
   @Watch('open')
   clampBodyWhenOpen(open, oldOpen) {
-    console.log(open, oldOpen);
     if (open === oldOpen) return;
     this.stopBodyScroll();
   }

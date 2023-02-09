@@ -14,9 +14,11 @@ import { PlatformType } from "./utils/platform";
 import { InputType } from "./components/simple-input/simple-input";
 export namespace Components {
     interface AddToMoodsButton {
+        "contentLocation": 'left' | 'right';
         "disabled": boolean;
         "imageUrl": string;
         "postId": number | null;
+        "showOnHover": boolean;
         "theme": Theme;
     }
     interface DisplayCard {
@@ -214,10 +216,12 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AddToMoodsButton {
+        "contentLocation"?: 'left' | 'right';
         "disabled"?: boolean;
         "imageUrl"?: string;
         "onOpenMoodsModal"?: (event: CustomEvent<MoodsModalEvent>) => void;
         "postId"?: number | null;
+        "showOnHover"?: boolean;
         "theme"?: Theme;
     }
     interface DisplayCard {
