@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Prop, Element } from '@stencil/core';
+import { Component, Host, h, State, Watch, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'moods-modal',
@@ -75,6 +75,21 @@ export class MoodsModal {
 
       this.open = false;
     });
+  }
+
+  stopBodyScroll() {
+    if (this.open === true) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'inherit';
+    }
+  }
+
+  @Watch('open')
+  clampBodyWhenOpen(open, oldOpen) {
+    console.log(open, oldOpen);
+    if (open === oldOpen) return;
+    this.stopBodyScroll();
   }
 
   render() {
