@@ -95,8 +95,8 @@ export class AddToMoodsButton {
         <div
           class={
             'add-to-moods-button ' +
-            (this.showOnHover ? 'add-to-moods-button--show-on-hover' : ' ') +
-            (!this.hidden && this.showOnHover ? 'add-to-moods-button--show-on-hover--hover' : ' ')
+            (this.showOnHover ? 'add-to-moods-button--show-on-hover ' : ' ') +
+            (!this.hidden && this.showOnHover ? 'add-to-moods-button--show-on-hover--hover ' : ' ')
           }
           onClick={() => this.openMoodsModalHandler()}
         >
