@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `boards` | `boards`  |             | `string` | `undefined` |
+| Property  | Attribute  | Description | Type     | Default                      |
+| --------- | ---------- | ----------- | -------- | ---------------------------- |
+| `apiUrl`  | `api-url`  |             | `string` | `'/wp-json/moods/v1/create'` |
+| `boards`  | `boards`   |             | `string` | `undefined`                  |
+| `wpNonce` | `wp-nonce` |             | `string` | `undefined`                  |
 
 
 ## Dependencies

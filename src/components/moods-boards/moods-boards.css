@@ -14,10 +14,33 @@
   }
 
   &__create-board {
-    @apply mb-2 cursor-pointer;
+    @apply mb-8;
 
-    &:hover {
-      @apply font-bold underline underline-offset-2;
+    &__input {
+      @apply py-2 flex items-center;
+
+      border-bottom: 1px solid #888;
+
+      & input {
+        all: unset;
+        @apply flex-1 cursor-text;
+      }
+    }
+
+    &__button {
+      @apply ml-2 cursor-pointer flex items-center;
+
+      img {
+        @apply w-[16px] opacity-70;
+      }
+    }
+
+    & a {
+      @apply block py-2;
+    }
+
+    & a:hover {
+      @apply font-bold underline underline-offset-2 cursor-pointer;
     }
   }
 

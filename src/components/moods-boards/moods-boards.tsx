@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
 import { MoodsBoardData } from '../moods-board-preview/moods-board-preview';
 
 type SortBy = 'name' | 'timestamp';
@@ -7,6 +7,7 @@ type SortOrder = 'asc' | 'desc';
 @Component({
   tag: 'moods-boards',
   styleUrl: 'moods-boards.css',
+  assetsDirs: ['assets'],
   shadow: true,
 })
 export class MoodsBoards {
@@ -30,6 +31,34 @@ export class MoodsBoards {
     return selected ? 'moods-boards__sort-by--selected' : '';
   }
 
+  // Create Board
+  @State() creatingBoard: boolean = false;
+  @State() creatingBoardName: string = '';
+
+  @Prop({ reflect: true, mutable: true })
+  apiUrl: string = '/wp-json/moods/v1/create';
+
+  @Prop({ reflect: true, mutable: true }) wpNonce: string;
+  async createBoard() {
+    const formData = new FormData();
+    formData.append('title', this.creatingBoardName);
+
+    fetch(this.apiUrl, {
+      method: 'POST',
+      headers: {
+        'X-WP-Nonce': this.wpNonce,
+      },
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        this.boardsList.push(data);
+        this.creatingBoard = false;
+        this.creatingBoardName = '';
+      });
+  }
+
   componentWillLoad() {
     this.boardsList = JSON.parse(this.boards);
   }
@@ -39,7 +68,43 @@ export class MoodsBoards {
       <Host>
         <div class="moods-boards">
           <div class="moods-boards__sidebar">
-            <div class="moods-boards__create-board">Create New Board</div>
+            <div class="moods-boards__create-board">
+              {this.creatingBoard ? (
+                <div class="moods-boards__create-board__input">
+                  <input
+                    onKeyDown={e => {
+                      if (e.key == 'Escape') {
+                        this.creatingBoard = false;
+                      }
+                      if (e.key == 'Enter') {
+                        this.createBoard();
+                      }
+                    }}
+                    onInput={(e: any) => {
+                      this.creatingBoardName = e.target.value;
+                    }}
+                    type="text"
+                    placeholder="Type Board Title"
+                  />
+                  <div
+                    class="moods-boards__create-board__button"
+                    onClick={async () => {
+                      await this.createBoard();
+                    }}
+                  >
+                    <img src={getAssetPath('./assets/arrow.png')} alt="Submit" />
+                  </div>
+                </div>
+              ) : (
+                <a
+                  onClick={() => {
+                    this.creatingBoard = true;
+                  }}
+                >
+                  Create New Board
+                </a>
+              )}
+            </div>
             <div class="moods-boards__sort">
               <div class="moods-boards__sort__header">Sort Boards</div>
               <div
@@ -76,8 +141,10 @@ export class MoodsBoards {
 
                 // Order by last image timestamp or createdAt
                 if (this.sortBy == 'timestamp') {
-                  x = Array.isArray(_x.images) ? _x.images.slice(-1)[0].timestamp : _x.createdAt;
-                  y = Array.isArray(_y.images) ? _y.images.slice(-1)[0].timestamp : _y.createdAt;
+                  x =
+                    Array.isArray(_x.images) && _x.images.length > 0 ? _x.images.slice(-1)[0].timestamp : _x.timestamp;
+                  y =
+                    Array.isArray(_y.images) && _y.images.length > 0 ? _y.images.slice(-1)[0].timestamp : _y.timestamp;
                 }
 
                 if (this.sortOrder == 'asc') {

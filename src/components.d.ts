@@ -58,7 +58,9 @@ export namespace Components {
         "board": MoodsBoardData;
     }
     interface MoodsBoards {
+        "apiUrl": string;
         "boards": string;
+        "wpNonce": string;
     }
     interface MoodsModal {
         "boards": string;
@@ -264,7 +266,9 @@ declare namespace LocalJSX {
         "board"?: MoodsBoardData;
     }
     interface MoodsBoards {
+        "apiUrl"?: string;
         "boards"?: string;
+        "wpNonce"?: string;
     }
     interface MoodsModal {
         "boards"?: string;
