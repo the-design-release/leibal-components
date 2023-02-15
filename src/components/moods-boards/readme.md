@@ -18,11 +18,13 @@
 
 ### Depends on
 
+- [sticky-scroller](../sticky-scroller)
 - [moods-board-preview](../moods-board-preview)
 
 ### Graph
 ```mermaid
 graph TD;
+  moods-boards --> sticky-scroller
   moods-boards --> moods-board-preview
   style moods-boards fill:#f9f,stroke:#333,stroke-width:4px
 ```

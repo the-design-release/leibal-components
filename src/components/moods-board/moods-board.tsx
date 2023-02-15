@@ -54,34 +54,38 @@ export class MoodsBoard {
       <Host>
         <div class="moods-board">
           <div class="moods-board__sidebar">
-            <div class="moods-board__create-board">Export Collection</div>
-            <div class="moods-board__sort">
-              <div class="moods-board__sort__header">Sort Saved</div>
-              <div
-                class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
-                onClick={() => this.setSort('timestamp', 'desc')}
-              >
-                Latest
+            <sticky-scroller startOffset={130}>
+              <div>
+                <div class="moods-board__create-board">Export Collection</div>
+                <div class="moods-board__sort">
+                  <div class="moods-board__sort__header">Sort Saved</div>
+                  <div
+                    class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
+                    onClick={() => this.setSort('timestamp', 'desc')}
+                  >
+                    Latest
+                  </div>
+                  <div
+                    class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
+                    onClick={() => this.setSort('timestamp', 'asc')}
+                  >
+                    Oldest
+                  </div>
+                  <div
+                    class={'moods-board__sort-by ' + this.sortSelectedClass('postTitle', 'asc')}
+                    onClick={() => this.setSort('postTitle', 'asc')}
+                  >
+                    A - Z
+                  </div>
+                  <div
+                    class={'moods-board__sort-by ' + this.sortSelectedClass('postTitle', 'desc')}
+                    onClick={() => this.setSort('postTitle', 'desc')}
+                  >
+                    Z - A
+                  </div>
+                </div>
               </div>
-              <div
-                class={'moods-board__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
-                onClick={() => this.setSort('timestamp', 'asc')}
-              >
-                Oldest
-              </div>
-              <div
-                class={'moods-board__sort-by ' + this.sortSelectedClass('postTitle', 'asc')}
-                onClick={() => this.setSort('postTitle', 'asc')}
-              >
-                A - Z
-              </div>
-              <div
-                class={'moods-board__sort-by ' + this.sortSelectedClass('postTitle', 'desc')}
-                onClick={() => this.setSort('postTitle', 'desc')}
-              >
-                Z - A
-              </div>
-            </div>
+            </sticky-scroller>
           </div>
           <div class="moods-board__contents">
             {columns.map(column => (

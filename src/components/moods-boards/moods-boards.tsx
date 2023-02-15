@@ -68,70 +68,74 @@ export class MoodsBoards {
       <Host>
         <div class="moods-boards">
           <div class="moods-boards__sidebar">
-            <div class="moods-boards__create-board">
-              {this.creatingBoard ? (
-                <div class="moods-boards__create-board__input">
-                  <input
-                    onKeyDown={e => {
-                      if (e.key == 'Escape') {
-                        this.creatingBoard = false;
-                      }
-                      if (e.key == 'Enter') {
-                        this.createBoard();
-                      }
-                    }}
-                    onInput={(e: any) => {
-                      this.creatingBoardName = e.target.value;
-                    }}
-                    type="text"
-                    placeholder="Type Board Title"
-                  />
+            <sticky-scroller startOffset={130}>
+              <div>
+                <div class="moods-boards__create-board">
+                  {this.creatingBoard ? (
+                    <div class="moods-boards__create-board__input">
+                      <input
+                        onKeyDown={e => {
+                          if (e.key == 'Escape') {
+                            this.creatingBoard = false;
+                          }
+                          if (e.key == 'Enter') {
+                            this.createBoard();
+                          }
+                        }}
+                        onInput={(e: any) => {
+                          this.creatingBoardName = e.target.value;
+                        }}
+                        type="text"
+                        placeholder="Type Board Title"
+                      />
+                      <div
+                        class="moods-boards__create-board__button"
+                        onClick={async () => {
+                          await this.createBoard();
+                        }}
+                      >
+                        <img src={getAssetPath('./assets/arrow.png')} alt="Submit" />
+                      </div>
+                    </div>
+                  ) : (
+                    <a
+                      onClick={() => {
+                        this.creatingBoard = true;
+                      }}
+                    >
+                      Create New Board
+                    </a>
+                  )}
+                </div>
+                <div class="moods-boards__sort">
+                  <div class="moods-boards__sort__header">Sort Boards</div>
                   <div
-                    class="moods-boards__create-board__button"
-                    onClick={async () => {
-                      await this.createBoard();
-                    }}
+                    class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
+                    onClick={() => this.setSort('timestamp', 'desc')}
                   >
-                    <img src={getAssetPath('./assets/arrow.png')} alt="Submit" />
+                    Latest
+                  </div>
+                  <div
+                    class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
+                    onClick={() => this.setSort('timestamp', 'asc')}
+                  >
+                    Oldest
+                  </div>
+                  <div
+                    class={'moods-boards__sort-by ' + this.sortSelectedClass('name', 'asc')}
+                    onClick={() => this.setSort('name', 'asc')}
+                  >
+                    A - Z
+                  </div>
+                  <div
+                    class={'moods-boards__sort-by ' + this.sortSelectedClass('name', 'desc')}
+                    onClick={() => this.setSort('name', 'desc')}
+                  >
+                    Z - A
                   </div>
                 </div>
-              ) : (
-                <a
-                  onClick={() => {
-                    this.creatingBoard = true;
-                  }}
-                >
-                  Create New Board
-                </a>
-              )}
-            </div>
-            <div class="moods-boards__sort">
-              <div class="moods-boards__sort__header">Sort Boards</div>
-              <div
-                class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'desc')}
-                onClick={() => this.setSort('timestamp', 'desc')}
-              >
-                Latest
               </div>
-              <div
-                class={'moods-boards__sort-by ' + this.sortSelectedClass('timestamp', 'asc')}
-                onClick={() => this.setSort('timestamp', 'asc')}
-              >
-                Oldest
-              </div>
-              <div
-                class={'moods-boards__sort-by ' + this.sortSelectedClass('name', 'asc')}
-                onClick={() => this.setSort('name', 'asc')}
-              >
-                A - Z
-              </div>
-              <div
-                class={'moods-boards__sort-by ' + this.sortSelectedClass('name', 'desc')}
-                onClick={() => this.setSort('name', 'desc')}
-              >
-                Z - A
-              </div>
-            </div>
+            </sticky-scroller>
           </div>
           <div class="moods-boards__content">
             {this.boardsList
