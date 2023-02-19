@@ -44,7 +44,7 @@
       opacity: 1;
     }
 
-    &:selection {
+    &::selection {
       background: none;
     }
   }
@@ -52,12 +52,12 @@
   &__options {
     @apply absolute z-10 left-0 right-0;
 
-    @apply p-6;
     border: 1px solid #000;
     margin-top: -1px;
-    max-height: 350px;
+    max-height: 275px;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-width: none;
 
     opacity: 0;
     visibility: hidden;
@@ -69,13 +69,19 @@
       visibility: visible;
       transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__option {
-    @apply block w-full cursor-pointer py-3 first:pt-0 last:pb-0  transition-colors duration-300;
+    @apply block w-full cursor-pointer px-6 py-3 first:pt-0  transition-colors duration-300;
 
     &:hover {
-      @apply underline transition-colors;
+      @apply transition-colors;
+      background: #000;
+      color: #fff;
     }
 
     &--no-results {
@@ -85,7 +91,7 @@
   }
 
   &__new-board {
-    @apply flex w-full items-center justify-between;
+    @apply flex items-center justify-between px-6 pt-6;
 
     & > *:first-child {
       @apply w-full;
@@ -93,6 +99,10 @@
 
     & > *:last-child {
       @apply ml-6 cursor-pointer;
+    }
+
+    &-icon {
+      width: 1.5rem;
     }
   }
 

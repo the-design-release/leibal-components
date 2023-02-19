@@ -26,6 +26,8 @@ export class MoodsModal {
   @Prop({ reflect: true, mutable: true })
   wpApiNonce: string = '';
 
+  container: HTMLDivElement;
+
   componentWillLoad() {
     document.addEventListener('openMoodsModal', (event: CustomEvent) => {
       this.open = true;
@@ -77,6 +79,14 @@ export class MoodsModal {
     });
   }
 
+  componentDidLoad() {
+    this.container.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        this.open = false;
+      }
+    });
+  }
+
   stopBodyScroll() {
     if (this.open === true) {
       document.body.style.overflow = 'hidden';
@@ -88,14 +98,23 @@ export class MoodsModal {
   @Watch('open')
   clampBodyWhenOpen(open, oldOpen) {
     if (open === oldOpen) return;
-    this.stopBodyScroll();
+    if (open) {
+      this.container.focus();
+      this.stopBodyScroll();
+    }
   }
 
   render() {
     return (
       <Host>
         <tele-portal>
-          <div class={'moods-modal ' + (this.open ? 'moods-modal--visible' : '')}>
+          <div
+            ref={el => {
+              this.container = el;
+            }}
+            tabIndex={-1}
+            class={'moods-modal ' + (this.open ? 'moods-modal--visible' : '')}
+          >
             <div class="moods-modal__content">
               <div class="moods-modal__left">
                 <img src={this.imageUrl} />
@@ -109,7 +128,6 @@ export class MoodsModal {
                     <div class="moods-modal__text">Choose A Board</div>
                     <moods-board-picker boards={this.boards} />
                   </div>
-                  <div></div>
                 </div>
               </div>
             </div>

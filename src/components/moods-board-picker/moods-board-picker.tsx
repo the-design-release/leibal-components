@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Prop, Watch, EventEmitter, Event } from '@stencil/core';
+import { Component, Element, Host, h, State, Prop, Watch, EventEmitter, Event, getAssetPath } from '@stencil/core';
 // import { ClickOutside } from 'stencil-click-outside';
 import FuzzySearch from 'fuzzy-search';
 
@@ -14,9 +14,13 @@ export interface MoodsBoardPickedEvent {
 @Component({
   tag: 'moods-board-picker',
   styleUrl: 'moods-board-picker.css',
+  assetsDirs: ['assets'],
   shadow: true,
 })
 export class MoodsBoardPicker {
+  @Element()
+  el: HTMLElement;
+
   searcher: FuzzySearch;
 
   @Prop({ reflect: true, mutable: true })
@@ -53,40 +57,42 @@ export class MoodsBoardPicker {
         caseSensitive: false,
       });
     }
+
+    // Close on click outside
+    document.addEventListener('click', (event: MouseEvent) => {
+      if (!this.el.contains(event.target as Node)) {
+        this.open = false;
+      }
+    });
   }
 
   toggleOpen() {
     this.open = !this.open;
   }
 
-  onInputChangeValue(event: Event) {
-    // Check if the event is an direction arrow key
-    if (event instanceof KeyboardEvent) {
-      if (
-        event.key === 'ArrowDown' ||
-        event.key === 'ArrowUp' ||
-        event.key === 'ArrowLeft' ||
-        event.key === 'ArrowRight'
-      ) {
-        return;
-      }
-
-      if (event.key === 'Enter') {
+  onInputKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      if (!this.selectedMoodBoard) {
         this.selectedMoodBoard = this.moodBoards[0];
-        this.toggleOpen();
-        return;
       }
+      this.toggleOpen();
+      return;
+    }
 
-      if (event.key === 'Escape') {
-        this.toggleOpen();
-        return;
-      }
+    if (event.key === 'Escape') {
+      event.stopPropagation();
+      event.preventDefault();
+
+      this.open = false;
+      return;
     }
 
     if (!this.open) {
       this.open = true;
     }
+  }
 
+  onInputInput(event: Event) {
     this.inputValue = (event.target as HTMLInputElement).value;
     if (this.inputValue) {
       this.moodBoards = this.searcher.search(this.inputValue);
@@ -137,7 +143,8 @@ export class MoodsBoardPicker {
                 class="moods-board-picker__input"
                 type="text"
                 value={this.inputValue}
-                onInput={this.onInputChangeValue.bind(this)}
+                onKeyDown={this.onInputKeyDown.bind(this)}
+                onInput={this.onInputInput.bind(this)}
                 onClick={e => {
                   if (this.open) {
                     e.stopImmediatePropagation();
@@ -151,7 +158,6 @@ export class MoodsBoardPicker {
                   'moods-board-picker__selected__arrow ' +
                   (this.open ? 'moods-board-picker__selected__arrow--open' : '')
                 }
-                onClick={() => this.toggleOpen()}
               >
                 ▼
               </span>
@@ -166,10 +172,17 @@ export class MoodsBoardPicker {
                   type="text"
                   placeholder="Start Typing..."
                   onInput={this.handleNewBoardInput.bind(this)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') {
+                      this.handleNewBoardClick();
+                    }
+                  }}
                   value={this.newBoardName}
                 />
               </div>
-              <div onClick={this.handleNewBoardClick.bind(this)}>+</div>
+              <div onClick={this.handleNewBoardClick.bind(this)}>
+                <img class="moods-board-picker__new-board-icon" src={getAssetPath('./assets/plus.png')} />
+              </div>
             </div>
             {this.moodBoards.length === 0 && (
               <div class="moods-board-picker__option moods-board-picker__option--no-results">No results</div>
