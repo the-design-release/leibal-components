@@ -14,7 +14,7 @@
   }
 
   &__create-board {
-    @apply mb-8;
+    @apply mb-2;
 
     &__input {
       @apply py-2 flex items-center;
