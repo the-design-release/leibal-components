@@ -34,6 +34,14 @@ export class MoodsModal {
       this.imageUrl = event.detail.imageUrl;
       this.postId = event.detail.postId;
     });
+  }
+
+  componentDidLoad() {
+    this.container.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        this.open = false;
+      }
+    });
 
     document.addEventListener('moodsBoardPicked', (event: CustomEvent) => {
       if (this.moodsApiUrl === '') {
@@ -75,15 +83,15 @@ export class MoodsModal {
           console.error(error);
         });
 
-      this.open = false;
-    });
-  }
+      document.querySelector('.moods-modal__success').classList.add('moods-modal__success--visible');
 
-  componentDidLoad() {
-    this.container.addEventListener('keydown', (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      setTimeout(() => {
         this.open = false;
-      }
+      }, 1000);
+
+      setTimeout(() => {
+        document.querySelector('.moods-modal__success').classList.remove('moods-modal__success--visible');
+      }, 1500);
     });
   }
 
@@ -120,6 +128,9 @@ export class MoodsModal {
                 <img src={this.imageUrl} />
               </div>
               <div class="moods-modal__right">
+                <div class="moods-modal__success">
+                  <div class="moods-modal__success__text">Saved!</div>
+                </div>
                 <div class="moods-modal__close" onClick={() => (this.open = false)}>
                   Close
                 </div>

@@ -25,7 +25,7 @@
   }
 
   &__left {
-    @apply flex flex-col justify-center p-12 lg:p-32;
+    @apply flex flex-col justify-center p-12 lg:p-32 z-20;
     background: #f5f5f5;
 
     & > * {
@@ -35,7 +35,7 @@
   }
 
   &__right {
-    @apply p-12;
+    @apply p-12 relative;
   }
 
   &__close {
@@ -54,5 +54,22 @@
 
   &__text {
     @apply mb-8;
+  }
+
+  &__success {
+    @apply z-10 absolute top-0 right-0 left-0 bottom-0 flex bg-black text-white items-center justify-center;
+
+    transition: transform 0.3s ease-in-out;
+
+    transform: translateX(-100%);
+
+    &--visible {
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &__text {
+      @apply text-xl;
+    }
   }
 }
