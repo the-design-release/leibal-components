@@ -95,6 +95,7 @@ export class MoodsModal {
     });
   }
 
+  @Watch('open')
   stopBodyScroll() {
     if (this.open === true) {
       document.body.style.overflow = 'hidden';
@@ -108,7 +109,6 @@ export class MoodsModal {
     if (open === oldOpen) return;
     if (open) {
       this.container.focus();
-      this.stopBodyScroll();
     }
   }
 
