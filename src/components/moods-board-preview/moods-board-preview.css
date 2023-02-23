@@ -6,7 +6,7 @@
   @apply cursor-pointer;
 
   &__images {
-    @apply grid grid-cols-2 grid-rows-2 gap-[2px] mb-4 p-3;
+    @apply grid grid-cols-2 grid-rows-2 gap-[2px] mb-4 p-3 relative;
 
     border: 1px solid #e3e3e3;
   }

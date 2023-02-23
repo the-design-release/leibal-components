@@ -11,6 +11,7 @@ import { DisplayCardType } from "./components/display-card/display-card";
 import { MoodBoard, MoodsBoardPickedEvent } from "./components/moods-board-picker/moods-board-picker";
 import { MoodsBoardData } from "./components/moods-board-preview/moods-board-preview";
 import { PlatformType } from "./utils/platform";
+import { RemoveOverlayEvent } from "./components/remove-overlay/remove-overlay";
 import { InputType } from "./components/simple-input/simple-input";
 export namespace Components {
     interface AddToMoodsButton {
@@ -71,6 +72,10 @@ export namespace Components {
         "authenticated": boolean;
         "platform": PlatformType;
         "showMultiplier": number;
+    }
+    interface RemoveOverlay {
+        "name": string;
+        "payload": any;
     }
     interface SimpleButton {
         "disabled": boolean;
@@ -167,6 +172,12 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
+    interface HTMLRemoveOverlayElement extends Components.RemoveOverlay, HTMLStencilElement {
+    }
+    var HTMLRemoveOverlayElement: {
+        prototype: HTMLRemoveOverlayElement;
+        new (): HTMLRemoveOverlayElement;
+    };
     interface HTMLSimpleButtonElement extends Components.SimpleButton, HTMLStencilElement {
     }
     var HTMLSimpleButtonElement: {
@@ -210,6 +221,7 @@ declare global {
         "moods-boards": HTMLMoodsBoardsElement;
         "moods-modal": HTMLMoodsModalElement;
         "nav-bar": HTMLNavBarElement;
+        "remove-overlay": HTMLRemoveOverlayElement;
         "simple-button": HTMLSimpleButtonElement;
         "simple-input": HTMLSimpleInputElement;
         "sticky-scroller": HTMLStickyScrollerElement;
@@ -280,6 +292,11 @@ declare namespace LocalJSX {
         "platform"?: PlatformType;
         "showMultiplier"?: number;
     }
+    interface RemoveOverlay {
+        "name"?: string;
+        "onRemoveOverlayEvent"?: (event: CustomEvent<RemoveOverlayEvent>) => void;
+        "payload"?: any;
+    }
     interface SimpleButton {
         "disabled"?: boolean;
         "fillWidth"?: boolean;
@@ -315,6 +332,7 @@ declare namespace LocalJSX {
         "moods-boards": MoodsBoards;
         "moods-modal": MoodsModal;
         "nav-bar": NavBar;
+        "remove-overlay": RemoveOverlay;
         "simple-button": SimpleButton;
         "simple-input": SimpleInput;
         "sticky-scroller": StickyScroller;
@@ -338,6 +356,7 @@ declare module "@stencil/core" {
             "moods-boards": LocalJSX.MoodsBoards & JSXBase.HTMLAttributes<HTMLMoodsBoardsElement>;
             "moods-modal": LocalJSX.MoodsModal & JSXBase.HTMLAttributes<HTMLMoodsModalElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+            "remove-overlay": LocalJSX.RemoveOverlay & JSXBase.HTMLAttributes<HTMLRemoveOverlayElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
