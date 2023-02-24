@@ -68,8 +68,16 @@ export class RemoveOverlay {
     this.showIcon = true;
   }
 
+  toggleOverlay() {
+    if (this.confirming) {
+      this.hideOverlay();
+    } else {
+      this.showOverlay();
+    }
+  }
+
   handleRemoveClick() {
-    this.showOverlay();
+    this.toggleOverlay();
   }
 
   handleCancelClick() {
