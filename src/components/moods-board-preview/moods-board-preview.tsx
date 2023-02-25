@@ -29,7 +29,6 @@ export class MoodsBoard {
 
   render() {
     let thumbnails = this.board.images.map(image => image.imageUrl);
-    console.log(thumbnails);
 
     if (this.board.images.length <= 4) {
       thumbnails = this.board.images.map(image => image.imageUrl);
