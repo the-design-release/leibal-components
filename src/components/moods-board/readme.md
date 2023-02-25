@@ -17,11 +17,13 @@
 ### Depends on
 
 - [sticky-scroller](../sticky-scroller)
+- [remove-overlay](../remove-overlay)
 
 ### Graph
 ```mermaid
 graph TD;
   moods-board --> sticky-scroller
+  moods-board --> remove-overlay
   style moods-board fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -26,6 +26,7 @@
 graph TD;
   moods-boards --> sticky-scroller
   moods-boards --> moods-board-preview
+  moods-board-preview --> remove-overlay
   style moods-boards fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
