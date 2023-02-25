@@ -46,7 +46,7 @@ export class RemoveOverlay {
   removeOverlayEvent: EventEmitter<RemoveOverlayEvent>;
 
   componentDidLoad() {
-    const parentEl = this.el.shadowRoot.parentElement;
+    const parentEl = this.el.parentElement;
     if (!parentEl) return;
 
     parentEl.addEventListener('mouseenter', () => {
@@ -60,12 +60,10 @@ export class RemoveOverlay {
 
   hideOverlay() {
     this.confirming = false;
-    this.showIcon = false;
   }
 
   showOverlay() {
     this.confirming = true;
-    this.showIcon = true;
   }
 
   toggleOverlay() {

@@ -92,7 +92,10 @@ export class MoodsBoard {
               <div>
                 {column.map(board => (
                   <div class="moods-board__content">
-                    <img class="moods-board__content__image" src={board.imageUrl} alt={board.postTitle} />
+                    <div style={{ position: 'relative', lineHeight: '0' }}>
+                      <img class="moods-board__content__image" src={board.imageUrl} alt={board.postTitle} />
+                      <remove-overlay payload={JSON.stringify(board)} name="Image" />
+                    </div>
                     <div class="moods-board__content__title">{board.postTitle}</div>
                     <div class="moods-board__content__subtitle">{board.postSubtitle}</div>
                   </div>
