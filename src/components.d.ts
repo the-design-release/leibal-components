@@ -49,7 +49,9 @@ export namespace Components {
         "imageIndex": number;
     }
     interface MoodsBoard {
+        "boardId": string;
         "images": string;
+        "wpNonce": string;
     }
     interface MoodsBoardPicker {
         "boards": string;
@@ -267,7 +269,9 @@ declare namespace LocalJSX {
         "onOpenImageGallery"?: (event: CustomEvent<number>) => void;
     }
     interface MoodsBoard {
+        "boardId"?: string;
         "images"?: string;
+        "wpNonce"?: string;
     }
     interface MoodsBoardPicker {
         "boards"?: string;

@@ -46,6 +46,12 @@ export class RemoveOverlay {
   removeOverlayEvent: EventEmitter<RemoveOverlayEvent>;
 
   componentDidLoad() {
+    try {
+      this.payloadJson = JSON.parse(this.payload);
+    } catch (e) {
+      console.error('Failed to parse remove-overlay payload: ', e);
+    }
+
     const parentEl = this.el.parentElement;
     if (!parentEl) return;
 
@@ -93,7 +99,15 @@ export class RemoveOverlay {
   render() {
     return (
       <Host>
-        <div class="remove-overlay">
+        <div
+          class="remove-overlay"
+          onClick={e => {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+
+            return false;
+          }}
+        >
           <div class={'remove-overlay__confirm ' + (this.confirming ? 'remove-overlay__confirm--visible' : '')}>
             <div class="remove-overlay__message">Remove {this.name}?</div>
             <div class="remove-overlay__buttons">
@@ -112,7 +126,7 @@ export class RemoveOverlay {
             </div>
           </div>
           <div class={'remove-overlay__icon ' + (this.showIcon ? 'remove-overlay__icon--visible' : '')}>
-            <img src={getAssetPath('./assets/icon.png')} onClick={this.handleRemoveClick.bind(this)} />
+            <img src={getAssetPath('./assets/remove-icon.png')} onClick={this.handleRemoveClick.bind(this)} />
           </div>
         </div>
       </Host>

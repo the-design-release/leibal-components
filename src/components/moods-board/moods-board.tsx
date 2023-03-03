@@ -1,6 +1,6 @@
-import { Component, Host, h, Prop, State, Watch, Element } from '@stencil/core';
+import { Component, Host, h, Prop, State, Element, Listen } from '@stencil/core';
 import { MoodsBoardImage } from '../moods-board-preview/moods-board-preview';
-// import Masonry from 'masonry-layout';
+import { RemoveOverlayEvent } from '../remove-overlay/remove-overlay';
 
 type SortBy = 'postTitle' | 'timestamp';
 type SortOrder = 'asc' | 'desc';
@@ -14,12 +14,12 @@ export class MoodsBoard {
   @Element() el: HTMLElement;
 
   // Boards
-  @Prop({ reflect: true, mutable: true }) images: string;
+  @Prop({ reflect: true, mutable: true }) boardId: string = '';
+  @Prop({ reflect: true, mutable: true }) wpNonce: string = null;
+  @Prop() images: string;
+
+  @State()
   imageList: MoodsBoardImage[] = [];
-  @Watch('images')
-  boardsChanged(newValue: string) {
-    this.imageList = JSON.parse(newValue);
-  }
 
   // Sorting
   @State() sortBy: SortBy = 'timestamp';
@@ -37,8 +37,32 @@ export class MoodsBoard {
     this.imageList = JSON.parse(this.images);
   }
 
+  // Listen for remove-overlay event
+  @Listen('removeOverlayEvent')
+  removeOverlayHandler(event: CustomEvent<RemoveOverlayEvent>) {
+    const payload = event.detail.payload;
+
+    const data = new FormData();
+    data.append('id', this.boardId);
+    data.append('image_url', payload.imageUrl);
+
+    fetch('/wp-json/moods/v1/remove-from-board', {
+      method: 'POST',
+      headers: {
+        'X-WP-Nonce': this.wpNonce,
+      },
+      body: data,
+    })
+      .then(response => response.json())
+      .then(_ => {
+        this.imageList = this.imageList.filter(image => image.imageUrl != payload.imageUrl);
+      });
+  }
+
   render() {
-    const imageList = this.imageList.sort((x, y) => {
+    let images = this.imageList.map((image, index) => ({ index, ...image })) as any;
+
+    images = this.imageList.sort((x, y) => {
       if (this.sortOrder == 'asc') {
         return x[this.sortBy] > y[this.sortBy] ? 1 : -1;
       } else {
@@ -47,7 +71,7 @@ export class MoodsBoard {
     });
     const columns = [];
     for (let i = 0; i < 4; i++) {
-      columns.push(imageList.filter((_, index) => index % 4 == i));
+      columns.push(images.filter((_, index) => index % 4 == i));
     }
 
     return (

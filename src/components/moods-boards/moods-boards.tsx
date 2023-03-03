@@ -1,5 +1,6 @@
-import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
+import { Component, Host, h, Prop, State, Watch, getAssetPath, Listen } from '@stencil/core';
 import { MoodsBoardData } from '../moods-board-preview/moods-board-preview';
+import { RemoveOverlayEvent } from '../remove-overlay/remove-overlay';
 
 type SortBy = 'name' | 'timestamp';
 type SortOrder = 'asc' | 'desc';
@@ -13,6 +14,7 @@ type SortOrder = 'asc' | 'desc';
 export class MoodsBoards {
   // Boards
   @Prop({ reflect: true, mutable: true }) boards: string;
+  @State()
   boardsList: MoodsBoardData[] = [];
   @Watch('boards')
   boardsChanged(newValue: string) {
@@ -56,6 +58,27 @@ export class MoodsBoards {
         this.boardsList.push(data);
         this.creatingBoard = false;
         this.creatingBoardName = '';
+      });
+  }
+
+  // Listen for remove-overlay event
+  @Listen('removeOverlayEvent')
+  removeOverlayHandler(event: CustomEvent<RemoveOverlayEvent>) {
+    const payload = event.detail.payload;
+
+    const data = new FormData();
+    data.append('id', payload.id);
+
+    fetch('/wp-json/moods/v1/delete', {
+      method: 'POST',
+      headers: {
+        'X-WP-Nonce': this.wpNonce,
+      },
+      body: data,
+    })
+      .then(response => response.json())
+      .then(_ => {
+        this.boardsList = this.boardsList.filter(board => board.id != payload.id);
       });
   }
 

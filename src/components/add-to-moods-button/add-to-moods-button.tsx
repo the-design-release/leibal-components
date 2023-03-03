@@ -106,7 +106,9 @@ export class AddToMoodsButton {
             </div>
           )}
           <img
-            src={this.theme == 'light' ? getAssetPath('./assets/icon.png') : getAssetPath('./assets/icon-dark.png')}
+            src={
+              this.theme == 'light' ? getAssetPath('./assets/add-icon.png') : getAssetPath('./assets/add-icon-dark.png')
+            }
             alt="Add To MOODS"
           />
           {this.contentLocation === 'right' && (

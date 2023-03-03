@@ -9,6 +9,7 @@ export interface MoodsBoardImage {
 }
 
 export interface MoodsBoardData {
+  id: string;
   postId: string;
   name: string;
   images: MoodsBoardImage[];

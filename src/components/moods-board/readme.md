@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `images` | `images`  |             | `string` | `undefined` |
+| Property  | Attribute  | Description | Type     | Default     |
+| --------- | ---------- | ----------- | -------- | ----------- |
+| `boardId` | `board-id` |             | `string` | `''`        |
+| `images`  | `images`   |             | `string` | `undefined` |
+| `wpNonce` | `wp-nonce` |             | `string` | `null`      |
 
 
 ## Dependencies
