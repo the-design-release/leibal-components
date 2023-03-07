@@ -4,6 +4,7 @@ export interface MoodsBoardImage {
   postId: string;
   postTitle: string;
   postSubtitle: string;
+  postUrl: string;
   photographer?: string;
   imageUrl: string;
   timestamp: string;

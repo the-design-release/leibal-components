@@ -14,6 +14,13 @@
 | `wpNonce` | `wp-nonce` |             | `string` | `null`      |
 
 
+## Events
+
+| Event              | Description | Type                           |
+| ------------------ | ----------- | ------------------------------ |
+| `openMoodsGallery` |             | `CustomEvent<MoodsBoardImage>` |
+
+
 ## Dependencies
 
 ### Depends on

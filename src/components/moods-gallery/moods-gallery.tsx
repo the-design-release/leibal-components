@@ -46,6 +46,8 @@ export class ImageGallery {
   _images: MoodsBoardImage[] = [];
 
   swiper: Swiper;
+
+  @State()
   currentImageIndex: number = 0;
 
   componentWillLoad() {
@@ -78,13 +80,16 @@ export class ImageGallery {
   }
 
   @Listen('openMoodsGallery', { target: 'body' })
-  openMoodsGalleryHandler(event: CustomEvent<number>) {
+  openMoodsGalleryHandler(event: CustomEvent<MoodsBoardImage>) {
     if (this.isModalOpen !== true) {
       this.isModalOpen = true;
     }
+    console.log(event.detail);
 
-    // TODO: Update this to get the index of the image that was clicked.
-    this.swiper.slideTo(event.detail, 0, false);
+    // Get the index of the image that was clicked.
+    const index = this._images.findIndex(image => image.imageUrl === event.detail.imageUrl);
+
+    this.swiper.slideTo(index + 1, 0, false);
   }
 
   @Listen('keydown', { target: 'body' })
@@ -114,35 +119,17 @@ export class ImageGallery {
             <div class="moods-gallery__info">
               <div
                 onClick={() => {
-                  this.isModalOpen = false;
+                  location.href = this._images[this.currentImageIndex].postUrl;
                 }}
-                style={{ position: 'relative' }}
+                style={{ position: 'relative', cursor: 'pointer' }}
               >
                 <div class="moods-gallery__info__title">{this.postTitle()}</div>
-                <div class="moods-gallery__info__subtitle">by {this.postExcerpt()}</div>
+                <div class="moods-gallery__info__subtitle">{this.postExcerpt()}</div>
                 <div class="moods-gallery__info__photographer__label">Photography</div>
                 <div class="moods-gallery__info__photographer__title">{this.photographer()}</div>
                 <div class="swiper-pagination"></div>
               </div>
               {/* TODO: Add remove from board button here! */}
-              {/* <div>
-                <add-to-moods-button
-                  theme={'dark'}
-                  image-url={this._images[this.currentImageIndex]}
-                  post-id={this.postId}
-                  content-location={'right'}
-                >
-                  <span style={{ marginLeft: '1rem', fontSize: '0.75rem' }}>Save Image to MOODS</span>
-                </add-to-moods-button>
-              </div>
-              <div>
-                {this.canEnquire && (
-                  <enquire-modal
-                    postTitle={this.postTitle + ' by ' + this.postExcerpt}
-                    previewImage={this.previewImage}
-                  />
-                )}
-              </div> */}
             </div>
             <div class="moods-gallery__images">
               <div class="swiper moods-gallery__images__swiper">
