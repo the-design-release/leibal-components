@@ -15,7 +15,7 @@
   }
 
   &__content {
-    @apply mb-16;
+    @apply mb-16 cursor-pointer;
     &__image {
       width: 100%;
     }

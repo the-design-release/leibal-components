@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Theme } from "./utils/theme";
 import { MoodsModalEvent } from "./components/add-to-moods-button/add-to-moods-button";
 import { DisplayCardType } from "./components/display-card/display-card";
+import { MoodsBoardImage } from "./components/moods-board-preview/moods-board-preview";
 import { MoodBoard, MoodsBoardPickedEvent } from "./components/moods-board-picker/moods-board-picker";
 import { MoodsBoardData } from "./components/moods-board-preview/moods-board-preview";
 import { PlatformType } from "./utils/platform";
@@ -64,6 +65,9 @@ export namespace Components {
         "apiUrl": string;
         "boards": string;
         "wpNonce": string;
+    }
+    interface MoodsGallery {
+        "images": string;
     }
     interface MoodsModal {
         "boards": string;
@@ -162,6 +166,12 @@ declare global {
         prototype: HTMLMoodsBoardsElement;
         new (): HTMLMoodsBoardsElement;
     };
+    interface HTMLMoodsGalleryElement extends Components.MoodsGallery, HTMLStencilElement {
+    }
+    var HTMLMoodsGalleryElement: {
+        prototype: HTMLMoodsGalleryElement;
+        new (): HTMLMoodsGalleryElement;
+    };
     interface HTMLMoodsModalElement extends Components.MoodsModal, HTMLStencilElement {
     }
     var HTMLMoodsModalElement: {
@@ -221,6 +231,7 @@ declare global {
         "moods-board-picker": HTMLMoodsBoardPickerElement;
         "moods-board-preview": HTMLMoodsBoardPreviewElement;
         "moods-boards": HTMLMoodsBoardsElement;
+        "moods-gallery": HTMLMoodsGalleryElement;
         "moods-modal": HTMLMoodsModalElement;
         "nav-bar": HTMLNavBarElement;
         "remove-overlay": HTMLRemoveOverlayElement;
@@ -271,6 +282,7 @@ declare namespace LocalJSX {
     interface MoodsBoard {
         "boardId"?: string;
         "images"?: string;
+        "onOpenMoodsGallery"?: (event: CustomEvent<MoodsBoardImage>) => void;
         "wpNonce"?: string;
     }
     interface MoodsBoardPicker {
@@ -285,6 +297,9 @@ declare namespace LocalJSX {
         "apiUrl"?: string;
         "boards"?: string;
         "wpNonce"?: string;
+    }
+    interface MoodsGallery {
+        "images"?: string;
     }
     interface MoodsModal {
         "boards"?: string;
@@ -334,6 +349,7 @@ declare namespace LocalJSX {
         "moods-board-picker": MoodsBoardPicker;
         "moods-board-preview": MoodsBoardPreview;
         "moods-boards": MoodsBoards;
+        "moods-gallery": MoodsGallery;
         "moods-modal": MoodsModal;
         "nav-bar": NavBar;
         "remove-overlay": RemoveOverlay;
@@ -358,6 +374,7 @@ declare module "@stencil/core" {
             "moods-board-picker": LocalJSX.MoodsBoardPicker & JSXBase.HTMLAttributes<HTMLMoodsBoardPickerElement>;
             "moods-board-preview": LocalJSX.MoodsBoardPreview & JSXBase.HTMLAttributes<HTMLMoodsBoardPreviewElement>;
             "moods-boards": LocalJSX.MoodsBoards & JSXBase.HTMLAttributes<HTMLMoodsBoardsElement>;
+            "moods-gallery": LocalJSX.MoodsGallery & JSXBase.HTMLAttributes<HTMLMoodsGalleryElement>;
             "moods-modal": LocalJSX.MoodsModal & JSXBase.HTMLAttributes<HTMLMoodsModalElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "remove-overlay": LocalJSX.RemoveOverlay & JSXBase.HTMLAttributes<HTMLRemoveOverlayElement>;

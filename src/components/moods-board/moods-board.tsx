@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Element, Listen } from '@stencil/core';
+import { Component, Event, Host, h, Prop, State, Element, Listen, EventEmitter } from '@stencil/core';
 import { MoodsBoardImage } from '../moods-board-preview/moods-board-preview';
 import { RemoveOverlayEvent } from '../remove-overlay/remove-overlay';
 
@@ -59,6 +59,14 @@ export class MoodsBoard {
       });
   }
 
+  @Event({
+    eventName: 'openMoodsGallery',
+    composed: true,
+    cancelable: true,
+    bubbles: true,
+  })
+  openMoodsGallery: EventEmitter<MoodsBoardImage>;
+
   render() {
     let images = this.imageList.map((image, index) => ({ index, ...image })) as any;
 
@@ -115,7 +123,12 @@ export class MoodsBoard {
             {columns.map(column => (
               <div>
                 {column.map(board => (
-                  <div class="moods-board__content">
+                  <div
+                    class="moods-board__content"
+                    onClick={() => {
+                      this.openMoodsGallery.emit(board);
+                    }}
+                  >
                     <div style={{ position: 'relative', lineHeight: '0' }}>
                       <img class="moods-board__content__image" src={board.imageUrl} alt={board.postTitle} />
                       <remove-overlay payload={JSON.stringify(board)} name="Image" />
