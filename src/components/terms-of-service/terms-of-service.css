@@ -1,0 +1,69 @@
+:host {
+  display: block;
+}
+
+.terms-of-service {
+  @apply block md:grid md:gap-8 md:grid-cols-10 text-sm font-light;
+
+  * button {
+    all: unset;
+    display: block;
+    cursor: pointer;
+  }
+
+  &__sections {
+    @apply md:col-span-2;
+
+    & > * {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  &__section {
+    &--active {
+      font-weight: 600 !important;
+    }
+  }
+
+  &__subsection-select {
+    &--active {
+      font-weight: 600 !important;
+    }
+  }
+
+  &__subsections {
+    @apply md:col-span-3 mb-16 md:mb-24;
+
+    & > * {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  &__subheaders {
+    & > * {
+      margin-bottom: 0.5rem !important;
+
+      &:hover {
+        font-weight: 600 !important;
+      }
+    }
+  }
+
+  &__content {
+    @apply md:col-span-5;
+  }
+
+  &__subsection {
+    &__title {
+      @apply text-3xl mb-4;
+    }
+
+    &__content {
+      @apply pt-16;
+
+      &__title {
+        @apply text-lg mb-8 font-normal;
+      }
+    }
+  }
+}

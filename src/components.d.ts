@@ -102,6 +102,8 @@ export namespace Components {
     }
     interface TelePortal {
     }
+    interface TermsOfService {
+    }
     interface ToolTip {
     }
 }
@@ -214,6 +216,12 @@ declare global {
         prototype: HTMLTelePortalElement;
         new (): HTMLTelePortalElement;
     };
+    interface HTMLTermsOfServiceElement extends Components.TermsOfService, HTMLStencilElement {
+    }
+    var HTMLTermsOfServiceElement: {
+        prototype: HTMLTermsOfServiceElement;
+        new (): HTMLTermsOfServiceElement;
+    };
     interface HTMLToolTipElement extends Components.ToolTip, HTMLStencilElement {
     }
     var HTMLToolTipElement: {
@@ -239,6 +247,7 @@ declare global {
         "simple-input": HTMLSimpleInputElement;
         "sticky-scroller": HTMLStickyScrollerElement;
         "tele-portal": HTMLTelePortalElement;
+        "terms-of-service": HTMLTermsOfServiceElement;
         "tool-tip": HTMLToolTipElement;
     }
 }
@@ -336,6 +345,8 @@ declare namespace LocalJSX {
     }
     interface TelePortal {
     }
+    interface TermsOfService {
+    }
     interface ToolTip {
     }
     interface IntrinsicElements {
@@ -357,6 +368,7 @@ declare namespace LocalJSX {
         "simple-input": SimpleInput;
         "sticky-scroller": StickyScroller;
         "tele-portal": TelePortal;
+        "terms-of-service": TermsOfService;
         "tool-tip": ToolTip;
     }
 }
@@ -382,6 +394,7 @@ declare module "@stencil/core" {
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;
             "sticky-scroller": LocalJSX.StickyScroller & JSXBase.HTMLAttributes<HTMLStickyScrollerElement>;
             "tele-portal": LocalJSX.TelePortal & JSXBase.HTMLAttributes<HTMLTelePortalElement>;
+            "terms-of-service": LocalJSX.TermsOfService & JSXBase.HTMLAttributes<HTMLTermsOfServiceElement>;
             "tool-tip": LocalJSX.ToolTip & JSXBase.HTMLAttributes<HTMLToolTipElement>;
         }
     }

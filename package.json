@@ -30,6 +30,7 @@
     "build"
   ],
   "dependencies": {
+    "@proyecto26/animatable-component": "^1.1.10",
     "@stencil/core": "^2.13.0",
     "fuzzy-search": "^3.2.1",
     "postcss-nesting": "^10.1.2",
@@ -45,7 +46,6 @@
     "cssnano": "^5.0.17",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
-    "masonry": "^0.0.2",
     "masonry-layout": "^4.2.2",
     "postcss": "^8.4.6",
     "postcss-import": "^14.0.2",
