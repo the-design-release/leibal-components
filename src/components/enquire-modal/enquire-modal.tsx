@@ -1,9 +1,10 @@
-import { Component, Host, h, Prop, State, Element, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, State, Element, Watch, getAssetPath } from '@stencil/core';
 
 type FormState = { firstName: string; lastName: string; email: string; location: string; moreText: string };
 
 @Component({
   tag: 'enquire-modal',
+  assetsDirs: ['assets'],
   styleUrl: 'enquire-modal.css',
 })
 export class EnquireModal {
@@ -215,7 +216,7 @@ export class EnquireModal {
                   this.isModalOpen = false;
                 }}
               >
-                x
+                <img src={getAssetPath('./assets/close-icon.png')} />
               </div>
             </form>
           </div>

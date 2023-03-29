@@ -112,7 +112,9 @@ export class NavBar {
             <div class="navbar__row__action">
               <a href="/submissions">Submit</a>
               {this.authenticated ? (
-                <a href={this.platformSpecificLink('blog', '/moods')}>MOODS</a>
+                <a href={this.platformSpecificLink('blog', '/moods')} class="navbar__moods-logo">
+                  <img src={getAssetPath(`./assets/moods-white.png`)} />
+                </a>
               ) : (
                 <a href={this.platformSpecificLink('blog', '/subscription/subscribe')}>Sign Up</a>
               )}

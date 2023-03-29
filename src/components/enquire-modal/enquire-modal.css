@@ -150,6 +150,10 @@
 
     &__close {
       @apply absolute top-3 right-3 cursor-pointer leading-none text-xl font-light;
+
+      img {
+        @apply w-4;
+      }
     }
   }
 }
