@@ -20,12 +20,14 @@
 
  - [moods-board](../moods-board)
  - [moods-boards](../moods-boards)
+ - [terms-of-service](../terms-of-service)
 
 ### Graph
 ```mermaid
 graph TD;
   moods-board --> sticky-scroller
   moods-boards --> sticky-scroller
+  terms-of-service --> sticky-scroller
   style sticky-scroller fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

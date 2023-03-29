@@ -106,7 +106,7 @@ export class NavBar {
               <a href={this.platformSpecificLink('blog', '/category/interiors')}>Interiors</a>
               <a href={this.platformSpecificLink('blog', '/category/furniture')}>Furniture</a>
               <a href={this.platformSpecificLink('blog', '/category/lighting')}>Lighting</a>
-              <a href={this.platformSpecificLink('blog', '/category/products')}>Products</a>
+              <a href={this.platformSpecificLink('blog', '/category/products')}>Objects</a>
               <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
             </div>
             <div class="navbar__row__action">
