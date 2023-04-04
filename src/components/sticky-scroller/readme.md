@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type      | Default |
-| ------------- | -------------- | ----------- | --------- | ------- |
-| `bottom`      | `bottom`       |             | `boolean` | `false` |
-| `endOffset`   | `end-offset`   |             | `number`  | `0`     |
-| `startOffset` | `start-offset` |             | `number`  | `0`     |
+| Property      | Attribute      | Description | Type                                          | Default      |
+| ------------- | -------------- | ----------- | --------------------------------------------- | ------------ |
+| `bottom`      | `bottom`       |             | `boolean`                                     | `false`      |
+| `endOffset`   | `end-offset`   |             | `number`                                      | `0`          |
+| `mode`        | `mode`         |             | `"relative" \| "stickyBottom" \| "stickyTop"` | `'relative'` |
+| `startOffset` | `start-offset` |             | `number`                                      | `0`          |
 
 
 ## Dependencies

@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute       | Description | Type     | Default |
-| ------------- | --------------- | ----------- | -------- | ------- |
-| `boards`      | `boards`        |             | `string` | `''`    |
-| `moodsApiUrl` | `moods-api-url` |             | `string` | `''`    |
-| `wpApiNonce`  | `wp-api-nonce`  |             | `string` | `''`    |
+| Property          | Attribute          | Description | Type      | Default |
+| ----------------- | ------------------ | ----------- | --------- | ------- |
+| `boards`          | `boards`           |             | `string`  | `''`    |
+| `isAuthenticated` | `is-authenticated` |             | `boolean` | `false` |
+| `moodsApiUrl`     | `moods-api-url`    |             | `string`  | `''`    |
+| `wpApiNonce`      | `wp-api-nonce`     |             | `string`  | `''`    |
 
 
 ## Dependencies

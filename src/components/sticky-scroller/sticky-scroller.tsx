@@ -301,11 +301,13 @@ export class StickyScroller {
   @Prop() startOffset: number = 0;
   @Prop() endOffset: number = 0;
   @Prop() bottom: boolean = false;
+  @Prop() mode: 'relative' | 'stickyTop' | 'stickyBottom' = 'relative';
   @Element() el: HTMLElement;
-  @State() argsRef: { offsetTop: number; offsetBottom: number; bottom: boolean } = {
+  @State() argsRef: { offsetTop: number; offsetBottom: number; bottom: boolean; mode: string } = {
     offsetTop: this.startOffset,
     offsetBottom: this.endOffset,
     bottom: this.bottom,
+    mode: this.mode,
   };
 
   componentWillLoad() {
@@ -313,7 +315,7 @@ export class StickyScroller {
   }
 
   componentShouldUpdate() {
-    this.argsRef = { offsetTop: this.startOffset, offsetBottom: this.endOffset, bottom: this.bottom };
+    this.argsRef = { offsetTop: this.startOffset, offsetBottom: this.endOffset, bottom: this.bottom, mode: this.mode };
   }
 
   render() {

@@ -1,7 +1,8 @@
-import { Component, Element, Host, h, Prop, State, Watch, Listen } from '@stencil/core';
+import { Component, Element, Host, h, Prop, State, Watch, Listen, Fragment } from '@stencil/core';
 
 import Swiper, { Navigation, Pagination, Keyboard, SwiperOptions } from 'swiper';
 import { zeroPad } from '../../utils';
+import converter from 'number-to-words';
 
 const DEFAULT_SWIPER_OPTIONS: SwiperOptions = {
   modules: [Navigation, Pagination, Keyboard],
@@ -25,6 +26,11 @@ const DEFAULT_SWIPER_OPTIONS: SwiperOptions = {
     enabled: true,
     onlyInViewport: false,
   },
+};
+
+type Image = {
+  href: string;
+  designDetail: any;
 };
 
 @Component({
@@ -56,17 +62,25 @@ export class ImageGallery {
   @Prop({ mutable: true, reflect: true })
   canEnquire: boolean = false;
 
+  @Prop({ mutable: true, reflect: true })
+  designDetail: string | null = null;
+
   @State()
   isModalOpen: boolean = false;
 
   // Parsed JSON images.
-  _images: string[] = [];
+  _images: Image[] = [];
+  _designDetail: any;
 
   swiper: Swiper;
+  @State()
   currentImageIndex: number = 0;
 
   componentWillLoad() {
     this._images = JSON.parse(this.images);
+    if (this.designDetail) {
+      this._designDetail = JSON.parse(this.designDetail);
+    }
   }
 
   componentDidLoad() {
@@ -111,6 +125,19 @@ export class ImageGallery {
   }
 
   render() {
+    //
+    // NOTE: Get the design detail for a specific image, not needed now.
+    //
+    // Get the first non thumbnail image.
+    // const currentImage = this._images[this.currentImageIndex];
+    // const currentImageDesignDetail =
+    //   currentImage.designDetail && currentImage.designDetail.length > 0 ? currentImage.designDetail[0] : null;
+    //
+
+    const designDetail = this._designDetail;
+
+    const asSeenIns = designDetail && designDetail.asSeenIn ? designDetail.asSeenIn : [];
+
     return (
       <Host>
         <tele-portal>
@@ -131,9 +158,10 @@ export class ImageGallery {
               <div>
                 <add-to-moods-button
                   theme={'dark'}
-                  image-url={this._images[this.currentImageIndex]}
+                  image-url={this._images[this.currentImageIndex].href}
                   post-id={this.postId}
                   content-location={'right'}
+                  style={{ margin: '2.5rem 0' }}
                 >
                   <span style={{ marginLeft: '1rem', fontSize: '0.75rem' }}>Save Image to MOODS</span>
                 </add-to-moods-button>
@@ -145,6 +173,52 @@ export class ImageGallery {
                     previewImage={this.previewImage}
                   />
                 )}
+                {!this.canEnquire && designDetail && (
+                  <div>
+                    <div class="image-gallery__info__subtitle">Design Details</div>
+
+                    <div class="block xl:grid xl:grid-cols-12 xl:gap-8">
+                      <display-card
+                        images={JSON.stringify([designDetail.image.url])}
+                        style={{ marginBottom: '0' }}
+                        class="col-span-8"
+                      >
+                        <div slot="top-title">{designDetail.designer || 'Unknown'}</div>
+                        <div slot="top-subtitle">{designDetail.category || 'N/A'}</div>
+                        <div slot="bottom-title">{designDetail.name || ''}</div>
+                        <div slot="bottom-subtitle">{designDetail.price || ''}</div>
+                      </display-card>
+                      <div class="flex flex-col col-span-4 mb-8 text-2xs xl:mb-0">
+                        <div>
+                          <span>As seen in image </span>
+                          {asSeenIns.map((image, i) => {
+                            const index = parseFloat(image.value.index);
+
+                            if (i === asSeenIns.length - 1 && asSeenIns.length > 0) {
+                              return (
+                                <Fragment>
+                                  <span>and </span>
+                                  <span class="underline cursor-pointer" onClick={() => this.swiper.slideTo(index + 1)}>
+                                    {converter.toWords(index + 1)}
+                                  </span>
+                                  .
+                                </Fragment>
+                              );
+                            }
+                            return (
+                              <Fragment>
+                                <span class="underline cursor-pointer" onClick={() => this.swiper.slideTo(index + 1)}>
+                                  {converter.toWords(index + 1)}
+                                </span>
+                                {', '}
+                              </Fragment>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div class="image-gallery__images">
@@ -152,7 +226,7 @@ export class ImageGallery {
                 <div class="swiper-wrapper">
                   {this._images.map(image => (
                     <div class="swiper-slide">
-                      <img src={image} />
+                      <img src={image.href} />
                     </div>
                   ))}
                 </div>

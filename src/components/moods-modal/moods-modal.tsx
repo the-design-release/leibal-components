@@ -26,6 +26,9 @@ export class MoodsModal {
   @Prop({ reflect: true, mutable: true })
   wpApiNonce: string = '';
 
+  @Prop({ reflect: true, mutable: true })
+  isAuthenticated: boolean = false;
+
   container: HTMLDivElement;
 
   componentWillLoad() {
@@ -33,6 +36,13 @@ export class MoodsModal {
       this.open = true;
       this.imageUrl = event.detail.imageUrl;
       this.postId = event.detail.postId;
+
+      if (!this.isAuthenticated) {
+        setTimeout(() => {
+          this.open = false;
+          document.location.href = '/subscription/subscribe';
+        }, 1000);
+      }
     });
   }
 

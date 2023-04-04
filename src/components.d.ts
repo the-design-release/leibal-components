@@ -39,6 +39,7 @@ export namespace Components {
     }
     interface ImageGallery {
         "canEnquire": boolean;
+        "designDetail": string | null;
         "images": string;
         "photographer": string;
         "postExcerpt": string;
@@ -71,6 +72,7 @@ export namespace Components {
     }
     interface MoodsModal {
         "boards": string;
+        "isAuthenticated": boolean;
         "moodsApiUrl": string;
         "wpApiNonce": string;
     }
@@ -98,6 +100,7 @@ export namespace Components {
     interface StickyScroller {
         "bottom": boolean;
         "endOffset": number;
+        "mode": 'relative' | 'stickyTop' | 'stickyBottom';
         "startOffset": number;
     }
     interface TelePortal {
@@ -277,6 +280,7 @@ declare namespace LocalJSX {
     }
     interface ImageGallery {
         "canEnquire"?: boolean;
+        "designDetail"?: string | null;
         "images"?: string;
         "photographer"?: string;
         "postExcerpt"?: string;
@@ -312,6 +316,7 @@ declare namespace LocalJSX {
     }
     interface MoodsModal {
         "boards"?: string;
+        "isAuthenticated"?: boolean;
         "moodsApiUrl"?: string;
         "wpApiNonce"?: string;
     }
@@ -341,6 +346,7 @@ declare namespace LocalJSX {
     interface StickyScroller {
         "bottom"?: boolean;
         "endOffset"?: number;
+        "mode"?: 'relative' | 'stickyTop' | 'stickyBottom';
         "startOffset"?: number;
     }
     interface TelePortal {
