@@ -10,6 +10,8 @@ import { PlatformType, STORE_URL, BLOG_URL } from '../../utils/platform';
 export class NavBar {
   @Element() el: HTMLElement;
 
+  searchInput?: HTMLInputElement;
+
   @Prop() authenticated: boolean = false;
   @Prop() platform: PlatformType = 'blog';
   @Prop() showMultiplier: number = 1;
@@ -20,6 +22,8 @@ export class NavBar {
   @State() scrollingUp: boolean = false;
   @State() scrolledUp: number = 0;
   @State() scrollThreshold: number = 500;
+  @State() showSearch: boolean = false;
+  @State() searchText: string = '';
 
   currentHeight: number = 150;
 
@@ -121,6 +125,29 @@ export class NavBar {
             </div>
           </div>
           <div class="navbar__row">
+            <div class={'navbar__search ' + (this.showSearch ? 'navbar__search--visible' : '')}>
+              <input
+                ref={el => (this.searchInput = el as HTMLInputElement)}
+                class="navbar__search__input"
+                onInput={e => {
+                  this.searchText = (e.target as HTMLInputElement).value;
+                }}
+                onKeyPress={e => {
+                  if (e.key === 'Enter') {
+                    this.searchInput.blur();
+                    this.showSearch = false;
+
+                    if (this.platform === 'blog') {
+                      window.location.href = this.platformSpecificLink('blog', `/?s=${this.searchText}`);
+                    } else {
+                      window.location.href = this.platformSpecificLink('store', `/search?q=${this.searchText}`);
+                    }
+                  }
+                }}
+                type="text"
+                placeholder="Start Typing..."
+              />
+            </div>
             <a
               href={this.platformSpecificLink('store', '/')}
               class={'navbar__row__leading ' + (this.platform === 'store' ? 'font-bold' : '')}
@@ -140,7 +167,19 @@ export class NavBar {
             </div>
             <div class="navbar__row__action">
               <a href="/cart">Cart</a>
-              <a href="/search">Search</a>
+              <a
+                class="z-10 border-l border-white cursor-pointer"
+                onClick={() => {
+                  this.showSearch = !this.showSearch;
+                  setTimeout(() => {
+                    if (this.showSearch) {
+                      this.searchInput.focus();
+                    }
+                  }, 300);
+                }}
+              >
+                Search
+              </a>
             </div>
           </div>
         </nav>
