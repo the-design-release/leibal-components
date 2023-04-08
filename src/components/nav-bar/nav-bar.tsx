@@ -166,7 +166,9 @@ export class NavBar {
               <a href={this.platformSpecificLink('store', '/collections/brands')}>Brands</a>
             </div>
             <div class="navbar__row__action">
-              <a href="/cart">Cart</a>
+              <a href="/cart" class="border-l border-white cursor-pointer">
+                Cart
+              </a>
               <a
                 class="z-10 border-l border-white cursor-pointer"
                 onClick={() => {
