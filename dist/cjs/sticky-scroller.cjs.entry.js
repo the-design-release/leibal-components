@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bb21c77a.js');
+const index = require('./index-31caa8e8.js');
 
 // Use require here to keep TS happy...
 // TS has a confilicting internal type with this module

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bb21c77a.js');
+const index = require('./index-31caa8e8.js');
 
 const STORE_URL = "https://store.leibal.com";
 const BLOG_URL = "https://leibal.com";
@@ -93,7 +93,7 @@ let NavBar = class {
             window.location.href = this.platformSpecificLink('store', `/search?q=${this.searchText}`);
           }
         }
-      }, type: "text", placeholder: "Start Typing..." })), index.h("a", { href: this.platformSpecificLink('store', '/'), class: 'navbar__row__leading ' + (this.platform === 'store' ? 'font-bold' : '') }, index.h("div", { class: "navbar__logo", style: { opacity: '0', visibility: 'hidden' } }, index.h("img", { src: index.getAssetPath(`./assets/leibal-logo.png`) })), "Store"), index.h("div", { class: "navbar__row__links" }, index.h("a", { href: this.platformSpecificLink('store', '/collections/new') }, "New"), index.h("a", { href: this.platformSpecificLink('store', '/collections/furniture') }, "Furniture"), index.h("a", { href: this.platformSpecificLink('store', '/collections/lighting') }, "Lighting"), index.h("a", { href: this.platformSpecificLink('store', '/collections/accessories') }, "Accessories"), index.h("a", { href: this.platformSpecificLink('store', '/collections/outdoor') }, "Outdoor"), index.h("a", { href: this.platformSpecificLink('store', '/collections/brands') }, "Brands")), index.h("div", { class: "navbar__row__action" }, index.h("a", { href: "/cart", class: "border-l border-white cursor-pointer" }, "Cart"), index.h("a", { class: "z-10 border-l border-white cursor-pointer", onClick: () => {
+      }, type: "text", placeholder: "Start Typing..." })), index.h("a", { href: this.platformSpecificLink('store', '/'), class: 'navbar__row__leading ' + (this.platform === 'store' ? 'font-bold' : '') }, index.h("div", { class: "navbar__logo", style: { opacity: '0', visibility: 'hidden' } }, index.h("img", { src: index.getAssetPath(`./assets/leibal-logo.png`) })), "Store"), index.h("div", { class: "navbar__row__links" }, index.h("a", { href: this.platformSpecificLink('store', '/collections/new') }, "New"), index.h("a", { href: this.platformSpecificLink('store', '/collections/furniture') }, "Furniture"), index.h("a", { href: this.platformSpecificLink('store', '/collections/lighting') }, "Lighting"), index.h("a", { href: this.platformSpecificLink('store', '/collections/accessories') }, "Accessories"), index.h("a", { href: this.platformSpecificLink('store', '/collections/outdoor') }, "Outdoor"), index.h("a", { href: this.platformSpecificLink('store', '/collections/brands') }, "Brands")), index.h("div", { class: "navbar__row__action" }, index.h("a", { href: "/cart", class: "border-l border-white cursor-pointer" }, "Cart"), index.h("a", { class: "z-10 cursor-pointer", onClick: () => {
         this.showSearch = !this.showSearch;
         setTimeout(() => {
           if (this.showSearch) {

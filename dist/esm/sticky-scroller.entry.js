@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host, a as getElement } from './index-7436abb4.js';
+import { r as registerInstance, h, H as Host, a as getElement } from './index-3f06ee34.js';
 
 // Use require here to keep TS happy...
 // TS has a confilicting internal type with this module

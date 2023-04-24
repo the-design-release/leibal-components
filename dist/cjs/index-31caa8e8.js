@@ -1,3 +1,25 @@
+'use strict';
+
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () {
+            return e[k];
+          }
+        });
+      }
+    });
+  }
+  n['default'] = e;
+  return Object.freeze(n);
+}
+
 const NAMESPACE = 'leibal-components';
 
 let scopeId;
@@ -1646,7 +1668,6 @@ const getAssetPath = (path) => {
     const assetUrl = new URL(path, plt.$resourcesUrl$);
     return assetUrl.origin !== win.location.origin ? assetUrl.href : assetUrl.pathname;
 };
-const setAssetPath = (path) => (plt.$resourcesUrl$ = path);
 const Fragment = (_, children) => children;
 const hostRefs = new WeakMap();
 const getHostRef = (ref) => hostRefs.get(ref);
@@ -1677,11 +1698,11 @@ const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
     if (module) {
         return module[exportName];
     }
-    return import(
+    return Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require(
     /* webpackInclude: /\.entry\.js$/ */
     /* webpackExclude: /\.system\.entry\.js$/ */
     /* webpackMode: "lazy" */
-    `./${bundleId}.entry.js${''}`).then((importedModule) => {
+    `./${bundleId}.entry.js${''}`)); }).then((importedModule) => {
         {
             cmpModules.set(bundleId, importedModule);
         }
@@ -1732,4 +1753,12 @@ const flush = () => {
 const nextTick = /*@__PURE__*/ (cb) => promiseResolve().then(cb);
 const writeTask = /*@__PURE__*/ queueTask(queueDomWrites, true);
 
-export { Fragment as F, Host as H, getElement as a, bootstrapLazy as b, createEvent as c, getAssetPath as g, h, promiseResolve as p, registerInstance as r, setAssetPath as s };
+exports.Fragment = Fragment;
+exports.Host = Host;
+exports.bootstrapLazy = bootstrapLazy;
+exports.createEvent = createEvent;
+exports.getAssetPath = getAssetPath;
+exports.getElement = getElement;
+exports.h = h;
+exports.promiseResolve = promiseResolve;
+exports.registerInstance = registerInstance;

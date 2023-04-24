@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bb21c77a.js');
+const index = require('./index-31caa8e8.js');
 
 const moodsBoardPreviewCss = ":host{display:block}.moods-board-preview{cursor:pointer}.moods-board-preview__images{border:1px solid #e3e3e3;display:grid;gap:2px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));margin-bottom:1rem;padding:.75rem;position:relative}.moods-board-preview__image{aspect-ratio:1/1;border:1px solid #e3e3e3;overflow:hidden}.moods-board-preview__image img{height:100%;-o-object-fit:cover;object-fit:cover;width:100%}.moods-board-preview__saved{font-size:9px;margin-bottom:.25rem;text-transform:uppercase}.moods-board-preview__export{font-size:9px;font-weight:300;margin-bottom:.75rem;text-transform:uppercase}.moods-board-preview__name{font-size:1rem;line-height:1.5rem;margin-bottom:.5rem}";
 

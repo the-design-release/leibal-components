@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, g as getAssetPath, H as Host, a as getElement } from './index-7436abb4.js';
+import { r as registerInstance, c as createEvent, h, g as getAssetPath, H as Host, a as getElement } from './index-3f06ee34.js';
 
 class Helper {
   static getDescendantProperty(object, path, list = []) {

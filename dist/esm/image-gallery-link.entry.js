@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, H as Host } from './index-7436abb4.js';
+import { r as registerInstance, c as createEvent, h, H as Host } from './index-3f06ee34.js';
 
 const imageGalleryLinkCss = ":root{cursor:pointer;display:block}";
 

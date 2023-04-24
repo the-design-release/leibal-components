@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bb21c77a.js');
+const index = require('./index-31caa8e8.js');
 
 class Helper {
   static getDescendantProperty(object, path, list = []) {

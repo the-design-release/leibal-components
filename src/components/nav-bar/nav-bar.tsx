@@ -170,7 +170,7 @@ export class NavBar {
                 Cart
               </a>
               <a
-                class="z-10 border-l border-white cursor-pointer"
+                class="z-10 cursor-pointer"
                 onClick={() => {
                   this.showSearch = !this.showSearch;
                   setTimeout(() => {

@@ -118,7 +118,7 @@ export class NavBar {
             h("a", { href: this.platformSpecificLink('store', '/collections/brands') }, "Brands")),
           h("div", { class: "navbar__row__action" },
             h("a", { href: "/cart", class: "border-l border-white cursor-pointer" }, "Cart"),
-            h("a", { class: "z-10 border-l border-white cursor-pointer", onClick: () => {
+            h("a", { class: "z-10 cursor-pointer", onClick: () => {
                 this.showSearch = !this.showSearch;
                 setTimeout(() => {
                   if (this.showSearch) {

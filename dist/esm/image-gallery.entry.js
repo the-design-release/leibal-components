@@ -1,4 +1,4 @@
-import { r as registerInstance, h, F as Fragment, H as Host, a as getElement } from './index-7436abb4.js';
+import { r as registerInstance, h, F as Fragment, H as Host, a as getElement } from './index-3f06ee34.js';
 import { S as Swiper, N as Navigation, P as Pagination, K as Keyboard, z as zeroPad } from './index-219c5654.js';
 
 function createCommonjsModule(fn, basedir, module) {
