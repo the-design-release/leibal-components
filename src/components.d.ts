@@ -8,10 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Theme } from "./utils/theme";
 import { MoodsModalEvent } from "./components/add-to-moods-button/add-to-moods-button";
 import { DisplayCardType } from "./components/display-card/display-card";
+import { PlatformType } from "./utils/platform";
 import { MoodsBoardImage } from "./components/moods-board-preview/moods-board-preview";
 import { MoodBoard, MoodsBoardPickedEvent } from "./components/moods-board-picker/moods-board-picker";
 import { MoodsBoardData } from "./components/moods-board-preview/moods-board-preview";
-import { PlatformType } from "./utils/platform";
 import { RemoveOverlayEvent } from "./components/remove-overlay/remove-overlay";
 import { InputType } from "./components/simple-input/simple-input";
 export namespace Components {
@@ -49,6 +49,9 @@ export namespace Components {
     }
     interface ImageGalleryLink {
         "imageIndex": number;
+    }
+    interface MobileNavBar {
+        "platform": PlatformType;
     }
     interface MoodsBoard {
         "boardId": string;
@@ -147,6 +150,12 @@ declare global {
         prototype: HTMLImageGalleryLinkElement;
         new (): HTMLImageGalleryLinkElement;
     };
+    interface HTMLMobileNavBarElement extends Components.MobileNavBar, HTMLStencilElement {
+    }
+    var HTMLMobileNavBarElement: {
+        prototype: HTMLMobileNavBarElement;
+        new (): HTMLMobileNavBarElement;
+    };
     interface HTMLMoodsBoardElement extends Components.MoodsBoard, HTMLStencilElement {
     }
     var HTMLMoodsBoardElement: {
@@ -238,6 +247,7 @@ declare global {
         "footer-nav": HTMLFooterNavElement;
         "image-gallery": HTMLImageGalleryElement;
         "image-gallery-link": HTMLImageGalleryLinkElement;
+        "mobile-nav-bar": HTMLMobileNavBarElement;
         "moods-board": HTMLMoodsBoardElement;
         "moods-board-picker": HTMLMoodsBoardPickerElement;
         "moods-board-preview": HTMLMoodsBoardPreviewElement;
@@ -291,6 +301,9 @@ declare namespace LocalJSX {
     interface ImageGalleryLink {
         "imageIndex"?: number;
         "onOpenImageGallery"?: (event: CustomEvent<number>) => void;
+    }
+    interface MobileNavBar {
+        "platform"?: PlatformType;
     }
     interface MoodsBoard {
         "boardId"?: string;
@@ -362,6 +375,7 @@ declare namespace LocalJSX {
         "footer-nav": FooterNav;
         "image-gallery": ImageGallery;
         "image-gallery-link": ImageGalleryLink;
+        "mobile-nav-bar": MobileNavBar;
         "moods-board": MoodsBoard;
         "moods-board-picker": MoodsBoardPicker;
         "moods-board-preview": MoodsBoardPreview;
@@ -388,6 +402,7 @@ declare module "@stencil/core" {
             "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
             "image-gallery": LocalJSX.ImageGallery & JSXBase.HTMLAttributes<HTMLImageGalleryElement>;
             "image-gallery-link": LocalJSX.ImageGalleryLink & JSXBase.HTMLAttributes<HTMLImageGalleryLinkElement>;
+            "mobile-nav-bar": LocalJSX.MobileNavBar & JSXBase.HTMLAttributes<HTMLMobileNavBarElement>;
             "moods-board": LocalJSX.MoodsBoard & JSXBase.HTMLAttributes<HTMLMoodsBoardElement>;
             "moods-board-picker": LocalJSX.MoodsBoardPicker & JSXBase.HTMLAttributes<HTMLMoodsBoardPickerElement>;
             "moods-board-preview": LocalJSX.MoodsBoardPreview & JSXBase.HTMLAttributes<HTMLMoodsBoardPreviewElement>;

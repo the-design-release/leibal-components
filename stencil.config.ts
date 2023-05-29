@@ -4,11 +4,10 @@ import replace from 'postcss-replace';
 import purgecss from '@fullhuman/postcss-purgecss';
 import cssnano from 'cssnano';
 
-
 const purge = purgecss({
   content: ['./src/**/*.tsx', './src/index.html'],
   safelist: [':host'],
-  defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
 });
 
 export const config: Config = {
@@ -41,10 +40,8 @@ export const config: Config = {
         require('autoprefixer'),
         replace({ pattern: 'html', data: { replaceAll: ':host' } } as any),
         // purge and cssnano if production build
-        ...(!process.argv.includes('--dev')
-          ? [purge, cssnano()]
-          : [])
-      ]
-    })
-  ]
+        ...(!process.argv.includes('--dev') ? [purge, cssnano()] : []),
+      ],
+    }),
+  ],
 };

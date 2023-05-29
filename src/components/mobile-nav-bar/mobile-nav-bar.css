@@ -1,0 +1,124 @@
+:host {
+  display: block;
+}
+
+.mobile-nav-bar {
+  @apply fixed top-0 left-0 right-0 bg-white font-light;
+
+  &__icons {
+    @apply z-50 w-full absolute flex justify-between items-center border-b border-b-gray-300 h-[50px] transition-colors duration-300 ease-in-out;
+
+    border-bottom-style: solid;
+
+    &--open {
+      @apply transition-colors duration-300 ease-in-out bg-black text-white border-b-white;
+
+      & .mobile-nav-bar__icon {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &__icon {
+    @apply cursor-pointer p-4 w-4 block;
+  }
+
+  &__menu {
+    @apply absolute w-full h-screen bg-black text-white z-40 flex flex-col justify-around box-border;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem 1rem;
+    padding-top: calc(50px + 3.5rem);
+    padding-bottom: 3.5rem;
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__logo {
+    @apply block w-[100px] mb-8;
+
+    filter: invert(1);
+  }
+
+  &__menu-items {
+    @apply mb-12;
+  }
+
+  &__menu-links-container {
+    @apply absolute w-full h-full;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 300ms, opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__menu-links {
+    @apply z-[60] flex flex-col absolute top-0 right-0 left-0 bottom-0 bg-black;
+
+    & a {
+      @apply mb-2 font-light text-sm no-underline text-white;
+
+      &:hover {
+        @apply underline underline-offset-2;
+      }
+    }
+  }
+
+  &__menu-item {
+    @apply mb-3 text-lg font-normal;
+  }
+
+  &__submenu-items {
+    @apply mb-12;
+  }
+
+  &__submenu-item {
+    @apply mb-1 text-sm;
+  }
+
+  &__newsletter {
+    @apply mb-8;
+
+    &__header {
+      @apply mb-3 text-lg font-normal;
+    }
+
+    &__input {
+      @apply py-2 flex justify-between;
+      border-bottom: 1px solid #fff;
+
+      & input {
+        all: unset;
+        @apply text-sm flex-grow;
+      }
+
+      & button {
+        all: unset;
+        @apply text-sm cursor-pointer pl-4;
+      }
+    }
+  }
+
+  &__links {
+    @apply grid grid-cols-2 gap-6 mb-8;
+  }
+
+  &__link-header {
+    @apply mb-3 text-base font-normal;
+  }
+
+  &__link-item {
+    @apply text-[12px];
+  }
+}
