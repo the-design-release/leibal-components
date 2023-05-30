@@ -60,13 +60,13 @@ export class MobileNavBar {
                 class="mobile-nav-bar__icon"
                 src={getAssetPath('./assets/shopping-bag.png')}
                 alt="Cart"
-                style={{ paddingRight: '0rem' }}
+                style={{ paddingRight: '0.5rem' }}
               />
               <img
                 class="mobile-nav-bar__icon"
                 src={getAssetPath('./assets/user.png')}
                 alt="Account"
-                style={{ width: '0.9rem', height: '0.9rem' }}
+                style={{ width: '0.9rem', height: '0.9rem', paddingLeft: '0.5rem' }}
               />
             </div>
           </div>
@@ -194,13 +194,13 @@ export class MobileNavBar {
                 <div class="mobile-nav-bar__submenu-item">Cart</div>
               </div>
 
-              <div class="mobile-nav-bar__newsletter">
+              {/* <div class="mobile-nav-bar__newsletter">
                 <div class="mobile-nav-bar__newsletter__header">Newsletter</div>
                 <div class="mobile-nav-bar__newsletter__input">
                   <input type="text" />
                   <button>Send</button>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div class="mobile-nav-bar__links">

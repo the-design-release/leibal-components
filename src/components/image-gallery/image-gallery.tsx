@@ -161,7 +161,7 @@ export class ImageGallery {
                   image-url={this._images[this.currentImageIndex].href}
                   post-id={this.postId}
                   content-location={'right'}
-                  style={{ margin: '2.5rem 0' }}
+                  style={{ marginTop: '2.5rem' }}
                 >
                   <span style={{ marginLeft: '1rem', fontSize: '0.75rem' }}>Save Image to MOODS</span>
                 </add-to-moods-button>
@@ -174,7 +174,7 @@ export class ImageGallery {
                   />
                 )}
                 {!this.canEnquire && designDetail && (
-                  <div>
+                  <div class="hidden lg:block">
                     <div class="image-gallery__info__subtitle">Design Details</div>
 
                     <div class="block xl:grid xl:grid-cols-12 xl:gap-8">
