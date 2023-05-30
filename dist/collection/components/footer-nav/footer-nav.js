@@ -40,7 +40,7 @@ export class FooterNav {
             h("a", { class: "footer-nav__link", href: "#" }, "Tumblr"),
             h("a", { class: "footer-nav__link", href: "#" }, "LinkedIn"))),
         h("div", { class: "footer-nav__column" },
-          h("div", { class: "footer-nav__title" }, "Subscribe"),
+          h("div", { class: "footer-nav__title" }, "Newsletter: "),
           h("div", { class: "footer-nav__email-form" }),
           h("div", { class: "footer-nav__trademark" },
             "\u00A9 ",

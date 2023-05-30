@@ -1,7 +1,8 @@
 import { Component, Host, Prop, State, getAssetPath, h } from '@stencil/core';
+import { BLOG_URL, STORE_URL } from '../../utils/platform';
 export class MobileNavBar {
   constructor() {
-    this.isOpen = true;
+    this.isOpen = false;
     this.platform = 'blog';
     this.isShowingLinks = false;
     this.linksType = 'blog';
@@ -13,6 +14,15 @@ export class MobileNavBar {
   hideLinks() {
     this.isShowingLinks = false;
   }
+  platformSpecificLink(platform, path) {
+    const platformUrl = platform === 'store' ? STORE_URL : BLOG_URL;
+    if (this.platform === platform) {
+      return path;
+    }
+    else {
+      return new URL(path, platformUrl).toString();
+    }
+  }
   render() {
     return (h(Host, null,
       h("div", { class: "mobile-nav-bar" },
@@ -22,7 +32,9 @@ export class MobileNavBar {
             h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/shopping-bag.png'), alt: "Cart", style: { paddingRight: '0rem' } }),
             h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/user.png'), alt: "Account", style: { width: '0.9rem', height: '0.9rem' } }))),
         h("div", { class: `mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}` },
-          h("img", { class: "mobile-nav-bar__logo", src: getAssetPath('./assets/leibal-logo.png'), alt: "Logo" }),
+          h("img", { class: "mobile-nav-bar__logo", src: getAssetPath('./assets/leibal-logo.png'), alt: "Logo", onClick: () => {
+              window.location.href = this.platformSpecificLink(this.platform, '/');
+            } }),
           h("div", { style: { position: 'relative' } },
             h("div", { class: `mobile-nav-bar__menu-links-container ${this.isShowingLinks ? 'mobile-nav-bar__menu-links-container--open' : ''}` },
               this.linksType === 'blog' && (h("div", { class: "mobile-nav-bar__menu-links" },

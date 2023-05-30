@@ -3,10 +3,10 @@
 }
 
 .mobile-nav-bar {
-  @apply fixed top-0 left-0 right-0 bg-white font-light;
+  @apply fixed top-0 left-0 right-0 font-light z-[100];
 
   &__icons {
-    @apply z-50 w-full absolute flex justify-between items-center border-b border-b-gray-300 h-[50px] transition-colors duration-300 ease-in-out;
+    @apply z-50 w-full absolute flex justify-between items-center border-b bg-white  border-b-gray-300 h-[50px] transition-colors duration-300 ease-in-out;
 
     border-bottom-style: solid;
 

@@ -8,13 +8,13 @@
 }
 
 .footer-nav {
-  @apply block lg:grid lg:grid-cols-10 lg:gap-8 my-16 lg:my-24;
+  @apply grid grid-cols-2 gap-4 lg:grid lg:grid-cols-10 lg:gap-8 my-16 lg:my-24;
 
   &__column {
-    @apply col-span-2 flex flex-col mb-12 lg:mb-0;
+    @apply lg:col-span-2 flex flex-col mb-12 lg:mb-0;
 
     &:last-child {
-      @apply justify-between;
+      @apply col-span-2 justify-between;
     }
   }
 

@@ -1,5 +1,5 @@
 import { Component, Host, Prop, State, getAssetPath, h } from '@stencil/core';
-import { PlatformType } from '../../utils/platform';
+import { BLOG_URL, PlatformType, STORE_URL } from '../../utils/platform';
 
 @Component({
   tag: 'mobile-nav-bar',
@@ -8,7 +8,7 @@ import { PlatformType } from '../../utils/platform';
   shadow: true,
 })
 export class MobileNavBar {
-  @State() isOpen: boolean = true;
+  @State() isOpen: boolean = false;
   @Prop() platform: PlatformType = 'blog';
   @State() isShowingLinks: boolean = false;
   @State() linksType: PlatformType = 'blog';
@@ -20,6 +20,15 @@ export class MobileNavBar {
 
   hideLinks() {
     this.isShowingLinks = false;
+  }
+
+  platformSpecificLink(platform: PlatformType, path: string): string {
+    const platformUrl = platform === 'store' ? STORE_URL : BLOG_URL;
+    if (this.platform === platform) {
+      return path;
+    } else {
+      return new URL(path, platformUrl).toString();
+    }
   }
 
   render() {
@@ -62,7 +71,14 @@ export class MobileNavBar {
             </div>
           </div>
           <div class={`mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}`}>
-            <img class="mobile-nav-bar__logo" src={getAssetPath('./assets/leibal-logo.png')} alt="Logo" />
+            <img
+              class="mobile-nav-bar__logo"
+              src={getAssetPath('./assets/leibal-logo.png')}
+              alt="Logo"
+              onClick={() => {
+                window.location.href = this.platformSpecificLink(this.platform, '/');
+              }}
+            />
 
             <div style={{ position: 'relative' }}>
               <div

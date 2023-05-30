@@ -6,5 +6,6 @@ export declare class MobileNavBar {
   linksType: PlatformType;
   showLinks(platform: PlatformType): void;
   hideLinks(): void;
+  platformSpecificLink(platform: PlatformType, path: string): string;
   render(): any;
 }

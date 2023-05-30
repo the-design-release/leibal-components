@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-31caa8e8.js');
 
-const simpleInputCss = ":host{--font-family:var(--leibal-components-font-family,sans-serif);--color-light:#fff;--color-dark:#222;--color-gray:#ddd;display:block;font-family:var(--font-family)}.simple-input,.simple-input--text{display:block}.simple-input--text{border:none;border-bottom:1px solid var(--color-gray);letter-spacing:.05em;outline:none;padding-bottom:1rem;width:100%}.simple-input--text::-moz-placeholder{color:#999;letter-spacing:.05em;opacity:1!important}.simple-input--text::placeholder{color:#999;letter-spacing:.05em;opacity:1!important}";
+const simpleInputCss = ":host{--font-family:var(--leibal-components-font-family,sans-serif);--color-light:#fff;--color-dark:#222;--color-gray:#ddd;display:block;font-family:var(--font-family)}.simple-input,.simple-input--text{display:block}.simple-input--text{border:none;border-bottom:1px solid var(--color-gray);letter-spacing:.05em;outline:none;padding-bottom:1rem;width:100%}.simple-input--text::-moz-placeholder{color:#999;letter-spacing:.05em;opacity:1!important}.simple-input--text:-ms-input-placeholder{color:#999;letter-spacing:.05em;opacity:1!important}.simple-input--text::placeholder{color:#999;letter-spacing:.05em;opacity:1!important}";
 
 const INPUT_TYPES = ['text', 'password', 'email', 'number', 'tel', 'url'];
 let SimpleInput = class {
