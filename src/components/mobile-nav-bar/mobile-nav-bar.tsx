@@ -279,7 +279,13 @@ export class MobileNavBar {
                 type="text"
                 placeholder="Start Typing..."
               />
-              <button>Search</button>
+              <button
+                onClick={() => {
+                  this.submitSearch();
+                }}
+              >
+                Search
+              </button>
             </div>
           </div>
         </div>

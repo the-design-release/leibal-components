@@ -1,0 +1,1 @@
+const t="https://store.leibal.com",s="https://leibal.com";export{s as B,t as S}
