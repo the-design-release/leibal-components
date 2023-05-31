@@ -118,22 +118,22 @@ export class FooterNav {
           <div class="footer-nav__column">
             <div class="footer-nav__title">About</div>
             <div class="footer-nav__links">
-              <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/contact-us')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/contact-us')}>
                 Contact Us
               </a>
-              <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/submissions')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/submissions')}>
                 Submit
               </a>
-              <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/faq')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/faq')}>
                 FAQ
               </a>
-              <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/privacy')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/privacy')}>
                 Privacy
               </a>
-              <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/toc')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/toc')}>
                 Terms &amp; Conditions
               </a>
-              <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/trades')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/trades')}>
                 Trade Program
               </a>
             </div>

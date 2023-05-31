@@ -84,7 +84,7 @@
   }
 
   &__submenu-item {
-    @apply mb-1 text-sm;
+    @apply mb-1 text-sm block text-white no-underline;
   }
 
   &__newsletter {
@@ -119,6 +119,6 @@
   }
 
   &__link-item {
-    @apply text-[12px];
+    @apply block text-[12px] text-white no-underline;
   }
 }
