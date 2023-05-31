@@ -114,7 +114,7 @@ export class NavBar {
               <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
             </div>
             <div class="navbar__row__action">
-              <a href="/submissions">Submit</a>
+              <a href="/submissions-form">Submit</a>
               {this.authenticated ? (
                 <a href={this.platformSpecificLink('blog', '/moods')} class="navbar__moods-logo">
                   <img src={getAssetPath(`./assets/moods-white.png`)} />
@@ -166,7 +166,7 @@ export class NavBar {
               <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
             </div>
             <div class="navbar__row__action">
-              <a href="/cart" class="border-l border-white cursor-pointer">
+              <a href={this.platformSpecificLink('store', '/cart')} class="border-l border-white cursor-pointer">
                 Cart
               </a>
               <a

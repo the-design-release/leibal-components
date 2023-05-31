@@ -86,7 +86,7 @@ export class NavBar {
             h("a", { href: this.platformSpecificLink('blog', '/category/products') }, "Objects"),
             h("a", { href: this.platformSpecificLink('blog', '/category/travel') }, "Travel")),
           h("div", { class: "navbar__row__action" },
-            h("a", { href: "/submissions" }, "Submit"),
+            h("a", { href: "/submissions-form" }, "Submit"),
             this.authenticated ? (h("a", { href: this.platformSpecificLink('blog', '/moods'), class: "navbar__moods-logo" },
               h("img", { src: getAssetPath(`./assets/moods-white.png`) }))) : (h("a", { href: this.platformSpecificLink('blog', '/subscription/subscribe') }, "Sign Up")))),
         h("div", { class: "navbar__row" },
@@ -117,7 +117,7 @@ export class NavBar {
             h("a", { href: this.platformSpecificLink('store', '/collections/outdoor') }, "Outdoor"),
             h("a", { href: this.platformSpecificLink('store', '/collections/accessories') }, "Accessories")),
           h("div", { class: "navbar__row__action" },
-            h("a", { href: "/cart", class: "border-l border-white cursor-pointer" }, "Cart"),
+            h("a", { href: this.platformSpecificLink('store', '/cart'), class: "border-l border-white cursor-pointer" }, "Cart"),
             h("a", { class: "z-10 cursor-pointer", onClick: () => {
                 this.showSearch = !this.showSearch;
                 setTimeout(() => {

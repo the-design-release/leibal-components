@@ -6,6 +6,7 @@ export class MobileNavBar {
     this.platform = 'blog';
     this.isShowingLinks = false;
     this.linksType = 'blog';
+    this.searchText = '';
   }
   showLinks(platform) {
     this.isShowingLinks = true;
@@ -21,6 +22,14 @@ export class MobileNavBar {
     }
     else {
       return new URL(path, platformUrl).toString();
+    }
+  }
+  submitSearch() {
+    if (this.platform === 'blog') {
+      window.location.href = this.platformSpecificLink('blog', `/?s=${this.searchText}`);
+    }
+    else {
+      window.location.href = this.platformSpecificLink('store', `/search?q=${this.searchText}`);
     }
   }
   render() {
@@ -91,7 +100,7 @@ export class MobileNavBar {
                   this.showLinks('store');
                 } }, "Store >")),
             h("div", { class: "mobile-nav-bar__submenu-items" },
-              h("a", { class: "mobile-nav-bar__submenu-item", href: this.platformSpecificLink('blog', '/submissions') }, "Submit"),
+              h("a", { class: "mobile-nav-bar__submenu-item", href: this.platformSpecificLink('blog', '/submissions-form') }, "Submit"),
               h("a", { class: "mobile-nav-bar__submenu-item", href: this.platformSpecificLink('blog', '/subscribe') }, "Subscribe"),
               h("a", { class: "mobile-nav-bar__submenu-item", href: this.platformSpecificLink('blog', '/users') }, "Account"),
               h("a", { class: "mobile-nav-bar__submenu-item", href: this.platformSpecificLink('store', '/cart') }, "Cart"))),
@@ -99,10 +108,10 @@ export class MobileNavBar {
             h("div", null,
               h("div", { class: "mobile-nav-bar__link-header" }, "About"),
               h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/contact-us') }, "Contact Us"),
-              h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/submissions') }, "Submit"),
+              h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/submissions-form') }, "Submit"),
               h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/faq') }, "FAQ"),
               h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/privacy') }, "Privacy"),
-              h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/toc') }, "Terms & Conditions"),
+              h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/terms-and-conditions') }, "Terms & Conditions"),
               h("a", { class: "mobile-nav-bar__link-item", href: this.platformSpecificLink('blog', '/trades') }, "Trade Program")),
             h("div", null,
               h("div", { class: "mobile-nav-bar__link-header" }, "Connect"),
@@ -111,7 +120,16 @@ export class MobileNavBar {
               h("a", { class: "mobile-nav-bar__link-item", href: "http://www.facebook.com/Leibal" }, "Facebook"),
               h("a", { class: "mobile-nav-bar__link-item", href: "https://leibal.tumblr.com/" }, "Tumblr"),
               h("a", { class: "mobile-nav-bar__link-item", href: "https://www.linkedin.com/company/leibal/" }, "LinkedIn"),
-              h("a", { class: "mobile-nav-bar__link-item", href: "https://www.tiktok.com/leibal" }, "TikTok")))))));
+              h("a", { class: "mobile-nav-bar__link-item", href: "https://www.tiktok.com/leibal" }, "TikTok"))),
+          h("div", { class: "mobile-nav-bar__search" },
+            h("input", { class: "navbar__search__input", onInput: e => {
+                this.searchText = e.target.value;
+              }, onKeyPress: e => {
+                if (e.key === 'Enter') {
+                  this.submitSearch();
+                }
+              }, type: "text", placeholder: "Start Typing..." }),
+            h("button", null, "Search"))))));
   }
   static get is() { return "mobile-nav-bar"; }
   static get encapsulation() { return "shadow"; }
@@ -150,6 +168,7 @@ export class MobileNavBar {
   static get states() { return {
     "isOpen": {},
     "isShowingLinks": {},
-    "linksType": {}
+    "linksType": {},
+    "searchText": {}
   }; }
 }

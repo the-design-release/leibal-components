@@ -121,7 +121,7 @@ export class FooterNav {
               <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/contact-us')}>
                 Contact Us
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/submissions')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/submissions-form')}>
                 Submit
               </a>
               <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/faq')}>
@@ -130,7 +130,7 @@ export class FooterNav {
               <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/privacy')}>
                 Privacy
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/toc')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/terms-and-conditions')}>
                 Terms &amp; Conditions
               </a>
               <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/trades')}>

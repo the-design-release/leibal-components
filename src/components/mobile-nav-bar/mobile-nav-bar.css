@@ -31,7 +31,7 @@
     transition: visibility 0s, opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem 1rem;
     padding-top: calc(50px + 3.5rem);
-    padding-bottom: 3.5rem;
+    padding-bottom: calc(50px + 3.5rem);
 
     &--open {
       visibility: visible;
@@ -120,5 +120,20 @@
 
   &__link-item {
     @apply block text-[12px] text-white no-underline;
+  }
+
+  &__search {
+    @apply flex justify-between absolute bottom-0 left-0 right-0 bg-white text-black;
+
+    & input {
+      all: unset;
+      @apply block p-4 w-full;
+    }
+
+    & button {
+      all: unset;
+      @apply block px-12 py-4;
+      border-left: 1px solid #888;
+    }
   }
 }

@@ -12,6 +12,7 @@ export class MobileNavBar {
   @Prop() platform: PlatformType = 'blog';
   @State() isShowingLinks: boolean = false;
   @State() linksType: PlatformType = 'blog';
+  @State() searchText: string = '';
 
   showLinks(platform: PlatformType) {
     this.isShowingLinks = true;
@@ -28,6 +29,14 @@ export class MobileNavBar {
       return path;
     } else {
       return new URL(path, platformUrl).toString();
+    }
+  }
+
+  submitSearch() {
+    if (this.platform === 'blog') {
+      window.location.href = this.platformSpecificLink('blog', `/?s=${this.searchText}`);
+    } else {
+      window.location.href = this.platformSpecificLink('store', `/search?q=${this.searchText}`);
     }
   }
 
@@ -188,7 +197,7 @@ export class MobileNavBar {
               </div>
 
               <div class="mobile-nav-bar__submenu-items">
-                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/submissions')}>
+                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/submissions-form')}>
                   Submit
                 </a>
                 <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/subscribe')}>
@@ -217,7 +226,7 @@ export class MobileNavBar {
                 <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/contact-us')}>
                   Contact Us
                 </a>
-                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/submissions')}>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/submissions-form')}>
                   Submit
                 </a>
                 <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/faq')}>
@@ -226,7 +235,7 @@ export class MobileNavBar {
                 <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/privacy')}>
                   Privacy
                 </a>
-                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/toc')}>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/terms-and-conditions')}>
                   Terms &amp; Conditions
                 </a>
                 <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/trades')}>
@@ -254,6 +263,23 @@ export class MobileNavBar {
                   TikTok
                 </a>
               </div>
+            </div>
+
+            <div class="mobile-nav-bar__search">
+              <input
+                class="navbar__search__input"
+                onInput={e => {
+                  this.searchText = (e.target as HTMLInputElement).value;
+                }}
+                onKeyPress={e => {
+                  if (e.key === 'Enter') {
+                    this.submitSearch();
+                  }
+                }}
+                type="text"
+                placeholder="Start Typing..."
+              />
+              <button>Search</button>
             </div>
           </div>
         </div>
