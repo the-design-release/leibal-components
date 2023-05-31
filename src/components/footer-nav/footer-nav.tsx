@@ -1,4 +1,5 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
+import { PlatformType } from '../../utils/platform';
 
 @Component({
   tag: 'footer-nav',
@@ -6,7 +7,37 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class FooterNav {
+  @Prop() platform: PlatformType = 'blog';
+
   render() {
+    const storeNewsletterForm = (
+      <form
+        action="https://leibal.us4.list-manage.com/subscribe/post?u=9891199121e89a545e0ba572a&amp;id=55fd30c180&amp;f_id=005bb1ebf0"
+        method="post"
+        target="_self"
+      >
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required />
+        <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+          <input type="text" name="b_9891199121e89a545e0ba572a_3a78fd6a2d" tabindex="-1" value="" />
+        </div>
+        <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button" />
+      </form>
+    );
+
+    const blogNewsletterForm = (
+      <form
+        action="https://leibal.us4.list-manage.com/subscribe/post?u=9891199121e89a545e0ba572a&amp;id=3a78fd6a2d&amp;f_id=0057b1ebf0"
+        method="post"
+        target="_self"
+      >
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required />
+        <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+          <input type="text" name="b_9891199121e89a545e0ba572a_3a78fd6a2d" tabindex="-1" value="" />
+        </div>
+        <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button" />
+      </form>
+    );
+
     return (
       <Host>
         <div class="footer-nav">
@@ -116,8 +147,10 @@ export class FooterNav {
 
           {/* Subscribe */}
           <div class="footer-nav__column">
-            <div class="footer-nav__title">Newsletter: </div>
-            <div class="footer-nav__email-form">{/* TODO: Create an input component and add the email form. */}</div>
+            <div class="footer-nav__title">Newsletter</div>
+            <div class="footer-nav__email-form">
+              {this.platform === 'blog' ? blogNewsletterForm : storeNewsletterForm}
+            </div>
             <div class="footer-nav__trademark">
               &copy; {new Date().getUTCFullYear()} LEIBAL LLC. ALL RIGHTS RESERVED
             </div>

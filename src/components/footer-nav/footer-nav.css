@@ -42,6 +42,24 @@
   }
 
   &__email-form {
+    flex-grow: 1;
+
+    & form {
+      @apply flex text-sm pb-2;
+      border-bottom: 1px solid var(--color-dark);
+    }
+
+    & input[type='email'] {
+      all: unset;
+      display: block;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    & input[type='submit'] {
+      all: unset;
+      display: block;
+    }
   }
 
   &__trademark {

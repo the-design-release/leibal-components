@@ -36,6 +36,7 @@ export namespace Components {
         "previewImage": string;
     }
     interface FooterNav {
+        "platform": PlatformType;
     }
     interface ImageGallery {
         "canEnquire": boolean;
@@ -287,6 +288,7 @@ declare namespace LocalJSX {
         "previewImage"?: string;
     }
     interface FooterNav {
+        "platform"?: PlatformType;
     }
     interface ImageGallery {
         "canEnquire"?: boolean;

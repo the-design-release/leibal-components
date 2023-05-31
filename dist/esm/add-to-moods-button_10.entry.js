@@ -1,17 +1,13 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-const index = require('./index-31caa8e8.js');
-const index$1 = require('./index-b9166294.js');
-const platform = require('./platform-aba5f316.js');
+import { r as registerInstance, c as createEvent, h, g as getAssetPath, H as Host, a as getElement, F as Fragment } from './index-3f06ee34.js';
+import { S as Swiper, N as Navigation, P as Pagination, K as Keyboard, z as zeroPad } from './index-219c5654.js';
+import { S as STORE_URL, B as BLOG_URL } from './platform-1d25d27e.js';
 
 const addToMoodsButtonCss = ":host{display:block}.add-to-moods-button{align-items:center;cursor:pointer;display:flex;transition:opacity .2s ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.add-to-moods-button--show-on-hover{opacity:0}.add-to-moods-button--show-on-hover .add-to-moods-button__content-left,.add-to-moods-button--show-on-hover .add-to-moods-button__content-right{opacity:0;transition:opacity .2s ease-in-out}.add-to-moods-button--show-on-hover .add-to-moods-button__content-left--hover,.add-to-moods-button--show-on-hover .add-to-moods-button__content-right--hover,.add-to-moods-button--show-on-hover--hover{opacity:1;transition:opacity .2s ease-in-out}.add-to-moods-button img{margin-top:-.1rem;width:1.5rem}";
 
 let AddToMoodsButton = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
-    this.openMoodsModal = index.createEvent(this, "openMoodsModal", 7);
+    registerInstance(this, hostRef);
+    this.openMoodsModal = createEvent(this, "openMoodsModal", 7);
     this.imageUrl = '';
     this.postId = null;
     this.disabled = false;
@@ -63,20 +59,20 @@ let AddToMoodsButton = class {
     });
   }
   render() {
-    return (index.h(index.Host, null, index.h("div", { class: 'add-to-moods-button ' +
+    return (h(Host, null, h("div", { class: 'add-to-moods-button ' +
         (this.showOnHover ? 'add-to-moods-button--show-on-hover ' : ' ') +
-        (!this.hidden && this.showOnHover ? 'add-to-moods-button--show-on-hover--hover ' : ' '), onClick: () => this.openMoodsModalHandler() }, this.contentLocation === 'left' && (index.h("div", { class: "add-to-moods-button__content-left" }, index.h("slot", null))), index.h("img", { src: this.theme == 'light' ? index.getAssetPath('./assets/add-icon.png') : index.getAssetPath('./assets/add-icon-dark.png'), alt: "Add To MOODS" }), this.contentLocation === 'right' && (index.h("div", { class: "add-to-moods-button__content-right" }, index.h("slot", null))))));
+        (!this.hidden && this.showOnHover ? 'add-to-moods-button--show-on-hover--hover ' : ' '), onClick: () => this.openMoodsModalHandler() }, this.contentLocation === 'left' && (h("div", { class: "add-to-moods-button__content-left" }, h("slot", null))), h("img", { src: this.theme == 'light' ? getAssetPath('./assets/add-icon.png') : getAssetPath('./assets/add-icon-dark.png'), alt: "Add To MOODS" }), this.contentLocation === 'right' && (h("div", { class: "add-to-moods-button__content-right" }, h("slot", null))))));
   }
   static get assetsDirs() { return ["assets"]; }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
 };
 AddToMoodsButton.style = addToMoodsButtonCss;
 
-const displayCardCss = "/*! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}h1{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}button,input,textarea{color:inherit;font-family:inherit;font-size:100%;line-height:inherit;margin:0;padding:0}button{text-transform:none}[type=button],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}h1,p{margin:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}img{display:block;height:auto;max-width:100%;vertical-align:middle}[hidden]{display:none}*,:after,:before{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scroll-snap-strictness:proximity;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;}.container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}.visible{visibility:visible}.relative{position:relative}.sticky{position:sticky}.z-10{z-index:10}.col-span-4{grid-column:span 4/span 4}.col-span-3{grid-column:span 3/span 3}.col-span-8{grid-column:span 8/span 8}.mb-8{margin-bottom:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.contents{display:contents}.hidden{display:none}.w-full{width:100%}.cursor-pointer{cursor:pointer}.resize{resize:both}.flex-col{flex-direction:column}.border-l{border-left-width:1px}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity))}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.blur{--tw-blur:blur(8px)}.blur,.invert{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.invert{--tw-invert:invert(100%)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}:host{margin-bottom:3rem}@media (min-width:1024px){:host{margin-bottom:5rem}}:host{--font-family:var(--leibal-components-font-family,sans-serif);--color-light:#fff;--color-dark:#222;display:block;font-family:var(--font-family)}.display-card{cursor:pointer;letter-spacing:.1em}.display-card__image{aspect-ratio:auto 1/1;overflow:hidden;position:relative;width:100%}.display-card__image>*{background-position:50%;background-size:cover;height:100%;opacity:0;position:absolute;transition:opacity .3s ease-in-out;width:100%;z-index:1}.display-card__image>:first-child{opacity:1}.display-card__image:hover>:nth-child(2){opacity:1;z-index:2}.display-card__top{margin-bottom:1.25rem;margin-top:1.25rem}.display-card__top__title{font-size:9px;font-weight:400;margin-bottom:.25rem;text-transform:uppercase}.display-card__top__subtitle{font-size:9px;font-weight:300;text-transform:uppercase}.display-card__bottom__title{font-size:13px;font-weight:400;margin-bottom:.25rem}.display-card__bottom__subtitle{font-size:9px;font-weight:300}.display-card--featured{cursor:pointer;display:block;letter-spacing:.1em}@media (min-width:768px){.display-card--featured{display:grid;gap:2rem;grid-template-columns:repeat(6,minmax(0,1fr))}}.display-card--featured__right{display:flex;flex-direction:column;grid-column:span 2/span 2;justify-content:space-between}.display-card--featured__top{margin-bottom:1.75rem;margin-top:1.5rem}@media (min-width:768px){.display-card--featured__top{margin-bottom:0;margin-top:0}}.display-card--featured__top__title{font-size:1.875rem;font-weight:400;line-height:2.25rem;margin-bottom:1rem;padding-right:1rem}.display-card--featured__top__subtitle{font-size:1rem;font-weight:300;line-height:1.5rem}.display-card--featured__bottom__title{font-size:9px;font-weight:400;margin-bottom:.75rem;text-transform:uppercase}.display-card--featured__bottom__title__name{font-size:9px;font-weight:300;margin-bottom:.25rem;text-transform:uppercase}.display-card--featured__bottom__subtitle{font-size:9px;font-weight:400;text-transform:uppercase}.display-card--featured__bottom__subtitle__name{font-size:9px;font-weight:300;margin-bottom:.25rem;text-transform:uppercase}@media (min-width:1024px){.lg\\:block{display:block}}@media (min-width:1280px){.xl\\:mb-0{margin-bottom:0}.xl\\:grid{display:grid}.xl\\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.xl\\:gap-8{gap:2rem}}";
+const displayCardCss = "/*! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}h1{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}button,input,textarea{color:inherit;font-family:inherit;font-size:100%;line-height:inherit;margin:0;padding:0}button{text-transform:none}[type=button],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}h1,p{margin:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}img{display:block;height:auto;max-width:100%;vertical-align:middle}[hidden]{display:none}*,:after,:before{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scroll-snap-strictness:proximity;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;}.container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}.visible{visibility:visible}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.z-10{z-index:10}.col-span-4{grid-column:span 4/span 4}.col-span-3{grid-column:span 3/span 3}.col-span-8{grid-column:span 8/span 8}.mb-8{margin-bottom:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.contents{display:contents}.hidden{display:none}.w-full{width:100%}.cursor-pointer{cursor:pointer}.resize{resize:both}.flex-col{flex-direction:column}.border-l{border-left-width:1px}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity))}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.blur{--tw-blur:blur(8px)}.blur,.invert{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.invert{--tw-invert:invert(100%)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}:host{margin-bottom:3rem}@media (min-width:1024px){:host{margin-bottom:5rem}}:host{--font-family:var(--leibal-components-font-family,sans-serif);--color-light:#fff;--color-dark:#222;display:block;font-family:var(--font-family)}.display-card{cursor:pointer;letter-spacing:.1em}.display-card__image{aspect-ratio:auto 1/1;overflow:hidden;position:relative;width:100%}.display-card__image>*{background-position:50%;background-size:cover;height:100%;opacity:0;position:absolute;transition:opacity .3s ease-in-out;width:100%;z-index:1}.display-card__image>:first-child{opacity:1}.display-card__image:hover>:nth-child(2){opacity:1;z-index:2}.display-card__top{margin-bottom:1.25rem;margin-top:1.25rem}.display-card__top__title{font-size:9px;font-weight:400;margin-bottom:.25rem;text-transform:uppercase}.display-card__top__subtitle{font-size:9px;font-weight:300;text-transform:uppercase}.display-card__bottom__title{font-size:13px;font-weight:400;margin-bottom:.25rem}.display-card__bottom__subtitle{font-size:9px;font-weight:300}.display-card--featured{cursor:pointer;display:block;letter-spacing:.1em}@media (min-width:768px){.display-card--featured{display:grid;gap:2rem;grid-template-columns:repeat(6,minmax(0,1fr))}}.display-card--featured__right{display:flex;flex-direction:column;grid-column:span 2/span 2;justify-content:space-between}.display-card--featured__top{margin-bottom:1.75rem;margin-top:1.5rem}@media (min-width:768px){.display-card--featured__top{margin-bottom:0;margin-top:0}}.display-card--featured__top__title{font-size:1.875rem;font-weight:400;line-height:2.25rem;margin-bottom:1rem;padding-right:1rem}.display-card--featured__top__subtitle{font-size:1rem;font-weight:300;line-height:1.5rem}.display-card--featured__bottom__title{font-size:9px;font-weight:400;margin-bottom:.75rem;text-transform:uppercase}.display-card--featured__bottom__title__name{font-size:9px;font-weight:300;margin-bottom:.25rem;text-transform:uppercase}.display-card--featured__bottom__subtitle{font-size:9px;font-weight:400;text-transform:uppercase}.display-card--featured__bottom__subtitle__name{font-size:9px;font-weight:300;margin-bottom:.25rem;text-transform:uppercase}@media (min-width:1024px){.lg\\:block{display:block}}@media (min-width:1280px){.xl\\:mb-0{margin-bottom:0}.xl\\:grid{display:grid}.xl\\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.xl\\:gap-8{gap:2rem}}";
 
 let DisplayCard = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.theme = 'light';
     this.cardType = 'normal';
     this.bottomTitleName = '';
@@ -96,7 +92,7 @@ let DisplayCard = class {
     this.watchImages(this.images);
   }
   render() {
-    return (index.h(index.Host, null, this.cardType === 'normal' ? (index.h("a", { href: this.linkTo, class: "display-card" }, index.h("div", { class: "display-card__image" }, index.h("div", { style: { backgroundImage: `url(${this._images[0]})` } }), index.h("div", { style: { backgroundImage: `url(${this._images[1]})` } })), index.h("div", { class: "display-card__top" }, index.h("div", { class: "display-card__top__title" }, index.h("slot", { name: "top-title" })), index.h("div", { class: "display-card__top__subtitle" }, index.h("slot", { name: "top-subtitle" }))), index.h("div", { class: "display-card__bottom" }, index.h("div", { class: "display-card__bottom__title" }, index.h("slot", { name: "bottom-title" })), index.h("div", { class: "display-card__bottom__subtitle" }, index.h("slot", { name: "bottom-subtitle" }))))) : (index.h("a", { href: this.linkTo, class: "display-card--featured" }, index.h("div", { class: "col-span-4 display-card__image" }, index.h("div", { style: { backgroundImage: `url(${this._images[0]})` } }), index.h("div", { style: { backgroundImage: `url(${this._images[1]})` } })), index.h("div", { class: "display-card--featured__right" }, index.h("div", { class: "display-card--featured__top" }, index.h("div", { class: "display-card--featured__top__title" }, index.h("slot", { name: "top-title" })), index.h("div", { class: "display-card--featured__top__subtitle" }, index.h("slot", { name: "top-subtitle" }))), index.h("div", { class: "display-card--featured__bottom" }, index.h("div", { class: "display-card--featured__bottom__title" }, index.h("div", { class: "display-card--featured__bottom__title__name" }, this.bottomTitleName), index.h("slot", { name: "bottom-title" })), index.h("div", { class: "display-card--featured__bottom__subtitle" }, index.h("div", { class: "display-card--featured__bottom__subtitle__name" }, this.bottomSubtitleName), index.h("slot", { name: "bottom-subtitle" }))))))));
+    return (h(Host, null, this.cardType === 'normal' ? (h("a", { href: this.linkTo, class: "display-card" }, h("div", { class: "display-card__image" }, h("div", { style: { backgroundImage: `url(${this._images[0]})` } }), h("div", { style: { backgroundImage: `url(${this._images[1]})` } })), h("div", { class: "display-card__top" }, h("div", { class: "display-card__top__title" }, h("slot", { name: "top-title" })), h("div", { class: "display-card__top__subtitle" }, h("slot", { name: "top-subtitle" }))), h("div", { class: "display-card__bottom" }, h("div", { class: "display-card__bottom__title" }, h("slot", { name: "bottom-title" })), h("div", { class: "display-card__bottom__subtitle" }, h("slot", { name: "bottom-subtitle" }))))) : (h("a", { href: this.linkTo, class: "display-card--featured" }, h("div", { class: "col-span-4 display-card__image" }, h("div", { style: { backgroundImage: `url(${this._images[0]})` } }), h("div", { style: { backgroundImage: `url(${this._images[1]})` } })), h("div", { class: "display-card--featured__right" }, h("div", { class: "display-card--featured__top" }, h("div", { class: "display-card--featured__top__title" }, h("slot", { name: "top-title" })), h("div", { class: "display-card--featured__top__subtitle" }, h("slot", { name: "top-subtitle" }))), h("div", { class: "display-card--featured__bottom" }, h("div", { class: "display-card--featured__bottom__title" }, h("div", { class: "display-card--featured__bottom__title__name" }, this.bottomTitleName), h("slot", { name: "bottom-title" })), h("div", { class: "display-card--featured__bottom__subtitle" }, h("div", { class: "display-card--featured__bottom__subtitle__name" }, this.bottomSubtitleName), h("slot", { name: "bottom-subtitle" }))))))));
   }
   static get watchers() { return {
     "images": ["watchImages"]
@@ -108,7 +104,7 @@ const enquireModalCss = ".enquire-card{--font-family:var(--leibal-components-fon
 
 let EnquireModal = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.isModalOpen = false;
     this.formState = {
       firstName: '',
@@ -117,7 +113,7 @@ let EnquireModal = class {
       location: '',
       moreText: '',
     };
-    this.renderEnquireCard = () => (index.h("div", { class: "col-span-3 w-full cursor-pointer enquire-card", onClick: this.handleEnquireClick.bind(this) }, index.h("div", { class: "enquire-card__preview-image" }, index.h("div", { style: { backgroundImage: `url(${this.previewImage})` } })), index.h("div", { class: "enquire-card__info" }, index.h("div", { class: "mb-8" }, index.h("div", { class: "enquire-card__info__enquire" }, "Enquire About"), index.h("div", { class: "enquire-card__info__title" }, this.postTitle)), index.h("div", null, "Find out more information regarding purchasing, dimensions or lead times.")), index.h("div", { class: "text-xl enquire-card__button" }, index.h("simple-button", null, "Enquire"))));
+    this.renderEnquireCard = () => (h("div", { class: "col-span-3 w-full cursor-pointer enquire-card", onClick: this.handleEnquireClick.bind(this) }, h("div", { class: "enquire-card__preview-image" }, h("div", { style: { backgroundImage: `url(${this.previewImage})` } })), h("div", { class: "enquire-card__info" }, h("div", { class: "mb-8" }, h("div", { class: "enquire-card__info__enquire" }, "Enquire About"), h("div", { class: "enquire-card__info__title" }, this.postTitle)), h("div", null, "Find out more information regarding purchasing, dimensions or lead times.")), h("div", { class: "text-xl enquire-card__button" }, h("simple-button", null, "Enquire"))));
   }
   componentWillLoad() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
@@ -191,24 +187,39 @@ let EnquireModal = class {
     // }
   }
   render() {
-    return (index.h(index.Host, null, this.renderEnquireCard(), index.h("tele-portal", null, index.h("div", { class: this.isModalOpen ? 'enquire-modal__modal enquire-modal__modal--visible' : 'enquire-modal__modal', onClick: () => {
+    return (h(Host, null, this.renderEnquireCard(), h("tele-portal", null, h("div", { class: this.isModalOpen ? 'enquire-modal__modal enquire-modal__modal--visible' : 'enquire-modal__modal', onClick: () => {
         this.isModalOpen = false;
-      } }, index.h("form", { class: "enquire-modal__modal__content", onClick: e => e.stopImmediatePropagation(), ref: el => (this.contentElement = el), onInput: this.handleFormChange.bind(this), onSubmit: this.handleFormSubmit.bind(this) }, this.renderEnquireCard(), index.h("div", { class: "enquire-modal__modal__form" }, index.h("div", null, index.h("simple-input", { type: "text", name: "firstName", placeholder: "First Name", required: true }), index.h("simple-input", { type: "text", name: "lastName", placeholder: "Last Name", required: true }), index.h("simple-input", { type: "text", name: "email", placeholder: "Email Address", required: true }), index.h("simple-input", { type: "text", name: "location", placeholder: "Location", required: true }), index.h("div", { class: "enquire-modal__modal__form__message" }, index.h("div", { class: "enquire-modal__modal__form__message__title" }, "Message"), index.h("div", { class: "enquire-modal__modal__form__message__body" }, index.h("p", null, "Hello,"), index.h("p", null, "My name is ", index.h("u", null, this.formState.firstName || '...'), " ", index.h("u", null, this.formState.lastName || '...'), ", and I would like additional information regarding ", index.h("u", null, this.postTitle), "."), index.h("p", null, "I am currently located in ", index.h("u", null, this.formState.location || '...'), "."), index.h("div", { class: "grow-wrap" }, index.h("textarea", { class: "enquire-modal__modal__form__message__more-text", placeholder: "Type to add more to your request.", name: "moreText", onInput: function () {
+      } }, h("form", { class: "enquire-modal__modal__content", onClick: e => e.stopImmediatePropagation(), ref: el => (this.contentElement = el), onInput: this.handleFormChange.bind(this), onSubmit: this.handleFormSubmit.bind(this) }, this.renderEnquireCard(), h("div", { class: "enquire-modal__modal__form" }, h("div", null, h("simple-input", { type: "text", name: "firstName", placeholder: "First Name", required: true }), h("simple-input", { type: "text", name: "lastName", placeholder: "Last Name", required: true }), h("simple-input", { type: "text", name: "email", placeholder: "Email Address", required: true }), h("simple-input", { type: "text", name: "location", placeholder: "Location", required: true }), h("div", { class: "enquire-modal__modal__form__message" }, h("div", { class: "enquire-modal__modal__form__message__title" }, "Message"), h("div", { class: "enquire-modal__modal__form__message__body" }, h("p", null, "Hello,"), h("p", null, "My name is ", h("u", null, this.formState.firstName || '...'), " ", h("u", null, this.formState.lastName || '...'), ", and I would like additional information regarding ", h("u", null, this.postTitle), "."), h("p", null, "I am currently located in ", h("u", null, this.formState.location || '...'), "."), h("div", { class: "grow-wrap" }, h("textarea", { class: "enquire-modal__modal__form__message__more-text", placeholder: "Type to add more to your request.", name: "moreText", onInput: function () {
         this.parentNode.dataset.replicatedValue = this.value;
-      } })))))), index.h("div", { class: "enquire-modal__modal__submit" }, index.h("div", { class: "enquire-modal__modal__submit__disclaimer" }, "By sending this message your agree to our\u00A0", index.h("a", { href: "#" }, "Terms and Conditions"), ". For more information regarding how your data is processed, please view of ", index.h("a", { href: "#" }, "Privacy Policy"), "."), index.h("div", null, index.h("simple-button", { theme: "dark", onClick: (event) => {
+      } })))))), h("div", { class: "enquire-modal__modal__submit" }, h("div", { class: "enquire-modal__modal__submit__disclaimer" }, "By sending this message your agree to our\u00A0", h("a", { href: "#" }, "Terms and Conditions"), ". For more information regarding how your data is processed, please view of ", h("a", { href: "#" }, "Privacy Policy"), "."), h("div", null, h("simple-button", { theme: "dark", onClick: (event) => {
         const submitButton = event.target.nextSibling;
         submitButton.click();
-      } }, "Send"), index.h("button", { type: "submit", style: { display: 'none' } }))), index.h("div", { class: "enquire-modal__modal__close", onClick: () => {
+      } }, "Send"), h("button", { type: "submit", style: { display: 'none' } }))), h("div", { class: "enquire-modal__modal__close", onClick: () => {
         this.isModalOpen = false;
-      } }, index.h("img", { src: index.getAssetPath('./assets/close-icon.png') })))))));
+      } }, h("img", { src: getAssetPath('./assets/close-icon.png') })))))));
   }
   static get assetsDirs() { return ["assets"]; }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
   static get watchers() { return {
     "isModalOpen": ["clampBodyScroll"]
   }; }
 };
 EnquireModal.style = enquireModalCss;
+
+const footerNavCss = ":host{--font-family:var(--leibal-components-font-family,sans-serif);--color-light:#fff;--color-dark:#222;display:block;font-family:var(--font-family)}.footer-nav{display:grid;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:4rem;margin-top:4rem}@media (min-width:1024px){.footer-nav{display:grid;gap:2rem;grid-template-columns:repeat(10,minmax(0,1fr));margin-bottom:6rem;margin-top:6rem}}.footer-nav__column{display:flex;flex-direction:column;margin-bottom:3rem}@media (min-width:1024px){.footer-nav__column{grid-column:span 2/span 2;margin-bottom:0}}.footer-nav__column:last-child{grid-column:span 2/span 2;justify-content:space-between}.footer-nav__title{font-size:1rem;font-weight:400;letter-spacing:.1em;line-height:1.5rem;margin-bottom:3rem}.footer-nav__link{color:var(--color-dark);display:block;font-size:13px;margin-bottom:.75rem;text-decoration:none;text-underline-offset:2px}.footer-nav__link:hover{text-decoration:underline}.footer-nav__link:last-child{margin-bottom:0}.footer-nav__email-form{flex-grow:1}.footer-nav__email-form form{border-bottom:1px solid var(--color-dark);display:flex;font-size:13px;padding-bottom:.5rem}.footer-nav__email-form input[type=email]{all:unset;display:block;flex-grow:1;width:100%}.footer-nav__email-form input[type=submit]{all:unset;display:block}.footer-nav__trademark{font-size:9px;font-weight:300;text-transform:uppercase}";
+
+let FooterNav = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.platform = 'blog';
+  }
+  render() {
+    const storeNewsletterForm = (h("form", { action: "https://leibal.us4.list-manage.com/subscribe/post?u=9891199121e89a545e0ba572a&id=55fd30c180&f_id=005bb1ebf0", method: "post", target: "_self" }, h("input", { type: "email", value: "", name: "EMAIL", class: "required email", id: "mce-EMAIL", required: true }), h("div", { style: { position: 'absolute', left: '-5000px' }, "aria-hidden": "true" }, h("input", { type: "text", name: "b_9891199121e89a545e0ba572a_3a78fd6a2d", tabindex: "-1", value: "" })), h("input", { type: "submit", value: "Send", name: "subscribe", id: "mc-embedded-subscribe", class: "button" })));
+    const blogNewsletterForm = (h("form", { action: "https://leibal.us4.list-manage.com/subscribe/post?u=9891199121e89a545e0ba572a&id=3a78fd6a2d&f_id=0057b1ebf0", method: "post", target: "_self" }, h("input", { type: "email", value: "", name: "EMAIL", class: "required email", id: "mce-EMAIL", required: true }), h("div", { style: { position: 'absolute', left: '-5000px' }, "aria-hidden": "true" }, h("input", { type: "text", name: "b_9891199121e89a545e0ba572a_3a78fd6a2d", tabindex: "-1", value: "" })), h("input", { type: "submit", value: "Send", name: "subscribe", id: "mc-embedded-subscribe", class: "button" })));
+    return (h(Host, null, h("div", { class: "footer-nav" }, h("div", { class: "footer-nav__column" }, h("div", { class: "footer-nav__title" }, "Stories"), h("div", { class: "footer-nav__links" }, h("a", { class: "footer-nav__link", href: "#" }, "Architecture"), h("a", { class: "footer-nav__link", href: "#" }, "Interiors"), h("a", { class: "footer-nav__link", href: "#" }, "Furniture"), h("a", { class: "footer-nav__link", href: "#" }, "Lighting"), h("a", { class: "footer-nav__link", href: "#" }, "Products"), h("a", { class: "footer-nav__link", href: "#" }, "Travel"))), h("div", { class: "footer-nav__column" }, h("div", { class: "footer-nav__title" }, "Store"), h("div", { class: "footer-nav__links" }, h("a", { class: "footer-nav__link", href: "#" }, "Sofas"), h("a", { class: "footer-nav__link", href: "#" }, "Chairs"), h("a", { class: "footer-nav__link", href: "#" }, "Tables"), h("a", { class: "footer-nav__link", href: "#" }, "Storage"), h("a", { class: "footer-nav__link", href: "#" }, "Lighting"), h("a", { class: "footer-nav__link", href: "#" }, "Accessories"))), h("div", { class: "footer-nav__column" }, h("div", { class: "footer-nav__title" }, "About"), h("div", { class: "footer-nav__links" }, h("a", { class: "footer-nav__link", href: "#" }, "Contact Us"), h("a", { class: "footer-nav__link", href: "#" }, "Submit"), h("a", { class: "footer-nav__link", href: "#" }, "FAQ"), h("a", { class: "footer-nav__link", href: "#" }, "Privacy"), h("a", { class: "footer-nav__link", href: "#" }, "Terms & Conditions"), h("a", { class: "footer-nav__link", href: "#" }, "Trade Program"))), h("div", { class: "footer-nav__column" }, h("div", { class: "footer-nav__title" }, "Connect"), h("div", { class: "footer-nav__links" }, h("a", { class: "footer-nav__link", href: "#" }, "Pinterest"), h("a", { class: "footer-nav__link", href: "#" }, "Instagram"), h("a", { class: "footer-nav__link", href: "#" }, "Facebook"), h("a", { class: "footer-nav__link", href: "#" }, "Twitter"), h("a", { class: "footer-nav__link", href: "#" }, "Tumblr"), h("a", { class: "footer-nav__link", href: "#" }, "LinkedIn"))), h("div", { class: "footer-nav__column" }, h("div", { class: "footer-nav__title" }, "Newsletter"), h("div", { class: "footer-nav__email-form" }, this.platform === 'blog' ? blogNewsletterForm : storeNewsletterForm), h("div", { class: "footer-nav__trademark" }, "\u00A9 ", new Date().getUTCFullYear(), " LEIBAL LLC. ALL RIGHTS RESERVED")))));
+  }
+};
+FooterNav.style = footerNavCss;
 
 function createCommonjsModule(fn, basedir, module) {
 	return module = {
@@ -239,15 +250,15 @@ var numberToWords_min = createCommonjsModule(function (module, exports) {
 const imageGalleryCss = "@font-face{font-family:swiper-icons;font-style:normal;font-weight:400;src:url(\"data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA\")}:root{--swiper-theme-color:#007aff}.swiper{list-style:none;margin-left:auto;margin-right:auto;overflow:hidden;padding:0}.swiper,.swiper-wrapper{position:relative;z-index:1}.swiper-wrapper{box-sizing:content-box;display:flex;transform:translateZ(0)}.swiper-slide,.swiper-wrapper{height:100%;transition-property:transform;width:100%}.swiper-slide{flex-shrink:0;position:relative}:root{--swiper-navigation-size:44px}.swiper-button-next,.swiper-button-prev{align-items:center;color:var(--swiper-navigation-color,var(--swiper-theme-color));cursor:pointer;display:flex;height:var(--swiper-navigation-size);justify-content:center;margin-top:calc(0px - var(--swiper-navigation-size)/2);position:absolute;top:50%;width:calc(var(--swiper-navigation-size)/44*27);z-index:10}.swiper-button-next:after,.swiper-button-prev:after{font-family:swiper-icons;font-size:var(--swiper-navigation-size);font-variant:normal;letter-spacing:0;line-height:1;text-transform:none!important}.swiper-button-prev{left:10px;right:auto}.swiper-button-prev:after{content:\"prev\"}.swiper-button-next{left:auto;right:10px}.swiper-button-next:after{content:\"next\"}.swiper-pagination{position:absolute;text-align:center;transform:translateZ(0);transition:opacity .3s;z-index:10}@keyframes swiper-preloader-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.image-gallery{bottom:0;display:flex;flex-direction:column;left:0;position:fixed;right:0;top:0;z-index:800}@media (min-width:1024px){.image-gallery{display:grid;gap:2rem;grid-template-columns:repeat(10,minmax(0,1fr));padding-left:4rem;padding-right:4rem}}.image-gallery{background:#fff;opacity:0;transition:visibility 0s linear .25s,opacity .25s 0s,transform .25s;visibility:hidden}.image-gallery--visible{opacity:1;transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s;visibility:visible}.image-gallery__info{cursor:default;display:block;font-size:9px;grid-column:span 3/span 3;padding:2rem 2rem 2.75rem;z-index:20}@media (min-width:1024px){.image-gallery__info{display:flex;flex-direction:column;justify-content:space-between;padding-left:0;padding-right:0;padding-top:3rem}}.image-gallery__info{background:#fff}.image-gallery__info__title{font-size:1.5rem;font-weight:300;line-height:1.375;margin-bottom:.75rem;margin-right:.75rem;width:60%}@media (min-width:1024px){.image-gallery__info__title{font-size:2.5rem;margin-right:4rem}}.image-gallery__info__subtitle{font-size:1rem;font-weight:300;margin-bottom:2.5rem}@media (min-width:1024px){.image-gallery__info__subtitle{font-size:1.25rem;line-height:1.75rem}}.image-gallery__info__photographer__label{font-weight:300;margin-bottom:.25rem;text-transform:uppercase}.image-gallery__info__photographer__title{font-weight:700;margin-bottom:.75rem;text-transform:uppercase}.image-gallery__images{background:#f5f5f5;display:block;flex-grow:1;grid-column:span 7/span 7;position:relative;width:100%;z-index:10}@media (min-width:1024px){.image-gallery__images{width:calc(100% + 4rem)}}.image-gallery__images__swiper{bottom:0;left:0;position:absolute;right:0;top:0}.image-gallery__images__close{background:#f5f5f5;border-radius:5px;cursor:pointer;font-size:9px;margin:.5rem;padding:.5rem;position:absolute;right:0;-webkit-text-decoration-line:underline;text-decoration-line:underline;text-transform:uppercase;text-underline-offset:2px;top:0;z-index:10}.image-gallery .swiper{height:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:100%}.image-gallery .swiper-slide{align-items:center;background:#f5f5f5;display:flex;justify-content:center;text-align:center;width:100%}.image-gallery .swiper-slide img{max-height:100%;max-width:100%;-o-object-fit:cover;object-fit:cover}.image-gallery .swiper-button-next,.image-gallery .swiper-button-prev{color:#000}.image-gallery .swiper-button-next:after,.image-gallery .swiper-button-prev:after{align-items:center;display:flex;font-size:1rem;height:100vh;justify-content:center;padding:0 6rem}.image-gallery .swiper-button-prev{cursor:w-resize}.image-gallery .swiper-button-next{cursor:e-resize}.image-gallery .swiper-pagination{display:inline-block;font-size:.75rem;left:inherit;position:absolute;right:0;top:0;width:inherit;z-index:100}";
 
 const DEFAULT_SWIPER_OPTIONS = {
-  modules: [index$1.Navigation, index$1.Pagination, index$1.Keyboard],
+  modules: [Navigation, Pagination, Keyboard],
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
     formatFractionCurrent(number) {
-      return index$1.zeroPad(number, 2);
+      return zeroPad(number, 2);
     },
     formatFractionTotal(number) {
-      return index$1.zeroPad(number, 2);
+      return zeroPad(number, 2);
     },
   },
   navigation: {
@@ -263,7 +274,7 @@ const DEFAULT_SWIPER_OPTIONS = {
 };
 let ImageGallery = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.images = '[]';
     this.canEnquire = false;
     this.designDetail = null;
@@ -280,7 +291,7 @@ let ImageGallery = class {
   }
   componentDidLoad() {
     this.stopBodyScroll();
-    this.swiper = new index$1.Swiper('.image-gallery__images__swiper', DEFAULT_SWIPER_OPTIONS);
+    this.swiper = new Swiper('.image-gallery__images__swiper', DEFAULT_SWIPER_OPTIONS);
     // Update the currentImageIndex when the slide changes.
     this.swiper.on('slideChange', () => {
       this.currentImageIndex = this.swiper.realIndex;
@@ -321,19 +332,19 @@ let ImageGallery = class {
     //
     const designDetail = this._designDetail;
     const asSeenIns = designDetail && designDetail.asSeenIn ? designDetail.asSeenIn : [];
-    return (index.h(index.Host, null, index.h("tele-portal", null, index.h("div", { class: this.isModalOpen ? 'image-gallery image-gallery--visible' : 'image-gallery' }, index.h("div", { class: "image-gallery__info" }, index.h("div", { onClick: () => {
+    return (h(Host, null, h("tele-portal", null, h("div", { class: this.isModalOpen ? 'image-gallery image-gallery--visible' : 'image-gallery' }, h("div", { class: "image-gallery__info" }, h("div", { onClick: () => {
         this.isModalOpen = false;
-      }, style: { position: 'relative' } }, index.h("div", { class: "image-gallery__info__title" }, this.postTitle), index.h("div", { class: "image-gallery__info__subtitle" }, "by ", this.postExcerpt), index.h("div", { class: "image-gallery__info__photographer__label" }, "Photography"), index.h("div", { class: "image-gallery__info__photographer__title" }, this.photographer), index.h("div", { class: "swiper-pagination" })), index.h("div", null, index.h("add-to-moods-button", { theme: 'dark', "image-url": this._images[this.currentImageIndex].href, "post-id": this.postId, "content-location": 'right', style: { marginTop: '2.5rem' } }, index.h("span", { style: { marginLeft: '1rem', fontSize: '0.75rem' } }, "Save Image to MOODS"))), index.h("div", null, this.canEnquire && (index.h("enquire-modal", { postTitle: this.postTitle + ' by ' + this.postExcerpt, previewImage: this.previewImage })), !this.canEnquire && designDetail && (index.h("div", { class: "hidden lg:block" }, index.h("div", { class: "image-gallery__info__subtitle" }, "Design Details"), index.h("div", { class: "block xl:grid xl:grid-cols-12 xl:gap-8" }, index.h("display-card", { images: JSON.stringify([designDetail.image.url]), style: { marginBottom: '0' }, class: "col-span-8" }, index.h("div", { slot: "top-title" }, designDetail.designer || 'Unknown'), index.h("div", { slot: "top-subtitle" }, designDetail.category || 'N/A'), index.h("div", { slot: "bottom-title" }, designDetail.name || ''), index.h("div", { slot: "bottom-subtitle" }, designDetail.price || '')), index.h("div", { class: "flex flex-col col-span-4 mb-8 text-2xs xl:mb-0" }, index.h("div", null, index.h("span", null, "As seen in image "), asSeenIns.map((image, i) => {
-      const index$1 = parseFloat(image.value.index);
+      }, style: { position: 'relative' } }, h("div", { class: "image-gallery__info__title" }, this.postTitle), h("div", { class: "image-gallery__info__subtitle" }, "by ", this.postExcerpt), h("div", { class: "image-gallery__info__photographer__label" }, "Photography"), h("div", { class: "image-gallery__info__photographer__title" }, this.photographer), h("div", { class: "swiper-pagination" })), h("div", null, h("add-to-moods-button", { theme: 'dark', "image-url": this._images[this.currentImageIndex].href, "post-id": this.postId, "content-location": 'right', style: { marginTop: '2.5rem' } }, h("span", { style: { marginLeft: '1rem', fontSize: '0.75rem' } }, "Save Image to MOODS"))), h("div", null, this.canEnquire && (h("enquire-modal", { postTitle: this.postTitle + ' by ' + this.postExcerpt, previewImage: this.previewImage })), !this.canEnquire && designDetail && (h("div", { class: "hidden lg:block" }, h("div", { class: "image-gallery__info__subtitle" }, "Design Details"), h("div", { class: "block xl:grid xl:grid-cols-12 xl:gap-8" }, h("display-card", { images: JSON.stringify([designDetail.image.url]), style: { marginBottom: '0' }, class: "col-span-8" }, h("div", { slot: "top-title" }, designDetail.designer || 'Unknown'), h("div", { slot: "top-subtitle" }, designDetail.category || 'N/A'), h("div", { slot: "bottom-title" }, designDetail.name || ''), h("div", { slot: "bottom-subtitle" }, designDetail.price || '')), h("div", { class: "flex flex-col col-span-4 mb-8 text-2xs xl:mb-0" }, h("div", null, h("span", null, "As seen in image "), asSeenIns.map((image, i) => {
+      const index = parseFloat(image.value.index);
       if (i === asSeenIns.length - 1 && asSeenIns.length > 0) {
-        return (index.h(index.Fragment, null, index.h("span", null, "and "), index.h("span", { class: "underline cursor-pointer", onClick: () => this.swiper.slideTo(index$1 + 1) }, numberToWords_min.toWords(index$1 + 1)), "."));
+        return (h(Fragment, null, h("span", null, "and "), h("span", { class: "underline cursor-pointer", onClick: () => this.swiper.slideTo(index + 1) }, numberToWords_min.toWords(index + 1)), "."));
       }
-      return (index.h(index.Fragment, null, index.h("span", { class: "underline cursor-pointer", onClick: () => this.swiper.slideTo(index$1 + 1) }, numberToWords_min.toWords(index$1 + 1)), ', '));
-    })))))))), index.h("div", { class: "image-gallery__images" }, index.h("div", { class: "swiper image-gallery__images__swiper" }, index.h("div", { class: "swiper-wrapper" }, this._images.map(image => (index.h("div", { class: "swiper-slide" }, index.h("img", { src: image.href }))))), index.h("div", { class: "swiper-button-next" }), index.h("div", { class: "swiper-button-prev" })), index.h("div", { class: "image-gallery__images__close", onClick: () => {
+      return (h(Fragment, null, h("span", { class: "underline cursor-pointer", onClick: () => this.swiper.slideTo(index + 1) }, numberToWords_min.toWords(index + 1)), ', '));
+    })))))))), h("div", { class: "image-gallery__images" }, h("div", { class: "swiper image-gallery__images__swiper" }, h("div", { class: "swiper-wrapper" }, this._images.map(image => (h("div", { class: "swiper-slide" }, h("img", { src: image.href }))))), h("div", { class: "swiper-button-next" }), h("div", { class: "swiper-button-prev" })), h("div", { class: "image-gallery__images__close", onClick: () => {
         this.isModalOpen = false;
       } }, "Close"))))));
   }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
   static get watchers() { return {
     "isModalOpen": ["clampBodyScroll"]
   }; }
@@ -344,15 +355,15 @@ const imageGalleryLinkCss = ":root{cursor:pointer;display:block}";
 
 let ImageGalleryLink = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
-    this.openImageGallery = index.createEvent(this, "openImageGallery", 7);
+    registerInstance(this, hostRef);
+    this.openImageGallery = createEvent(this, "openImageGallery", 7);
     this.imageIndex = 0;
   }
   openImageGalleryHandler(index) {
     this.openImageGallery.emit(index);
   }
   render() {
-    return (index.h(index.Host, { onClick: () => this.openImageGalleryHandler(this.imageIndex + 1) }, index.h("slot", null)));
+    return (h(Host, { onClick: () => this.openImageGalleryHandler(this.imageIndex + 1) }, h("slot", null)));
   }
 };
 ImageGalleryLink.style = imageGalleryLinkCss;
@@ -361,7 +372,7 @@ const mobileNavBarCss = ":host{display:block}.mobile-nav-bar{font-weight:300;lef
 
 let MobileNavBar = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.isOpen = false;
     this.platform = 'blog';
     this.isShowingLinks = false;
@@ -374,9 +385,9 @@ let MobileNavBar = class {
   hideLinks() {
     this.isShowingLinks = false;
   }
-  platformSpecificLink(platform$1, path) {
-    const platformUrl = platform$1 === 'store' ? platform.STORE_URL : platform.BLOG_URL;
-    if (this.platform === platform$1) {
+  platformSpecificLink(platform, path) {
+    const platformUrl = platform === 'store' ? STORE_URL : BLOG_URL;
+    if (this.platform === platform) {
       return path;
     }
     else {
@@ -384,23 +395,23 @@ let MobileNavBar = class {
     }
   }
   render() {
-    return (index.h(index.Host, null, index.h("div", { class: "mobile-nav-bar" }, index.h("div", { class: `mobile-nav-bar__icons ${this.isOpen ? 'mobile-nav-bar__icons--open' : ''}` }, index.h("div", null, this.isOpen ? (index.h("img", { class: "mobile-nav-bar__icon", src: index.getAssetPath('./assets/close.png'), alt: "Close Menu", style: { width: '0.88rem', height: '0.88rem' }, onClick: () => (this.isOpen = false) })) : (index.h("img", { class: "mobile-nav-bar__icon", src: index.getAssetPath('./assets/hamburger.png'), alt: "Open Menu", style: { width: '1.13rem', height: '1.13rem', marginLeft: '-0.13rem' }, onClick: () => (this.isOpen = true) }))), index.h("div", { style: { display: 'flex' } }, index.h("img", { class: "mobile-nav-bar__icon", src: index.getAssetPath('./assets/shopping-bag.png'), alt: "Cart", style: { paddingRight: '0.5rem' } }), index.h("img", { class: "mobile-nav-bar__icon", src: index.getAssetPath('./assets/user.png'), alt: "Account", style: { width: '0.9rem', height: '0.9rem', paddingLeft: '0.5rem' } }))), index.h("div", { class: `mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}` }, index.h("img", { class: "mobile-nav-bar__logo", src: index.getAssetPath('./assets/leibal-logo.png'), alt: "Logo", onClick: () => {
+    return (h(Host, null, h("div", { class: "mobile-nav-bar" }, h("div", { class: `mobile-nav-bar__icons ${this.isOpen ? 'mobile-nav-bar__icons--open' : ''}` }, h("div", null, this.isOpen ? (h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/close.png'), alt: "Close Menu", style: { width: '0.88rem', height: '0.88rem' }, onClick: () => (this.isOpen = false) })) : (h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/hamburger.png'), alt: "Open Menu", style: { width: '1.13rem', height: '1.13rem', marginLeft: '-0.13rem' }, onClick: () => (this.isOpen = true) }))), h("div", { style: { display: 'flex' } }, h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/shopping-bag.png'), alt: "Cart", style: { paddingRight: '0.5rem' } }), h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/user.png'), alt: "Account", style: { width: '0.9rem', height: '0.9rem', paddingLeft: '0.5rem' } }))), h("div", { class: `mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}` }, h("img", { class: "mobile-nav-bar__logo", src: getAssetPath('./assets/leibal-logo.png'), alt: "Logo", onClick: () => {
         window.location.href = this.platformSpecificLink(this.platform, '/');
-      } }), index.h("div", { style: { position: 'relative' } }, index.h("div", { class: `mobile-nav-bar__menu-links-container ${this.isShowingLinks ? 'mobile-nav-bar__menu-links-container--open' : ''}` }, this.linksType === 'blog' && (index.h("div", { class: "mobile-nav-bar__menu-links" }, index.h("div", { onClick: () => this.hideLinks(), style: { display: 'flex', alignItems: 'center', marginBottom: '.5rem' } }, index.h("img", { src: index.getAssetPath('./assets/arrow.png'), style: {
+      } }), h("div", { style: { position: 'relative' } }, h("div", { class: `mobile-nav-bar__menu-links-container ${this.isShowingLinks ? 'mobile-nav-bar__menu-links-container--open' : ''}` }, this.linksType === 'blog' && (h("div", { class: "mobile-nav-bar__menu-links" }, h("div", { onClick: () => this.hideLinks(), style: { display: 'flex', alignItems: 'center', marginBottom: '.5rem' } }, h("img", { src: getAssetPath('./assets/arrow.png'), style: {
         width: '1rem',
         filter: 'invert(1)',
         transform: 'rotate(-180deg)',
         marginRight: '0.5rem',
-      } }), ' ', "Stories"), index.h("div", null, index.h("div", null, index.h("a", { href: "#" }, "Architecture")), index.h("div", null, index.h("a", { href: "#" }, "Interiors")), index.h("div", null, index.h("a", { href: "#" }, "Furniture")), index.h("div", null, index.h("a", { href: "#" }, "Lighting")), index.h("div", null, index.h("a", { href: "#" }, "Objects")), index.h("div", null, index.h("a", { href: "#" }, "Travel"))))), this.linksType === 'store' && (index.h("div", { class: "mobile-nav-bar__menu-links" }, index.h("div", { onClick: () => this.hideLinks(), style: { display: 'flex', alignItems: 'center', marginBottom: '1.5rem' } }, index.h("img", { src: index.getAssetPath('./assets/arrow.png'), style: {
+      } }), ' ', "Stories"), h("div", null, h("div", null, h("a", { href: "#" }, "Architecture")), h("div", null, h("a", { href: "#" }, "Interiors")), h("div", null, h("a", { href: "#" }, "Furniture")), h("div", null, h("a", { href: "#" }, "Lighting")), h("div", null, h("a", { href: "#" }, "Objects")), h("div", null, h("a", { href: "#" }, "Travel"))))), this.linksType === 'store' && (h("div", { class: "mobile-nav-bar__menu-links" }, h("div", { onClick: () => this.hideLinks(), style: { display: 'flex', alignItems: 'center', marginBottom: '1.5rem' } }, h("img", { src: getAssetPath('./assets/arrow.png'), style: {
         width: '1rem',
         filter: 'invert(1)',
         transform: 'rotate(-180deg)',
         marginRight: '0.5rem',
-      } }), ' ', "Store"), index.h("div", null, index.h("div", null, index.h("a", { href: "#" }, "Sofas")), index.h("div", null, index.h("a", { href: "#" }, "Lighting")), index.h("div", null, index.h("a", { href: "#" }, "Accessories")), index.h("div", null, index.h("a", { href: "#" }, "Lighting")), index.h("div", null, index.h("a", { href: "#" }, "Objects")), index.h("div", null, index.h("a", { href: "#" }, "Trinkets")))))), index.h("div", { class: "mobile-nav-bar__menu-items" }, index.h("div", { class: "mobile-nav-bar__menu-item", onClick: () => {
+      } }), ' ', "Store"), h("div", null, h("div", null, h("a", { href: "#" }, "Sofas")), h("div", null, h("a", { href: "#" }, "Lighting")), h("div", null, h("a", { href: "#" }, "Accessories")), h("div", null, h("a", { href: "#" }, "Lighting")), h("div", null, h("a", { href: "#" }, "Objects")), h("div", null, h("a", { href: "#" }, "Trinkets")))))), h("div", { class: "mobile-nav-bar__menu-items" }, h("div", { class: "mobile-nav-bar__menu-item", onClick: () => {
         this.showLinks('blog');
-      } }, "Stories >"), index.h("div", { class: "mobile-nav-bar__menu-item", onClick: () => {
+      } }, "Stories >"), h("div", { class: "mobile-nav-bar__menu-item", onClick: () => {
         this.showLinks('store');
-      } }, "Store >")), index.h("div", { class: "mobile-nav-bar__submenu-items" }, index.h("div", { class: "mobile-nav-bar__submenu-item" }, "Submit"), index.h("div", { class: "mobile-nav-bar__submenu-item" }, "Subscribe"), index.h("div", { class: "mobile-nav-bar__submenu-item" }, "Account"), index.h("div", { class: "mobile-nav-bar__submenu-item" }, "Cart"))), index.h("div", { class: "mobile-nav-bar__links" }, index.h("div", null, index.h("div", { class: "mobile-nav-bar__link-header" }, "About"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Contact Us"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Submit"), index.h("div", { class: "mobile-nav-bar__link-item" }, "FAQ"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Privacy"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Terms & Conditions"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Trade Program")), index.h("div", null, index.h("div", { class: "mobile-nav-bar__link-header" }, "Connect"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Pinterest"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Instagram"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Facebook"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Twitter"), index.h("div", { class: "mobile-nav-bar__link-item" }, "Tumblr"), index.h("div", { class: "mobile-nav-bar__link-item" }, "LinkedIn")))))));
+      } }, "Store >")), h("div", { class: "mobile-nav-bar__submenu-items" }, h("div", { class: "mobile-nav-bar__submenu-item" }, "Submit"), h("div", { class: "mobile-nav-bar__submenu-item" }, "Subscribe"), h("div", { class: "mobile-nav-bar__submenu-item" }, "Account"), h("div", { class: "mobile-nav-bar__submenu-item" }, "Cart"))), h("div", { class: "mobile-nav-bar__links" }, h("div", null, h("div", { class: "mobile-nav-bar__link-header" }, "About"), h("div", { class: "mobile-nav-bar__link-item" }, "Contact Us"), h("div", { class: "mobile-nav-bar__link-item" }, "Submit"), h("div", { class: "mobile-nav-bar__link-item" }, "FAQ"), h("div", { class: "mobile-nav-bar__link-item" }, "Privacy"), h("div", { class: "mobile-nav-bar__link-item" }, "Terms & Conditions"), h("div", { class: "mobile-nav-bar__link-item" }, "Trade Program")), h("div", null, h("div", { class: "mobile-nav-bar__link-header" }, "Connect"), h("div", { class: "mobile-nav-bar__link-item" }, "Pinterest"), h("div", { class: "mobile-nav-bar__link-item" }, "Instagram"), h("div", { class: "mobile-nav-bar__link-item" }, "Facebook"), h("div", { class: "mobile-nav-bar__link-item" }, "Twitter"), h("div", { class: "mobile-nav-bar__link-item" }, "Tumblr"), h("div", { class: "mobile-nav-bar__link-item" }, "LinkedIn")))))));
   }
   static get assetsDirs() { return ["assets"]; }
 };
@@ -410,16 +421,16 @@ const simpleButtonCss = ":host{--font-family:var(--leibal-components-font-family
 
 let SimpleButton = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.theme = 'light';
     this.fillWidth = false;
     this.disabled = false;
   }
   render() {
-    return (index.h(index.Host, null, index.h("div", { class: 'simple-button ' +
+    return (h(Host, null, h("div", { class: 'simple-button ' +
         (this.fillWidth ? 'simple-button--full-width ' : ' ') +
         (this.theme == 'dark' ? 'simple-button--dark ' : ' ') +
-        (this.disabled ? 'simple-button--disabled' : ' '), role: "button", "aria-pressed": "false", tabindex: "0" }, index.h("div", { class: "simple-button__icon" }, index.h("slot", { name: "icon" })), index.h("div", { class: "simple-button__text" }, index.h("slot", null)))));
+        (this.disabled ? 'simple-button--disabled' : ' '), role: "button", "aria-pressed": "false", tabindex: "0" }, h("div", { class: "simple-button__icon" }, h("slot", { name: "icon" })), h("div", { class: "simple-button__text" }, h("slot", null)))));
   }
 };
 SimpleButton.style = simpleButtonCss;
@@ -429,8 +440,8 @@ const simpleInputCss = ":host{--font-family:var(--leibal-components-font-family,
 const INPUT_TYPES = ['text', 'password', 'email', 'number', 'tel', 'url'];
 let SimpleInput = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
-    this.valueChanged = index.createEvent(this, "valueChanged", 7);
+    registerInstance(this, hostRef);
+    this.valueChanged = createEvent(this, "valueChanged", 7);
     this.placeholder = 'Text here...';
     this.required = false;
     this.input = () => {
@@ -438,7 +449,7 @@ let SimpleInput = class {
       if (this.required) {
         placeholder += ' *';
       }
-      return (index.h("input", { class: "simple-input--text", name: this.name, onInput: this.onInputChangeValue.bind(this), value: this.value, type: this.type, placeholder: placeholder, required: this.required }));
+      return (h("input", { class: "simple-input--text", name: this.name, onInput: this.onInputChangeValue.bind(this), value: this.value, type: this.type, placeholder: placeholder, required: this.required }));
     };
   }
   onInputChangeValue(event) {
@@ -459,15 +470,15 @@ let SimpleInput = class {
   render() {
     const { el, value, name } = this;
     this.renderInputOutsideShadowRoot(el, name, value);
-    return (index.h(index.Host, null, index.h("div", { class: "simple-input" }, INPUT_TYPES.includes(this.type) && this.input())));
+    return (h(Host, null, h("div", { class: "simple-input" }, INPUT_TYPES.includes(this.type) && this.input())));
   }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
 };
 SimpleInput.style = simpleInputCss;
 
 let TelePortal = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
   }
   createPortal() {
     this.portal = document.createElement('div');
@@ -486,17 +497,9 @@ let TelePortal = class {
     this.portal.remove();
   }
   render() {
-    return (index.h(index.Host, null, index.h("slot", null)));
+    return (h(Host, null, h("slot", null)));
   }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
 };
 
-exports.add_to_moods_button = AddToMoodsButton;
-exports.display_card = DisplayCard;
-exports.enquire_modal = EnquireModal;
-exports.image_gallery = ImageGallery;
-exports.image_gallery_link = ImageGalleryLink;
-exports.mobile_nav_bar = MobileNavBar;
-exports.simple_button = SimpleButton;
-exports.simple_input = SimpleInput;
-exports.tele_portal = TelePortal;
+export { AddToMoodsButton as add_to_moods_button, DisplayCard as display_card, EnquireModal as enquire_modal, FooterNav as footer_nav, ImageGallery as image_gallery, ImageGalleryLink as image_gallery_link, MobileNavBar as mobile_nav_bar, SimpleButton as simple_button, SimpleInput as simple_input, TelePortal as tele_portal };
