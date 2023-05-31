@@ -158,12 +158,12 @@ export class NavBar {
               Store
             </a>
             <div class="navbar__row__links">
-              <a href={this.platformSpecificLink('store', '/collections/new')}>New</a>
-              <a href={this.platformSpecificLink('store', '/collections/furniture')}>Furniture</a>
+              <a href={this.platformSpecificLink('store', '/collections/seating')}>Seating</a>
+              <a href={this.platformSpecificLink('store', '/collections/tables')}>Tables</a>
               <a href={this.platformSpecificLink('store', '/collections/lighting')}>Lighting</a>
-              <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
+              <a href={this.platformSpecificLink('store', '/collections/storage')}>Storage</a>
               <a href={this.platformSpecificLink('store', '/collections/outdoor')}>Outdoor</a>
-              <a href={this.platformSpecificLink('store', '/collections/brands')}>Brands</a>
+              <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
             </div>
             <div class="navbar__row__action">
               <a href="/cart" class="border-l border-white cursor-pointer">

@@ -105,22 +105,22 @@ export class MobileNavBar {
                     </div>
                     <div>
                       <div>
-                        <a href="#">Architecture</a>
+                        <a href={this.platformSpecificLink('blog', '/category/architecture')}>Architecture</a>
                       </div>
                       <div>
-                        <a href="#">Interiors</a>
+                        <a href={this.platformSpecificLink('blog', '/category/interiors')}>Interiors</a>
                       </div>
                       <div>
-                        <a href="#">Furniture</a>
+                        <a href={this.platformSpecificLink('blog', '/category/furniture')}>Furniture</a>
                       </div>
                       <div>
-                        <a href="#">Lighting</a>
+                        <a href={this.platformSpecificLink('blog', '/category/lighting')}>Lighting</a>
                       </div>
                       <div>
-                        <a href="#">Objects</a>
+                        <a href={this.platformSpecificLink('blog', '/category/objects')}>Objects</a>
                       </div>
                       <div>
-                        <a href="#">Travel</a>
+                        <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
                       </div>
                     </div>
                   </div>
@@ -144,24 +144,24 @@ export class MobileNavBar {
                       Store
                     </div>
                     <div>
-                      {/* TODO: This isn't defined? */}
+                      {/* TODO: Seating, Tables, Lighting, Storage, Outdoor, Accessories */}
                       <div>
-                        <a href="#">Sofas</a>
+                        <a href={this.platformSpecificLink('store', '/collection/seating')}>Seating</a>
                       </div>
                       <div>
-                        <a href="#">Lighting</a>
+                        <a href={this.platformSpecificLink('store', '/collection/tables')}>Tables</a>
                       </div>
                       <div>
-                        <a href="#">Accessories</a>
+                        <a href={this.platformSpecificLink('store', '/collection/lighting')}>Lighting</a>
                       </div>
                       <div>
-                        <a href="#">Lighting</a>
+                        <a href={this.platformSpecificLink('store', '/collection/storage')}>Storage</a>
                       </div>
                       <div>
-                        <a href="#">Objects</a>
+                        <a href={this.platformSpecificLink('store', '/collection/outdoor')}>Outdoor</a>
                       </div>
                       <div>
-                        <a href="#">Trinkets</a>
+                        <a href={this.platformSpecificLink('store', '/collection/accessories')}>Accessories</a>
                       </div>
                     </div>
                   </div>
@@ -188,10 +188,18 @@ export class MobileNavBar {
               </div>
 
               <div class="mobile-nav-bar__submenu-items">
-                <div class="mobile-nav-bar__submenu-item">Submit</div>
-                <div class="mobile-nav-bar__submenu-item">Subscribe</div>
-                <div class="mobile-nav-bar__submenu-item">Account</div>
-                <div class="mobile-nav-bar__submenu-item">Cart</div>
+                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/submissions')}>
+                  Submit
+                </a>
+                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/subscribe')}>
+                  Subscribe
+                </a>
+                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/users')}>
+                  Account
+                </a>
+                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('store', '/cart')}>
+                  Cart
+                </a>
               </div>
 
               {/* <div class="mobile-nav-bar__newsletter">
@@ -206,21 +214,45 @@ export class MobileNavBar {
             <div class="mobile-nav-bar__links">
               <div>
                 <div class="mobile-nav-bar__link-header">About</div>
-                <div class="mobile-nav-bar__link-item">Contact Us</div>
-                <div class="mobile-nav-bar__link-item">Submit</div>
-                <div class="mobile-nav-bar__link-item">FAQ</div>
-                <div class="mobile-nav-bar__link-item">Privacy</div>
-                <div class="mobile-nav-bar__link-item">Terms &amp; Conditions</div>
-                <div class="mobile-nav-bar__link-item">Trade Program</div>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/contact-us')}>
+                  Contact Us
+                </a>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/submissions')}>
+                  Submit
+                </a>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/faq')}>
+                  FAQ
+                </a>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/privacy')}>
+                  Privacy
+                </a>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/toc')}>
+                  Terms &amp; Conditions
+                </a>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/trades')}>
+                  Trade Program
+                </a>
               </div>
               <div>
                 <div class="mobile-nav-bar__link-header">Connect</div>
-                <div class="mobile-nav-bar__link-item">Pinterest</div>
-                <div class="mobile-nav-bar__link-item">Instagram</div>
-                <div class="mobile-nav-bar__link-item">Facebook</div>
-                <div class="mobile-nav-bar__link-item">Twitter</div>
-                <div class="mobile-nav-bar__link-item">Tumblr</div>
-                <div class="mobile-nav-bar__link-item">LinkedIn</div>
+                <a class="mobile-nav-bar__link-item" href="https://www.pinterest.com/leibal/">
+                  Pinterest
+                </a>
+                <a class="mobile-nav-bar__link-item" href="https://instagram.com/leibal">
+                  Instagram
+                </a>
+                <a class="mobile-nav-bar__link-item" href="http://www.facebook.com/Leibal">
+                  Facebook
+                </a>
+                <a class="mobile-nav-bar__link-item" href="https://leibal.tumblr.com/">
+                  Tumblr
+                </a>
+                <a class="mobile-nav-bar__link-item" href="https://www.linkedin.com/company/leibal/">
+                  LinkedIn
+                </a>
+                <a class="mobile-nav-bar__link-item" href="https://www.tiktok.com/leibal">
+                  TikTok
+                </a>
               </div>
             </div>
           </div>
