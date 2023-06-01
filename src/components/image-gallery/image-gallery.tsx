@@ -152,10 +152,22 @@ export class ImageGallery {
                 <div class="image-gallery__info__title">{this.postTitle}</div>
                 <div class="image-gallery__info__subtitle">by {this.postExcerpt}</div>
                 <div class="image-gallery__info__photographer__label">Photography</div>
-                <div class="image-gallery__info__photographer__title">{this.photographer}</div>
+                <div class="flex justify-between items-center image-gallery__info__photographer__title">
+                  <div>{this.photographer}</div>
+                  <div class="lg:hidden">
+                    <add-to-moods-button
+                      theme={'dark'}
+                      image-url={this._images[this.currentImageIndex].href}
+                      post-id={this.postId}
+                      content-location={'left'}
+                    >
+                      <span style={{ marginRight: '0.5rem', fontSize: '0.5rem' }}>Save Image to MOODS</span>
+                    </add-to-moods-button>
+                  </div>
+                </div>
                 <div class="swiper-pagination"></div>
               </div>
-              <div>
+              <div class="hidden lg:block">
                 <add-to-moods-button
                   theme={'dark'}
                   image-url={this._images[this.currentImageIndex].href}
@@ -168,10 +180,12 @@ export class ImageGallery {
               </div>
               <div>
                 {this.canEnquire && (
-                  <enquire-modal
-                    postTitle={this.postTitle + ' by ' + this.postExcerpt}
-                    previewImage={this.previewImage}
-                  />
+                  <div class="hidden lg:block">
+                    <enquire-modal
+                      postTitle={this.postTitle + ' by ' + this.postExcerpt}
+                      previewImage={this.previewImage}
+                    />
+                  </div>
                 )}
                 {!this.canEnquire && designDetail && (
                   <div class="hidden lg:block">
