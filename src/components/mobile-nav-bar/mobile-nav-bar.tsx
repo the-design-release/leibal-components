@@ -159,22 +159,22 @@ export class MobileNavBar {
                     <div>
                       {/* TODO: Seating, Tables, Lighting, Storage, Outdoor, Accessories */}
                       <div>
-                        <a href={this.platformSpecificLink('store', '/collection/seating')}>Seating</a>
+                        <a href={this.platformSpecificLink('store', '/collections/seating')}>Seating</a>
                       </div>
                       <div>
-                        <a href={this.platformSpecificLink('store', '/collection/tables')}>Tables</a>
+                        <a href={this.platformSpecificLink('store', '/collections/tables')}>Tables</a>
                       </div>
                       <div>
-                        <a href={this.platformSpecificLink('store', '/collection/lighting')}>Lighting</a>
+                        <a href={this.platformSpecificLink('store', '/collections/lighting')}>Lighting</a>
                       </div>
                       <div>
-                        <a href={this.platformSpecificLink('store', '/collection/storage')}>Storage</a>
+                        <a href={this.platformSpecificLink('store', '/collections/storage')}>Storage</a>
                       </div>
                       <div>
-                        <a href={this.platformSpecificLink('store', '/collection/outdoor')}>Outdoor</a>
+                        <a href={this.platformSpecificLink('store', '/collections/outdoor')}>Outdoor</a>
                       </div>
                       <div>
-                        <a href={this.platformSpecificLink('store', '/collection/accessories')}>Accessories</a>
+                        <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
                       </div>
                     </div>
                   </div>
