@@ -65,18 +65,22 @@ export class MobileNavBar {
               )}
             </div>
             <div style={{ display: 'flex' }}>
-              <img
-                class="mobile-nav-bar__icon"
-                src={getAssetPath('./assets/shopping-bag.png')}
-                alt="Cart"
-                style={{ paddingRight: '0.5rem' }}
-              />
-              <img
-                class="mobile-nav-bar__icon"
-                src={getAssetPath('./assets/user.png')}
-                alt="Account"
-                style={{ width: '0.9rem', height: '0.9rem', paddingLeft: '0.5rem' }}
-              />
+              <a href={this.platformSpecificLink(this.platform, '/cart')}>
+                <img
+                  class="mobile-nav-bar__icon"
+                  src={getAssetPath('./assets/shopping-bag.png')}
+                  alt="Cart"
+                  style={{ paddingRight: '0.5rem' }}
+                />
+              </a>
+              <a href={this.platformSpecificLink(this.platform, '/my-account')}>
+                <img
+                  class="mobile-nav-bar__icon"
+                  src={getAssetPath('./assets/user.png')}
+                  alt="Account"
+                  style={{ width: '0.9rem', height: '0.9rem', paddingLeft: '0.5rem' }}
+                />
+              </a>
             </div>
           </div>
           <div class={`mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}`}>
@@ -203,7 +207,7 @@ export class MobileNavBar {
                 <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/subscribe')}>
                   Subscribe
                 </a>
-                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/users')}>
+                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/my-account')}>
                   Account
                 </a>
                 <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('store', '/cart')}>
