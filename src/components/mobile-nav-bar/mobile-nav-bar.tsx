@@ -73,7 +73,7 @@ export class MobileNavBar {
               )}
             </div>
             <div style={{ display: 'flex' }}>
-              <a href={this.platformSpecificLink(this.platform, '/cart')}>
+              <a href={this.platformSpecificLink('store', '/cart')}>
                 <img
                   class="mobile-nav-bar__icon"
                   src={getAssetPath('./assets/shopping-bag.png')}
@@ -81,7 +81,7 @@ export class MobileNavBar {
                   style={{ paddingRight: '0.5rem' }}
                 />
               </a>
-              <a href={this.platformSpecificLink(this.platform, '/my-account')}>
+              <a href={this.platformSpecificLink('blog', '/moods')}>
                 <img
                   class="mobile-nav-bar__icon"
                   src={getAssetPath('./assets/user.png')}
