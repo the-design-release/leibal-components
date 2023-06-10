@@ -19,14 +19,14 @@
   }
 
   &__title {
-    @apply mb-12 text-base tracking-widest font-normal;
+    @apply mb-12 text-[0.75rem] tracking-widest font-normal;
   }
 
   &__links {
   }
 
   &__link {
-    @apply block mb-3 text-sm;
+    @apply block mb-3 text-[11px];
 
     color: var(--color-dark);
     text-decoration: none;
@@ -61,6 +61,7 @@
     & input[type='submit'] {
       all: unset;
       display: block;
+      font-size: 11px;
     }
   }
 

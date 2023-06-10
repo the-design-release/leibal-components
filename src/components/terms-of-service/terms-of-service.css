@@ -12,7 +12,7 @@
   }
 
   &__sections {
-    @apply md:col-span-2;
+    @apply md:col-span-2 mb-16;
 
     & > * {
       margin-bottom: 0.5rem !important;
@@ -40,6 +40,8 @@
   }
 
   &__subheaders {
+    @apply mb-16;
+
     & > * {
       margin-bottom: 0.5rem !important;
 

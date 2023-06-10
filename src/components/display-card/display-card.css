@@ -83,14 +83,14 @@
 
     &__bottom {
       &__title {
-        @apply font-normal text-xs mb-3 uppercase;
+        @apply font-normal leading-[0px] text-xs mb-3 uppercase;
 
         &__name {
           @apply font-light text-xs uppercase mb-1;
         }
       }
       &__subtitle {
-        @apply font-normal text-xs uppercase;
+        @apply font-light text-xs uppercase;
 
         &__name {
           @apply font-light text-xs uppercase mb-1;

@@ -29,10 +29,10 @@
 
     &__photographer {
       &__label {
-        @apply uppercase mb-1 font-light;
+        @apply uppercase mb-1 font-light text-[9.6px];
       }
       &__title {
-        @apply uppercase mb-3 font-bold;
+        @apply uppercase mb-3 text-[9.6px] font-normal;
       }
     }
   }

@@ -104,7 +104,7 @@ export class EnquireModal {
     body += `${this.formState.moreText.replace('\n', '%0D%0A')}`;
 
     const email = document.createElement('a');
-    email.href = `mailto:info@leibal.com?subject=Enquiry about ${this.postTitle}&body=${body}`;
+    email.href = `mailto:sales@leibal.com?subject=Enquiry about ${this.postTitle}&body=${body}`;
     email.click();
 
     return false;

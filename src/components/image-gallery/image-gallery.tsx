@@ -189,7 +189,7 @@ export class ImageGallery {
                 )}
                 {!this.canEnquire && designDetail && (
                   <div class="hidden lg:block">
-                    <div class="image-gallery__info__subtitle">Design Details</div>
+                    {/* <div class="image-gallery__info__subtitle">Design Details</div> */}
 
                     <div class="block xl:grid xl:grid-cols-12 xl:gap-8">
                       <display-card
