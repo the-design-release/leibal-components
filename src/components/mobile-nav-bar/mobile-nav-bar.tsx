@@ -1,4 +1,4 @@
-import { Component, Host, Prop, State, getAssetPath, h } from '@stencil/core';
+import { Component, Element, Host, Prop, State, getAssetPath, h } from '@stencil/core';
 import { BLOG_URL, PlatformType, STORE_URL } from '../../utils/platform';
 
 @Component({
@@ -13,6 +13,14 @@ export class MobileNavBar {
   @State() isShowingLinks: boolean = false;
   @State() linksType: PlatformType = 'blog';
   @State() searchText: string = '';
+
+  @Element() windowResizeEl: HTMLDivElement;
+
+  componentDidMount() {
+    window.addEventListener('resize', () => {
+      this.windowResizeEl.style.height = `${window.innerHeight}px`;
+    });
+  }
 
   showLinks(platform: PlatformType) {
     this.isShowingLinks = true;
@@ -83,7 +91,10 @@ export class MobileNavBar {
               </a>
             </div>
           </div>
-          <div class={`mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}`}>
+          <div
+            ref={() => this.windowResizeEl}
+            class={`mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}`}
+          >
             <img
               class="mobile-nav-bar__logo"
               src={getAssetPath('./assets/leibal-logo.png')}

@@ -5,6 +5,8 @@ export declare class MobileNavBar {
   isShowingLinks: boolean;
   linksType: PlatformType;
   searchText: string;
+  windowResizeEl: HTMLDivElement;
+  componentDidMount(): void;
   showLinks(platform: PlatformType): void;
   hideLinks(): void;
   platformSpecificLink(platform: PlatformType, path: string): string;
