@@ -244,16 +244,16 @@ export class MobileNavBar {
                 <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/submissions-form')}>
                   Submit
                 </a>
-                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/faq')}>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/info#faq')}>
                   FAQ
                 </a>
-                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/privacy')}>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/info#privacy')}>
                   Privacy
                 </a>
-                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/terms-and-conditions')}>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/info#terms')}>
                   Terms &amp; Conditions
                 </a>
-                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/trades')}>
+                <a class="mobile-nav-bar__link-item" href={this.platformSpecificLink('blog', '/info#trades')}>
                   Trade Program
                 </a>
               </div>
