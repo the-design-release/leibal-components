@@ -50,7 +50,9 @@
   }
 
   &__options {
-    @apply absolute z-10 left-0 right-0;
+    @apply absolute z-10 left-0 right-0 top-0 lg:top-auto;
+
+    transform: translateY(-100%);
 
     border: 1px solid #000;
     margin-top: -1px;
@@ -72,6 +74,10 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @screen lg {
+      transform: translateY(0);
     }
   }
 
