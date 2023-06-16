@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Element } from '@stencil/core';
+import { Component, Host, h, State, Element, Watch } from '@stencil/core';
 import MarkDownIt from 'markdown-it';
 const CONTENT = {
   faq: {
@@ -499,6 +499,21 @@ export class TermsOfService {
       typographer: true,
     });
   }
+  onVisibleSectionChange() {
+    window.location.hash = '#' + this.visibleSection;
+  }
+  componentWillLoad() {
+    console.log(window.location.hash);
+    if (window.location.hash === '#faq') {
+      this.visibleSection = 'faq';
+    }
+    else if (window.location.hash === '#terms') {
+      this.visibleSection = 'terms';
+    }
+    else if (window.location.hash === '#privacy') {
+      this.visibleSection = 'privacy';
+    }
+  }
   sectionProps(section) {
     return {
       class: {
@@ -566,4 +581,8 @@ export class TermsOfService {
     "subsectionIndex": {}
   }; }
   static get elementRef() { return "el"; }
+  static get watchers() { return [{
+      "propName": "visibleSection",
+      "methodName": "onVisibleSectionChange"
+    }]; }
 }

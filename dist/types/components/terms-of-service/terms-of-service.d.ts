@@ -42,6 +42,8 @@ export declare class TermsOfService {
   visibleSection: Section;
   subsectionIndex: number;
   md: any;
+  onVisibleSectionChange(): void;
+  componentWillLoad(): void;
   sectionProps(section: Section): {
     class: {
       'terms-of-service__section': boolean;

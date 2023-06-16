@@ -13111,6 +13111,21 @@ let TermsOfService = class {
       typographer: true,
     });
   }
+  onVisibleSectionChange() {
+    window.location.hash = '#' + this.visibleSection;
+  }
+  componentWillLoad() {
+    console.log(window.location.hash);
+    if (window.location.hash === '#faq') {
+      this.visibleSection = 'faq';
+    }
+    else if (window.location.hash === '#terms') {
+      this.visibleSection = 'terms';
+    }
+    else if (window.location.hash === '#privacy') {
+      this.visibleSection = 'privacy';
+    }
+  }
   sectionProps(section) {
     return {
       class: {
@@ -13150,6 +13165,9 @@ let TermsOfService = class {
     return (h(Host, null, h("div", { class: "terms-of-service" }, this.renderSections(), this.renderSubsections(), this.renderSubsectionContent())));
   }
   get el() { return getElement(this); }
+  static get watchers() { return {
+    "visibleSection": ["onVisibleSectionChange"]
+  }; }
 };
 TermsOfService.style = termsOfServiceCss;
 

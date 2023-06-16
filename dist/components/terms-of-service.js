@@ -12757,6 +12757,21 @@ let TermsOfService$1 = class extends HTMLElement {
       typographer: true,
     });
   }
+  onVisibleSectionChange() {
+    window.location.hash = '#' + this.visibleSection;
+  }
+  componentWillLoad() {
+    console.log(window.location.hash);
+    if (window.location.hash === '#faq') {
+      this.visibleSection = 'faq';
+    }
+    else if (window.location.hash === '#terms') {
+      this.visibleSection = 'terms';
+    }
+    else if (window.location.hash === '#privacy') {
+      this.visibleSection = 'privacy';
+    }
+  }
   sectionProps(section) {
     return {
       class: {
@@ -12796,6 +12811,9 @@ let TermsOfService$1 = class extends HTMLElement {
     return (h(Host, null, h("div", { class: "terms-of-service" }, this.renderSections(), this.renderSubsections(), this.renderSubsectionContent())));
   }
   get el() { return this; }
+  static get watchers() { return {
+    "visibleSection": ["onVisibleSectionChange"]
+  }; }
   static get style() { return termsOfServiceCss; }
 };
 TermsOfService$1 = /*@__PURE__*/ proxyCustomElement(TermsOfService$1, [1, "terms-of-service", {
