@@ -66,6 +66,14 @@
       &__title {
         @apply text-lg mb-8 font-normal;
       }
+
+      em {
+        @apply block mb-4 font-bold;
+      }
+
+      p {
+        @apply mb-8;
+      }
     }
   }
 }

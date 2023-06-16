@@ -33,6 +33,7 @@
     "@proyecto26/animatable-component": "^1.1.10",
     "@stencil/core": "^2.13.0",
     "fuzzy-search": "^3.2.1",
+    "markdown-it": "^13.0.1",
     "postcss-nesting": "^10.1.2",
     "st-lazy": "^2.2.0"
   },

@@ -29,7 +29,10 @@ declare const CONTENT: {
         short: string;
         long: string;
       };
-      subsections: any[];
+      subsections: {
+        title: string;
+        content: string;
+      }[];
     }[];
   };
 };
@@ -38,6 +41,7 @@ export declare class TermsOfService {
   el: any;
   visibleSection: Section;
   subsectionIndex: number;
+  md: any;
   sectionProps(section: Section): {
     class: {
       'terms-of-service__section': boolean;
