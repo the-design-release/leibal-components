@@ -311,7 +311,9 @@ export class StickyScroller {
   };
 
   componentWillLoad() {
-    registerNode(this.el, this.argsRef as any);
+    window.addEventListener('load', () => {
+      registerNode(this.el, this.argsRef as any);
+    });
   }
 
   componentShouldUpdate() {

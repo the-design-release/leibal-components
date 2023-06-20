@@ -274,7 +274,9 @@ let StickyScroller = class extends HTMLElement {
     };
   }
   componentWillLoad() {
-    registerNode(this.el, this.argsRef);
+    window.addEventListener('load', () => {
+      registerNode(this.el, this.argsRef);
+    });
   }
   componentShouldUpdate() {
     this.argsRef = { offsetTop: this.startOffset, offsetBottom: this.endOffset, bottom: this.bottom, mode: this.mode };
