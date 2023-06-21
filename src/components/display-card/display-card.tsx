@@ -48,8 +48,8 @@ export class DisplayCard {
         {this.cardType === 'normal' ? (
           <a href={this.linkTo} class="display-card">
             <div class="display-card__image">
-              <div style={{ backgroundImage: `url(${this._images[0]})` }}></div>
-              <div style={{ backgroundImage: `url(${this._images[1]})` }}></div>
+              <img src={this._images[0]} loading="lazy" />
+              <img src={this._images[1]} loading="lazy" />
             </div>
             <div class="display-card__top">
               <div class="display-card__top__title">
@@ -71,8 +71,8 @@ export class DisplayCard {
         ) : (
           <a href={this.linkTo} class="display-card--featured">
             <div class="col-span-4 display-card__image">
-              <div style={{ backgroundImage: `url(${this._images[0]})` }}></div>
-              <div style={{ backgroundImage: `url(${this._images[1]})` }}></div>
+              <img src={this._images[0]} loading="lazy" />
+              <img src={this._images[1]} loading="lazy" />
             </div>
             <div class="display-card--featured__right">
               <div class="display-card--featured__top">
