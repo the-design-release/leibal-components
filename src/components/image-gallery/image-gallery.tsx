@@ -197,10 +197,46 @@ export class ImageGallery {
                         style={{ marginBottom: '0' }}
                         class="col-span-8"
                       >
-                        <div slot="top-title">{designDetail.designer || 'Unknown'}</div>
-                        <div slot="top-subtitle">{designDetail.category || 'N/A'}</div>
-                        <div slot="bottom-title">{designDetail.name || ''}</div>
-                        <div slot="bottom-subtitle">{designDetail.price || ''}</div>
+                        <div
+                          slot="top-title"
+                          style={{
+                            fontSize: '9.6px',
+                            letterSpacing: '1.6px',
+                            fontWeight: '400',
+                          }}
+                        >
+                          {designDetail.designer || 'Unknown'}
+                        </div>
+                        <div
+                          slot="top-subtitle"
+                          style={{
+                            fontSize: '9.6px',
+                            letterSpacing: '1.6px',
+                            fontWeight: '300',
+                          }}
+                        >
+                          {designDetail.category || 'N/A'}
+                        </div>
+                        <div
+                          slot="bottom-title"
+                          style={{
+                            fontSize: '13px',
+                            letterSpacing: '1.6px',
+                            fontWeight: '400',
+                          }}
+                        >
+                          {designDetail.name || ''}
+                        </div>
+                        <div
+                          slot="bottom-subtitle"
+                          style={{
+                            fontSize: '9.6px',
+                            letterSpacing: '1.6px',
+                            fontWeight: '300',
+                          }}
+                        >
+                          {designDetail.price || ''}
+                        </div>
                       </display-card>
                       <div class="flex flex-col col-span-4 mb-8 text-2xs xl:mb-0">
                         <div>

@@ -287,6 +287,10 @@ const registerNode = (node, { offsetTop, offsetBottom, bottom }) => {
   handleParentNodeResize();
 
   addResizeObserver(node, handleNodeResize);
+
+  setTimeout(() => {
+    handleNodeResize({ initial: true });
+  }, 1000);
   handleNodeResize({ initial: true });
 
   initial();
@@ -310,7 +314,7 @@ export class StickyScroller {
     mode: this.mode,
   };
 
-  componentWillLoad() {
+  componentDidLoad() {
     registerNode(this.el, this.argsRef as any);
   }
 

@@ -40,7 +40,7 @@ export declare class StickyScroller {
     bottom: boolean;
     mode: string;
   };
-  componentWillLoad(): void;
+  componentDidLoad(): void;
   componentShouldUpdate(): void;
   render(): any;
 }
