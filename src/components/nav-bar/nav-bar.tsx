@@ -103,7 +103,7 @@ export class NavBar {
               <div class="navbar__logo">
                 <img src={getAssetPath(`./assets/leibal-logo.png`)} />
               </div>
-              <a href="/">Stories</a>
+              <a href={this.platformSpecificLink('blog', '/')}>Stories</a>
             </a>
             <div class="navbar__row__links">
               <a href={this.platformSpecificLink('blog', '/category/architecture')}>Architecture</a>

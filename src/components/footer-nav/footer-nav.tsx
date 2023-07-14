@@ -159,7 +159,7 @@ export class FooterNav {
               <a class="footer-nav__link" href="https://www.linkedin.com/company/leibal/">
                 LinkedIn
               </a>
-              <a class="footer-nav__link" href="https://www.tiktok.com/leibal">
+              <a class="footer-nav__link" href="https://www.tiktok.com/@leibal">
                 TikTok
               </a>
             </div>

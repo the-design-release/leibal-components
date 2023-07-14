@@ -95,145 +95,158 @@ export class MobileNavBar {
             ref={() => this.windowResizeEl}
             class={`mobile-nav-bar__menu ${this.isOpen ? 'mobile-nav-bar__menu--open' : ''}`}
           >
-            <img
-              class="mobile-nav-bar__logo"
-              src={getAssetPath('./assets/leibal-logo.png')}
-              alt="Logo"
-              onClick={() => {
-                window.location.href = this.platformSpecificLink(this.platform, '/');
-              }}
-            />
+            <div>
+              <img
+                class="mobile-nav-bar__logo"
+                src={getAssetPath('./assets/leibal-logo.png')}
+                alt="Logo"
+                style={{ marginBottom: '3.5rem' }}
+                onClick={() => {
+                  window.location.href = this.platformSpecificLink(this.platform, '/');
+                }}
+              />
 
-            <div style={{ position: 'relative' }}>
-              <div
-                class={`mobile-nav-bar__menu-links-container ${
-                  this.isShowingLinks ? 'mobile-nav-bar__menu-links-container--open' : ''
-                }`}
-              >
-                {this.linksType === 'blog' && (
-                  <div class="mobile-nav-bar__menu-links">
-                    <div
-                      onClick={() => this.hideLinks()}
-                      style={{ display: 'flex', alignItems: 'center', marginBottom: '.5rem' }}
-                    >
-                      <img
-                        src={getAssetPath('./assets/arrow.png')}
-                        style={{
-                          width: '1rem',
-                          filter: 'invert(1)',
-                          transform: 'rotate(-180deg)',
-                          marginRight: '0.5rem',
-                        }}
-                      />{' '}
-                      Stories
-                    </div>
-                    <div>
-                      <div>
-                        <a href={this.platformSpecificLink('blog', '/category/architecture')}>Architecture</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('blog', '/category/interiors')}>Interiors</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('blog', '/category/furniture')}>Furniture</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('blog', '/category/lighting')}>Lighting</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('blog', '/category/objects')}>Objects</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
-                      </div>
-                    </div>
+              {!this.isShowingLinks && (
+                <div>
+                  <div
+                    class="mobile-nav-bar__menu-item"
+                    onClick={() => {
+                      this.showLinks('blog');
+                    }}
+                  >
+                    Stories
                   </div>
-                )}
-
-                {this.linksType === 'store' && (
-                  <div class="mobile-nav-bar__menu-links">
-                    <div
-                      onClick={() => this.hideLinks()}
-                      style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}
-                    >
-                      <img
-                        src={getAssetPath('./assets/arrow.png')}
-                        style={{
-                          width: '1rem',
-                          filter: 'invert(1)',
-                          transform: 'rotate(-180deg)',
-                          marginRight: '0.5rem',
-                        }}
-                      />{' '}
-                      Store
-                    </div>
-                    <div>
-                      {/* TODO: Seating, Tables, Lighting, Storage, Outdoor, Accessories */}
-                      <div>
-                        <a href={this.platformSpecificLink('store', '/collections/seating')}>Seating</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('store', '/collections/tables')}>Tables</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('store', '/collections/lighting')}>Lighting</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('store', '/collections/storage')}>Storage</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('store', '/collections/outdoor')}>Outdoor</a>
-                      </div>
-                      <div>
-                        <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
-                      </div>
-                    </div>
+                  <div
+                    class="mobile-nav-bar__menu-item"
+                    onClick={() => {
+                      this.showLinks('store');
+                    }}
+                  >
+                    Store
                   </div>
-                )}
-              </div>
-
-              <div class="mobile-nav-bar__menu-items">
-                <div
-                  class="mobile-nav-bar__menu-item"
-                  onClick={() => {
-                    this.showLinks('blog');
-                  }}
-                >
-                  Stories &gt;
                 </div>
+              )}
+
+              <div style={{ position: 'relative' }}>
                 <div
-                  class="mobile-nav-bar__menu-item"
-                  onClick={() => {
-                    this.showLinks('store');
-                  }}
+                  class={`mobile-nav-bar__menu-links-container ${
+                    this.isShowingLinks ? 'mobile-nav-bar__menu-links-container--open' : ''
+                  }`}
                 >
-                  Store &gt;
+                  {this.linksType === 'blog' && (
+                    <div class="mobile-nav-bar__menu-links">
+                      <div
+                        onClick={() => this.hideLinks()}
+                        style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}
+                      >
+                        <img
+                          src={getAssetPath('./assets/arrow.png')}
+                          style={{
+                            width: '1rem',
+                            filter: 'invert(1)',
+                            transform: 'rotate(-180deg)',
+                            marginRight: '0.5rem',
+                          }}
+                        />{' '}
+                        Stories
+                      </div>
+                      <div style={{ marginLeft: '1.5rem' }}>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/')}>Home</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/category/architecture')}>Architecture</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/category/interiors')}>Interiors</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/category/furniture')}>Furniture</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/category/lighting')}>Lighting</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/category/objects')}>Objects</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {this.linksType === 'store' && (
+                    <div class="mobile-nav-bar__menu-links">
+                      <div
+                        onClick={() => this.hideLinks()}
+                        style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}
+                      >
+                        <img
+                          src={getAssetPath('./assets/arrow.png')}
+                          style={{
+                            width: '1rem',
+                            filter: 'invert(1)',
+                            transform: 'rotate(-180deg)',
+                            marginRight: '0.5rem',
+                          }}
+                        />{' '}
+                        Store
+                      </div>
+                      <div style={{ marginLeft: '1.5rem' }}>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/')}>Home</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/collections/seating')}>Seating</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/collections/tables')}>Tables</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/collections/lighting')}>Lighting</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/collections/storage')}>Storage</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/collections/outdoor')}>Outdoor</a>
+                        </div>
+                        <div>
+                          <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
+            </div>
 
-              <div class="mobile-nav-bar__submenu-items">
-                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/submissions-form')}>
-                  Submit
-                </a>
-                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/subscribe')}>
-                  Subscribe
-                </a>
-                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/my-account')}>
-                  Account
-                </a>
-                <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('store', '/cart')}>
-                  Cart
-                </a>
-              </div>
+            <div
+              class="mobile-nav-bar__submenu-items"
+              style={{ visibility: this.isShowingLinks ? 'hidden' : 'inherit' }}
+            >
+              <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/submissions-form')}>
+                Submit
+              </a>
+              <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/subscribe')}>
+                Subscribe
+              </a>
+              <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('blog', '/my-account')}>
+                Account
+              </a>
+              <a class="mobile-nav-bar__submenu-item" href={this.platformSpecificLink('store', '/cart')}>
+                Cart
+              </a>
+            </div>
 
-              {/* <div class="mobile-nav-bar__newsletter">
+            {/* <div class="mobile-nav-bar__newsletter">
                 <div class="mobile-nav-bar__newsletter__header">Newsletter</div>
                 <div class="mobile-nav-bar__newsletter__input">
                   <input type="text" />
                   <button>Send</button>
                 </div>
               </div> */}
-            </div>
 
             <div class="mobile-nav-bar__links">
               <div>
@@ -274,7 +287,7 @@ export class MobileNavBar {
                 <a class="mobile-nav-bar__link-item" href="https://www.linkedin.com/company/leibal/">
                   LinkedIn
                 </a>
-                <a class="mobile-nav-bar__link-item" href="https://www.tiktok.com/leibal">
+                <a class="mobile-nav-bar__link-item" href="https://www.tiktok.com/@leibal">
                   TikTok
                 </a>
               </div>
