@@ -33,7 +33,7 @@ export class FooterNav {
             h("a", { class: "footer-nav__link", href: this.platformSpecificLink('blog', '/category/interiors') }, "Interiors"),
             h("a", { class: "footer-nav__link", href: this.platformSpecificLink('blog', '/category/furniture') }, "Furniture"),
             h("a", { class: "footer-nav__link", href: this.platformSpecificLink('blog', '/category/lighting') }, "Lighting"),
-            h("a", { class: "footer-nav__link", href: this.platformSpecificLink('blog', '/category/products') }, "Products"),
+            h("a", { class: "footer-nav__link", href: this.platformSpecificLink('blog', '/category/products') }, "Objects"),
             h("a", { class: "footer-nav__link", href: this.platformSpecificLink('blog', '/category/travel') }, "Travel"))),
         h("div", { class: "footer-nav__column" },
           h("div", { class: "footer-nav__title" }, "Store"),

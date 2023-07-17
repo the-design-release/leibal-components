@@ -79,7 +79,7 @@ export class FooterNav {
                 Lighting
               </a>
               <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/category/products')}>
-                Products
+                Objects
               </a>
               <a class="footer-nav__link" href={this.platformSpecificLink('blog', '/category/travel')}>
                 Travel

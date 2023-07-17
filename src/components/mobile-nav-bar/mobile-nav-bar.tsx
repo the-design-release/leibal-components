@@ -167,7 +167,7 @@ export class MobileNavBar {
                           <a href={this.platformSpecificLink('blog', '/category/lighting')}>Lighting</a>
                         </div>
                         <div>
-                          <a href={this.platformSpecificLink('blog', '/category/objects')}>Objects</a>
+                          <a href={this.platformSpecificLink('blog', '/category/products')}>Objects</a>
                         </div>
                         <div>
                           <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>

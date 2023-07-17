@@ -83,7 +83,7 @@ export class MobileNavBar {
                     h("div", null,
                       h("a", { href: this.platformSpecificLink('blog', '/category/lighting') }, "Lighting")),
                     h("div", null,
-                      h("a", { href: this.platformSpecificLink('blog', '/category/objects') }, "Objects")),
+                      h("a", { href: this.platformSpecificLink('blog', '/category/products') }, "Objects")),
                     h("div", null,
                       h("a", { href: this.platformSpecificLink('blog', '/category/travel') }, "Travel"))))),
                 this.linksType === 'store' && (h("div", { class: "mobile-nav-bar__menu-links" },
