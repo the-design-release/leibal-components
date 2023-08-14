@@ -30,6 +30,8 @@ export class ImageGallery {
     this.images = '[]';
     this.canEnquire = false;
     this.designDetail = null;
+    this.canBook = false;
+    this.bookUrl = null;
     this.isModalOpen = false;
     // Parsed JSON images.
     this._images = [];
@@ -97,7 +99,9 @@ export class ImageGallery {
                 this.postExcerpt),
               h("div", { class: "image-gallery__info__photographer__label" }, "Photography"),
               h("div", { class: "flex justify-between items-center image-gallery__info__photographer__title" },
-                h("div", null, this.photographer),
+                h("div", null, this._images[this.currentImageIndex] === undefined
+                  ? this._images[this.currentImageIndex].photographer
+                  : this.photographer),
                 h("div", { class: "lg:hidden" },
                   h("add-to-moods-button", { theme: 'dark', "image-url": this._images[this.currentImageIndex].href, "post-id": this.postId, "content-location": 'left' },
                     h("span", { style: { marginRight: '0.5rem', fontSize: '0.5rem' } }, "Save Image to MOODS")))),
@@ -108,26 +112,38 @@ export class ImageGallery {
             h("div", null,
               this.canEnquire && (h("div", { class: "hidden lg:block" },
                 h("enquire-modal", { postTitle: this.postTitle + ' by ' + this.postExcerpt, previewImage: this.previewImage }))),
+              this.canBook && (h("div", null,
+                h("div", { class: "block xl:grid xl:grid-cols-12 xl:gap-8 design-detail" },
+                  h("a", { href: this.bookUrl, class: "block col-span-8", target: "_blank", style: { letterSpacing: '1.6px' } },
+                    h("div", { class: "overflow-hidden relative w-full aspect-square" },
+                      h("img", { class: "object-cover object-center w-full h-full", src: this.previewImage }))),
+                  h("div", { class: "flex flex-col col-span-4 justify-between mt-4 mb-8 text-[9px] lg:mt-0 xl:mb-0" },
+                    h("div", { class: "uppercase" },
+                      h("div", { class: "font-light" }, "Book"),
+                      h("div", { class: "font-normal" }, this.postTitle)),
+                    h("div", { class: "font-light" }, "Find out more information regarding availability, pricing, and booking.")),
+                  h("a", { href: this.bookUrl, target: "_blank", class: "block col-span-8" },
+                    h("simple-button", null, "Book"))))),
               !this.canEnquire && designDetail && (h("div", { class: "hidden lg:block" },
                 h("div", { class: "block xl:grid xl:grid-cols-12 xl:gap-8" },
                   h("display-card", { images: JSON.stringify([designDetail.image.url]), style: { marginBottom: '0' }, class: "col-span-8" },
                     h("div", { slot: "top-title", style: {
-                        fontSize: '9.6px',
+                        fontSize: '0.6rem',
                         letterSpacing: '1.6px',
                         fontWeight: '400',
                       } }, designDetail.designer || 'Unknown'),
                     h("div", { slot: "top-subtitle", style: {
-                        fontSize: '9.6px',
+                        fontSize: '0.6rem',
                         letterSpacing: '1.6px',
                         fontWeight: '300',
                       } }, designDetail.category || 'N/A'),
                     h("div", { slot: "bottom-title", style: {
-                        fontSize: '13px',
+                        fontSize: '0.88rem',
                         letterSpacing: '1.6px',
                         fontWeight: '400',
                       } }, designDetail.name || ''),
                     h("div", { slot: "bottom-subtitle", style: {
-                        fontSize: '9.6px',
+                        fontSize: '0.6rem',
                         letterSpacing: '1.6px',
                         fontWeight: '300',
                       } }, designDetail.price || '')),
@@ -300,6 +316,42 @@ export class ImageGallery {
         "text": ""
       },
       "attribute": "design-detail",
+      "reflect": true,
+      "defaultValue": "null"
+    },
+    "canBook": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "can-book",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "bookUrl": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "string | null",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "book-url",
       "reflect": true,
       "defaultValue": "null"
     }

@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xs: '9px',
-        sm: '13px',
+        xs: '0.6rem',
+        sm: '0.88rem',
       },
     },
   },

@@ -2,6 +2,7 @@ import Swiper from 'swiper';
 declare type Image = {
   href: string;
   designDetail: any;
+  photographer: string | null;
 };
 export declare class ImageGallery {
   el: HTMLDivElement;
@@ -13,6 +14,8 @@ export declare class ImageGallery {
   photographer: string;
   canEnquire: boolean;
   designDetail: string | null;
+  canBook: boolean;
+  bookUrl: string | null;
   isModalOpen: boolean;
   _images: Image[];
   _designDetail: any;

@@ -39,6 +39,8 @@ export namespace Components {
         "platform": PlatformType;
     }
     interface ImageGallery {
+        "bookUrl": string | null;
+        "canBook": boolean;
         "canEnquire": boolean;
         "designDetail": string | null;
         "images": string;
@@ -291,6 +293,8 @@ declare namespace LocalJSX {
         "platform"?: PlatformType;
     }
     interface ImageGallery {
+        "bookUrl"?: string | null;
+        "canBook"?: boolean;
         "canEnquire"?: boolean;
         "designDetail"?: string | null;
         "images"?: string;

@@ -31,6 +31,7 @@ const DEFAULT_SWIPER_OPTIONS: SwiperOptions = {
 type Image = {
   href: string;
   designDetail: any;
+  photographer: string | null;
 };
 
 @Component({
@@ -64,6 +65,12 @@ export class ImageGallery {
 
   @Prop({ mutable: true, reflect: true })
   designDetail: string | null = null;
+
+  @Prop({ mutable: true, reflect: true })
+  canBook: boolean = false;
+
+  @Prop({ mutable: true, reflect: true })
+  bookUrl: string | null = null;
 
   @State()
   isModalOpen: boolean = false;
@@ -153,7 +160,11 @@ export class ImageGallery {
                 <div class="image-gallery__info__subtitle">by {this.postExcerpt}</div>
                 <div class="image-gallery__info__photographer__label">Photography</div>
                 <div class="flex justify-between items-center image-gallery__info__photographer__title">
-                  <div>{this.photographer}</div>
+                  <div>
+                    {this._images[this.currentImageIndex] === undefined
+                      ? this._images[this.currentImageIndex].photographer
+                      : this.photographer}
+                  </div>
                   <div class="lg:hidden">
                     <add-to-moods-button
                       theme={'dark'}
@@ -187,6 +198,35 @@ export class ImageGallery {
                     />
                   </div>
                 )}
+                {this.canBook && (
+                  <div>
+                    <div class="block xl:grid xl:grid-cols-12 xl:gap-8 design-detail">
+                      <a
+                        href={this.bookUrl}
+                        class="block col-span-8"
+                        target="_blank"
+                        style={{ letterSpacing: '1.6px' }}
+                      >
+                        <div class="overflow-hidden relative w-full aspect-square">
+                          <img class="object-cover object-center w-full h-full" src={this.previewImage} />
+                        </div>
+                      </a>
+                      <div class="flex flex-col col-span-4 justify-between mt-4 mb-8 text-[9px] lg:mt-0 xl:mb-0">
+                        <div class="uppercase">
+                          <div class="font-light">Book</div>
+                          <div class="font-normal">{this.postTitle}</div>
+                        </div>
+                        <div class="font-light">
+                          Find out more information regarding availability, pricing, and booking.
+                        </div>
+                      </div>
+
+                      <a href={this.bookUrl} target="_blank" class="block col-span-8">
+                        <simple-button>Book</simple-button>
+                      </a>
+                    </div>
+                  </div>
+                )}
                 {!this.canEnquire && designDetail && (
                   <div class="hidden lg:block">
                     {/* <div class="image-gallery__info__subtitle">Design Details</div> */}
@@ -200,7 +240,7 @@ export class ImageGallery {
                         <div
                           slot="top-title"
                           style={{
-                            fontSize: '9.6px',
+                            fontSize: '0.6rem',
                             letterSpacing: '1.6px',
                             fontWeight: '400',
                           }}
@@ -210,7 +250,7 @@ export class ImageGallery {
                         <div
                           slot="top-subtitle"
                           style={{
-                            fontSize: '9.6px',
+                            fontSize: '0.6rem',
                             letterSpacing: '1.6px',
                             fontWeight: '300',
                           }}
@@ -220,7 +260,7 @@ export class ImageGallery {
                         <div
                           slot="bottom-title"
                           style={{
-                            fontSize: '13px',
+                            fontSize: '0.88rem',
                             letterSpacing: '1.6px',
                             fontWeight: '400',
                           }}
@@ -230,7 +270,7 @@ export class ImageGallery {
                         <div
                           slot="bottom-subtitle"
                           style={{
-                            fontSize: '9.6px',
+                            fontSize: '0.6rem',
                             letterSpacing: '1.6px',
                             fontWeight: '300',
                           }}

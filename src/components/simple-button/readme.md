@@ -19,12 +19,14 @@
 ### Used by
 
  - [enquire-modal](../enquire-modal)
+ - [image-gallery](../image-gallery)
  - [moods-board-picker](../moods-board-picker)
 
 ### Graph
 ```mermaid
 graph TD;
   enquire-modal --> simple-button
+  image-gallery --> simple-button
   moods-board-picker --> simple-button
   style simple-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -9,6 +9,8 @@
 
 | Property       | Attribute       | Description | Type      | Default     |
 | -------------- | --------------- | ----------- | --------- | ----------- |
+| `bookUrl`      | `book-url`      |             | `string`  | `null`      |
+| `canBook`      | `can-book`      |             | `boolean` | `false`     |
 | `canEnquire`   | `can-enquire`   |             | `boolean` | `false`     |
 | `designDetail` | `design-detail` |             | `string`  | `null`      |
 | `images`       | `images`        |             | `string`  | `'[]'`      |
@@ -26,6 +28,7 @@
 - [tele-portal](../tele-portal)
 - [add-to-moods-button](../add-to-moods-button)
 - [enquire-modal](../enquire-modal)
+- [simple-button](../simple-button)
 - [display-card](../display-card)
 
 ### Graph
@@ -34,6 +37,7 @@ graph TD;
   image-gallery --> tele-portal
   image-gallery --> add-to-moods-button
   image-gallery --> enquire-modal
+  image-gallery --> simple-button
   image-gallery --> display-card
   enquire-modal --> simple-button
   enquire-modal --> tele-portal
