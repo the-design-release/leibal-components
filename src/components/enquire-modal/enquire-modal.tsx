@@ -81,7 +81,11 @@ export class EnquireModal {
       if (top <= 5) {
         window.scrollBy({ behavior: 'smooth', top: top - 64, left: 0 });
       } else if (top + this.contentElement.clientHeight >= window.innerHeight + 5) {
-        window.scrollBy({ behavior: 'smooth', top: top - this.contentElement.clientHeight + 64, left: 0 });
+        if (window.innerWidth < 768) {
+          window.scrollBy({ behavior: 'smooth', top: top - 64, left: 0 });
+        } else {
+          window.scrollBy({ behavior: 'smooth', top: top - this.contentElement.clientHeight + 64, left: 0 });
+        }
       }
     }
   }

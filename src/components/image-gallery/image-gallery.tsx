@@ -158,7 +158,7 @@ export class ImageGallery {
               >
                 <div class="image-gallery__info__title">{this.postTitle}</div>
                 <div class="image-gallery__info__subtitle">by {this.postExcerpt}</div>
-                <div class="image-gallery__info__photographer__label">Photography</div>
+                <div class="image-gallery__info__photographer__label">Photographer</div>
                 <div class="flex justify-between items-center image-gallery__info__photographer__title">
                   <div>
                     {this._images[this.currentImageIndex] === undefined
@@ -242,7 +242,7 @@ export class ImageGallery {
                           style={{
                             fontSize: '0.6rem',
                             letterSpacing: '1.6px',
-                            fontWeight: '400',
+                            fontWeight: '300',
                           }}
                         >
                           {designDetail.designer || 'Unknown'}
@@ -252,7 +252,7 @@ export class ImageGallery {
                           style={{
                             fontSize: '0.6rem',
                             letterSpacing: '1.6px',
-                            fontWeight: '300',
+                            fontWeight: '200',
                           }}
                         >
                           {designDetail.category || 'N/A'}
@@ -262,7 +262,7 @@ export class ImageGallery {
                           style={{
                             fontSize: '0.88rem',
                             letterSpacing: '1.6px',
-                            fontWeight: '400',
+                            fontWeight: '300',
                           }}
                         >
                           {designDetail.name || ''}
@@ -272,7 +272,7 @@ export class ImageGallery {
                           style={{
                             fontSize: '0.6rem',
                             letterSpacing: '1.6px',
-                            fontWeight: '300',
+                            fontWeight: '200',
                           }}
                         >
                           {designDetail.price || ''}

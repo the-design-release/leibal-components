@@ -97,7 +97,7 @@ export class ImageGallery {
               h("div", { class: "image-gallery__info__subtitle" },
                 "by ",
                 this.postExcerpt),
-              h("div", { class: "image-gallery__info__photographer__label" }, "Photography"),
+              h("div", { class: "image-gallery__info__photographer__label" }, "Photographer"),
               h("div", { class: "flex justify-between items-center image-gallery__info__photographer__title" },
                 h("div", null, this._images[this.currentImageIndex] === undefined
                   ? this._images[this.currentImageIndex].photographer
@@ -130,22 +130,22 @@ export class ImageGallery {
                     h("div", { slot: "top-title", style: {
                         fontSize: '0.6rem',
                         letterSpacing: '1.6px',
-                        fontWeight: '400',
+                        fontWeight: '300',
                       } }, designDetail.designer || 'Unknown'),
                     h("div", { slot: "top-subtitle", style: {
                         fontSize: '0.6rem',
                         letterSpacing: '1.6px',
-                        fontWeight: '300',
+                        fontWeight: '200',
                       } }, designDetail.category || 'N/A'),
                     h("div", { slot: "bottom-title", style: {
                         fontSize: '0.88rem',
                         letterSpacing: '1.6px',
-                        fontWeight: '400',
+                        fontWeight: '300',
                       } }, designDetail.name || ''),
                     h("div", { slot: "bottom-subtitle", style: {
                         fontSize: '0.6rem',
                         letterSpacing: '1.6px',
-                        fontWeight: '300',
+                        fontWeight: '200',
                       } }, designDetail.price || '')),
                   h("div", { class: "flex flex-col col-span-4 mb-8 text-2xs xl:mb-0" },
                     h("div", null,
