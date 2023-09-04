@@ -36,11 +36,11 @@
     }
 
     & a {
-      @apply block py-2;
+      @apply block py-2 font-light;
     }
 
     & a:hover {
-      @apply font-bold underline underline-offset-2 cursor-pointer;
+      @apply font-medium underline underline-offset-2 cursor-pointer;
     }
   }
 
@@ -51,10 +51,10 @@
   }
 
   &__sort-by {
-    @apply mb-2 ml-6 cursor-pointer;
+    @apply mb-2 ml-6 font-light cursor-pointer;
 
     &--selected {
-      @apply font-bold underline underline-offset-2;
+      @apply font-medium underline underline-offset-2;
     }
   }
 

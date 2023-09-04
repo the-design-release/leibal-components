@@ -117,7 +117,7 @@ export class ImageGallery {
                   h("a", { href: this.bookUrl, class: "block col-span-8", target: "_blank", style: { letterSpacing: '1.6px' } },
                     h("div", { class: "overflow-hidden relative w-full aspect-square" },
                       h("img", { class: "object-cover object-center w-full h-full", src: this.previewImage }))),
-                  h("div", { class: "flex flex-col col-span-4 justify-between mt-4 mb-8 text-[9px] lg:mt-0 xl:mb-0" },
+                  h("div", { class: "flex flex-col col-span-4 justify-between mt-4 mb-8 text-2xs lg:mt-0 xl:mb-0" },
                     h("div", { class: "uppercase" },
                       h("div", { class: "font-light" }, "Book"),
                       h("div", { class: "font-normal" }, this.postTitle)),
@@ -147,7 +147,7 @@ export class ImageGallery {
                         letterSpacing: '1.6px',
                         fontWeight: '200',
                       } }, designDetail.price || '')),
-                  h("div", { class: "flex flex-col col-span-4 mb-8 text-2xs xl:mb-0" },
+                  h("div", { class: "flex flex-col col-span-4 mb-8 font-light text-2xs xl:mb-0" },
                     h("div", null,
                       h("span", null, "As seen in image "),
                       asSeenIns.map((image, i) => {

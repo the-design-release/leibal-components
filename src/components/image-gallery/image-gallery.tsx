@@ -211,7 +211,7 @@ export class ImageGallery {
                           <img class="object-cover object-center w-full h-full" src={this.previewImage} />
                         </div>
                       </a>
-                      <div class="flex flex-col col-span-4 justify-between mt-4 mb-8 text-[9px] lg:mt-0 xl:mb-0">
+                      <div class="flex flex-col col-span-4 justify-between mt-4 mb-8 text-2xs lg:mt-0 xl:mb-0">
                         <div class="uppercase">
                           <div class="font-light">Book</div>
                           <div class="font-normal">{this.postTitle}</div>
@@ -278,7 +278,7 @@ export class ImageGallery {
                           {designDetail.price || ''}
                         </div>
                       </display-card>
-                      <div class="flex flex-col col-span-4 mb-8 text-2xs xl:mb-0">
+                      <div class="flex flex-col col-span-4 mb-8 font-light text-2xs xl:mb-0">
                         <div>
                           <span>As seen in image </span>
                           {asSeenIns.map((image, i) => {

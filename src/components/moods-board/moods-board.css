@@ -21,7 +21,7 @@
     }
 
     &__title {
-      @apply mt-4 text-xs uppercase mb-1;
+      @apply mt-4 font-normal text-xs uppercase mb-1;
     }
 
     &__subtitle {
@@ -30,10 +30,10 @@
   }
 
   &__create-board {
-    @apply py-2 mb-2 cursor-pointer;
+    @apply py-2 mb-2 font-light cursor-pointer;
 
     &:hover {
-      @apply font-bold underline underline-offset-2;
+      @apply font-medium underline underline-offset-2;
     }
   }
 
@@ -44,10 +44,10 @@
   }
 
   &__sort-by {
-    @apply mb-2 ml-6 cursor-pointer;
+    @apply mb-2 ml-6 cursor-pointer font-light;
 
     &--selected {
-      @apply font-bold underline underline-offset-2;
+      @apply font-medium underline underline-offset-2;
     }
   }
 }

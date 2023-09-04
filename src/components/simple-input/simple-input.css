@@ -19,7 +19,8 @@
     border-bottom: 1px solid var(--color-gray);
 
     &::placeholder {
-      @apply tracking-wider;
+      @apply tracking-wider font-normal;
+      font-family: var(--font-family);
       opacity: 1 !important;
       color: #999;
     }

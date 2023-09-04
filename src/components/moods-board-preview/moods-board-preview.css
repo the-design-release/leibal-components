@@ -22,7 +22,7 @@
   }
 
   &__saved {
-    @apply text-xs uppercase mb-1;
+    @apply text-xs font-normal uppercase mb-1;
   }
 
   &__export {
@@ -30,6 +30,6 @@
   }
 
   &__name {
-    @apply text-base mb-2;
+    @apply text-[0.85rem] font-normal mb-2;
   }
 }

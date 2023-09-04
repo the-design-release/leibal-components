@@ -82,7 +82,7 @@
   }
 
   &__option {
-    @apply block w-full cursor-pointer px-6 py-3 first:pt-0  transition-colors duration-300;
+    @apply block w-full cursor-pointer px-6 py-3 first:pt-0 font-light transition-colors duration-300;
 
     &:hover {
       @apply transition-colors;
