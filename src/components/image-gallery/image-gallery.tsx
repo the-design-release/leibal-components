@@ -195,6 +195,7 @@ export class ImageGallery {
                     <enquire-modal
                       postTitle={this.postTitle + ' by ' + this.postExcerpt}
                       previewImage={this.previewImage}
+                      postUrl={window.location.href}
                     />
                   </div>
                 )}

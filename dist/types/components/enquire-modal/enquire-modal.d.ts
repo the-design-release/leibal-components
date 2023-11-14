@@ -8,6 +8,7 @@ declare type FormState = {
 export declare class EnquireModal {
   el: HTMLDivElement;
   postTitle: string;
+  postUrl: string;
   previewImage: string;
   isModalOpen: boolean;
   formState: FormState;

@@ -7,12 +7,21 @@
   user-select: none;
 
   display: flex;
-  align-items: center;
   transition: opacity 0.2s ease-in-out;
 }
 
 .add-to-moods-button--show-on-hover {
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    margin-top: 0 !important;
+    width: 2rem !important;
+    margin-bottom: 0.5rem;
+  }
 
   & .add-to-moods-button__content-left,
   & .add-to-moods-button__content-right {

@@ -10,6 +10,7 @@
 | Property       | Attribute       | Description | Type     | Default     |
 | -------------- | --------------- | ----------- | -------- | ----------- |
 | `postTitle`    | `post-title`    |             | `string` | `undefined` |
+| `postUrl`      | `post-url`      |             | `string` | `undefined` |
 | `previewImage` | `preview-image` |             | `string` | `undefined` |
 
 

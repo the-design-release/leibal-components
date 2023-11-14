@@ -77,7 +77,7 @@ export class EnquireModal {
     event.preventDefault();
     event.stopPropagation();
     let body = `Hello,%0D%0A%0D%0A`;
-    body += `My name is ${this.formState.firstName} ${this.formState.lastName}, and I would like additional information regarding ${this.postTitle}.%0D%0A%0D%0A`;
+    body += `My name is ${this.formState.firstName} ${this.formState.lastName}, and I would like additional information regarding ${this.postTitle} (https://leibal.com${this.postUrl}).%0D%0A%0D%0A`;
     body += `I am currently located in ${this.formState.location}.%0D%0A%0D%0A`;
     body += `${this.formState.moreText.replace('\n', '%0D%0A')}`;
     const email = document.createElement('a');
@@ -122,7 +122,9 @@ export class EnquireModal {
                       h("u", null, this.formState.lastName || '...'),
                       ", and I would like additional information regarding ",
                       h("u", null, this.postTitle),
-                      "."),
+                      " (https://leibal.com",
+                      this.postUrl,
+                      ")."),
                     h("p", null,
                       "I am currently located in ",
                       h("u", null, this.formState.location || '...'),
@@ -173,6 +175,23 @@ export class EnquireModal {
         "text": ""
       },
       "attribute": "post-title",
+      "reflect": true
+    },
+    "postUrl": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "post-url",
       "reflect": true
     },
     "previewImage": {

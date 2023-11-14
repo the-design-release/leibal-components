@@ -33,6 +33,7 @@ export namespace Components {
     }
     interface EnquireModal {
         "postTitle": string;
+        "postUrl": string;
         "previewImage": string;
     }
     interface FooterNav {
@@ -54,6 +55,7 @@ export namespace Components {
         "imageIndex": number;
     }
     interface MobileNavBar {
+        "pageTitle": string;
         "platform": PlatformType;
     }
     interface MoodsBoard {
@@ -287,6 +289,7 @@ declare namespace LocalJSX {
     }
     interface EnquireModal {
         "postTitle"?: string;
+        "postUrl"?: string;
         "previewImage"?: string;
     }
     interface FooterNav {
@@ -309,6 +312,7 @@ declare namespace LocalJSX {
         "onOpenImageGallery"?: (event: CustomEvent<number>) => void;
     }
     interface MobileNavBar {
+        "pageTitle"?: string;
         "platform"?: PlatformType;
     }
     interface MoodsBoard {

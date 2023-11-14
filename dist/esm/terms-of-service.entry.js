@@ -12672,7 +12672,7 @@ const CONTENT = {
             content: `Our Site is not intended for children under 13 years of age. We do not knowingly collect personally identifiable information from children under 13.`,
           },
           {
-            title: 'Contract Us',
+            title: 'Contact Us',
             content: `For any questions or concerns regarding your privacy, you may contact us using the following details:
 
             Email: info@leibal.com

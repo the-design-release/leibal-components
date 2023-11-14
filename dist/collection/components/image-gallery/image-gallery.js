@@ -111,7 +111,7 @@ export class ImageGallery {
                 h("span", { style: { marginLeft: '1rem', fontSize: '0.75rem' } }, "Save Image to MOODS"))),
             h("div", null,
               this.canEnquire && (h("div", { class: "hidden lg:block" },
-                h("enquire-modal", { postTitle: this.postTitle + ' by ' + this.postExcerpt, previewImage: this.previewImage }))),
+                h("enquire-modal", { postTitle: this.postTitle + ' by ' + this.postExcerpt, previewImage: this.previewImage, postUrl: window.location.href }))),
               this.canBook && (h("div", null,
                 h("div", { class: "block xl:grid xl:grid-cols-12 xl:gap-8 design-detail" },
                   h("a", { href: this.bookUrl, class: "block col-span-8", target: "_blank", style: { letterSpacing: '1.6px' } },

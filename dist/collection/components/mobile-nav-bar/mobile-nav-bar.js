@@ -4,6 +4,7 @@ export class MobileNavBar {
   constructor() {
     this.isOpen = false;
     this.platform = 'blog';
+    this.pageTitle = '';
     this.isShowingLinks = false;
     this.linksType = 'blog';
     this.searchText = '';
@@ -41,8 +42,9 @@ export class MobileNavBar {
     return (h(Host, null,
       h("div", { class: "mobile-nav-bar" },
         h("div", { class: `mobile-nav-bar__icons ${this.isOpen ? 'mobile-nav-bar__icons--open' : ''}` },
-          h("div", null, this.isOpen ? (h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/close.png'), alt: "Close Menu", style: { width: '0.88rem', height: '0.88rem' }, onClick: () => (this.isOpen = false) })) : (h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/hamburger.png'), alt: "Open Menu", style: { width: '1.13rem', height: '1.13rem', marginLeft: '-0.13rem' }, onClick: () => (this.isOpen = true) }))),
-          h("div", { style: { display: 'flex' } },
+          h("div", { style: { display: 'flex', flexBasis: '0', flexGrow: '1', ridColumn: '2 span / 2 span' } }, this.isOpen ? (h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/close.png'), alt: "Close Menu", style: { width: '0.88rem', height: '0.88rem' }, onClick: () => (this.isOpen = false) })) : (h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/hamburger.png'), alt: "Open Menu", style: { width: '1.13rem', height: '1.13rem', marginLeft: '-0.13rem' }, onClick: () => (this.isOpen = true) }))),
+          h("div", { style: { display: 'flex', justifyContent: 'center', fontSize: '12.5px', gridColumn: '4 span / 4 span' } }, this.pageTitle.length >= 24 ? `${this.pageTitle.slice(0, 25)}...` : this.pageTitle),
+          h("div", { style: { display: 'flex', justifyContent: 'flex-end' } },
             h("a", { href: this.platformSpecificLink('store', '/cart') },
               h("img", { class: "mobile-nav-bar__icon", src: getAssetPath('./assets/shopping-bag.png'), alt: "Cart", style: { paddingRight: '0.5rem' } })),
             h("a", { href: this.platformSpecificLink('blog', '/moods') },
@@ -177,6 +179,24 @@ export class MobileNavBar {
       "attribute": "platform",
       "reflect": false,
       "defaultValue": "'blog'"
+    },
+    "pageTitle": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "page-title",
+      "reflect": false,
+      "defaultValue": "''"
     }
   }; }
   static get states() { return {

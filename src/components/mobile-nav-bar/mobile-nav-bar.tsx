@@ -10,6 +10,7 @@ import { BLOG_URL, PlatformType, STORE_URL } from '../../utils/platform';
 export class MobileNavBar {
   @State() isOpen: boolean = false;
   @Prop() platform: PlatformType = 'blog';
+  @Prop() pageTitle: string = '';
   @State() isShowingLinks: boolean = false;
   @State() linksType: PlatformType = 'blog';
   @State() searchText: string = '';
@@ -53,7 +54,7 @@ export class MobileNavBar {
       <Host>
         <div class="mobile-nav-bar">
           <div class={`mobile-nav-bar__icons ${this.isOpen ? 'mobile-nav-bar__icons--open' : ''}`}>
-            <div>
+            <div style={{ display: 'flex', flexBasis: '0', flexGrow: '1', ridColumn: '2 span / 2 span' }}>
               {this.isOpen ? (
                 <img
                   class="mobile-nav-bar__icon"
@@ -72,7 +73,12 @@ export class MobileNavBar {
                 />
               )}
             </div>
-            <div style={{ display: 'flex' }}>
+            <div
+              style={{ display: 'flex', justifyContent: 'center', fontSize: '12.5px', gridColumn: '4 span / 4 span' }}
+            >
+              {this.pageTitle.length >= 24 ? `${this.pageTitle.slice(0, 25)}...` : this.pageTitle}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <a href={this.platformSpecificLink('store', '/cart')}>
                 <img
                   class="mobile-nav-bar__icon"

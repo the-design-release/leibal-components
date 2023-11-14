@@ -15,6 +15,9 @@ export class EnquireModal {
   postTitle: string;
 
   @Prop({ mutable: true, reflect: true })
+  postUrl: string;
+
+  @Prop({ mutable: true, reflect: true })
   previewImage: string;
 
   @State()
@@ -103,7 +106,7 @@ export class EnquireModal {
     event.stopPropagation();
 
     let body = `Hello,%0D%0A%0D%0A`;
-    body += `My name is ${this.formState.firstName} ${this.formState.lastName}, and I would like additional information regarding ${this.postTitle}.%0D%0A%0D%0A`;
+    body += `My name is ${this.formState.firstName} ${this.formState.lastName}, and I would like additional information regarding ${this.postTitle} (https://leibal.com${this.postUrl}).%0D%0A%0D%0A`;
     body += `I am currently located in ${this.formState.location}.%0D%0A%0D%0A`;
     body += `${this.formState.moreText.replace('\n', '%0D%0A')}`;
 
@@ -176,7 +179,8 @@ export class EnquireModal {
                       <p>Hello,</p>
                       <p>
                         My name is <u>{this.formState.firstName || '...'}</u> <u>{this.formState.lastName || '...'}</u>,
-                        and I would like additional information regarding <u>{this.postTitle}</u>.
+                        and I would like additional information regarding <u>{this.postTitle}</u> (https://leibal.com
+                        {this.postUrl}).
                       </p>
                       <p>
                         I am currently located in <u>{this.formState.location || '...'}</u>.

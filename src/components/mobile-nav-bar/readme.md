@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                | Default  |
-| ---------- | ---------- | ----------- | ------------------- | -------- |
-| `platform` | `platform` |             | `"blog" \| "store"` | `'blog'` |
+| Property    | Attribute    | Description | Type                | Default  |
+| ----------- | ------------ | ----------- | ------------------- | -------- |
+| `pageTitle` | `page-title` |             | `string`            | `''`     |
+| `platform`  | `platform`   |             | `"blog" \| "store"` | `'blog'` |
 
 
 ----------------------------------------------
