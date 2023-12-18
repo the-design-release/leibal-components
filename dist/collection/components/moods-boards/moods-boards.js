@@ -64,7 +64,7 @@ export class MoodsBoards {
       h("div", { class: "moods-boards" },
         h("div", { class: "moods-boards__sidebar" },
           h("sticky-scroller", { startOffset: 130 },
-            h("div", null,
+            h("div", { style: { marginBottom: '4rem' } },
               h("div", { class: "moods-boards__create-board" }, this.creatingBoard ? (h("div", { class: "moods-boards__create-board__input" },
                 h("input", { onKeyDown: e => {
                     if (e.key == 'Escape') {
@@ -106,7 +106,7 @@ export class MoodsBoards {
             return x < y ? 1 : -1;
           }
         })
-          .map(board => (h("a", { href: board.url },
+          .map(board => (h("a", { href: board.url, class: "moods-boards__preview" },
           h("moods-board-preview", { board: board }))))))));
   }
   static get is() { return "moods-boards"; }

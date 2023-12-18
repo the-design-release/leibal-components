@@ -56,7 +56,7 @@ export class MoodsBoard {
       h("div", { class: "moods-board" },
         h("div", { class: "moods-board__sidebar" },
           h("sticky-scroller", { startOffset: 130 },
-            h("div", null,
+            h("div", { style: { marginBottom: '4rem' } },
               h("div", { class: "moods-board__create-board" }, "Export Collection"),
               h("div", { class: "moods-board__sort" },
                 h("div", { class: "moods-board__sort__header" }, "Sort Saved"),

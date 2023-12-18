@@ -52,7 +52,13 @@ export class MobileNavBar {
   render() {
     return (
       <Host>
-        <div class="mobile-nav-bar">
+        <div
+          class="mobile-nav-bar"
+          onClick={() => {
+            // Scroll to the top of the page.
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           <div class={`mobile-nav-bar__icons ${this.isOpen ? 'mobile-nav-bar__icons--open' : ''}`}>
             <div style={{ display: 'flex', flexBasis: '0', flexGrow: '1', ridColumn: '2 span / 2 span' }}>
               {this.isOpen ? (
@@ -74,7 +80,13 @@ export class MobileNavBar {
               )}
             </div>
             <div
-              style={{ display: 'flex', justifyContent: 'center', fontSize: '12.5px', gridColumn: '4 span / 4 span' }}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                fontSize: '12.5px',
+                gridColumn: '4 span / 4 span',
+                marginTop: '2px',
+              }}
             >
               {this.pageTitle.length >= 24 ? `${this.pageTitle.slice(0, 25)}...` : this.pageTitle}
             </div>

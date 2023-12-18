@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-31caa8e8.js');
 
-const moodsBoardsCss = ":host{display:block}.moods-boards{cursor:default;display:block;font-size:.88rem}@media (min-width:768px){.moods-boards{display:grid;gap:1rem;grid-template-columns:repeat(10,minmax(0,1fr))}.moods-boards__sidebar{grid-column:span 2/span 2}}.moods-boards__content{display:block}@media (min-width:768px){.moods-boards__content{display:grid;gap:2rem;grid-column:span 8/span 8;grid-template-columns:repeat(4,minmax(0,1fr));row-gap:4rem}}.moods-boards__create-board{margin-bottom:.5rem}.moods-boards__create-board__input{align-items:center;border-bottom:1px solid #888;display:flex;padding-bottom:.5rem;padding-top:.5rem}.moods-boards__create-board__input input{all:unset;cursor:text;flex:1 1 0%}.moods-boards__create-board__button{align-items:center;cursor:pointer;display:flex;margin-left:.5rem}.moods-boards__create-board__button img{opacity:.7;width:16px}.moods-boards__create-board a{display:block;font-weight:200;padding-bottom:.5rem;padding-top:.5rem}.moods-boards__create-board a:hover{cursor:pointer;font-weight:400;text-decoration-line:underline;text-underline-offset:2px}.moods-boards__sort__header{margin-bottom:.5rem}.moods-boards__sort-by{cursor:pointer;font-weight:200;margin-bottom:.5rem;margin-left:1.5rem}.moods-boards__sort-by--selected{font-weight:400;text-decoration-line:underline;text-underline-offset:2px}.moods-boards a{color:inherit;text-decoration-line:none}";
+const moodsBoardsCss = ":host{display:block}.moods-boards{cursor:default;display:block;font-size:.88rem}@media (min-width:768px){.moods-boards{display:grid;gap:1rem;grid-template-columns:repeat(10,minmax(0,1fr))}.moods-boards__sidebar{grid-column:span 2/span 2}}.moods-boards__content{display:block}@media (min-width:768px){.moods-boards__content{display:grid;gap:2rem;grid-column:span 8/span 8;grid-template-columns:repeat(4,minmax(0,1fr));row-gap:4rem}}.moods-boards__create-board{margin-bottom:.5rem}.moods-boards__create-board__input{align-items:center;border-bottom:1px solid #888;display:flex;padding-bottom:.5rem;padding-top:.5rem}.moods-boards__create-board__input input{all:unset;cursor:text;flex:1 1 0%}.moods-boards__create-board__button{align-items:center;cursor:pointer;display:flex;margin-left:.5rem}.moods-boards__create-board__button img{opacity:.7;width:16px}.moods-boards__create-board a{display:block;font-weight:200;padding-bottom:.5rem;padding-top:.5rem}.moods-boards__create-board a:hover{cursor:pointer;font-weight:400;text-decoration-line:underline;text-underline-offset:2px}.moods-boards__sort__header{margin-bottom:.5rem}.moods-boards__sort-by{cursor:pointer;font-weight:200;margin-bottom:.5rem;margin-left:1.5rem}.moods-boards__sort-by--selected{font-weight:400;text-decoration-line:underline;text-underline-offset:2px}.moods-boards a{color:inherit;text-decoration-line:none}.moods-boards__preview{display:block;margin-bottom:4rem}@media (min-width:768px){.moods-boards__preview{margin-bottom:0}}";
 
 let MoodsBoards = class {
   constructor(hostRef) {
@@ -68,7 +68,7 @@ let MoodsBoards = class {
     this.boardsList = JSON.parse(this.boards);
   }
   render() {
-    return (index.h(index.Host, null, index.h("div", { class: "moods-boards" }, index.h("div", { class: "moods-boards__sidebar" }, index.h("sticky-scroller", { startOffset: 130 }, index.h("div", null, index.h("div", { class: "moods-boards__create-board" }, this.creatingBoard ? (index.h("div", { class: "moods-boards__create-board__input" }, index.h("input", { onKeyDown: e => {
+    return (index.h(index.Host, null, index.h("div", { class: "moods-boards" }, index.h("div", { class: "moods-boards__sidebar" }, index.h("sticky-scroller", { startOffset: 130 }, index.h("div", { style: { marginBottom: '4rem' } }, index.h("div", { class: "moods-boards__create-board" }, this.creatingBoard ? (index.h("div", { class: "moods-boards__create-board__input" }, index.h("input", { onKeyDown: e => {
         if (e.key == 'Escape') {
           this.creatingBoard = false;
         }
@@ -99,7 +99,7 @@ let MoodsBoards = class {
         return x < y ? 1 : -1;
       }
     })
-      .map(board => (index.h("a", { href: board.url }, index.h("moods-board-preview", { board: board }))))))));
+      .map(board => (index.h("a", { href: board.url, class: "moods-boards__preview" }, index.h("moods-board-preview", { board: board }))))))));
   }
   static get assetsDirs() { return ["assets"]; }
   static get watchers() { return {

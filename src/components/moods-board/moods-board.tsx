@@ -87,7 +87,7 @@ export class MoodsBoard {
         <div class="moods-board">
           <div class="moods-board__sidebar">
             <sticky-scroller startOffset={130}>
-              <div>
+              <div style={{ marginBottom: '4rem' }}>
                 <div class="moods-board__create-board">Export Collection</div>
                 <div class="moods-board__sort">
                   <div class="moods-board__sort__header">Sort Saved</div>

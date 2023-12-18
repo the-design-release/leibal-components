@@ -92,7 +92,7 @@ export class MoodsBoards {
         <div class="moods-boards">
           <div class="moods-boards__sidebar">
             <sticky-scroller startOffset={130}>
-              <div>
+              <div style={{ marginBottom: '4rem' }}>
                 <div class="moods-boards__create-board">
                   {this.creatingBoard ? (
                     <div class="moods-boards__create-board__input">
@@ -181,7 +181,7 @@ export class MoodsBoards {
                 }
               })
               .map(board => (
-                <a href={board.url}>
+                <a href={board.url} class="moods-boards__preview">
                   <moods-board-preview board={board}></moods-board-preview>
                 </a>
               ))}

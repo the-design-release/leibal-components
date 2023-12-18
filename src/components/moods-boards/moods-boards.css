@@ -62,4 +62,8 @@
     @apply no-underline;
     color: inherit;
   }
+
+  &__preview {
+    @apply block mb-16 md:mb-0;
+  }
 }
