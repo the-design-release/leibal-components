@@ -89,6 +89,10 @@ export namespace Components {
         "platform": PlatformType;
         "showMultiplier": number;
     }
+    interface NavBarV2 {
+        "authenticated": boolean;
+        "platform": PlatformType;
+    }
     interface RemoveOverlay {
         "name": string;
         "payload": any;
@@ -203,6 +207,12 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
+    interface HTMLNavBarV2Element extends Components.NavBarV2, HTMLStencilElement {
+    }
+    var HTMLNavBarV2Element: {
+        prototype: HTMLNavBarV2Element;
+        new (): HTMLNavBarV2Element;
+    };
     interface HTMLRemoveOverlayElement extends Components.RemoveOverlay, HTMLStencilElement {
     }
     var HTMLRemoveOverlayElement: {
@@ -260,6 +270,7 @@ declare global {
         "moods-gallery": HTMLMoodsGalleryElement;
         "moods-modal": HTMLMoodsModalElement;
         "nav-bar": HTMLNavBarElement;
+        "nav-bar-v2": HTMLNavBarV2Element;
         "remove-overlay": HTMLRemoveOverlayElement;
         "simple-button": HTMLSimpleButtonElement;
         "simple-input": HTMLSimpleInputElement;
@@ -348,6 +359,10 @@ declare namespace LocalJSX {
         "platform"?: PlatformType;
         "showMultiplier"?: number;
     }
+    interface NavBarV2 {
+        "authenticated"?: boolean;
+        "platform"?: PlatformType;
+    }
     interface RemoveOverlay {
         "name"?: string;
         "onRemoveOverlayEvent"?: (event: CustomEvent<RemoveOverlayEvent>) => void;
@@ -393,6 +408,7 @@ declare namespace LocalJSX {
         "moods-gallery": MoodsGallery;
         "moods-modal": MoodsModal;
         "nav-bar": NavBar;
+        "nav-bar-v2": NavBarV2;
         "remove-overlay": RemoveOverlay;
         "simple-button": SimpleButton;
         "simple-input": SimpleInput;
@@ -420,6 +436,7 @@ declare module "@stencil/core" {
             "moods-gallery": LocalJSX.MoodsGallery & JSXBase.HTMLAttributes<HTMLMoodsGalleryElement>;
             "moods-modal": LocalJSX.MoodsModal & JSXBase.HTMLAttributes<HTMLMoodsModalElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+            "nav-bar-v2": LocalJSX.NavBarV2 & JSXBase.HTMLAttributes<HTMLNavBarV2Element>;
             "remove-overlay": LocalJSX.RemoveOverlay & JSXBase.HTMLAttributes<HTMLRemoveOverlayElement>;
             "simple-button": LocalJSX.SimpleButton & JSXBase.HTMLAttributes<HTMLSimpleButtonElement>;
             "simple-input": LocalJSX.SimpleInput & JSXBase.HTMLAttributes<HTMLSimpleInputElement>;

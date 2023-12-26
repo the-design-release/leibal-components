@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+    <script type="module" src="/build/leibal-components.esm.js"></script>
+    <script nomodule src="/build/leibal-components.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+    </style>
 
-  <script type="module" src="/build/leibal-components.esm.js"></script>
-  <script nomodule src="/build/leibal-components.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-  </style>
+    <style>
+      :root {
+        --leibal-components-font-family: Roboto, sans-serif;
+      }
 
-  <style>
-    :root {
-      --leibal-components-font-family: Roboto, sans-serif;
-    }
+      body {
+        font-family: var(--leibal-components-font-family);
+        line-height: 1.7;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
 
-    body {
-      font-family: var(--leibal-components-font-family);
-      line-height: 1.7;
-      border: 0;
-      padding: 0;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-  </style>
-</head>
+  <body style="height: 340vh">
+    <div>
+      <nav-bar-v2 authenticated="true" />
+    </div>
 
-<body style="height: 340vh">
-  <!-- <div>
-    <nav-bar authenticated="true" />
-  </div> -->
-
-
+    <!--
   <div>
     <mobile-nav-bar></mobile-nav-bar>
   </div>
+  -->
 
-
-  <!--
+    <!--
 
   <div style="padding: 4rem;">
     <terms-of-service>
@@ -47,7 +46,7 @@
   </div>
 
 -->
-  <!--
+    <!--
   <div style="width: 400px; margin-top: 4rem; margin-bottom: 2rem;">
     <moods-board-picker boards='[
       {"postId": 1, "name": "My Cool Images"},
@@ -60,7 +59,7 @@
   </div>
 
 -->
-  <!--
+    <!--
   <div style="padding: 3rem; width: 512px;">
     <add-to-moods-button image-url="https://leibal.com/wp-content/uploads/2022/02/leibal_4pm_massproductions_14.jpg"
       post-id="123" theme="dark">
@@ -237,7 +236,7 @@
     </div>
 
   -->
-  <!--
+    <!--
   <image-gallery post-title="The Game Is Here And We'll Die" post-excerpt="Zack Bowler"
     images='["https://leibal.com/wp-content/uploads/2022/03/leibal_pavilion-house_norm-architects_48.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_2.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_3.jpg", "https://leibal.com/wp-content/uploads/2021/11/leibal_tubs-i-llums_max-enrich_14.jpg"]'
     preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg"
@@ -250,15 +249,16 @@
   <footer-nav></footer-nav>
   -->
 
-  <div style="width: 350px; padding-top: 5rem; padding-left: 3rem">
+    <div style="width: 350px; padding-top: 5rem; padding-left: 3rem">
+      <enquire-modal
+        post-title="Zack by Zack"
+        preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg"
+      />
+    </div>
 
-    <enquire-modal post-title="Zack by Zack"
-      preview-image="https://leibal.com/wp-content/uploads/2022/08/leibal_yo-chair_hamanishi-design_00007.jpg" />
-  </div>
-
-  <!-- <simple-input required type="text" placeholder="First Name"></simple-input> -->
-  <!-- <div style="margin-bottom: 60rem"></div> -->
-  <!--
+    <!-- <simple-input required type="text" placeholder="First Name"></simple-input> -->
+    <!-- <div style="margin-bottom: 60rem"></div> -->
+    <!--
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 2rem; padding-top: 20rem; margin: 4rem">
       <tool-tip>
         <div slot="content">
@@ -457,6 +457,5 @@
   <div style="padding: 4rem">
     <footer-nav></footer-nav>
   </div> -->
-</body>
-
+  </body>
 </html>
