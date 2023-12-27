@@ -86,7 +86,7 @@ export class NavBarV2 {
         h("div", { class: `menu submenu ${this.currentMenu == 'shop' && 'submenu--open'}` },
           h("div", null),
           h("div", { class: "sub-link" },
-            h("a", { href: this.platformSpecificLink('store', '/') }, "Shop All")),
+            h("a", { href: this.platformSpecificLink('store', '/collections/all') }, "Shop All")),
           h("div", { class: "sub-link" },
             h("a", { href: this.platformSpecificLink('store', '/collections/seating') }, "Seating")),
           h("div", { class: "sub-link" },

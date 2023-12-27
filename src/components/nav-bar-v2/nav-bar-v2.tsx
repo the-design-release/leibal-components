@@ -141,9 +141,7 @@ export class NavBarV2 {
             <div class="sub-link">
               <a href={this.platformSpecificLink('blog', '/category/travel')}>Travel</a>
             </div>
-            <div class="sub-link inactive">
-              <a href="#">City Guides</a>
-            </div>
+            <div class="sub-link inactive">{/* <a href="#">City Guides</a> */}</div>
             <div></div>
           </div>
 
@@ -171,7 +169,7 @@ export class NavBarV2 {
               <a href={this.platformSpecificLink('store', '/collections/accessories')}>Accessories</a>
             </div>
             <div class="sub-link">
-              <a href={this.platformSpecificLink('store', '/collections/brands')}>Brands</a>
+              {/* <a href={this.platformSpecificLink('store', '/collections/brands')}>Brands</a> */}
             </div>
             <div></div>
           </div>
