@@ -92,22 +92,22 @@ export class FooterNav {
           <div class="footer-nav__column">
             <div class="footer-nav__title">Store</div>
             <div class="footer-nav__links">
-              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collection/seating')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collections/seating')}>
                 Seating
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collection/tables')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collections/tables')}>
                 Tables
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collection/lighting')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collections/lighting')}>
                 Lighting
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collection/storage')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collections/storage')}>
                 Storage
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collection/outdoor')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collections/outdoor')}>
                 Outdoor
               </a>
-              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collection/accessories')}>
+              <a class="footer-nav__link" href={this.platformSpecificLink('store', '/collections/accessories')}>
                 Accessories
               </a>
             </div>
