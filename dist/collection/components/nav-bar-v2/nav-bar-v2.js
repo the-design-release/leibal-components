@@ -80,8 +80,7 @@ export class NavBarV2 {
             h("a", { href: this.platformSpecificLink('blog', '/category/objects') }, "Objects")),
           h("div", { class: "sub-link" },
             h("a", { href: this.platformSpecificLink('blog', '/category/travel') }, "Travel")),
-          h("div", { class: "sub-link inactive" },
-            h("a", { href: "#" }, "City Guides")),
+          h("div", { class: "sub-link inactive" }),
           h("div", null)),
         h("div", { class: `menu submenu ${this.currentMenu == 'shop' && 'submenu--open'}` },
           h("div", null),
@@ -99,8 +98,7 @@ export class NavBarV2 {
             h("a", { href: this.platformSpecificLink('store', '/collections/outdoor') }, "Outdoor")),
           h("div", { class: "sub-link" },
             h("a", { href: this.platformSpecificLink('store', '/collections/accessories') }, "Accessories")),
-          h("div", { class: "sub-link" },
-            h("a", { href: this.platformSpecificLink('store', '/collections/brands') }, "Brands")),
+          h("div", { class: "sub-link" }),
           h("div", null)))));
   }
   static get is() { return "nav-bar-v2"; }
