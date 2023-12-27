@@ -92,14 +92,14 @@
   display: flex;
   align-items: center;
 
-  &:active,
+  /* &:active,
   &--active {
     text-decoration: underline;
     text-underline-position: under;
     text-decoration-thickness: 0.125rem;
     text-decoration-color: var(--color-dim);
     text-underline-offset: 0.25rem;
-  }
+  } */
 
   & a {
     color: #000;

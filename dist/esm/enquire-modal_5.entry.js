@@ -139,7 +139,7 @@ let NavBarV2 = class {
         this.currentMenu = this.currentMenu == 'read' ? null : 'read';
       } }, "Read"), h("div", { class: `master-link ${this.currentMenu == 'shop' && 'master-link--active'}`, onClick: () => {
         this.currentMenu = this.currentMenu == 'shop' ? null : 'shop';
-      } }, "Shop"), h("div", { class: "empty-space" }), this.platform == 'blog' && (h(Fragment, null, h("div", { class: "master-link" }, h("a", { href: "/submissions-form" }, "Submit")), h("div", { class: "master-link" }, this.authenticated ? (h("a", { href: this.platformSpecificLink('blog', '/moods') }, "MOODS")) : (h("a", { href: this.platformSpecificLink('blog', '/subscription/subscribe') }, "Sign Up"))))), this.platform == 'store' && (h(Fragment, null, h("div", { class: "master-link" }, "Trade"), h("div", { class: "master-link" }, "Cart"))), h("div", { class: "master-link search", onClick: () => {
+      } }, "Shop"), h("div", { class: "empty-space" }), this.platform == 'blog' && (h(Fragment, null, h("div", { class: "master-link" }, h("a", { href: "/submissions-form" }, "Submit")), h("div", { class: "master-link" }, this.authenticated ? (h("a", { href: this.platformSpecificLink('blog', '/moods') }, "MOODS")) : (h("a", { href: this.platformSpecificLink('blog', '/subscription/subscribe') }, "Sign Up"))))), this.platform == 'store' && (h(Fragment, null, h("div", { class: "master-link" }, h("a", { href: "https://leibal.com/info/#trades" }, "Trade")), h("div", { class: "master-link" }, h("a", { href: this.platformSpecificLink('store', `/cart`) }, "Cart")))), h("div", { class: "master-link search", onClick: () => {
         if (this.currentMenu != null)
           this.currentMenu = null;
         this.isSearchOpen = !this.isSearchOpen;
