@@ -85,6 +85,9 @@ export class NavBarV2 {
               onClick={() => {
                 if (this.currentMenu != null) this.currentMenu = null;
                 this.isSearchOpen = !this.isSearchOpen;
+
+                console.log(this.searchInput);
+                this.searchInput.focus();
               }}
             >
               Search
