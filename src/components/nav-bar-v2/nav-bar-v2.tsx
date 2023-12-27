@@ -30,7 +30,13 @@ export class NavBarV2 {
         <div class="container">
           <div class="menu">
             <div class="logo">
-              <img src={getAssetPath('./assets/leibal-logo.png')} alt="logo" />
+              <img
+                src={getAssetPath('./assets/leibal-logo.png')}
+                alt="logo"
+                onClick={() => {
+                  window.location.href = this.platformSpecificLink(this.platform, '/');
+                }}
+              />
             </div>
             <div
               class={`master-link ${this.currentMenu == 'read' && 'master-link--active'}`}

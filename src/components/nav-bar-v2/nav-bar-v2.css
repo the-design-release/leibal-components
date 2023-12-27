@@ -15,7 +15,9 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  user-select: none;
 }
+
 .menu {
   position: relative;
   z-index: 1000;
@@ -30,8 +32,8 @@
 
 .logo {
   display: flex;
-  justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   & img {
     width: 100%;
