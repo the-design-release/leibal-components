@@ -1,0 +1,33 @@
+{
+  "entries": [
+    "./components/add-to-moods-button/add-to-moods-button.js",
+    "./components/display-card/display-card.js",
+    "./components/moods-board-preview/moods-board-preview.js",
+    "./components/moods-board-picker/moods-board-picker.js",
+    "./components/remove-overlay/remove-overlay.js",
+    "./components/simple-input/simple-input.js",
+    "./components/enquire-modal/enquire-modal.js",
+    "./components/footer-nav/footer-nav.js",
+    "./components/image-gallery/image-gallery.js",
+    "./components/image-gallery-link/image-gallery-link.js",
+    "./components/mobile-nav-bar/mobile-nav-bar.js",
+    "./components/moods-board/moods-board.js",
+    "./components/moods-boards/moods-boards.js",
+    "./components/moods-gallery/moods-gallery.js",
+    "./components/moods-modal/moods-modal.js",
+    "./components/nav-bar/nav-bar.js",
+    "./components/nav-bar-v2/nav-bar-v2.js",
+    "./components/simple-button/simple-button.js",
+    "./components/sticky-scroller/sticky-scroller.js",
+    "./components/tele-portal/tele-portal.js",
+    "./components/terms-of-service/terms-of-service.js",
+    "./components/tool-tip/tool-tip.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.14.0",
+    "typescriptVersion": "4.5.4"
+  },
+  "collections": [],
+  "bundles": []
+}

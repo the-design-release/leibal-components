@@ -150,7 +150,7 @@ export class NavBarV2 {
           <div class={`menu submenu ${this.currentMenu == 'shop' && 'submenu--open'}`}>
             <div></div>
             <div class="sub-link">
-              <a href={this.platformSpecificLink('store', '/')}>Shop All</a>
+              <a href={this.platformSpecificLink('store', '/collections/all')}>Shop All</a>
             </div>
             <div class="sub-link">
               <a href={this.platformSpecificLink('store', '/collections/seating')}>Seating</a>
