@@ -61,9 +61,9 @@
   &--active {
     text-decoration: underline;
     text-underline-position: under;
-    text-decoration-thickness: 0.125rem;
+    text-decoration-thickness: 0.025rem;
     text-decoration-color: var(--color-dim);
-    text-underline-offset: 0.25rem;
+    text-underline-offset: 0.1rem;
   }
 
   & a {
@@ -82,7 +82,7 @@
 .sub-link {
   color: #000;
 
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
