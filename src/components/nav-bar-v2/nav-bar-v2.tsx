@@ -71,8 +71,12 @@ export class NavBarV2 {
             )}
             {this.platform == 'store' && (
               <Fragment>
-                <div class="master-link">Trade</div>
-                <div class="master-link">Cart</div>
+                <div class="master-link">
+                  <a href="https://leibal.com/info/#trades">Trade</a>
+                </div>
+                <div class="master-link">
+                  <a href={this.platformSpecificLink('store', `/cart`)}>Cart</a>
+                </div>
               </Fragment>
             )}
 
