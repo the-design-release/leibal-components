@@ -109,11 +109,11 @@
         @apply col-span-2 row-span-2;
 
         &__title {
-          @apply text-sm font-light mb-4;
+          @apply text-sm font-light mt-[3rem] mb-4;
         }
 
         &__body {
-          @apply p-4 font-light text-sm tracking-wider leading-6 max-h-[185px] overflow-y-auto;
+          @apply p-4 font-light text-sm tracking-wider leading-6 max-h-[212px] overflow-y-auto;
 
           border: 1px solid #eaeaea;
 
