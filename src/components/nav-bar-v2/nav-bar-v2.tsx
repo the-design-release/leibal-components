@@ -60,9 +60,11 @@ export class NavBarV2 {
                 <div class="master-link">
                   <a href="/submissions-form">Submit</a>
                 </div>
-                <div class="master-link">
+                <div class="master-link moods">
                   {this.authenticated ? (
-                    <a href={this.platformSpecificLink('blog', '/moods')}>MOODS</a>
+                    <a href={this.platformSpecificLink('blog', '/moods')}>
+                      <img src={getAssetPath('./assets/moods.png')} alt="MOODS" />
+                    </a>
                   ) : (
                     <a href={this.platformSpecificLink('blog', '/subscription/subscribe')}>Sign Up</a>
                   )}
