@@ -77,7 +77,7 @@ export class NavBarV2 {
           h("div", { class: "sub-link" },
             h("a", { href: this.platformSpecificLink('blog', '/category/lighting') }, "Lighting")),
           h("div", { class: "sub-link" },
-            h("a", { href: this.platformSpecificLink('blog', '/category/objects') }, "Objects")),
+            h("a", { href: this.platformSpecificLink('blog', '/category/products') }, "Objects")),
           h("div", { class: "sub-link" },
             h("a", { href: this.platformSpecificLink('blog', '/category/travel') }, "Travel")),
           h("div", { class: "sub-link inactive" }),
