@@ -8,6 +8,7 @@
 
   display: flex;
   transition: opacity 0.2s ease-in-out;
+  font-weight: 200;
 }
 
 .add-to-moods-button--show-on-hover {
@@ -43,6 +44,6 @@
 
 .add-to-moods-button img {
   width: 1.5rem;
-  margin-top: -0.1rem;
+  margin-top: -0.25rem;
   /* height: 1rem; */
 }
