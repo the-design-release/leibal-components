@@ -26,9 +26,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
-  "pre-commit": [
-    "build"
-  ],
+  "pre-commit": [],
   "dependencies": {
     "@proyecto26/animatable-component": "^1.1.10",
     "@stencil/core": "^2.13.0",
