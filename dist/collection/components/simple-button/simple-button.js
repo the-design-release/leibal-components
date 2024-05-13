@@ -4,13 +4,15 @@ export class SimpleButton {
     this.theme = 'light';
     this.fillWidth = false;
     this.disabled = false;
+    this.transparentBackground = false;
   }
   render() {
     return (h(Host, null,
       h("div", { class: 'simple-button ' +
           (this.fillWidth ? 'simple-button--full-width ' : ' ') +
           (this.theme == 'dark' ? 'simple-button--dark ' : ' ') +
-          (this.disabled ? 'simple-button--disabled' : ' '), role: "button", "aria-pressed": "false", tabindex: "0" },
+          (this.disabled ? 'simple-button--disabled' : ' ') +
+          (this.transparentBackground ? 'simple-button--transparent' : ' '), role: "button", "aria-pressed": "false", tabindex: "0" },
         h("div", { class: "simple-button__icon" },
           h("slot", { name: "icon" })),
         h("div", { class: "simple-button__text" },
@@ -81,6 +83,24 @@ export class SimpleButton {
         "text": ""
       },
       "attribute": "disabled",
+      "reflect": false,
+      "defaultValue": "false"
+    },
+    "transparentBackground": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "transparent-background",
       "reflect": false,
       "defaultValue": "false"
     }

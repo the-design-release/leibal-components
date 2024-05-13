@@ -101,6 +101,7 @@ export namespace Components {
         "disabled": boolean;
         "fillWidth": boolean;
         "theme": Theme;
+        "transparentBackground": boolean;
     }
     interface SimpleInput {
         "name": string;
@@ -372,6 +373,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "fillWidth"?: boolean;
         "theme"?: Theme;
+        "transparentBackground"?: boolean;
     }
     interface SimpleInput {
         "name"?: string;

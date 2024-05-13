@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                | Default   |
-| ----------- | ------------ | ----------- | ------------------- | --------- |
-| `disabled`  | `disabled`   |             | `boolean`           | `false`   |
-| `fillWidth` | `fill-width` |             | `boolean`           | `false`   |
-| `theme`     | `theme`      |             | `"dark" \| "light"` | `'light'` |
+| Property                | Attribute                | Description | Type                | Default   |
+| ----------------------- | ------------------------ | ----------- | ------------------- | --------- |
+| `disabled`              | `disabled`               |             | `boolean`           | `false`   |
+| `fillWidth`             | `fill-width`             |             | `boolean`           | `false`   |
+| `theme`                 | `theme`                  |             | `"dark" \| "light"` | `'light'` |
+| `transparentBackground` | `transparent-background` |             | `boolean`           | `false`   |
 
 
 ## Dependencies

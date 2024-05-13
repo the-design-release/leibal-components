@@ -25,6 +25,10 @@
     opacity: 0.5;
   }
 
+  &--transparent {
+    background-color: transparent;
+  }
+
   &__text {
     @apply md:text-lg lg:text-xl;
   }
