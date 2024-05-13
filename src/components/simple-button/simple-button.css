@@ -32,8 +32,9 @@
 
     &:hover,
     &:active {
-      background-color: var(--color-light);
-      color: var(--color-dark);
+      border-color: var(--color-light) !important;
+      background-color: var(--color-light) !important;
+      color: var(--color-dark) !important;
     }
   }
 
