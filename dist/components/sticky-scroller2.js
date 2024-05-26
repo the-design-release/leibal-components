@@ -81,6 +81,8 @@ const registerNode = (node, { offsetTop, offsetBottom, bottom }) => {
   };
   const changeMode = newMode => {
     mode = newMode;
+    // Sticky elements needs to be block for Safari
+    node.style.display = 'block';
     if (newMode === 'relative') {
       node.style.position = 'relative';
       if (bottom) {
